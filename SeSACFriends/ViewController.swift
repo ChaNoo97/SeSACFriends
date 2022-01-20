@@ -9,28 +9,39 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-	let lable = UILabel()
-	let label2 = UILabel()
-	
+	let textfield = MainTextField(frame: .zero, type: .inactive)
+	let textfield2 = MainTextField(frame: .zero, type: .disable)
+	let textfield3 = MainTextField(frame: .zero, type: .error)
+	let button = UIButton()
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		view.backgroundColor = .white
-		lable.font = SesacFont.title1M16.font
-		lable.text = "되나요?"
-		label2.font = SesacFont.title5M12.font
-		label2.text = "폰트테스트"
-		view.addSubview(lable)
-		view.addSubview(label2)
-		lable.snp.makeConstraints {
+		view.addSubview(button)
+		view.addSubview(textfield2)
+		view.addSubview(textfield3)
+		button.backgroundColor = .sesacWhitegreen
+		
+		button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+		
+		button.snp.makeConstraints {
 			$0.center.equalToSuperview()
-			$0.size.equalTo(100)
+			$0.height.equalTo(48)
+			$0.width.equalToSuperview().multipliedBy(0.8)
 		}
-		label2.snp.makeConstraints {
-			$0.top.equalTo(lable.snp.bottom).offset(10)
-			$0.size.equalTo(100)
+		
+		textfield3.snp.makeConstraints {
+			$0.bottom.equalTo(button.snp.top).offset(-10)
+			$0.height.equalTo(48)
+			$0.width.equalTo(button)
+			$0.centerX.equalTo(button)
 		}
-		lable.backgroundColor = .sesacGreen
-		label2.backgroundColor = .sesacWhitegreen
+		
+		textfield3.notiLabel.text = "실패!"
+	}
+	
+	@objc func buttonClicked() {
+		textfield3.setupType(type: .success)
 	}
 
 

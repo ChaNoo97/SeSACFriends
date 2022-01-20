@@ -19,6 +19,8 @@
 		FE51594A2796A8C000E2CFBD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE5159492796A8C000E2CFBD /* SnapKit */; };
 		FE51594F27993E3400E2CFBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE51594E27993E3400E2CFBD /* GoogleService-Info.plist */; };
 		FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595027993EFD00E2CFBD /* MainButton.swift */; };
+		FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5159532799B4D500E2CFBD /* MainTextField.swift */; };
+		FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5159552799B95500E2CFBD /* ViewProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		FE5159452796A0CE00E2CFBD /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		FE51594E27993E3400E2CFBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE51595027993EFD00E2CFBD /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		FE5159532799B4D500E2CFBD /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
+		FE5159552799B95500E2CFBD /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		FE26BD092796832600E92519 /* SeSACFriends */ = {
 			isa = PBXGroup;
 			children = (
+				FE5159552799B95500E2CFBD /* ViewProtocols.swift */,
 				FE51595227994A6500E2CFBD /* CustomView */,
 				FE515943279694FE00E2CFBD /* DesignExtension */,
 				FE26BD0A2796832600E92519 /* AppDelegate.swift */,
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				FE51595027993EFD00E2CFBD /* MainButton.swift */,
+				FE5159532799B4D500E2CFBD /* MainTextField.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -185,6 +191,8 @@
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
+				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
+				FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
