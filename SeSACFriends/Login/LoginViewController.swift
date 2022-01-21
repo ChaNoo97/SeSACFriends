@@ -18,8 +18,12 @@ public class LoginViewController: BaseViewController {
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		mainView.button.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 	}
 	
+	@objc func mainButtonClicked() {
+//		let vc = ConfirmViewController()
+//		navigationController?.pushViewController(vc, animated: true)
+	}
 	
 }

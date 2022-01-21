@@ -13,6 +13,7 @@ public enum LoginButtonText: String {
 	case receive = "인증 문자 받기"
 	case start = "인증하고 시작하기"
 	case next = "다음"
+	case again = "재전송"
 }
 
 public class LoginBaseView: UIView {
@@ -31,6 +32,7 @@ public class LoginBaseView: UIView {
 	}
 	
 	public func setupConstraint() {
+//		print("LoginBaseView", #function)
 		addSubview(button)
 		button.snp.makeConstraints {
 			$0.center.equalToSuperview()
@@ -39,4 +41,13 @@ public class LoginBaseView: UIView {
 		}
 	}
 	
+}
+
+extension LoginBaseView {
+	public func setupLabel(label: UILabel, font: SesacFont, text: String) {
+		label.numberOfLines = 0
+		label.textAlignment = .center
+		label.font = font.font
+		label.text = text
+	}
 }

@@ -10,9 +10,8 @@ import SnapKit
 
 public class LoginView: LoginBaseView, ViewProtocols {
 	
-	
-	let label = UILabel()
-	let textfield = MainTextField(frame: .zero, type: .inactive)
+	let titleLabel = UILabel()
+	let phoneNumberTextField = MainTextField(frame: .zero, type: .inactive)
 	
 	init() {
 		super.init(frame: .zero, textType: .receive)
@@ -25,33 +24,27 @@ public class LoginView: LoginBaseView, ViewProtocols {
 	}
 	
 	public func configure() {
-		label.numberOfLines = 0
-		label.font = SesacFont.display1R20.font
-		label.textAlignment = .center
-		label.text = """
-			새싹 서비스 이용을 위해
-			휴대폰 번호를 입력해 주세요
-			"""
+		setupLabel(label: titleLabel, font: SesacFont.display1R20, text: "새싹 서비스 이용을 위해\n휴대폰 번호를 입력해 주세요")
 	}
 	
 	public override func setupConstraint() {
 		super.setupConstraint()
 		
-		[textfield, label].forEach {
+		[phoneNumberTextField, titleLabel].forEach {
 			addSubview($0)
 		}
 		
-		textfield.snp.makeConstraints {
+		phoneNumberTextField.snp.makeConstraints {
 			$0.centerX.equalToSuperview()
 			$0.bottom.equalTo(button.snp.top).offset(-72)
 			$0.leading.trailing.equalToSuperview().inset(16)
 			$0.height.equalTo(48)
 		}
 		
-		label.snp.makeConstraints {
-			$0.bottom.equalTo(textfield.snp.top).offset(-64)
+		titleLabel.snp.makeConstraints {
+			$0.bottom.equalTo(phoneNumberTextField.snp.top).offset(-64)
 			$0.centerX.equalToSuperview()
-			$0.leading.trailing.equalToSuperview().inset(73)
+			$0.leading.trailing.equalToSuperview().inset(16)
 			$0.height.equalTo(64)
 		}
 	}

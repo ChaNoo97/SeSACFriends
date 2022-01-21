@@ -25,6 +25,12 @@
 		FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515959279A8DEB00E2CFBD /* LoginView.swift */; };
 		FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595C279A90F300E2CFBD /* LoginViewController.swift */; };
 		FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* BaseViewController.swift */; };
+		FE515962279A999D00E2CFBD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FE515961279A999D00E2CFBD /* RxCocoa */; };
+		FE515964279A999D00E2CFBD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FE515963279A999D00E2CFBD /* RxSwift */; };
+		FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515966279AA2C800E2CFBD /* ConfirmView.swift */; };
+		FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515968279AAED600E2CFBD /* ConfirmViewController.swift */; };
+		FE51596C279AFE7400E2CFBD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596B279AFE7400E2CFBD /* Toast */; };
+		FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596E279AFE8200E2CFBD /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,8 @@
 		FE515959279A8DEB00E2CFBD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FE51595C279A90F300E2CFBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FE51595E279A984300E2CFBD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FE515966279AA2C800E2CFBD /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
+		FE515968279AAED600E2CFBD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */,
+				FE51596C279AFE7400E2CFBD /* Toast in Frameworks */,
+				FE515964279A999D00E2CFBD /* RxSwift in Frameworks */,
+				FE515962279A999D00E2CFBD /* RxCocoa in Frameworks */,
 				FE51594A2796A8C000E2CFBD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +134,8 @@
 			children = (
 				FE515959279A8DEB00E2CFBD /* LoginView.swift */,
 				FE51595C279A90F300E2CFBD /* LoginViewController.swift */,
+				FE515968279AAED600E2CFBD /* ConfirmViewController.swift */,
+				FE515966279AA2C800E2CFBD /* ConfirmView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -144,6 +158,10 @@
 			name = SeSACFriends;
 			packageProductDependencies = (
 				FE5159492796A8C000E2CFBD /* SnapKit */,
+				FE515961279A999D00E2CFBD /* RxCocoa */,
+				FE515963279A999D00E2CFBD /* RxSwift */,
+				FE51596B279AFE7400E2CFBD /* Toast */,
+				FE51596E279AFE8200E2CFBD /* Alamofire */,
 			);
 			productName = SeSACFriends;
 			productReference = FE26BD072796832600E92519 /* SeSACFriends.app */;
@@ -175,6 +193,9 @@
 			mainGroup = FE26BCFE2796832600E92519;
 			packageReferences = (
 				FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */,
+				FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FE26BD082796832600E92519 /* Products */;
 			projectDirPath = "";
@@ -210,6 +231,8 @@
 				FE26BD0F2796832600E92519 /* ViewController.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
+				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
+				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
@@ -436,6 +459,30 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -443,6 +490,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FE515961279A999D00E2CFBD /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		FE515963279A999D00E2CFBD /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		FE51596B279AFE7400E2CFBD /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		FE51596E279AFE8200E2CFBD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
