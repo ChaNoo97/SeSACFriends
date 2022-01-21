@@ -93,7 +93,7 @@ public class MainTextField: UIView, ViewProtocols {
 			designLine.backgroundColor = .sesacBlack
 			textField.textColor = .sesacBlack
 		case .active:
-			designLine.backgroundColor = .sesacGray3
+			designLine.backgroundColor = .sesacFocus
 			textField.textColor = .sesacBlack
 		case .disable:
 			textField.textColor = .sesacGray7

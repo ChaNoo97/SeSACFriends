@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0A2796832600E92519 /* AppDelegate.swift */; };
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
-		FE26BD0F2796832600E92519 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0E2796832600E92519 /* ViewController.swift */; };
 		FE26BD142796832800E92519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD132796832800E92519 /* Assets.xcassets */; };
 		FE26BD172796832800E92519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD152796832800E92519 /* LaunchScreen.storyboard */; };
 		FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51593F279692F900E2CFBD /* ColorExtension.swift */; };
@@ -25,19 +24,21 @@
 		FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515959279A8DEB00E2CFBD /* LoginView.swift */; };
 		FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595C279A90F300E2CFBD /* LoginViewController.swift */; };
 		FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* BaseViewController.swift */; };
-		FE515962279A999D00E2CFBD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FE515961279A999D00E2CFBD /* RxCocoa */; };
-		FE515964279A999D00E2CFBD /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FE515963279A999D00E2CFBD /* RxSwift */; };
 		FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515966279AA2C800E2CFBD /* ConfirmView.swift */; };
 		FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515968279AAED600E2CFBD /* ConfirmViewController.swift */; };
 		FE51596C279AFE7400E2CFBD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596B279AFE7400E2CFBD /* Toast */; };
 		FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596E279AFE8200E2CFBD /* Alamofire */; };
+		FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515976279B0DE800E2CFBD /* LoginViewModel.swift */; };
+		FE515979279B1DA400E2CFBD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515978279B1DA400E2CFBD /* Observable.swift */; };
+		FE7BDCBD279B3C6C001C75A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */; };
+		FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */; };
+		FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE26BD072796832600E92519 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE26BD0A2796832600E92519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE26BD0C2796832600E92519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE26BD0E2796832600E92519 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE26BD132796832800E92519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE26BD162796832800E92519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE26BD182796832800E92519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +56,9 @@
 		FE51595E279A984300E2CFBD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FE515966279AA2C800E2CFBD /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		FE515968279AAED600E2CFBD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		FE515976279B0DE800E2CFBD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FE515978279B1DA400E2CFBD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FE7BDCC2279B3D47001C75A9 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */,
 				FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */,
+				FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */,
 				FE51596C279AFE7400E2CFBD /* Toast in Frameworks */,
-				FE515964279A999D00E2CFBD /* RxSwift in Frameworks */,
-				FE515962279A999D00E2CFBD /* RxCocoa in Frameworks */,
+				FE7BDCBD279B3C6C001C75A9 /* FirebaseAnalytics in Frameworks */,
 				FE51594A2796A8C000E2CFBD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,19 +97,19 @@
 		FE26BD092796832600E92519 /* SeSACFriends */ = {
 			isa = PBXGroup;
 			children = (
+				FE7BDCC2279B3D47001C75A9 /* SeSACFriends.entitlements */,
+				FE26BD0A2796832600E92519 /* AppDelegate.swift */,
+				FE26BD0C2796832600E92519 /* SceneDelegate.swift */,
+				FE515978279B1DA400E2CFBD /* Observable.swift */,
 				FE51595B279A8DF500E2CFBD /* Login */,
 				FE51595227994A6500E2CFBD /* CustomView */,
 				FE515943279694FE00E2CFBD /* DesignExtension */,
-				FE26BD0A2796832600E92519 /* AppDelegate.swift */,
-				FE26BD0C2796832600E92519 /* SceneDelegate.swift */,
-				FE26BD0E2796832600E92519 /* ViewController.swift */,
-				FE5159552799B95500E2CFBD /* ViewProtocols.swift */,
+				FE515971279B086300E2CFBD /* Protocols */,
+				FE515970279B083A00E2CFBD /* Font */,
 				FE26BD132796832800E92519 /* Assets.xcassets */,
 				FE26BD152796832800E92519 /* LaunchScreen.storyboard */,
 				FE26BD182796832800E92519 /* Info.plist */,
 				FE51594E27993E3400E2CFBD /* GoogleService-Info.plist */,
-				FE5159452796A0CE00E2CFBD /* NotoSansCJKkr-Medium.otf */,
-				FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */,
 			);
 			path = SeSACFriends;
 			sourceTree = "<group>";
@@ -132,12 +137,62 @@
 		FE51595B279A8DF500E2CFBD /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FE515959279A8DEB00E2CFBD /* LoginView.swift */,
-				FE51595C279A90F300E2CFBD /* LoginViewController.swift */,
-				FE515968279AAED600E2CFBD /* ConfirmViewController.swift */,
-				FE515966279AA2C800E2CFBD /* ConfirmView.swift */,
+				FE515974279B09DC00E2CFBD /* Model */,
+				FE515973279B09D900E2CFBD /* ViewModel */,
+				FE515972279B09BA00E2CFBD /* View */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		FE515970279B083A00E2CFBD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FE5159452796A0CE00E2CFBD /* NotoSansCJKkr-Medium.otf */,
+				FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		FE515971279B086300E2CFBD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FE5159552799B95500E2CFBD /* ViewProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FE515972279B09BA00E2CFBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE515975279B0A2200E2CFBD /* View */,
+				FE51595C279A90F300E2CFBD /* LoginViewController.swift */,
+				FE515968279AAED600E2CFBD /* ConfirmViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE515973279B09D900E2CFBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FE515976279B0DE800E2CFBD /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FE515974279B09DC00E2CFBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE515975279B0A2200E2CFBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE515959279A8DEB00E2CFBD /* LoginView.swift */,
+				FE515966279AA2C800E2CFBD /* ConfirmView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,10 +213,11 @@
 			name = SeSACFriends;
 			packageProductDependencies = (
 				FE5159492796A8C000E2CFBD /* SnapKit */,
-				FE515961279A999D00E2CFBD /* RxCocoa */,
-				FE515963279A999D00E2CFBD /* RxSwift */,
 				FE51596B279AFE7400E2CFBD /* Toast */,
 				FE51596E279AFE8200E2CFBD /* Alamofire */,
+				FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */,
+				FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */,
+				FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */,
 			);
 			productName = SeSACFriends;
 			productReference = FE26BD072796832600E92519 /* SeSACFriends.app */;
@@ -193,9 +249,9 @@
 			mainGroup = FE26BCFE2796832600E92519;
 			packageReferences = (
 				FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */,
-				FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */,
 				FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FE26BD082796832600E92519 /* Products */;
 			projectDirPath = "";
@@ -227,12 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
+				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
-				FE26BD0F2796832600E92519 /* ViewController.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
+				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
@@ -378,6 +435,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSACFriends/SeSACFriends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2EZ5QWFYX2;
@@ -405,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSACFriends/SeSACFriends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2EZ5QWFYX2;
@@ -459,14 +518,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 		FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -483,6 +534,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -490,16 +549,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		FE515961279A999D00E2CFBD /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		FE515963279A999D00E2CFBD /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE515960279A999D00E2CFBD /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 		FE51596B279AFE7400E2CFBD /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -510,6 +559,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
