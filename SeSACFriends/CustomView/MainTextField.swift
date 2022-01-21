@@ -46,7 +46,6 @@ public class MainTextField: UIView, ViewProtocols {
 		textField.layer.borderWidth = 0
 		notiLabel.isHidden = true
 		notiLabel.font = SesacFont.body4R12.font
-		contentView.backgroundColor = .blue
 	}
 	
 	public func setupConstraint() {
