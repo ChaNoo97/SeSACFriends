@@ -7,11 +7,13 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
+import Toast
 
 public class LoginViewController: BaseViewController {
 	
 	let mainView = LoginView()
-	let viewModel = LoginViewModel()
+	let viewModel = LoginViewModel.shared
 	
 	public override func loadView() {
 		self.view = mainView
@@ -20,8 +22,7 @@ public class LoginViewController: BaseViewController {
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.button.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
-		let tap = UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard))
-		view.addGestureRecognizer(tap)
+		makeTabGester(view: view, target: self, action: #selector(dissmissKeyboard))
 		mainView.phoneNumberTextField.textField.delegate = self
 		mainView.phoneNumberTextField.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 	}
@@ -31,6 +32,7 @@ public class LoginViewController: BaseViewController {
 			mainView.button.setupButtonType(type: .fill)
 			mainView.phoneNumberTextField.setupType(type: .success)
 			mainView.phoneNumberTextField.notiLabel.text = "올바른 형식입니다."
+			viewModel.cleanPhoneNum.value = viewModel.cleanNum(num: textField.text!)
 		} else {
 			mainView.phoneNumberTextField.setupType(type: .error)
 			mainView.phoneNumberTextField.notiLabel.text = "올바르지 않은 형식입니다."
@@ -43,8 +45,12 @@ public class LoginViewController: BaseViewController {
 	}
 	
 	@objc func mainButtonClicked() {
-//		let vc = ConfirmViewController()
-//		navigationController?.pushViewController(vc, animated: true)
+		view.endEditing(true)
+		if mainView.button.type == .fill {
+			pushViewCon(vc: ConfirmViewController())
+		} else {
+			view.makeToast("잘못된 전화번호 형식입니다.")
+		}
 	}
 	
 }

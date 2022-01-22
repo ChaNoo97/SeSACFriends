@@ -6,17 +6,30 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 public class LoginViewModel {
 	
+	static let shared = LoginViewModel()
 	
+	let cleanPhoneNum = Observable("")
+	var verifyID = Observable("")
+	let authNum = Observable("")
 	
 	public func validPhoneNum(num: String) -> Bool {
 		let pattern = "(01[0-1])-([0-9]{3,4})-([0-9]{4})"
 		let regex = try? NSRegularExpression(pattern: pattern)
-		if num.count > 13 {
-			return false
+		
+		if validThirdNum(num: num) {
+			if num.count == 12 || num.count > 13 {
+				return false
+			}
+		} else {
+			if num.count > 12 {
+				return false
+			}
 		}
+
 		if let _ = regex?.firstMatch(in: num, options: [], range:  NSRange(location: 0, length: num.count)) {
 			return true
 		} else {
@@ -24,5 +37,25 @@ public class LoginViewModel {
 		}
 	}
 	
+	public func cleanNum(num: String) -> String {
+		let phoneNum = num.replacingOccurrences(of: "-", with: "")
+		return phoneNum
+	}
+	
+	public func validThirdNum(num: String) -> Bool {
+		var result: String?
+		if num.count > 3 {
+			let stsrt =	num.index(num.startIndex, offsetBy: 2)
+			let last = num.index(num.startIndex, offsetBy: 3)
+			result = String(num[stsrt..<last])
+		}
+		
+		if result == "0" {
+			return true
+		} else {
+			return false
+		}
+	}
 	
 }
+

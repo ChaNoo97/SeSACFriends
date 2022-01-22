@@ -7,7 +7,15 @@
 
 import UIKit
 
-public class BaseViewController: UIViewController {
+protocol BaseViewCon {
+	func viewDidLoad()
+	func configure()
+	func navigationBarSetting()
+	func navigationBarSetTitle(title: String)
+	func makeTabGester(view: UIView, target: Any?, action: Selector?)
+}
+
+public class BaseViewController: UIViewController, BaseViewCon {
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -15,7 +23,7 @@ public class BaseViewController: UIViewController {
 		navigationBarSetting()
 	}
 	
-	fileprivate func configure() {
+	public func configure() {
 		view.backgroundColor = .white
 	}
 	
@@ -28,6 +36,15 @@ public class BaseViewController: UIViewController {
 	
 	public func navigationBarSetTitle(title: String) {
 		navigationItem.title = title
+	}
+	
+	public func makeTabGester(view: UIView, target: Any?, action: Selector?) {
+		let tap = UITapGestureRecognizer(target: target, action: action)
+		view.addGestureRecognizer(tap)
+	}
+	
+	public func pushViewCon(vc: UIViewController) {
+		navigationController?.pushViewController(vc, animated: true)
 	}
 	
 }
