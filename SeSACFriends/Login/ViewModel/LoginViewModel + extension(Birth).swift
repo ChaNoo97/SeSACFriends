@@ -37,13 +37,6 @@ extension LoginViewModel {
 		return stringToDate(input: now)
 		}
 	
-	func dateToString(input: Date) -> String {
-		let formatter = DateFormatter()
-		formatter.timeStyle = .none
-		formatter.dateFormat = "yyyy-MM-dd"
-		return formatter.string(from: input)
-	}
-	
 	func stringToDate(input: String) -> Date {
 		let formatter = DateFormatter()
 		formatter.timeStyle = .none
@@ -52,7 +45,7 @@ extension LoginViewModel {
 		return formatter.date(from: input)!
 	}
 	
-	func dd(input: Date) {
+	func joinBirthData(input: Date) {
 		let myCalendar = Calendar(identifier: .gregorian)
 		let ymd = myCalendar.dateComponents([.year, .month, .day], from: input)
 		year.value = String(ymd.year!)

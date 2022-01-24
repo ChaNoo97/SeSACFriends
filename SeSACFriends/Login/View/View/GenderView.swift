@@ -69,8 +69,8 @@ public class GenderView: LoginBaseView, ViewProtocols {
 		
 		stackView.snp.makeConstraints {
 			$0.centerX.equalToSuperview()
-			$0.bottom.equalTo(button.snp.top).offset(-32)
-			$0.trailing.leading.equalTo(button)
+			$0.bottom.equalTo(mainButton.snp.top).offset(-32)
+			$0.trailing.leading.equalTo(mainButton)
 			$0.height.equalTo(120)
 		}
 		

@@ -29,11 +29,17 @@ public class BirthViewController: LoginBaseViewController {
 		createDatePickerView()
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 		navigationBarSetting()
-		mainView.button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+		mainView.mainButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
 	}
 	
 	@objc func buttonClicked() {
-		pushViewCon(vc: EmailViewController())
+		let status = mainView.mainButton.type
+		if status == .fill {
+			pushViewCon(vc: EmailViewController())
+		} else {
+			dismissKeyboard()
+			view.makeToast("새싹친구는 만 17세 이상만 사용할 수 있습니다.")
+		}
 	}
 	
 	func createDatePickerView() {
@@ -43,13 +49,14 @@ public class BirthViewController: LoginBaseViewController {
 		datePicker.date = viewModel.stringToDate(input: viewModel.birth.value)
 		datePicker.locale = Locale(identifier: "ko-KR")
 		datePicker.addTarget(self, action: #selector(changeValue), for: .valueChanged)
+		datePicker.maximumDate = Date()
 		mainView.yearView.textField.textField.inputView = datePicker
 		mainView.monthView.textField.textField.inputView = datePicker
 		mainView.dayView.textField.textField.inputView = datePicker
 	}
 	
 	@objc func changeValue() {
-		viewModel.dd(input: datePicker.date)
+		viewModel.joinBirthData(input: datePicker.date)
 		viewModel.year.bind {
 			self.mainView.yearView.textField.textField.text = $0
 		}
@@ -61,9 +68,9 @@ public class BirthViewController: LoginBaseViewController {
 		}
 		
 		if viewModel.validAge() {
-			mainView.button.setupButtonType(type: .fill)
+			mainView.mainButton.setupButtonType(type: .fill)
 		} else {
-			mainView.button.setupButtonType(type: .disable)
+			mainView.mainButton.setupButtonType(type: .disable)
 		}
 	}
 	

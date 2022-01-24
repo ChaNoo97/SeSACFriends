@@ -18,11 +18,11 @@ public enum LoginButtonText: String {
 
 public class LoginBaseView: UIView {
 	var textType: LoginButtonText
-	var button = MainButton(frame: .zero, type: .disable, text: "")
+	var mainButton = MainButton(frame: .zero, type: .disable, text: "")
 	
 	init(frame: CGRect, textType: LoginButtonText) {
 		self.textType = textType
-		self.button = MainButton(frame: .zero, type: .disable, text: textType.rawValue)
+		self.mainButton = MainButton(frame: .zero, type: .disable, text: textType.rawValue)
 		super.init(frame: frame)
 		setupConstraint()
 	}
@@ -33,8 +33,8 @@ public class LoginBaseView: UIView {
 	
 	public func setupConstraint() {
 //		print("LoginBaseView", #function)
-		addSubview(button)
-		button.snp.makeConstraints {
+		addSubview(mainButton)
+		mainButton.snp.makeConstraints {
 			$0.center.equalToSuperview()
 			$0.leading.trailing.equalToSuperview().inset(16)
 			$0.height.equalTo(48)

@@ -39,7 +39,7 @@ public class emailView: LoginBaseView, ViewProtocols {
 		}
 		
 		emailTextField.snp.makeConstraints {
-			$0.bottom.equalTo(button.snp.top).offset(-72)
+			$0.bottom.equalTo(mainButton.snp.top).offset(-72)
 			$0.leading.trailing.equalToSuperview().offset(16)
 			$0.height.equalTo(48)
 		}

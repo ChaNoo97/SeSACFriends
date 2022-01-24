@@ -21,7 +21,7 @@ public class LoginViewController: LoginBaseViewController {
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
-		mainView.button.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
+		mainView.mainButton.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 		mainView.phoneNumberTextField.textField.delegate = self
 		mainView.phoneNumberTextField.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -29,20 +29,20 @@ public class LoginViewController: LoginBaseViewController {
 	
 	@objc func textFieldDidChange(_ textField: UITextField) {
 		if viewModel.validPhoneNum(num: textField.text!) {
-			mainView.button.setupButtonType(type: .fill)
+			mainView.mainButton.setupButtonType(type: .fill)
 			mainView.phoneNumberTextField.setupType(type: .success)
 			mainView.phoneNumberTextField.notiLabel.text = "올바른 형식입니다."
-			viewModel.cleanPhoneNum.value = viewModel.cleanNum(num: textField.text!)
+			viewModel.cleanPhoneNum.value = "+82"+viewModel.cleanNum(num: textField.text!)
 		} else {
 			mainView.phoneNumberTextField.setupType(type: .error)
 			mainView.phoneNumberTextField.notiLabel.text = "올바르지 않은 형식입니다."
-			mainView.button.setupButtonType(type: .cancel)
+			mainView.mainButton.setupButtonType(type: .cancel)
 		}
 	}
 	
 	@objc func mainButtonClicked() {
 		view.endEditing(true)
-		if mainView.button.type == .fill {
+		if mainView.mainButton.type == .fill {
 			pushViewCon(vc: ConfirmViewController())
 		} else {
 			view.makeToast("잘못된 전화번호 형식입니다.")
@@ -56,8 +56,7 @@ extension LoginViewController: UITextFieldDelegate {
 		let phoneNum = textField.text!
 		if phoneNum != "" {
 			mainView.phoneNumberTextField.setupType(type: .active)
-			let userPhoneNum = phoneNum
-			textField.text = userPhoneNum.pretty()
+			textField.text = phoneNum.pretty()
 		} else {
 			mainView.phoneNumberTextField.setupType(type: .inactive)
 		}

@@ -35,7 +35,7 @@ public class NickNameVeiw: LoginBaseView, ViewProtocols {
 		}
 		
 		nickNameTextField.snp.makeConstraints {
-			$0.bottom.equalTo(button.snp.top).offset(-72)
+			$0.bottom.equalTo(mainButton.snp.top).offset(-72)
 			$0.leading.trailing.equalToSuperview().inset(16)
 			$0.height.equalTo(48)
 		}

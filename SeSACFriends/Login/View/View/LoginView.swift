@@ -38,7 +38,7 @@ public class LoginView: LoginBaseView, ViewProtocols {
 		
 		phoneNumberTextField.snp.makeConstraints {
 			$0.centerX.equalToSuperview()
-			$0.bottom.equalTo(button.snp.top).offset(-72)
+			$0.bottom.equalTo(mainButton.snp.top).offset(-72)
 			$0.leading.trailing.equalToSuperview().inset(16)
 			$0.height.equalTo(48)
 		}

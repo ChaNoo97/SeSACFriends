@@ -11,8 +11,7 @@ import FirebaseAuth
 extension LoginViewModel {
 	
 	public func validAuthNum(num: String) -> Bool {
-		let pattern = "^([0-9]{6})$"
-		let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
+		let pred = NSPredicate(format: "SELF MATCHES %@", validPattern.AuthNumber.rawValue)
 		return pred.evaluate(with: num)
 	}
 	

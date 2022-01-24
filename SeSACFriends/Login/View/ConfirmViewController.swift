@@ -26,13 +26,13 @@ public class ConfirmViewController: LoginBaseViewController {
 		mainView.authTextField.textField.keyboardType = .phonePad
 		mainView.authTextField.textField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
 		mainView.repeatButton.addTarget(self, action: #selector(repeatButtonClicked), for: .touchUpInside)
-		mainView.button.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
+		mainView.mainButton.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 	}
 	
 	public func sendAuthNum() {
 		Auth.auth().languageCode = "ko"
-		PhoneAuthProvider.provider().verifyPhoneNumber(("+82"+viewModel.cleanPhoneNum.value), uiDelegate: nil) { varification, error in
+		PhoneAuthProvider.provider().verifyPhoneNumber((viewModel.cleanPhoneNum.value), uiDelegate: nil) { varification, error in
 			if error == nil {
 				self.viewModel.verifyID.value = varification!
 				self.getSetTime()
@@ -57,7 +57,7 @@ public class ConfirmViewController: LoginBaseViewController {
 			return
 		}
 		
-		if mainView.button.type == .fill {
+		if mainView.mainButton.type == .fill {
 			viewModel.checkAuthNum { idToken, bool in
 				if bool {
 					UserDefaults.standard.set(idToken, forKey: "idToken")
@@ -74,11 +74,14 @@ public class ConfirmViewController: LoginBaseViewController {
 	
 	@objc func textFieldChanged() {
 		let text = mainView.authTextField.textField.text!
+		mainView.authTextField.setupType(type: .active)
 		viewModel.authNum.value = text
-		if text.count == 6 && viewModel.validAuthNum(num: text) {
-			mainView.button.setupButtonType(type: .fill)
+		if viewModel.valid(pattern: validPattern.AuthNumber.rawValue, input: text) {
+			mainView.mainButton.setupButtonType(type: .fill)
+			mainView.authTextField.setupType(type: .success)
+			mainView.authTextField.notiLabel.text = ""
 		} else {
-			mainView.button.setupButtonType(type: .disable)
+			mainView.mainButton.setupButtonType(type: .disable)
 		}
 	}
 	

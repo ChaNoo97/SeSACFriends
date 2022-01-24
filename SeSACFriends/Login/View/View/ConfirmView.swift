@@ -46,14 +46,14 @@ public class ConfirmView: LoginBaseView, ViewProtocols {
 
 		repeatButton.snp.makeConstraints {
 			$0.trailing.equalToSuperview().inset(16)
-			$0.bottom.equalTo(button.snp.top).offset(-74)
+			$0.bottom.equalTo(mainButton.snp.top).offset(-74)
 			$0.height.equalTo(40)
 			$0.width.equalTo(72)
 		}
 
 		authTextField.snp.makeConstraints {
 			$0.leading.equalToSuperview().offset(16)
-			$0.bottom.equalTo(button.snp.top).offset(-72)
+			$0.bottom.equalTo(mainButton.snp.top).offset(-72)
 			$0.trailing.equalTo(repeatButton.snp.leading).offset(-8)
 			$0.height.equalTo(48)
 		}
