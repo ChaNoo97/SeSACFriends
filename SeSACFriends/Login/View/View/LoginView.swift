@@ -26,6 +26,7 @@ public class LoginView: LoginBaseView, ViewProtocols {
 	public func configure() {
 		setupLabel(label: titleLabel, font: SesacFont.display1R20, text: "새싹 서비스 이용을 위해\n휴대폰 번호를 입력해 주세요")
 		phoneNumberTextField.textField.keyboardType = .phonePad
+		phoneNumberTextField.textField.placeholder = "휴대폰 번호(- 없이 숫자만 입력)"
 	}
 	
 	public override func setupConstraint() {

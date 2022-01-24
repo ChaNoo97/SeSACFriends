@@ -12,9 +12,17 @@ public class LoginViewModel {
 	
 	static let shared = LoginViewModel()
 	
-	let cleanPhoneNum = Observable("")
 	var verifyID = Observable("")
+	
+	let cleanPhoneNum = Observable("")
 	let authNum = Observable("")
+	let nickName = Observable("")
+	let birth = Observable("1990-01-01")
+	let year = Observable("")
+	let month = Observable("")
+	let day = Observable("")
+	let email = Observable("")
+	let gender = Observable(-1)
 	
 	public func validPhoneNum(num: String) -> Bool {
 		let pattern = "(01[0-1])-([0-9]{3,4})-([0-9]{4})"

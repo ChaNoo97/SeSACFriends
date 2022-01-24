@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol BaseViewCon {
+protocol LoginBaseViewCon {
 	func viewDidLoad()
 	func configure()
 	func navigationBarSetting()
@@ -15,7 +15,7 @@ protocol BaseViewCon {
 	func makeTabGester(view: UIView, target: Any?, action: Selector?)
 }
 
-public class BaseViewController: UIViewController, BaseViewCon {
+public class LoginBaseViewController: UIViewController, LoginBaseViewCon {
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,6 +45,10 @@ public class BaseViewController: UIViewController, BaseViewCon {
 	
 	public func pushViewCon(vc: UIViewController) {
 		navigationController?.pushViewController(vc, animated: true)
+	}
+	
+	@objc func dismissKeyboard() {
+		view.endEditing(true)
 	}
 	
 }

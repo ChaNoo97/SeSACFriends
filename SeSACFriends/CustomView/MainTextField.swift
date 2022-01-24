@@ -26,7 +26,6 @@ public class MainTextField: UIView, ViewProtocols {
 	var type: TextFieldType
 	
 	init(frame: CGRect, type: TextFieldType) {
-		
 		self.type = type
 		super.init(frame: frame)
 		configure()

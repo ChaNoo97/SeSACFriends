@@ -22,7 +22,7 @@
 		FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515957279A894C00E2CFBD /* LoginBaseView.swift */; };
 		FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515959279A8DEB00E2CFBD /* LoginView.swift */; };
 		FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595C279A90F300E2CFBD /* LoginViewController.swift */; };
-		FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* BaseViewController.swift */; };
+		FE51595F279A984300E2CFBD /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* LoginBaseViewController.swift */; };
 		FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515966279AA2C800E2CFBD /* ConfirmView.swift */; };
 		FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515968279AAED600E2CFBD /* ConfirmViewController.swift */; };
 		FE51596C279AFE7400E2CFBD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596B279AFE7400E2CFBD /* Toast */; };
@@ -35,6 +35,16 @@
 		FE7BDCC4279BC1E6001C75A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */; };
 		FE7BDCC8279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCC7279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift */; };
 		FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */; };
+		FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCCB279C4CA3001C75A9 /* NickNameView.swift */; };
+		FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCCD279C5962001C75A9 /* BirthView.swift */; };
+		FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCCF279C5E3E001C75A9 /* BirthSubView.swift */; };
+		FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCD1279C67B2001C75A9 /* BirthViewController.swift */; };
+		FE7BDCD4279C7788001C75A9 /* LoginViewModel+extension(Birth).swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCD3279C7788001C75A9 /* LoginViewModel+extension(Birth).swift */; };
+		FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCD5279C7AFE001C75A9 /* EmailView.swift */; };
+		FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCD7279C7B09001C75A9 /* EmailViewController.swift */; };
+		FE7BDCE0279E6868001C75A9 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCDF279E6868001C75A9 /* GenderView.swift */; };
+		FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCE1279E68C5001C75A9 /* GenderViewController.swift */; };
+		FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCE3279E69B0001C75A9 /* GenderButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +64,7 @@
 		FE515957279A894C00E2CFBD /* LoginBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseView.swift; sourceTree = "<group>"; };
 		FE515959279A8DEB00E2CFBD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FE51595C279A90F300E2CFBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FE51595E279A984300E2CFBD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FE51595E279A984300E2CFBD /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
 		FE515966279AA2C800E2CFBD /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		FE515968279AAED600E2CFBD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		FE515976279B0DE800E2CFBD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -63,6 +73,16 @@
 		FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE7BDCC7279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel + extension(confirm).swift"; sourceTree = "<group>"; };
 		FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
+		FE7BDCCB279C4CA3001C75A9 /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
+		FE7BDCCD279C5962001C75A9 /* BirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthView.swift; sourceTree = "<group>"; };
+		FE7BDCCF279C5E3E001C75A9 /* BirthSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthSubView.swift; sourceTree = "<group>"; };
+		FE7BDCD1279C67B2001C75A9 /* BirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthViewController.swift; sourceTree = "<group>"; };
+		FE7BDCD3279C7788001C75A9 /* LoginViewModel+extension(Birth).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel+extension(Birth).swift"; sourceTree = "<group>"; };
+		FE7BDCD5279C7AFE001C75A9 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		FE7BDCD7279C7B09001C75A9 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		FE7BDCDF279E6868001C75A9 /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		FE7BDCE1279E68C5001C75A9 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		FE7BDCE3279E69B0001C75A9 /* GenderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +153,9 @@
 				FE51595027993EFD00E2CFBD /* MainButton.swift */,
 				FE5159532799B4D500E2CFBD /* MainTextField.swift */,
 				FE515957279A894C00E2CFBD /* LoginBaseView.swift */,
-				FE51595E279A984300E2CFBD /* BaseViewController.swift */,
+				FE51595E279A984300E2CFBD /* LoginBaseViewController.swift */,
+				FE7BDCCF279C5E3E001C75A9 /* BirthSubView.swift */,
+				FE7BDCE3279E69B0001C75A9 /* GenderButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -172,6 +194,9 @@
 				FE51595C279A90F300E2CFBD /* LoginViewController.swift */,
 				FE515968279AAED600E2CFBD /* ConfirmViewController.swift */,
 				FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */,
+				FE7BDCD1279C67B2001C75A9 /* BirthViewController.swift */,
+				FE7BDCD7279C7B09001C75A9 /* EmailViewController.swift */,
+				FE7BDCE1279E68C5001C75A9 /* GenderViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +206,7 @@
 			children = (
 				FE515976279B0DE800E2CFBD /* LoginViewModel.swift */,
 				FE7BDCC7279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift */,
+				FE7BDCD3279C7788001C75A9 /* LoginViewModel+extension(Birth).swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -197,6 +223,10 @@
 			children = (
 				FE515959279A8DEB00E2CFBD /* LoginView.swift */,
 				FE515966279AA2C800E2CFBD /* ConfirmView.swift */,
+				FE7BDCCB279C4CA3001C75A9 /* NickNameView.swift */,
+				FE7BDCCD279C5962001C75A9 /* BirthView.swift */,
+				FE7BDCD5279C7AFE001C75A9 /* EmailView.swift */,
+				FE7BDCDF279E6868001C75A9 /* GenderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,23 +318,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
 				FE7BDCC8279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
+				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
+				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
+				FE7BDCD4279C7788001C75A9 /* LoginViewModel+extension(Birth).swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
+				FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
-				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
+				FE51595F279A984300E2CFBD /* LoginBaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
+				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
+				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
 				FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */,
+				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,
+				FE7BDCE0279E6868001C75A9 /* GenderView.swift in Sources */,
 				FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */,
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
+				FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import SnapKit
 import FirebaseAuth
 import Toast
 
-public class LoginViewController: BaseViewController {
+public class LoginViewController: LoginBaseViewController {
 	
 	let mainView = LoginView()
 	let viewModel = LoginViewModel.shared
@@ -22,7 +22,7 @@ public class LoginViewController: BaseViewController {
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.button.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
-		makeTabGester(view: view, target: self, action: #selector(dissmissKeyboard))
+		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 		mainView.phoneNumberTextField.textField.delegate = self
 		mainView.phoneNumberTextField.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 	}
@@ -38,10 +38,6 @@ public class LoginViewController: BaseViewController {
 			mainView.phoneNumberTextField.notiLabel.text = "올바르지 않은 형식입니다."
 			mainView.button.setupButtonType(type: .cancel)
 		}
-	}
-	
-	@objc func dissmissKeyboard() {
-		self.view.endEditing(true)
 	}
 	
 	@objc func mainButtonClicked() {

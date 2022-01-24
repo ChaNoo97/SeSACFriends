@@ -27,6 +27,7 @@ public class ConfirmView: LoginBaseView, ViewProtocols {
 	}
 	
 	public func configure() {
+		authTextField.textField.placeholder = "인증번호 입력"
 		setupLabel(label: titleLabel, font: .display1R20, text: "인증번호가 문자로 전송되었어요")
 		setupLabel(label: subTitleLabel, font: .title2R16, text: "(최대 소모 20초)")
 		subTitleLabel.textColor = .sesacGray7

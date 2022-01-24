@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Toast
 
-public class ConfirmViewController: BaseViewController {
+public class ConfirmViewController: LoginBaseViewController {
 	
 	let mainView = ConfirmView()
 	let viewModel = LoginViewModel.shared
@@ -28,10 +28,6 @@ public class ConfirmViewController: BaseViewController {
 		mainView.repeatButton.addTarget(self, action: #selector(repeatButtonClicked), for: .touchUpInside)
 		mainView.button.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
-	}
-	
-	@objc func dismissKeyboard() {
-		view.endEditing(true)
 	}
 	
 	public func sendAuthNum() {
@@ -65,6 +61,7 @@ public class ConfirmViewController: BaseViewController {
 			viewModel.checkAuthNum { idToken, bool in
 				if bool {
 					UserDefaults.standard.set(idToken, forKey: "idToken")
+					//get user -200 -201 
 					self.pushViewCon(vc: NickNameViewController())
 				} else {
 					self.view.makeToast("에러가 발생했습니다.\n잠시후 다시 시도해주세요.")
