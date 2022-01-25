@@ -43,7 +43,6 @@ public class BirthViewController: LoginBaseViewController {
 	}
 	
 	func createDatePickerView() {
-		print(#function)
 		datePicker.preferredDatePickerStyle = .wheels
 		datePicker.datePickerMode = .date
 		datePicker.date = viewModel.stringToDate(input: viewModel.birth.value)

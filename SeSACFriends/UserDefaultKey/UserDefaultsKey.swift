@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum UserDefaultKeyEnum: String {
-	case idToken
+public enum UserDefaultsKey: String {
 	case FCMtoken
+	case varification
+	case idToken
 }

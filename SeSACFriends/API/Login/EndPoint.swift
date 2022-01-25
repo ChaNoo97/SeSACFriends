@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct LoginRequest {
-	static let loginHeaders = ["idtoken": UserDefaults.standard.string(forKey: UserDefaultKeyEnum.idToken.rawValue)!, "Content-Type": "application/x-www-form-urlencoded"] as HTTPHeaders
+	static let loginHeaders = ["idtoken": UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue)!, "Content-Type": "application/x-www-form-urlencoded"] as HTTPHeaders
 }
 
 enum UserEndPoint {

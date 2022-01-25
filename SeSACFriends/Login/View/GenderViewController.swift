@@ -41,6 +41,7 @@ public class GenderViewController: LoginBaseViewController {
 			if let error = error {
 				return
 			}
+			
 			if let stausCode = stausCode {
 				switch stausCode {
 				case 200:

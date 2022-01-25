@@ -31,10 +31,8 @@ public class ConfirmViewController: LoginBaseViewController {
 	}
 	
 	public func sendAuthNum() {
-		Auth.auth().languageCode = "ko"
-		PhoneAuthProvider.provider().verifyPhoneNumber((viewModel.cleanPhoneNum.value), uiDelegate: nil) { varification, error in
+		FBAuth.sendAuthNum(viewModel.cleanPhoneNum.value) { varification, error in
 			if error == nil {
-				self.viewModel.verifyID.value = varification!
 				self.getSetTime()
 				self.view.makeToast("인증번호를 보냈습니다.")
 			} else {
@@ -58,10 +56,10 @@ public class ConfirmViewController: LoginBaseViewController {
 		}
 		
 		if mainView.mainButton.type == .fill {
-			viewModel.checkAuthNum { idToken, success in
+			FBAuth.checkAuthNum(authNum: viewModel.authNum.value) { idToken, success in
 				if success {
-					UserDefaults.standard.set(idToken, forKey: UserDefaultKeyEnum.idToken.rawValue)
-					//get user -200 -201 
+					UserDefaults.standard.set(idToken, forKey: UserDefaultsKey.idToken.rawValue)
+					//get user -200 -201
 					self.pushViewCon(vc: NickNameViewController())
 				} else {
 					self.view.makeToast("에러가 발생했습니다.\n잠시후 다시 시도해주세요.")

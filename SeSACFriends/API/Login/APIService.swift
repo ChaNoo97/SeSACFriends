@@ -30,7 +30,7 @@ public class LoginApiService {
 	}
 	
 	static func withdraw(completion: @escaping (Int?, Error?) -> Void) {
-		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultKeyEnum.idToken.rawValue) else { return }
+		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
 		let param = ["idtoken": idtoken] as HTTPHeaders
 		AF.request(UserEndPoint.withdraw.url,
 				   method: .post,
