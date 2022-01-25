@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			if let error = error {
 				print("Error fetching FCM registration token: \(error)")
 			} else if let token = token {
+				UserDefaults.standard.set(token, forKey: UserDefaultKeyEnum.FCMtoken.rawValue)
 				print("FCM registration token: \(token)")
 			}
 		}

@@ -20,6 +20,7 @@ public class LoginViewModel {
 	static let shared = LoginViewModel()
 	
 	var verifyID = Observable("")
+	var fcmtoken = UserDefaults.standard.string(forKey: UserDefaultKeyEnum.FCMtoken.rawValue) ?? ""
 	
 	let cleanPhoneNum = Observable("")
 	let authNum = Observable("")

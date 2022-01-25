@@ -58,9 +58,9 @@ public class ConfirmViewController: LoginBaseViewController {
 		}
 		
 		if mainView.mainButton.type == .fill {
-			viewModel.checkAuthNum { idToken, bool in
-				if bool {
-					UserDefaults.standard.set(idToken, forKey: "idToken")
+			viewModel.checkAuthNum { idToken, success in
+				if success {
+					UserDefaults.standard.set(idToken, forKey: UserDefaultKeyEnum.idToken.rawValue)
 					//get user -200 -201 
 					self.pushViewCon(vc: NickNameViewController())
 				} else {

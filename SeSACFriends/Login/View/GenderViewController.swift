@@ -37,12 +37,29 @@ public class GenderViewController: LoginBaseViewController {
 	}
 	
 	@objc func mainButtonClicked() {
-		print("cleanPhonenum", viewModel.cleanPhoneNum.value)
-		print("fcmtoken", UserDefaults.standard.string(forKey: "idToken")!)
-		print("nick", viewModel.nickName.value)
-		print("birth", viewModel.birth.value)
-		print("email", viewModel.email.value)
-		print("gender", viewModel.gender.value)
+		viewModel.signUP { stausCode, error in
+			if let error = error {
+				return
+			}
+			if let stausCode = stausCode {
+				switch stausCode {
+				case 200:
+					print(stausCode)
+				case 201:
+					print(stausCode)
+				case 202:
+					print(stausCode)
+				case 401:
+					print(stausCode)
+				case 500:
+					print(stausCode)
+				case 501:
+					print(stausCode)
+				default:
+					print("default")
+				}
+			}
+		}
 	}
 	
 	@objc func manButtonClicked() {

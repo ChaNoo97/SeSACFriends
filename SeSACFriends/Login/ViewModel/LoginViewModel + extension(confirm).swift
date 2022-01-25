@@ -10,11 +10,6 @@ import FirebaseAuth
 
 extension LoginViewModel {
 	
-	public func validAuthNum(num: String) -> Bool {
-		let pred = NSPredicate(format: "SELF MATCHES %@", validPattern.AuthNumber.rawValue)
-		return pred.evaluate(with: num)
-	}
-	
 	public func checkAuthNum(completion: @escaping (String?,Bool) -> Void) {
 		print(#function)
 		let credential = PhoneAuthProvider.provider().credential(withVerificationID: verifyID.value , verificationCode: authNum.value)
