@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 public class LoginApiService {
+	
 	static func signUp(model: signUpModel, completion: @escaping (Int?, Error?) -> Void) {
 		
 		let signUpParameter: Parameters = [
@@ -21,7 +22,7 @@ public class LoginApiService {
 		]
 		
 		AF.request(
-			UserEndPoint.singUp.url,
+			UserEndPoint.user.url,
 			method: .post,
 			parameters: signUpParameter,
 			headers: LoginRequest.loginHeaders).responseString { response in
@@ -29,14 +30,31 @@ public class LoginApiService {
 		}
 	}
 	
-	static func withdraw(completion: @escaping (Int?, Error?) -> Void) {
+	static func logIn(completion: @escaping (UserInfo?, Int?, Error?) -> Void ) {
 		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
-		let param = ["idtoken": idtoken] as HTTPHeaders
-		AF.request(UserEndPoint.withdraw.url,
-				   method: .post,
-				  headers: param).responseString { response in
-			completion(response.response?.statusCode, nil)
+		let header = ["idtoken": idtoken] as HTTPHeaders
+		AF.request(UserEndPoint.user.url, method: .get, headers: header).responseDecodable(of: UserInfo.self) { response in
+			let code = response.response?.statusCode
+			switch response.result {
+			case.success(let data):
+				completion(data,code,nil)
+			case .failure(let error):
+				completion(nil,code,error)
+			}
 		}
 		
 	}
+	
+	static func withdraw(completion: @escaping (Int?, Error?) -> Void) {
+		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
+		let header = ["idtoken": idtoken] as HTTPHeaders
+		AF.request(UserEndPoint.withdraw.url,
+				   method: .post,
+				  headers: header).responseString { response in
+			completion(response.response?.statusCode, nil)
+		}
+	}
+	
+	
+	
 }

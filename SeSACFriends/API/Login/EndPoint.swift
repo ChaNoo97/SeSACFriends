@@ -13,17 +13,14 @@ struct LoginRequest {
 }
 
 enum UserEndPoint {
-	case singUp
-	case signIn
+	case user
 	case withdraw
 }
 
 extension UserEndPoint {
 	var url: URL {
 		switch self {
-		case .singUp:
-			return .makeEndPoint("/user")
-		case .signIn:
+		case .user:
 			return .makeEndPoint("/user")
 		case .withdraw:
 			return .makeEndPoint("/user/withdraw")

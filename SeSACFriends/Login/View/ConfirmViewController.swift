@@ -14,6 +14,7 @@ public class ConfirmViewController: LoginBaseViewController {
 	let mainView = ConfirmView()
 	let viewModel = LoginViewModel.shared
 	var limitTime: Int = 60
+	var timer: Timer?
 	
 	public override func loadView() {
 		self.view = mainView
@@ -33,7 +34,7 @@ public class ConfirmViewController: LoginBaseViewController {
 	public func sendAuthNum() {
 		FBAuth.sendAuthNum(viewModel.cleanPhoneNum.value) { varification, error in
 			if error == nil {
-				self.getSetTime()
+				self.startTimer()
 				self.view.makeToast("인증번호를 보냈습니다.")
 			} else {
 				//분기처리
@@ -44,7 +45,10 @@ public class ConfirmViewController: LoginBaseViewController {
 	}
 	
 	@objc func repeatButtonClicked() {
+		mainView.repeatButton.setupButtonType(type: .disable)
+		mainView.repeatButton.isEnabled = false
 		limitTime = 60
+		startTimer()
 		sendAuthNum()
 	}
 	
@@ -66,7 +70,7 @@ public class ConfirmViewController: LoginBaseViewController {
 				}
 			}
 		} else {
-			view.makeToast("인증번호를 확인해 주세요.")
+			view.makeToast("전화 번호 인증 실패")
 		}
 	}
 	
@@ -83,30 +87,38 @@ public class ConfirmViewController: LoginBaseViewController {
 		}
 	}
 	
-	//타이머도 뷰모델에서 해주고싶은데 모르겟음
-	@objc func getSetTime() {
-		secToTime(sec: limitTime)
-		limitTime -= 1
+	public func startTimer() {
+		if timer != nil && timer!.isValid {
+			timer!.invalidate()
+		}
+		
+		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallBack), userInfo: nil, repeats: true)
 	}
 	
-	func secToTime(sec: Int) {
-		let minute = (sec % 3600) / 60
-		let second = (sec % 3600) % 60
-		if second < 10 {
-			mainView.timerLabel.text = String(minute)+":"+"0"+String(second)
+	@objc func timerCallBack() {
+		let min = (limitTime % 3600) / 60
+		let sec = (limitTime % 3600) % 60
+		if limitTime != 60 {
+			mainView.timerLabel.text = "00:\(sec)"
+			if limitTime < 40 {
+				mainView.repeatButton.setupButtonType(type: .fill)
+				mainView.repeatButton.isEnabled = true
+				if limitTime < 10 {
+					mainView.timerLabel.text = "00:0\(sec)"
+					if limitTime == 0 {
+						timer?.invalidate()
+						timer = nil
+					}
+				}
+			}
 		} else {
-			mainView.timerLabel.text = String(minute)+":"+String(second)
+			mainView.timerLabel.text = "0\(min):00"
 		}
-		
-		if limitTime >= 0 {
-			perform(#selector(getSetTime), with: nil, afterDelay: 1.0)
-		}
-		
-		if limitTime <= 40 {
-			mainView.repeatButton.setupButtonType(type: .fill)
-			mainView.repeatButton.isEnabled = true
+		if limitTime != 0 {
+			limitTime -= 1
 		}
 	}
+	
 }
 
 
