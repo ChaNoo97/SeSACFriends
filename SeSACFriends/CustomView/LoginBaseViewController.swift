@@ -51,4 +51,10 @@ public class LoginBaseViewController: UIViewController, LoginBaseViewCon {
 		view.endEditing(true)
 	}
 	
+	public func changeRootView(viewController: UIViewController) {
+		guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+		windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: viewController)
+		windowScene.windows.first?.makeKeyAndVisible()
+	}
+	
 }

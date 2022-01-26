@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 extension LoginViewModel {
+	
 	func signUP(completion: @escaping (Int?, Error?) -> Void) {
 		let birth = stringToDate(input: birth.value)
 		let signUpModel = signUpModel(

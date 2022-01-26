@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79F9279FD2600043F0F7 /* Onboding.swift */; };
-		FE1E79FE279FD46D0043F0F7 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FBAuth.swift */; };
+		FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */; };
 		FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */; };
 		FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0A2796832600E92519 /* AppDelegate.swift */; };
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
@@ -36,7 +36,6 @@
 		FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */; };
 		FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */; };
 		FE7BDCC4279BC1E6001C75A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */; };
-		FE7BDCC8279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCC7279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift */; };
 		FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */; };
 		FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCCB279C4CA3001C75A9 /* NickNameView.swift */; };
 		FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCCD279C5962001C75A9 /* BirthView.swift */; };
@@ -59,7 +58,7 @@
 
 /* Begin PBXFileReference section */
 		FE1E79F9279FD2600043F0F7 /* Onboding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboding.swift; sourceTree = "<group>"; };
-		FE1E79FD279FD46D0043F0F7 /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
+		FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuth.swift; sourceTree = "<group>"; };
 		FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		FE26BD072796832600E92519 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE26BD0A2796832600E92519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +83,6 @@
 		FE515978279B1DA400E2CFBD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FE7BDCC2279B3D47001C75A9 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
 		FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FE7BDCC7279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel + extension(confirm).swift"; sourceTree = "<group>"; };
 		FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		FE7BDCCB279C4CA3001C75A9 /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 		FE7BDCCD279C5962001C75A9 /* BirthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthView.swift; sourceTree = "<group>"; };
@@ -122,6 +120,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE1E7A0127A11EE30043F0F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FE1E7A0227A11EF50043F0F7 /* Model */,
+				FE1E7A0327A11EFC0043F0F7 /* ViewModel */,
+				FE1E7A0427A11F070043F0F7 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FE1E7A0227A11EF50043F0F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE1E7A0327A11EFC0043F0F7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FE1E7A0427A11F070043F0F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE7BDCFA279F27BF001C75A9 /* testViewCon.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FE26BCFE2796832600E92519 = {
 			isa = PBXGroup;
 			children = (
@@ -146,10 +176,11 @@
 				FE26BD0C2796832600E92519 /* SceneDelegate.swift */,
 				FE515978279B1DA400E2CFBD /* Observable.swift */,
 				FE1E79F9279FD2600043F0F7 /* Onboding.swift */,
-				FE1E79FD279FD46D0043F0F7 /* FBAuth.swift */,
+				FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */,
 				FE7BDCF5279F05E6001C75A9 /* UserDefaultKey */,
 				FE7BDCED279F050D001C75A9 /* API */,
 				FE51595B279A8DF500E2CFBD /* Login */,
+				FE1E7A0127A11EE30043F0F7 /* Main */,
 				FE51595227994A6500E2CFBD /* CustomView */,
 				FE515943279694FE00E2CFBD /* DesignExtension */,
 				FE515971279B086300E2CFBD /* Protocols */,
@@ -221,7 +252,6 @@
 				FE7BDCD1279C67B2001C75A9 /* BirthViewController.swift */,
 				FE7BDCD7279C7B09001C75A9 /* EmailViewController.swift */,
 				FE7BDCE1279E68C5001C75A9 /* GenderViewController.swift */,
-				FE7BDCFA279F27BF001C75A9 /* testViewCon.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				FE515976279B0DE800E2CFBD /* LoginViewModel.swift */,
-				FE7BDCC7279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift */,
 				FE7BDCD3279C7788001C75A9 /* LoginViewModel + extension(Birth).swift */,
 				FE7BDCE9279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift */,
 			);
@@ -374,14 +403,13 @@
 			files = (
 				FE7BDCEA279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift in Sources */,
 				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
-				FE7BDCC8279BFE97001C75A9 /* LoginViewModel + extension(confirm).swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
-				FE1E79FE279FD46D0043F0F7 /* FBAuth.swift in Sources */,
+				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,

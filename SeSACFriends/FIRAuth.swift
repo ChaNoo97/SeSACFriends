@@ -1,5 +1,5 @@
 //
-//  FBAuth.swift
+//  FIRAuth.swift
 //  SeSACFriends
 //
 //  Created by Hoo's MacBookPro on 2022/01/25.
@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-public class FBAuth {
+public class FIRAuth {
 	
 	static func sendAuthNum(_ cleanPhoneNum: String, completion: @escaping (String?, Error?) -> Void) {
 		Auth.auth().languageCode = "ko"
@@ -33,6 +33,7 @@ public class FBAuth {
 			   let currentUser = Auth.auth().currentUser
 			   currentUser?.getIDTokenForcingRefresh(true, completion: { idToken, error in
 				   if let error = error {
+					   print(#function, error)
 					   return;
 				   }
 				   completion(idToken, true)
@@ -44,5 +45,17 @@ public class FBAuth {
 		   }
 	   }
    }
+	
+	static func renewIdToken() {
+		let currentUser = Auth.auth().currentUser
+		currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+		  if let error = error {
+			print(#function, error)
+			return;
+		  }
+			UserDefaults.standard.set(idToken, forKey: UserDefaultsKey.idToken.rawValue)
+			
+		}
+	}
 	
 }

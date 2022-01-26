@@ -38,26 +38,54 @@ public class GenderViewController: LoginBaseViewController {
 	
 	@objc func mainButtonClicked() {
 		viewModel.signUP { stausCode, error in
-			if let error = error {
+			if error != nil {
 				return
 			}
 			
 			if let stausCode = stausCode {
 				switch stausCode {
 				case 200:
-					print(stausCode)
+					self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
+					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+						self.changeRootView(viewController: TestViewController())
+					}
 				case 201:
-					print(stausCode)
+					self.view.makeToast("이미 가입한 회원입니다.")
 				case 202:
-					print(stausCode)
+					self.view.makeToast("사용할수 없는 닉네임 입니다.\n닉네임 재설정 화면으로 이동합니다.")
+					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+						self.navigationController?.popToRootViewController(animated: true)
+					}
 				case 401:
-					print(stausCode)
-				case 500:
-					print(stausCode)
-				case 501:
-					print(stausCode)
+					FIRAuth.renewIdToken()
+					self.viewModel.signUP { statusCode, error in
+						if error != nil {
+							self.view.makeToast("회원가입 실패.\n잠시후 다시 시도해 주세요.")
+							return
+						}
+						if let statusCode = statusCode {
+							switch statusCode {
+							case 200:
+								self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
+								DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+									self.changeRootView(viewController: TestViewController())
+								}
+							case 201:
+								self.view.makeToast("이미 가입한 회원입니다.")
+							case 202:
+								self.view.makeToast("사용할수 없는 닉네임 입니다.\n닉네임 재설정 화면으로 이동합니다.")
+								DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+									self.navigationController?.popToRootViewController(animated: true)
+								}
+							case 401:
+								self.view.makeToast("회원가입 실패.\n잠시후 다시 시도해 주세요.")
+							default:
+								self.view.makeToast("서버에 오류가 있습니다.\n잠시후 다시 시도해 주세요.")
+							}
+						}
+					}
 				default:
-					print("default")
+					self.view.makeToast("서버에 오류가 있습니다.\n잠시후 다시 시도해 주세요.")
 				}
 			}
 		}

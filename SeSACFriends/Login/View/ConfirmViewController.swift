@@ -32,7 +32,7 @@ public class ConfirmViewController: LoginBaseViewController {
 	}
 	
 	public func sendAuthNum() {
-		FBAuth.sendAuthNum(viewModel.cleanPhoneNum.value) { varification, error in
+		FIRAuth.sendAuthNum(viewModel.cleanPhoneNum.value) { varification, error in
 			if error == nil {
 				self.startTimer()
 				self.view.makeToast("인증번호를 보냈습니다.")
@@ -60,11 +60,11 @@ public class ConfirmViewController: LoginBaseViewController {
 		}
 		
 		if mainView.mainButton.type == .fill {
-			FBAuth.checkAuthNum(authNum: viewModel.authNum.value) { idToken, success in
+			FIRAuth.checkAuthNum(authNum: viewModel.authNum.value) { idToken, success in
 				if success {
 					UserDefaults.standard.set(idToken, forKey: UserDefaultsKey.idToken.rawValue)
 					//get user -200 -201
-					self.pushViewCon(vc: NickNameViewController())
+					self.changeRootView(viewController: NickNameViewController())
 				} else {
 					self.view.makeToast("에러가 발생했습니다.\n잠시후 다시 시도해주세요.")
 				}

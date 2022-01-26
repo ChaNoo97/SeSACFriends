@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class testViewController: UIViewController {
+class TestViewController: UIViewController {
 	let button = UIButton()
 	
 	override func viewDidLoad() {
