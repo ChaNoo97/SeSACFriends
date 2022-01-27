@@ -19,8 +19,6 @@ public class LoginViewModel {
 	
 	static let shared = LoginViewModel()
 	
-	var fcmtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.FCMtoken.rawValue) ?? ""
-	
 	let cleanPhoneNum = Observable("")
 	let authNum = Observable("")
 	let nickName = Observable("")

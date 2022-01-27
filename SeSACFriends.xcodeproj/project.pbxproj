@@ -10,6 +10,8 @@
 		FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79F9279FD2600043F0F7 /* Onboding.swift */; };
 		FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */; };
 		FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */; };
+		FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */; };
+		FE1E7A0927A1B4430043F0F7 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */; };
 		FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0A2796832600E92519 /* AppDelegate.swift */; };
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
 		FE26BD142796832800E92519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD132796832800E92519 /* Assets.xcassets */; };
@@ -25,7 +27,7 @@
 		FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515957279A894C00E2CFBD /* LoginBaseView.swift */; };
 		FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515959279A8DEB00E2CFBD /* LoginView.swift */; };
 		FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595C279A90F300E2CFBD /* LoginViewController.swift */; };
-		FE51595F279A984300E2CFBD /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* LoginBaseViewController.swift */; };
+		FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* BaseViewController.swift */; };
 		FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515966279AA2C800E2CFBD /* ConfirmView.swift */; };
 		FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515968279AAED600E2CFBD /* ConfirmViewController.swift */; };
 		FE51596C279AFE7400E2CFBD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596B279AFE7400E2CFBD /* Toast */; };
@@ -60,6 +62,7 @@
 		FE1E79F9279FD2600043F0F7 /* Onboding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboding.swift; sourceTree = "<group>"; };
 		FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuth.swift; sourceTree = "<group>"; };
 		FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewComtroller.swift; sourceTree = "<group>"; };
 		FE26BD072796832600E92519 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE26BD0A2796832600E92519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE26BD0C2796832600E92519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +79,7 @@
 		FE515957279A894C00E2CFBD /* LoginBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseView.swift; sourceTree = "<group>"; };
 		FE515959279A8DEB00E2CFBD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		FE51595C279A90F300E2CFBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FE51595E279A984300E2CFBD /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
+		FE51595E279A984300E2CFBD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FE515966279AA2C800E2CFBD /* ConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmView.swift; sourceTree = "<group>"; };
 		FE515968279AAED600E2CFBD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		FE515976279B0DE800E2CFBD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */,
+				FE1E7A0927A1B4430043F0F7 /* JGProgressHUD in Frameworks */,
 				FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */,
 				FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */,
 				FE51596C279AFE7400E2CFBD /* Toast in Frameworks */,
@@ -177,6 +181,7 @@
 				FE515978279B1DA400E2CFBD /* Observable.swift */,
 				FE1E79F9279FD2600043F0F7 /* Onboding.swift */,
 				FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */,
+				FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */,
 				FE7BDCF5279F05E6001C75A9 /* UserDefaultKey */,
 				FE7BDCED279F050D001C75A9 /* API */,
 				FE51595B279A8DF500E2CFBD /* Login */,
@@ -208,7 +213,7 @@
 				FE51595027993EFD00E2CFBD /* MainButton.swift */,
 				FE5159532799B4D500E2CFBD /* MainTextField.swift */,
 				FE515957279A894C00E2CFBD /* LoginBaseView.swift */,
-				FE51595E279A984300E2CFBD /* LoginBaseViewController.swift */,
+				FE51595E279A984300E2CFBD /* BaseViewController.swift */,
 				FE7BDCCF279C5E3E001C75A9 /* BirthSubView.swift */,
 				FE7BDCE3279E69B0001C75A9 /* GenderButton.swift */,
 			);
@@ -337,6 +342,7 @@
 				FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */,
 				FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */,
 				FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */,
+				FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */,
 			);
 			productName = SeSACFriends;
 			productReference = FE26BD072796832600E92519 /* SeSACFriends.app */;
@@ -371,6 +377,7 @@
 				FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = FE26BD082796832600E92519 /* Products */;
 			projectDirPath = "";
@@ -419,9 +426,10 @@
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
-				FE51595F279A984300E2CFBD /* LoginBaseViewController.swift in Sources */,
+				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
+				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
@@ -650,6 +658,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -685,6 +701,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		FE5159492796A8C000E2CFBD /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */;

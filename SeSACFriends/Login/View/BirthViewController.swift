@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class BirthViewController: LoginBaseViewController {
+public class BirthViewController: BaseViewController {
 	
 	let mainView = BirthView()
 	let viewModel = LoginViewModel.shared

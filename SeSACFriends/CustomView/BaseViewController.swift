@@ -7,22 +7,16 @@
 
 import UIKit
 
-protocol LoginBaseViewCon {
-	func viewDidLoad()
-	func configure()
-	func navigationBarSetting()
-	func navigationBarSetTitle(title: String)
-	func makeTabGester(view: UIView, target: Any?, action: Selector?)
-}
-
-public class LoginBaseViewController: UIViewController, LoginBaseViewCon {
+public class BaseViewController: UIViewController {
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
 		configure()
 		navigationBarSetting()
 	}
-	
+}
+
+extension UIViewController {
 	public func configure() {
 		view.backgroundColor = .white
 	}
@@ -56,5 +50,4 @@ public class LoginBaseViewController: UIViewController, LoginBaseViewCon {
 		windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: viewController)
 		windowScene.windows.first?.makeKeyAndVisible()
 	}
-	
 }

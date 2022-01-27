@@ -10,7 +10,7 @@ import SnapKit
 import FirebaseAuth
 import Toast
 
-public class LoginViewController: LoginBaseViewController {
+public class LoginViewController: BaseViewController {
 	
 	let mainView = LoginView()
 	let viewModel = LoginViewModel.shared

@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import Toast
 
-public class ConfirmViewController: LoginBaseViewController {
+public class ConfirmViewController: BaseViewController {
 	
 	let mainView = ConfirmView()
 	let viewModel = LoginViewModel.shared
@@ -37,9 +37,14 @@ public class ConfirmViewController: LoginBaseViewController {
 				self.startTimer()
 				self.view.makeToast("인증번호를 보냈습니다.")
 			} else {
-				//분기처리
+				let state = AuthErrorCode(rawValue: error!._code)
 				print("Phone Varification Error: \(error.debugDescription)")
-				self.view.makeToast("오류가 발생했습니다.")
+				switch state {
+				case .tooManyRequests:
+					self.view.makeToast("요청과다.\n잠시후 다시 시도해주세요.")
+				default:
+					self.view.makeToast("오류가 발생했습니다.")
+				}
 			}
 		}
 	}

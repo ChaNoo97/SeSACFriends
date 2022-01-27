@@ -12,8 +12,10 @@ extension LoginViewModel {
 	
 	func signUP(completion: @escaping (Int?, Error?) -> Void) {
 		let birth = stringToDate(input: birth.value)
+		let phoneNum = UserDefaults.standard.string(forKey: UserDefaultsKey.userPhoneNum.rawValue)!
+		let fcmtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.FCMtoken.rawValue) ?? ""
 		let signUpModel = signUpModel(
-			phoneNum: cleanPhoneNum.value,
+			phoneNum: phoneNum,
 			FCMtoken: fcmtoken,
 			nick: nickName.value,
 			email: email.value,

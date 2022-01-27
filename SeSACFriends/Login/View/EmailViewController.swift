@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class EmailViewController: LoginBaseViewController {
+public class EmailViewController: BaseViewController {
 	
 	let mainView = emailView()
 	let viewModel = LoginViewModel.shared
@@ -23,6 +23,9 @@ public class EmailViewController: LoginBaseViewController {
 		mainView.emailTextField.textField.addTarget(self, action: #selector(emailTextfieldChanged(_:)), for: .editingChanged)
 		mainView.emailTextField.textField.becomeFirstResponder()
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
+		viewModel.email.bind { value in
+			self.mainView.emailTextField.textField.text = value
+		}
 	}
 	
 	@objc func emailTextfieldChanged(_ textField: UITextField) {

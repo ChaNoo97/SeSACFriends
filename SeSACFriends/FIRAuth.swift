@@ -11,6 +11,7 @@ import FirebaseAuth
 public class FIRAuth {
 	
 	static func sendAuthNum(_ cleanPhoneNum: String, completion: @escaping (String?, Error?) -> Void) {
+		UserDefaults.standard.set(cleanPhoneNum, forKey: UserDefaultsKey.userPhoneNum.rawValue)
 		Auth.auth().languageCode = "ko"
 		PhoneAuthProvider.provider().verifyPhoneNumber(cleanPhoneNum, uiDelegate: nil) { varification, error in
 			if error == nil {
@@ -47,6 +48,7 @@ public class FIRAuth {
    }
 	
 	static func renewIdToken() {
+		print("firauthrenewidtoken")
 		let currentUser = Auth.auth().currentUser
 		currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
 		  if let error = error {

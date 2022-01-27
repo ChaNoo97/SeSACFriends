@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class NickNameViewController: LoginBaseViewController {
+public class NickNameViewController: BaseViewController {
 	
 	let mainView = NickNameVeiw()
 	let viewModel = LoginViewModel.shared
@@ -19,6 +19,7 @@ public class NickNameViewController: LoginBaseViewController {
 	
 	public override func viewDidLoad() {
 		super.viewDidLoad()
+		print(UserDefaults.standard.string(forKey: UserDefaultsKey.FCMtoken.rawValue))
 		mainView.mainButton.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 		mainView.nickNameTextField.textField.addTarget(self, action: #selector(nickNameTextfieldChange(_:)), for: .editingChanged)

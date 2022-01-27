@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class GenderViewController: LoginBaseViewController {
+public class GenderViewController: BaseViewController {
 	
 	let mainView = GenderView()
 	let viewModel = LoginViewModel.shared
@@ -43,6 +43,7 @@ public class GenderViewController: LoginBaseViewController {
 			}
 			
 			if let stausCode = stausCode {
+				print(stausCode)
 				switch stausCode {
 				case 200:
 					self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
@@ -67,6 +68,7 @@ public class GenderViewController: LoginBaseViewController {
 							switch statusCode {
 							case 200:
 								self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
+								UserDefaults.standard.set(true, forKey: UserDefaultsKey.joinFriends.rawValue)
 								DispatchQueue.main.asyncAfter(deadline: .now()+1) {
 									self.changeRootView(viewController: TestViewController())
 								}
