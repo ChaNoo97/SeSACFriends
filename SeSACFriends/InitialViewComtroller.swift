@@ -27,7 +27,7 @@ public class InitialViewcontroller: BaseViewController {
 				switch code {
 				case 200:
 					self.hud.dismiss(animated: true)
-					self.changeRootView(viewController: TestViewController())
+					self.changeRootView(viewController: withdrawViewController())
 				case 201:
 					self.hud.dismiss(animated: true)
 					self.changeRootView(viewController: NickNameViewController())

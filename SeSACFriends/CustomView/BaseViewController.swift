@@ -7,6 +7,15 @@
 
 import UIKit
 
+protocol HelperFunc {
+	func configure()
+	func navigationBarSetting()
+	func navigationBarSetTitle(title: String)
+	func makeTabGester(view: UIView, target: Any?, action: Selector?)
+	func pushViewCon(vc: UIViewController)
+	func changeRootView(viewController: UIViewController)
+}
+
 public class BaseViewController: UIViewController {
 	
 	public override func viewDidLoad() {
@@ -16,7 +25,7 @@ public class BaseViewController: UIViewController {
 	}
 }
 
-extension UIViewController {
+extension UIViewController: HelperFunc {
 	public func configure() {
 		view.backgroundColor = .white
 	}

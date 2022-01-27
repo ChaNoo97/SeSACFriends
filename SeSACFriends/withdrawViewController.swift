@@ -1,5 +1,5 @@
 //
-//  testViewCon.swift
+//  HomeViewController.swift
 //  SeSACFriends
 //
 //  Created by Hoo's MacBookPro on 2022/01/25.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class TestViewController: UIViewController {
+class withdrawViewController: UIViewController {
 	let button = UIButton()
 	
 	override func viewDidLoad() {

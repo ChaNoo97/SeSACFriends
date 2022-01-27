@@ -48,7 +48,7 @@ public class GenderViewController: BaseViewController {
 				case 200:
 					self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
 					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-						self.changeRootView(viewController: TestViewController())
+						self.changeRootView(viewController: withdrawViewController())
 					}
 				case 201:
 					self.view.makeToast("이미 가입한 회원입니다.")
@@ -70,7 +70,7 @@ public class GenderViewController: BaseViewController {
 								self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
 								UserDefaults.standard.set(true, forKey: UserDefaultsKey.joinFriends.rawValue)
 								DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-									self.changeRootView(viewController: TestViewController())
+									self.changeRootView(viewController: withdrawViewController())
 								}
 							case 201:
 								self.view.makeToast("이미 가입한 회원입니다.")

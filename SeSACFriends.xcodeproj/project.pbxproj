@@ -12,6 +12,18 @@
 		FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */; };
 		FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */; };
 		FE1E7A0927A1B4430043F0F7 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */; };
+		FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8927A27A3900368B13 /* TabBarController.swift */; };
+		FE22DE8C27A27A6200368B13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8B27A27A6200368B13 /* HomeViewController.swift */; };
+		FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */; };
+		FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8F27A27AA400368B13 /* MyViewController.swift */; };
+		FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9127A27AAF00368B13 /* ShopViewController.swift */; };
+		FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9427A27B3A00368B13 /* HomeView.swift */; };
+		FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9627A27B4400368B13 /* FriendView.swift */; };
+		FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9827A27B4B00368B13 /* ShopView.swift */; };
+		FE22DE9B27A27B4F00368B13 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9A27A27B4F00368B13 /* MyView.swift */; };
+		FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */; };
+		FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */; };
+		FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEA127A2F52300368B13 /* UITableViewCell+extension.swift */; };
 		FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0A2796832600E92519 /* AppDelegate.swift */; };
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
 		FE26BD142796832800E92519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD132796832800E92519 /* Assets.xcassets */; };
@@ -55,7 +67,7 @@
 		FE7BDCF4279F0562001C75A9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF3279F0562001C75A9 /* APIService.swift */; };
 		FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */; };
 		FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */; };
-		FE7BDCFB279F27BF001C75A9 /* testViewCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCFA279F27BF001C75A9 /* testViewCon.swift */; };
+		FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +75,18 @@
 		FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuth.swift; sourceTree = "<group>"; };
 		FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewComtroller.swift; sourceTree = "<group>"; };
+		FE22DE8927A27A3900368B13 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FE22DE8B27A27A6200368B13 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		FE22DE8F27A27AA400368B13 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		FE22DE9127A27AAF00368B13 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		FE22DE9427A27B3A00368B13 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FE22DE9627A27B4400368B13 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		FE22DE9827A27B4B00368B13 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		FE22DE9A27A27B4F00368B13 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoCell.swift; sourceTree = "<group>"; };
+		FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
+		FE22DEA127A2F52300368B13 /* UITableViewCell+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+extension.swift"; sourceTree = "<group>"; };
 		FE26BD072796832600E92519 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE26BD0A2796832600E92519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE26BD0C2796832600E92519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +127,7 @@
 		FE7BDCF3279F0562001C75A9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
-		FE7BDCFA279F27BF001C75A9 /* testViewCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewCon.swift; sourceTree = "<group>"; };
+		FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withdrawViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +151,7 @@
 		FE1E7A0127A11EE30043F0F7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FE22DE8927A27A3900368B13 /* TabBarController.swift */,
 				FE1E7A0227A11EF50043F0F7 /* Model */,
 				FE1E7A0327A11EFC0043F0F7 /* ViewModel */,
 				FE1E7A0427A11F070043F0F7 /* View */,
@@ -151,9 +176,34 @@
 		FE1E7A0427A11F070043F0F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FE7BDCFA279F27BF001C75A9 /* testViewCon.swift */,
+				FE22DE9327A27B2E00368B13 /* View */,
+				FE22DE8B27A27A6200368B13 /* HomeViewController.swift */,
+				FE22DE9127A27AAF00368B13 /* ShopViewController.swift */,
+				FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */,
+				FE22DE8F27A27AA400368B13 /* MyViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FE22DE9327A27B2E00368B13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9427A27B3A00368B13 /* HomeView.swift */,
+				FE22DE9827A27B4B00368B13 /* ShopView.swift */,
+				FE22DE9627A27B4400368B13 /* FriendView.swift */,
+				FE22DE9A27A27B4F00368B13 /* MyView.swift */,
+				FE22DE9C27A2F3AA00368B13 /* MyTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE22DE9C27A2F3AA00368B13 /* MyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */,
+				FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */,
+			);
+			path = MyTableViewCell;
 			sourceTree = "<group>";
 		};
 		FE26BCFE2796832600E92519 = {
@@ -182,6 +232,7 @@
 				FE1E79F9279FD2600043F0F7 /* Onboding.swift */,
 				FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */,
 				FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */,
+				FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */,
 				FE7BDCF5279F05E6001C75A9 /* UserDefaultKey */,
 				FE7BDCED279F050D001C75A9 /* API */,
 				FE51595B279A8DF500E2CFBD /* Login */,
@@ -243,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				FE5159552799B95500E2CFBD /* ViewProtocols.swift */,
+				FE22DEA127A2F52300368B13 /* UITableViewCell+extension.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -408,10 +460,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE22DE9B27A27B4F00368B13 /* MyView.swift in Sources */,
 				FE7BDCEA279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift in Sources */,
 				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
+				FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
+				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
@@ -419,31 +474,40 @@
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
+				FE22DE8C27A27A6200368B13 /* HomeViewController.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
 				FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
+				FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */,
+				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
+				FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */,
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
+				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
 				FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */,
-				FE7BDCFB279F27BF001C75A9 /* testViewCon.swift in Sources */,
+				FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */,
 				FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */,
+				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
+				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,
 				FE7BDCF4279F0562001C75A9 /* APIService.swift in Sources */,
 				FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */,
+				FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */,
 				FE7BDCE0279E6868001C75A9 /* GenderView.swift in Sources */,
 				FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */,
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
 				FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */,
+				FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */,
 				FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

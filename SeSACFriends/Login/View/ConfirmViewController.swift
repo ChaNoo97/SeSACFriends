@@ -57,7 +57,9 @@ public class ConfirmViewController: BaseViewController {
 		sendAuthNum()
 	}
 	
+//	mainView.mainButton.isEnabled = false
 	@objc func mainButtonClicked() {
+		self.mainView.mainButton.isEnabled = false
 		dismissKeyboard()
 		if limitTime == 0 {
 			view.makeToast("전화 번호 인증 실패")
@@ -68,14 +70,15 @@ public class ConfirmViewController: BaseViewController {
 			FIRAuth.checkAuthNum(authNum: viewModel.authNum.value) { idToken, success in
 				if success {
 					UserDefaults.standard.set(idToken, forKey: UserDefaultsKey.idToken.rawValue)
-					//get user -200 -201
 					self.changeRootView(viewController: NickNameViewController())
 				} else {
 					self.view.makeToast("에러가 발생했습니다.\n잠시후 다시 시도해주세요.")
+					self.mainView.mainButton.isEnabled = true
 				}
 			}
 		} else {
 			view.makeToast("전화 번호 인증 실패")
+			self.mainView.mainButton.isEnabled = true
 		}
 	}
 	
