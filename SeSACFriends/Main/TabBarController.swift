@@ -24,6 +24,7 @@ public class TabBarController: UITabBarController {
 		setViewControllers([homeNav, shopNav, friendNav, myNav], animated: true)
 	}
 	
+	// iOS14 ~ 
 	public func setupTabBarAppearence() {
 		let appearence = UITabBarAppearance()
 //		appearence.configureWithTransparentBackground()
