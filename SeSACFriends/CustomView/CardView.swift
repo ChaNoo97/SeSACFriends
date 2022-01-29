@@ -33,7 +33,7 @@ public class CardView: UIView, ViewProtocols {
 		//test
 		titleLabel.text = "고래밥"
 		titleLabel.font = SesacFont.title1M16.font
-		moreButton.setImage(UIImage(named: "moreArrow"), for: .normal)
+		moreButton.setImage(UIImage(named: "downArrow"), for: .normal)
 		moreButton.tintColor = .black
 	}
 	
@@ -72,10 +72,9 @@ public class CardView: UIView, ViewProtocols {
 		}
 		
 		moreButton.snp.makeConstraints {
-			$0.top.equalTo(infoView.snp.top).of
-			$0.trailing.equalTo(18)
-			$0.width.equalTo(6)
-			$0.height.equalTo(12)
+			$0.top.equalTo(infoView.snp.top).inset(21)
+			$0.trailing.equalTo(infoView.snp.trailing).inset(16)
+			$0.size.equalTo(16)
 		}
 		
 	}
