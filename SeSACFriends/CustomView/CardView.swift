@@ -72,7 +72,7 @@ public class CardView: UIView, ViewProtocols {
 		}
 		
 		moreButton.snp.makeConstraints {
-			$0.top.equalTo(26)
+			$0.top.equalTo(infoView.snp.top).of
 			$0.trailing.equalTo(18)
 			$0.width.equalTo(6)
 			$0.height.equalTo(12)
