@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum MainButtonType {
+enum MainButtonType {
 	case inactive
 	case fill
 	case outline

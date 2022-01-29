@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public enum SesacFont {
+enum SesacFont {
 	case display1R20
 	case title1M16
 	case title2R16

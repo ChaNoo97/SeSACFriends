@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-public class ShopView: UIView, ViewProtocols {
-	public func configure() {
+final class ShopView: UIView, ViewProtocols {
+	func configure() {
 		
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		
 	}
 	

@@ -8,22 +8,22 @@
 import UIKit
 import SnapKit
 
-public class BirthViewController: BaseViewController {
+final class BirthViewController: BaseViewController {
 	
 	let mainView = BirthView()
 	let viewModel = LoginViewModel.shared
 	
 	let datePicker = UIDatePicker()
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewWillAppear(_ animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		changeValue()
 	}
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.yearView.textField.textField.becomeFirstResponder()
 		createDatePickerView()

@@ -8,7 +8,8 @@
 import UIKit
 import SnapKit
 
-public class CardView: UIView, ViewProtocols {
+//MARK: 상속예정에 있음
+class CardView: UIView, ViewProtocols {
 	
 	let backgroundImageView = UIImageView()
 	let faceImageView = UIImageView()
@@ -16,14 +17,14 @@ public class CardView: UIView, ViewProtocols {
 	let titleLabel = UILabel()
 	let moreButton = UIButton()
 	
-	public override init(frame: CGRect) {
+	override init(frame: CGRect) {
 		super.init(frame: frame)
 		configure()
 		setupConstraint()
 	}
 	
 	
-	public func configure() {
+	func configure() {
 		backgroundImageView.image = UIImage(named: "back1")
 		backgroundImageView.layer.cornerRadius = 8
 		backgroundImageView.clipsToBounds = true
@@ -37,7 +38,7 @@ public class CardView: UIView, ViewProtocols {
 		moreButton.tintColor = .black
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		
 		[backgroundImageView, faceImageView, infoView].forEach {
 			addSubview($0)

@@ -9,19 +9,19 @@ import UIKit
 import FirebaseAuth
 import Toast
 
-public class ConfirmViewController: BaseViewController {
+final class ConfirmViewController: BaseViewController {
 	
 	let mainView = ConfirmView()
 	let viewModel = LoginViewModel.shared
 	var limitTime: Int = 60
 	var timer: Timer?
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 		mainView.repeatButton.isEnabled = false
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		sendAuthNum()
 		mainView.authTextField.textField.keyboardType = .phonePad
@@ -31,7 +31,7 @@ public class ConfirmViewController: BaseViewController {
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 	}
 	
-	public func sendAuthNum() {
+	func sendAuthNum() {
 		FIRAuth.sendAuthNum(viewModel.cleanPhoneNum.value) { varification, error in
 			if error == nil {
 				self.startTimer()
@@ -95,7 +95,7 @@ public class ConfirmViewController: BaseViewController {
 		}
 	}
 	
-	public func startTimer() {
+	func startTimer() {
 		if timer != nil && timer!.isValid {
 			timer!.invalidate()
 		}

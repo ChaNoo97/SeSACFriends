@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class LoginView: LoginBaseView, ViewProtocols {
+final class LoginView: LoginBaseView, ViewProtocols {
 	
 	let titleLabel = UILabel()
 	let phoneNumberTextField = MainTextField(frame: .zero, type: .inactive)
@@ -23,13 +23,13 @@ public class LoginView: LoginBaseView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		setupLabel(label: titleLabel, font: SesacFont.display1R20, text: "새싹 서비스 이용을 위해\n휴대폰 번호를 입력해 주세요")
 		phoneNumberTextField.textField.keyboardType = .phonePad
 		phoneNumberTextField.textField.placeholder = "휴대폰 번호(- 없이 숫자만 입력)"
 	}
 	
-	public override func setupConstraint() {
+	override func setupConstraint() {
 		super.setupConstraint()
 		
 		[phoneNumberTextField, titleLabel].forEach {

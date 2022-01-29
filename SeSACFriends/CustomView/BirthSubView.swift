@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class BirthSubView: UIView, ViewProtocols {
+final class BirthSubView: UIView, ViewProtocols {
 	let textField = MainTextField(frame: .zero, type: .inactive)
 	let label = UILabel()
 	
@@ -22,13 +22,13 @@ public class BirthSubView: UIView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		label.font = SesacFont.title2R16.font
 		textField.textField.font = SesacFont.title4R14.font
 		textField.textField.textColor = .sesacGray7
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		[textField, label].forEach {
 			addSubview($0)
 		}

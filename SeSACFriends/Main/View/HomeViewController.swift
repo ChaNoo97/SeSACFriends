@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-public class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 	
 	let mainView = HomeView()
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationBarSetTitle(title: "홈")
 	}

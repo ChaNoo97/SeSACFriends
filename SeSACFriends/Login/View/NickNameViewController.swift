@@ -8,16 +8,16 @@
 import Foundation
 import UIKit
 
-public class NickNameViewController: BaseViewController {
+final class NickNameViewController: BaseViewController {
 	
 	let mainView = NickNameVeiw()
 	let viewModel = LoginViewModel.shared
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		print(UserDefaults.standard.string(forKey: UserDefaultsKey.FCMtoken.rawValue))
 		mainView.mainButton.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)

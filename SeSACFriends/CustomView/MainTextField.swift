@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public enum TextFieldType {
+enum TextFieldType {
 	case inactive
 	case focus
 	case active
@@ -17,7 +17,7 @@ public enum TextFieldType {
 	case success
 }
 
-public class MainTextField: UIView, ViewProtocols {
+class MainTextField: UIView, ViewProtocols {
 	
 	let contentView = UIView()
 	let textField = UITextField()
@@ -37,7 +37,7 @@ public class MainTextField: UIView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		contentView.layer.cornerRadius = 4
 		textField.clipsToBounds = true
 		textField.backgroundColor = .clear
@@ -47,7 +47,7 @@ public class MainTextField: UIView, ViewProtocols {
 		notiLabel.font = SesacFont.body4R12.font
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		
 		[contentView, notiLabel].forEach {
 			addSubview($0)
@@ -82,7 +82,7 @@ public class MainTextField: UIView, ViewProtocols {
 		
 	}
 	
-	public func setupType(type: TextFieldType) {
+	func setupType(type: TextFieldType) {
 		self.type = type
 		switch type {
 		case .inactive:

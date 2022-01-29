@@ -9,17 +9,18 @@ import Foundation
 import UIKit
 
 
-public class CardViewController: UIViewController {
+//MARK: Test 용 뷰컨
+final class CardViewController: UIViewController {
 	
 	let mainView = CardView()
 	
 	var buttonStatus = true
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.moreButton.addTarget(self, action: #selector(moreButtonClicked), for: .touchUpInside)
 	}

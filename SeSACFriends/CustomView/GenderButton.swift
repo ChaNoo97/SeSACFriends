@@ -7,7 +7,7 @@
 
 import UIKit
 
-public enum GenderButtonType {
+enum GenderButtonType {
 	case select
 	case unSelect
 }

@@ -10,14 +10,14 @@ import JGProgressHUD
 import SnapKit
 import FirebaseAuth
 
-public class InitialViewcontroller: BaseViewController {
+final class InitialViewcontroller: BaseViewController {
 	
 	let centerView = UIView()
 	let lunchImageView = UIImageView()
 	let lunchTitleImageView = UIImageView()
 	let hud = JGProgressHUD()
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupConstraint()
 		setupProgressHud()
@@ -47,12 +47,12 @@ public class InitialViewcontroller: BaseViewController {
 
 extension InitialViewcontroller {
 	
-	public func setupProgressHud() {
+	func setupProgressHud() {
 		hud.textLabel.text = "Loading"
 		hud.show(in: self.view)
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		view.addSubview(centerView)
 		[lunchImageView, lunchTitleImageView].forEach {
 			centerView.addSubview($0)

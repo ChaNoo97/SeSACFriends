@@ -8,16 +8,16 @@
 import UIKit
 import SnapKit
 
-public class EmailViewController: BaseViewController {
+final class EmailViewController: BaseViewController {
 	
 	let mainView = emailView()
 	let viewModel = LoginViewModel.shared
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.mainButton.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 		mainView.emailTextField.textField.addTarget(self, action: #selector(emailTextfieldChanged(_:)), for: .editingChanged)

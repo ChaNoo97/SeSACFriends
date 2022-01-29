@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class NickNameVeiw: LoginBaseView, ViewProtocols {
+final class NickNameVeiw: LoginBaseView, ViewProtocols {
 	
 	let nickNameTextField = MainTextField(frame: .zero, type: .inactive)
 	let titleLabel = UILabel()
@@ -23,12 +23,12 @@ public class NickNameVeiw: LoginBaseView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		nickNameTextField.textField.placeholder = "10자 이내로 입력"
 		setupLabel(label: titleLabel, font: .display1R20, text: "닉네임을 입력해 주세요")
 	}
 	
-	public override func setupConstraint() {
+	override func setupConstraint() {
 		super.setupConstraint()
 		[nickNameTextField, titleLabel].forEach {
 			addSubview($0)

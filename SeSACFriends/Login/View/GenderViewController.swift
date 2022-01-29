@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class GenderViewController: BaseViewController {
+final class GenderViewController: BaseViewController {
 	
 	let mainView = GenderView()
 	let viewModel = LoginViewModel.shared
@@ -16,11 +16,11 @@ public class GenderViewController: BaseViewController {
 	var womanBtnStatus = false
 	
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewWillAppear(_ animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		if viewModel.gender.value == 1 {
 			manButtonClicked()
@@ -29,7 +29,7 @@ public class GenderViewController: BaseViewController {
 		}
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.manButton.addTarget(self, action: #selector(manButtonClicked), for: .touchUpInside)
 		mainView.womanButton.addTarget(self, action: #selector(womanButtonClicked), for: .touchUpInside)

@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-public class FriendView: UIView, ViewProtocols {
-	public func configure() {
+final class FriendView: UIView, ViewProtocols {
+	func configure() {
 		
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		
 	}
 	

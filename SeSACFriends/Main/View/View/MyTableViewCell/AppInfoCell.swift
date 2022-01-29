@@ -8,24 +8,24 @@
 import UIKit
 import SnapKit
 
-public class AppInfoCell: UITableViewCell, ViewProtocols {
+final class AppInfoCell: UITableViewCell, ViewProtocols {
 	
 	let iconImage = UIImageView()
 	let titleLabel = UILabel()
 	let designLine = UIView()
 	
-	public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		configure()
 		setupConstraint()
 	}
 	
-	public func configure() {
+	func configure() {
 		titleLabel.font = SesacFont.title2R16.font
 		designLine.backgroundColor = .sesacGray2
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		[iconImage, titleLabel, designLine].forEach {
 			contentView.addSubview($0)
 		}

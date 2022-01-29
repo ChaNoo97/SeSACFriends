@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-public class FIRAuth {
+class FIRAuth {
 	
 	static func sendAuthNum(_ cleanPhoneNum: String, completion: @escaping (String?, Error?) -> Void) {
 		UserDefaults.standard.set(cleanPhoneNum, forKey: UserDefaultsKey.userPhoneNum.rawValue)

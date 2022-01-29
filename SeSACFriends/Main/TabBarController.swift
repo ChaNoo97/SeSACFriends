@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-public class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureTabBarController()
 		setupTabBarAppearence()
 	}
 	
-	public func configureTabBarController() {
+	func configureTabBarController() {
 		let homeNav = makeNavigationVC(HomeViewController(), title: "홈", unSelectImage: "homeUnSelect", selectImage: "homeSelect")
 		let shopNav = makeNavigationVC(ShopViewController(), title: "새싹샵", unSelectImage: "shopUnSelect", selectImage: "shopSelect")
 		let friendNav = makeNavigationVC(FriendViewController(), title: "새싹친구", unSelectImage: "friendUnSelect", selectImage: "friendSelect")
@@ -25,7 +25,7 @@ public class TabBarController: UITabBarController {
 	}
 	
 	// iOS14 ~ 
-	public func setupTabBarAppearence() {
+	func setupTabBarAppearence() {
 		let appearence = UITabBarAppearance()
 //		appearence.configureWithTransparentBackground()
 		appearence.backgroundColor = .white

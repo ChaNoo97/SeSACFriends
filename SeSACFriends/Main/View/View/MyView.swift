@@ -8,17 +8,17 @@
 import UIKit
 import SnapKit
 
-public class MyView: UIView {
+final class MyView: UIView {
 	
 	let tableView = UITableView()
 	
-	public override init(frame: CGRect) {
+	override init(frame: CGRect) {
 		super.init(frame: frame)
 		setupConstraint()
 	}
 	
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		addSubview(tableView)
 		tableView.snp.makeConstraints {
 			$0.edges.equalTo(self.safeAreaLayoutGuide)

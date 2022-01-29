@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class GenderView: LoginBaseView, ViewProtocols {
+final class GenderView: LoginBaseView, ViewProtocols {
 	
 	let stackView: UIStackView = {
 		let stack = UIStackView()
@@ -36,7 +36,7 @@ public class GenderView: LoginBaseView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		setupLabel(label: titleLabel, font: .display1R20, text: "성별을 선택해 주세요")
 		setupLabel(label: subTitleLabel, font: .title2R16, text: "새싹 찾기 기능을 이용하기 위해서 필요해요!")
 		subTitleLabel.textColor = .sesacGray7
@@ -48,7 +48,7 @@ public class GenderView: LoginBaseView, ViewProtocols {
 		
 	}
 	
-	public override func setupConstraint() {
+	override func setupConstraint() {
 		
 		super.setupConstraint()
 		[stackView, titleLabel, subTitleLabel].forEach {

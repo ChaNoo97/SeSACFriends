@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-public class ShopViewController: BaseViewController {
+final class ShopViewController: BaseViewController {
 	
 	let mainView = ShopView()
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationBarSetTitle(title: "새싹샵")
 	}

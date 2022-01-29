@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol ViewProtocols {
+protocol ViewProtocols {
 	func configure()
 	func setupConstraint()
 }

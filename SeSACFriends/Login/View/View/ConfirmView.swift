@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class ConfirmView: LoginBaseView, ViewProtocols {
+final class ConfirmView: LoginBaseView, ViewProtocols {
 	
 	let titleLabel = UILabel()
 	let subTitleLabel = UILabel()
@@ -26,7 +26,7 @@ public class ConfirmView: LoginBaseView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		authTextField.textField.placeholder = "인증번호 입력"
 		setupLabel(label: titleLabel, font: .display1R20, text: "인증번호가 문자로 전송되었어요")
 		setupLabel(label: subTitleLabel, font: .title2R16, text: "(최대 소모 20초)")
@@ -35,7 +35,7 @@ public class ConfirmView: LoginBaseView, ViewProtocols {
 		timerLabel.textColor = .sesacGreen
 	}
 	
-	override public func setupConstraint() {
+	override func setupConstraint() {
 		super.setupConstraint()
 		
 		[titleLabel, subTitleLabel, authTextField, repeatButton].forEach {

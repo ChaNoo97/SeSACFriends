@@ -10,16 +10,16 @@ import SnapKit
 import FirebaseAuth
 import Toast
 
-public class LoginViewController: BaseViewController {
+final class LoginViewController: BaseViewController {
 	
 	let mainView = LoginView()
 	let viewModel = LoginViewModel.shared
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.mainButton.addTarget(self, action: #selector(mainButtonClicked), for: .touchUpInside)
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
@@ -52,7 +52,7 @@ public class LoginViewController: BaseViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate {
-	public func textFieldDidChangeSelection(_ textField: UITextField) {
+	func textFieldDidChangeSelection(_ textField: UITextField) {
 		let phoneNum = textField.text!
 		if phoneNum != "" {
 			mainView.phoneNumberTextField.setupType(type: .active)

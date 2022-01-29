@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-public class MyViewController: BaseViewController {
+final class MyViewController: BaseViewController {
 	
 	let mainView = MyView()
 	
-	public override func loadView() {
+	override func loadView() {
 		self.view = mainView
 	}
 	
-	public override func viewDidLoad() {
+	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationBarSetTitle(title: "내정보")
 		mainView.tableView.delegate = self
@@ -35,11 +35,11 @@ public class MyViewController: BaseViewController {
 
 extension MyViewController: UITableViewDataSource, UITableViewDelegate {
 	
-	public func numberOfSections(in tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 2
 	}
 	
-	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if section == 0 {
 			return 1
 		} else {
@@ -47,7 +47,7 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
 		}
 	}
 	
-	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
 		if indexPath.section == 0 {
 			guard let cellOfSec0 = tableView.dequeueReusableCell(withIdentifier: MyInfoCell.reuseIdentfier, for: indexPath) as? MyInfoCell else {
@@ -69,7 +69,7 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
 		
 	}
 	
-	public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if indexPath.section == 0 {
 			return 90
 		} else {

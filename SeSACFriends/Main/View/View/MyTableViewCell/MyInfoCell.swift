@@ -8,28 +8,28 @@
 import UIKit
 import SnapKit
 
-public class MyInfoCell: UITableViewCell, ViewProtocols {
+final class MyInfoCell: UITableViewCell, ViewProtocols {
 	
 	let profileImage = UIImageView()
 	let profileName = UILabel()
 	let moreImage = UIImageView()
 	let designLine = UIView()
 	
-	public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		configure()
 		setupConstraint()
 	}
 	
 	
-	public func configure() {
+	func configure() {
 		profileImage.image = UIImage(named: "profileImg")
 		moreImage.image = UIImage(named: "moreArrow")
 		profileName.font = SesacFont.display1R20.font
 		designLine.backgroundColor = .sesacGray2
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		[profileImage, profileName, moreImage, designLine].forEach {
 			contentView.addSubview($0)
 		}

@@ -8,14 +8,14 @@
 import Foundation
 import FirebaseAuth
 
-public enum validPattern: String{
+enum validPattern: String{
 	case PhoneNumber = "(01[0-1])-([0-9]{3,4})-([0-9]{4})"
 	case AuthNumber = "^([0-9]{6})$"
 	case NickName = "^[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9_]{1,10}$"
 	case Email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 }
 
-public class LoginViewModel {
+final class LoginViewModel {
 	
 	static let shared = LoginViewModel()
 	
@@ -29,12 +29,12 @@ public class LoginViewModel {
 	let email = Observable("")
 	let gender = Observable(-1)
 	
-	public func valid(pattern: String, input: Any?) -> Bool {
+	func valid(pattern: String, input: Any?) -> Bool {
 		let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
 		return pred.evaluate(with: input)
 	}
 	
-	public func validPhoneNum(num: String) -> Bool {
+	func validPhoneNum(num: String) -> Bool {
 		let pred = valid(pattern: validPattern.PhoneNumber.rawValue, input: num)
 		if validThirdNum(num: num) {
 			if num.count == 12 || num.count > 13 {
@@ -51,12 +51,12 @@ public class LoginViewModel {
 		}
 	}
 	
-	public func cleanNum(num: String) -> String {
+	func cleanNum(num: String) -> String {
 		let phoneNum = num.replacingOccurrences(of: "-", with: "")
 		return phoneNum
 	}
 	
-	public func validThirdNum(num: String) -> Bool {
+	func validThirdNum(num: String) -> Bool {
 		var result: String?
 		if num.count > 3 {
 			let stsrt =	num.index(num.startIndex, offsetBy: 2)

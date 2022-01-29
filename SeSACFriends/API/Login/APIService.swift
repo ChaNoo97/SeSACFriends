@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public class LoginApiService {
+class LoginApiService {
 	
 	static func signUp(model: signUpModel, completion: @escaping (Int?, Error?) -> Void) {
 		

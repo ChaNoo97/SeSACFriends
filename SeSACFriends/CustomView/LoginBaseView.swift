@@ -9,14 +9,14 @@ import UIKit
 import SnapKit
 
 
-public enum LoginButtonText: String {
+enum LoginButtonText: String {
 	case receive = "인증 문자 받기"
 	case start = "인증하고 시작하기"
 	case next = "다음"
 	case again = "재전송"
 }
 
-public class LoginBaseView: UIView {
+class LoginBaseView: UIView {
 	var textType: LoginButtonText
 	var mainButton = MainButton(frame: .zero, type: .disable, text: "")
 	
@@ -31,7 +31,7 @@ public class LoginBaseView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 //		print("LoginBaseView", #function)
 		addSubview(mainButton)
 		mainButton.snp.makeConstraints {
@@ -44,7 +44,7 @@ public class LoginBaseView: UIView {
 }
 
 extension LoginBaseView {
-	public func setupLabel(label: UILabel, font: SesacFont, text: String) {
+	func setupLabel(label: UILabel, font: SesacFont, text: String) {
 		label.numberOfLines = 0
 		label.textAlignment = .center
 		label.font = font.font

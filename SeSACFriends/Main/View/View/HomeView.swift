@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-public class HomeView: UIView, ViewProtocols {
-	public func configure() {
+final class HomeView: UIView, ViewProtocols {
+	func configure() {
 		
 	}
 	
-	public func setupConstraint() {
+	func setupConstraint() {
 		
 	}
 	

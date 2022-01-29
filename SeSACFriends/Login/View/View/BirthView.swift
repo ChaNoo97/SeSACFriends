@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class BirthView: LoginBaseView, ViewProtocols {
+final class BirthView: LoginBaseView, ViewProtocols {
 	
 	let titleLabel = UILabel()
 	let stackView: UIStackView = {
@@ -32,7 +32,7 @@ public class BirthView: LoginBaseView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		yearView.label.text = "년"
 		yearView.textField.textField.placeholder = "1990"
 		monthView.label.text = "월"
@@ -42,7 +42,7 @@ public class BirthView: LoginBaseView, ViewProtocols {
 		setupLabel(label: titleLabel, font: .display1R20, text: "생년월일을 알려주세요")
 	}
 	
-	public override func setupConstraint() {
+	override func setupConstraint() {
 		super.setupConstraint()
 		[stackView, titleLabel].forEach {
 			addSubview($0)

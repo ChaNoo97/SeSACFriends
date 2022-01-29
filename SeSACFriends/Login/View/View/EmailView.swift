@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-public class emailView: LoginBaseView, ViewProtocols {
+final class emailView: LoginBaseView, ViewProtocols {
 	
 	let titleLabel = UILabel()
 	let subTitleLabel = UILabel()
@@ -24,14 +24,14 @@ public class emailView: LoginBaseView, ViewProtocols {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	public func configure() {
+	func configure() {
 		setupLabel(label: titleLabel, font: .display1R20, text: "이메일을 입력해 주세요")
 		setupLabel(label: subTitleLabel, font: .title2R16, text: "휴대폰 번호 변경 시 인증을 위해 사용해요")
 		subTitleLabel.textColor = .sesacGray7
 		emailTextField.textField.placeholder = "SeSAC@email.com"
 	}
 	
-	public override func setupConstraint() {
+	override func setupConstraint() {
 		super.setupConstraint()
 		
 		[titleLabel, subTitleLabel, emailTextField].forEach {
