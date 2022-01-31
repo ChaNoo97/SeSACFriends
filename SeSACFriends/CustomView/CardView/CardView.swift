@@ -13,9 +13,8 @@ class CardView: UIView, ViewProtocols {
 	
 	let backgroundImageView = UIImageView()
 	let faceImageView = UIImageView()
-	let infoView = UIView()
-	let titleLabel = UILabel()
-	let moreButton = UIButton()
+	let infoTableView = UITableView()
+	
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -29,23 +28,13 @@ class CardView: UIView, ViewProtocols {
 		backgroundImageView.layer.cornerRadius = 8
 		backgroundImageView.clipsToBounds = true
 		faceImageView.image = UIImage(named: "face1")
-		infoView.backgroundColor = .sesacWhite
-		infoView.layer.cornerRadius = 8
-		//test
-		titleLabel.text = "고래밥"
-		titleLabel.font = SesacFont.title1M16.font
-		moreButton.setImage(UIImage(named: "downArrow"), for: .normal)
-		moreButton.tintColor = .black
+		infoTableView.backgroundColor = .red
 	}
 	
 	func setupConstraint() {
 		
-		[backgroundImageView, faceImageView, infoView].forEach {
+		[backgroundImageView, faceImageView, infoTableView].forEach {
 			addSubview($0)
-		}
-		
-		[titleLabel, moreButton].forEach {
-			infoView.addSubview($0)
 		}
 		
 		backgroundImageView.snp.makeConstraints {
@@ -61,29 +50,16 @@ class CardView: UIView, ViewProtocols {
 			$0.top.equalTo(backgroundImageView.snp.top).inset(19)
 		}
 		
-		infoView.snp.makeConstraints {
+		infoTableView.snp.makeConstraints {
+			$0.leading.trailing.equalTo(backgroundImageView)
 			$0.top.equalTo(backgroundImageView.snp.bottom)
-			$0.leading.trailing.equalTo(self)
-			$0.height.equalTo(58)
-		}
-		
-		titleLabel.snp.makeConstraints {
-			$0.leading.top.equalTo(16)
-			$0.height.equalTo(26)
-		}
-		
-		moreButton.snp.makeConstraints {
-			$0.top.equalTo(infoView.snp.top).inset(21)
-			$0.trailing.equalTo(infoView.snp.trailing).inset(16)
-			$0.size.equalTo(16)
+			$0.height.equalTo(310)
 		}
 		
 	}
-	
+		
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
-	
-	
 	
 }

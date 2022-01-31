@@ -15,7 +15,7 @@ enum SesacFont {
 	case title3M14
 	case title4R14
 	case title5M12
-	case title5R12
+	case title6R12
 	case body1M16
 	case body2R16
 	case body3R14
@@ -38,7 +38,7 @@ extension SesacFont {
 			return .makeSesacFont(name: "R", size: 14)
 		case .title5M12:
 			return .makeSesacFont(name: "M", size: 12)
-		case .title5R12:
+		case .title6R12:
 			return .makeSesacFont(name: "R", size: 12)
 		case .body1M16:
 			return .makeSesacFont(name: "M", size: 16)
