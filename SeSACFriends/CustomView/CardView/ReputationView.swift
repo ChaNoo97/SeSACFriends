@@ -45,6 +45,20 @@ class ReputationView: UIView, ViewProtocols {
 		}
 		title.text = "새싹 타이틀"
 		title.font = SesacFont.title6R12.font
+		reputationLabel1.text = "좋은매너"
+		reputationLabel2.text = "정확한 시간 약속"
+		reputationLabel3.text = "빠른 응답"
+		reputationLabel4.text = "친절한 성격"
+		reputationLabel5.text = "능숙한 취미 실력"
+		reputationLabel6.text = "유익한 시간"
+		[reputationLabel1,reputationLabel2,reputationLabel3,reputationLabel4,reputationLabel5,reputationLabel6].forEach{
+			$0.font = SesacFont.title4R14.font
+			$0.textColor = .black
+			$0.textAlignment = .center
+			$0.layer.cornerRadius = 8
+			$0.layer.borderColor = UIColor.sesacGray4.cgColor
+			$0.layer.borderWidth = 1
+		}
 	}
 	
 	func setupConstraint() {
@@ -70,6 +84,12 @@ class ReputationView: UIView, ViewProtocols {
 		title.snp.makeConstraints {
 			$0.top.leading.equalTo(self)
 			$0.height.equalTo(18)
+		}
+		
+		verticalStackView.snp.makeConstraints {
+			$0.top.equalTo(title.snp.bottom).offset(16)
+			$0.height.equalTo(112)
+			$0.leading.trailing.equalTo(self)
 		}
 		
 	}

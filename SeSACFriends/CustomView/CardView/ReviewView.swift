@@ -39,12 +39,14 @@ class ReviewView: UIView, ViewProtocols {
 		
 		moreButton.snp.makeConstraints {
 			$0.centerY.equalTo(title)
+			$0.trailing.equalTo(5)
 			$0.size.equalTo(16)
 		}
 		
 		reviewLabel.snp.makeConstraints {
-			$0.top.equalTo(title).offset(16)
+			$0.top.equalTo(title.snp.bottom).offset(16)
 			$0.width.equalTo(self)
+			$0.bottom.equalToSuperview()
 		}
 		
 	}

@@ -23,6 +23,7 @@ final class InitialViewcontroller: BaseViewController {
 		setupProgressHud()
 		FIRAuth.renewIdToken()
 		if let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) {
+			//비행기모드 대응 해주세용
 			LoginApiService.logIn { data, code, error in
 				switch code {
 				case 200:

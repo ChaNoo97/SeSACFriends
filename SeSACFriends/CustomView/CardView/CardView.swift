@@ -28,7 +28,7 @@ class CardView: UIView, ViewProtocols {
 		backgroundImageView.layer.cornerRadius = 8
 		backgroundImageView.clipsToBounds = true
 		faceImageView.image = UIImage(named: "face1")
-		infoTableView.backgroundColor = .red
+		infoTableView.layer.cornerRadius = 8
 	}
 	
 	func setupConstraint() {
