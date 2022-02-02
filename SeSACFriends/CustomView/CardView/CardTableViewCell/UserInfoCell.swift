@@ -32,8 +32,7 @@ class UserInfoCell: UITableViewCell {
 		reviewView.snp.makeConstraints {
 			$0.top.equalTo(reputationView.snp.bottom).offset(24)
 			$0.leading.trailing.equalTo(self).inset(16)
-			$0.height.greaterThanOrEqualTo(58)
-//			$0.bottom.equalToSuperview()
+			$0.bottom.equalTo(self.snp.bottom)
 		}
 	}
 	

@@ -82,14 +82,15 @@ class ReputationView: UIView, ViewProtocols {
 		}
 		
 		title.snp.makeConstraints {
-			$0.top.leading.equalTo(self)
+			$0.top.equalTo(self).offset(8)
+			$0.leading.equalTo(self).inset(16)
 			$0.height.equalTo(18)
 		}
 		
 		verticalStackView.snp.makeConstraints {
 			$0.top.equalTo(title.snp.bottom).offset(16)
 			$0.height.equalTo(112)
-			$0.leading.trailing.equalTo(self)
+			$0.leading.trailing.equalTo(self).inset(16)
 		}
 		
 	}

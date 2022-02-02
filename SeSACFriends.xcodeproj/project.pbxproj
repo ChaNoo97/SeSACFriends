@@ -31,6 +31,8 @@
 		FE22DEAF27A78CDC00368B13 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEAE27A78CDC00368B13 /* CardViewController.swift */; };
 		FE22DEB127A79F6300368B13 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB027A79F6300368B13 /* UserInfoCell.swift */; };
 		FE22DEB527A973B400368B13 /* UserInfoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB427A973B400368B13 /* UserInfoTitleCell.swift */; };
+		FE22DEB827AA295200368B13 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB727AA295100368B13 /* testViewController.swift */; };
+		FE22DEBA27AA2C4900368B13 /* UserInfoTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB927AA2C4900368B13 /* UserInfoTitle.swift */; };
 		FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0A2796832600E92519 /* AppDelegate.swift */; };
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
 		FE26BD142796832800E92519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD132796832800E92519 /* Assets.xcassets */; };
@@ -101,6 +103,8 @@
 		FE22DEAE27A78CDC00368B13 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		FE22DEB027A79F6300368B13 /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		FE22DEB427A973B400368B13 /* UserInfoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitleCell.swift; sourceTree = "<group>"; };
+		FE22DEB727AA295100368B13 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		FE22DEB927AA2C4900368B13 /* UserInfoTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitle.swift; sourceTree = "<group>"; };
 		FE26BD072796832600E92519 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE26BD0A2796832600E92519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE26BD0C2796832600E92519 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */,
 				FE22DE8F27A27AA400368B13 /* MyViewController.swift */,
 				FE22DEAE27A78CDC00368B13 /* CardViewController.swift */,
+				FE22DEB727AA295100368B13 /* testViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			children = (
 				FE22DEB627A973BA00368B13 /* CardTableViewCell */,
 				FE22DEA327A3BBA100368B13 /* CardView.swift */,
+				FE22DEB927AA2C4900368B13 /* UserInfoTitle.swift */,
 				FE22DEA827A5B08800368B13 /* ReputationView.swift */,
 				FE22DEAA27A5B13600368B13 /* HobbyCollectionView.swift */,
 				FE22DEAC27A5B1C100368B13 /* ReviewView.swift */,
@@ -542,6 +548,7 @@
 				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,
 				FE7BDCF4279F0562001C75A9 /* APIService.swift in Sources */,
+				FE22DEB827AA295200368B13 /* testViewController.swift in Sources */,
 				FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */,
 				FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */,
 				FE22DEAB27A5B13600368B13 /* HobbyCollectionView.swift in Sources */,
@@ -551,6 +558,7 @@
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
 				FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */,
 				FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */,
+				FE22DEBA27AA2C4900368B13 /* UserInfoTitle.swift in Sources */,
 				FE22DEB127A79F6300368B13 /* UserInfoCell.swift in Sources */,
 				FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */,
 			);

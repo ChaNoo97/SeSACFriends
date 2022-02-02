@@ -25,6 +25,8 @@ class ReviewView: UIView, ViewProtocols {
 		title.font = SesacFont.title6R12.font
 		moreButton.setImage(UIImage(named: "moreArrow"), for: .normal)
 		reviewLabel.numberOfLines = 0
+		reviewLabel.font = SesacFont.body3R14.font
+		reviewLabel.text = "새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰"
 	}
 	
 	func setupConstraint() {
@@ -33,20 +35,21 @@ class ReviewView: UIView, ViewProtocols {
 		}
 		
 		title.snp.makeConstraints {
-			$0.top.leading.equalTo(self)
+			$0.top.equalTo(self).offset(24)
+			$0.leading.equalTo(self).inset(16)
 			$0.height.equalTo(18)
 		}
 		
 		moreButton.snp.makeConstraints {
 			$0.centerY.equalTo(title)
-			$0.trailing.equalTo(5)
+			$0.trailing.equalTo(self).inset(21)
 			$0.size.equalTo(16)
 		}
 		
 		reviewLabel.snp.makeConstraints {
 			$0.top.equalTo(title.snp.bottom).offset(16)
-			$0.width.equalTo(self)
-			$0.bottom.equalToSuperview()
+			$0.leading.trailing.equalTo(self).inset(16)
+			$0.bottom.equalTo(self).inset(16)
 		}
 		
 	}
