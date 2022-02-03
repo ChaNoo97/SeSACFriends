@@ -28,10 +28,7 @@
 		FE22DEA927A5B08800368B13 /* ReputationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEA827A5B08800368B13 /* ReputationView.swift */; };
 		FE22DEAB27A5B13600368B13 /* HobbyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEAA27A5B13600368B13 /* HobbyCollectionView.swift */; };
 		FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEAC27A5B1C100368B13 /* ReviewView.swift */; };
-		FE22DEAF27A78CDC00368B13 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEAE27A78CDC00368B13 /* CardViewController.swift */; };
-		FE22DEB127A79F6300368B13 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB027A79F6300368B13 /* UserInfoCell.swift */; };
-		FE22DEB527A973B400368B13 /* UserInfoTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB427A973B400368B13 /* UserInfoTitleCell.swift */; };
-		FE22DEB827AA295200368B13 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB727AA295100368B13 /* testViewController.swift */; };
+		FE22DEB827AA295200368B13 /* MyInfoManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB727AA295100368B13 /* MyInfoManageViewController.swift */; };
 		FE22DEBA27AA2C4900368B13 /* UserInfoTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DEB927AA2C4900368B13 /* UserInfoTitle.swift */; };
 		FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0A2796832600E92519 /* AppDelegate.swift */; };
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
@@ -55,6 +52,8 @@
 		FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596E279AFE8200E2CFBD /* Alamofire */; };
 		FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515976279B0DE800E2CFBD /* LoginViewModel.swift */; };
 		FE515979279B1DA400E2CFBD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515978279B1DA400E2CFBD /* Observable.swift */; };
+		FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */; };
+		FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */; };
 		FE7BDCBD279B3C6C001C75A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */; };
 		FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */; };
 		FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */; };
@@ -100,10 +99,7 @@
 		FE22DEA827A5B08800368B13 /* ReputationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReputationView.swift; sourceTree = "<group>"; };
 		FE22DEAA27A5B13600368B13 /* HobbyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCollectionView.swift; sourceTree = "<group>"; };
 		FE22DEAC27A5B1C100368B13 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
-		FE22DEAE27A78CDC00368B13 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		FE22DEB027A79F6300368B13 /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
-		FE22DEB427A973B400368B13 /* UserInfoTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitleCell.swift; sourceTree = "<group>"; };
-		FE22DEB727AA295100368B13 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		FE22DEB727AA295100368B13 /* MyInfoManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewController.swift; sourceTree = "<group>"; };
 		FE22DEB927AA2C4900368B13 /* UserInfoTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTitle.swift; sourceTree = "<group>"; };
 		FE26BD072796832600E92519 /* SeSACFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE26BD0A2796832600E92519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +122,8 @@
 		FE515968279AAED600E2CFBD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		FE515976279B0DE800E2CFBD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FE515978279B1DA400E2CFBD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageView.swift; sourceTree = "<group>"; };
 		FE7BDCC2279B3D47001C75A9 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
 		FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
@@ -166,70 +164,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FE1E7A0127A11EE30043F0F7 /* Main */ = {
+		FE1E7A0127A11EE30043F0F7 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				FE22DE8927A27A3900368B13 /* TabBarController.swift */,
-				FE1E7A0227A11EF50043F0F7 /* Model */,
-				FE1E7A0327A11EFC0043F0F7 /* ViewModel */,
-				FE1E7A0427A11F070043F0F7 /* View */,
+				FEC012C127AB9B9F004E0577 /* Home */,
+				FEC012C227AB9BB4004E0577 /* Shop */,
+				FEC012C327AB9CD1004E0577 /* Friend */,
+				FEC012C427AB9CDE004E0577 /* My */,
 			);
-			path = Main;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
-		FE1E7A0227A11EF50043F0F7 /* Model */ = {
+		FE22DE9C27A2F3AA00368B13 /* MyInfoManage */ = {
 			isa = PBXGroup;
 			children = (
+				FEC012D627ABA8C9004E0577 /* Model */,
+				FEC012D527ABA8C8004E0577 /* ViewModel */,
+				FEC012D427ABA8C1004E0577 /* View */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FE1E7A0327A11EFC0043F0F7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		FE1E7A0427A11F070043F0F7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FE22DE9327A27B2E00368B13 /* View */,
-				FE22DE8B27A27A6200368B13 /* HomeViewController.swift */,
-				FE22DE9127A27AAF00368B13 /* ShopViewController.swift */,
-				FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */,
-				FE22DE8F27A27AA400368B13 /* MyViewController.swift */,
-				FE22DEAE27A78CDC00368B13 /* CardViewController.swift */,
-				FE22DEB727AA295100368B13 /* testViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FE22DE9327A27B2E00368B13 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FE22DE9427A27B3A00368B13 /* HomeView.swift */,
-				FE22DE9827A27B4B00368B13 /* ShopView.swift */,
-				FE22DE9627A27B4400368B13 /* FriendView.swift */,
-				FE22DE9A27A27B4F00368B13 /* MyView.swift */,
-				FE22DE9C27A2F3AA00368B13 /* MyTableViewCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FE22DE9C27A2F3AA00368B13 /* MyTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */,
-				FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */,
-			);
-			path = MyTableViewCell;
+			path = MyInfoManage;
 			sourceTree = "<group>";
 		};
 		FE22DEA727A5B07500368B13 /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				FE22DEB627A973BA00368B13 /* CardTableViewCell */,
 				FE22DEA327A3BBA100368B13 /* CardView.swift */,
 				FE22DEB927AA2C4900368B13 /* UserInfoTitle.swift */,
 				FE22DEA827A5B08800368B13 /* ReputationView.swift */,
@@ -237,15 +196,6 @@
 				FE22DEAC27A5B1C100368B13 /* ReviewView.swift */,
 			);
 			path = CardView;
-			sourceTree = "<group>";
-		};
-		FE22DEB627A973BA00368B13 /* CardTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				FE22DEB027A79F6300368B13 /* UserInfoCell.swift */,
-				FE22DEB427A973B400368B13 /* UserInfoTitleCell.swift */,
-			);
-			path = CardTableViewCell;
 			sourceTree = "<group>";
 		};
 		FE26BCFE2796832600E92519 = {
@@ -278,7 +228,7 @@
 				FE7BDCF5279F05E6001C75A9 /* UserDefaultKey */,
 				FE7BDCED279F050D001C75A9 /* API */,
 				FE51595B279A8DF500E2CFBD /* Login */,
-				FE1E7A0127A11EE30043F0F7 /* Main */,
+				FE1E7A0127A11EE30043F0F7 /* TabBar */,
 				FE51595227994A6500E2CFBD /* CustomView */,
 				FE515943279694FE00E2CFBD /* DesignExtension */,
 				FE515971279B086300E2CFBD /* Protocols */,
@@ -307,9 +257,9 @@
 				FE51595027993EFD00E2CFBD /* MainButton.swift */,
 				FE5159532799B4D500E2CFBD /* MainTextField.swift */,
 				FE515957279A894C00E2CFBD /* LoginBaseView.swift */,
-				FE51595E279A984300E2CFBD /* BaseViewController.swift */,
 				FE7BDCCF279C5E3E001C75A9 /* BirthSubView.swift */,
 				FE7BDCE3279E69B0001C75A9 /* GenderButton.swift */,
+				FE51595E279A984300E2CFBD /* BaseViewController.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -414,6 +364,183 @@
 			path = UserDefaultKey;
 			sourceTree = "<group>";
 		};
+		FEC012C127AB9B9F004E0577 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FEC012CB27ABA328004E0577 /* Model */,
+				FEC012CA27ABA327004E0577 /* ViewModel */,
+				FEC012C927ABA325004E0577 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FEC012C227AB9BB4004E0577 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				FEC012C827ABA311004E0577 /* Model */,
+				FEC012C727ABA30F004E0577 /* ViewModel */,
+				FEC012C527AB9ECB004E0577 /* View */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		FEC012C327AB9CD1004E0577 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				FEC012D127ABA568004E0577 /* Model */,
+				FEC012D027ABA566004E0577 /* ViewModel */,
+				FEC012CF27ABA566004E0577 /* View */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		FEC012C427AB9CDE004E0577 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				FEC012D227ABA89F004E0577 /* MyTableView */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		FEC012C527AB9ECB004E0577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9827A27B4B00368B13 /* ShopView.swift */,
+				FE22DE9127A27AAF00368B13 /* ShopViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC012C727ABA30F004E0577 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEC012C827ABA311004E0577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEC012C927ABA325004E0577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9427A27B3A00368B13 /* HomeView.swift */,
+				FE22DE8B27A27A6200368B13 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC012CA27ABA327004E0577 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEC012CB27ABA328004E0577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEC012CC27ABA35A004E0577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEC012D327ABA8B3004E0577 /* View */,
+				FE22DE8F27A27AA400368B13 /* MyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC012CD27ABA35C004E0577 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEC012CE27ABA35D004E0577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FEC012CF27ABA566004E0577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9627A27B4400368B13 /* FriendView.swift */,
+				FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC012D027ABA566004E0577 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			path = "New Group/ViewModel";
+			sourceTree = "<group>";
+		};
+		FEC012D127ABA568004E0577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "New Group/New Group/Model";
+			sourceTree = "<group>";
+		};
+		FEC012D227ABA89F004E0577 /* MyTableView */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9C27A2F3AA00368B13 /* MyInfoManage */,
+				FEC012CE27ABA35D004E0577 /* Model */,
+				FEC012CD27ABA35C004E0577 /* ViewModel */,
+				FEC012CC27ABA35A004E0577 /* View */,
+			);
+			path = MyTableView;
+			sourceTree = "<group>";
+		};
+		FEC012D327ABA8B3004E0577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE22DE9A27A27B4F00368B13 /* MyView.swift */,
+				FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */,
+				FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC012D427ABA8C1004E0577 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */,
+				FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */,
+				FE22DEB727AA295100368B13 /* MyInfoManageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEC012D527ABA8C8004E0577 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEC012D627ABA8C9004E0577 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,8 +641,10 @@
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
+				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
+				FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
 				FE22DEA427A3BBA100368B13 /* CardView.swift in Sources */,
@@ -526,7 +655,6 @@
 				FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */,
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
-				FE22DEB527A973B400368B13 /* UserInfoTitleCell.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
@@ -536,7 +664,6 @@
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
-				FE22DEAF27A78CDC00368B13 /* CardViewController.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
@@ -548,7 +675,7 @@
 				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,
 				FE7BDCF4279F0562001C75A9 /* APIService.swift in Sources */,
-				FE22DEB827AA295200368B13 /* testViewController.swift in Sources */,
+				FE22DEB827AA295200368B13 /* MyInfoManageViewController.swift in Sources */,
 				FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */,
 				FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */,
 				FE22DEAB27A5B13600368B13 /* HobbyCollectionView.swift in Sources */,
@@ -559,7 +686,6 @@
 				FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */,
 				FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */,
 				FE22DEBA27AA2C4900368B13 /* UserInfoTitle.swift in Sources */,
-				FE22DEB127A79F6300368B13 /* UserInfoCell.swift in Sources */,
 				FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

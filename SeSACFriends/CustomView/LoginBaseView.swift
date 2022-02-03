@@ -43,7 +43,7 @@ class LoginBaseView: UIView {
 	
 }
 
-extension LoginBaseView {
+extension UIView {
 	func setupLabel(label: UILabel, font: SesacFont, text: String) {
 		label.numberOfLines = 0
 		label.textAlignment = .center
