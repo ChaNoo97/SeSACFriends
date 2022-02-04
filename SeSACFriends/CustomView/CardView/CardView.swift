@@ -52,7 +52,7 @@ class CardView: UIView {
 		}
 		
 		backgroundImageView.snp.makeConstraints {
-			$0.top.equalTo(self)
+			$0.top.equalToSuperview()
 			$0.leading.trailing.equalTo(self).inset(16)
 			$0.height.equalTo(194)
 		}
@@ -66,18 +66,16 @@ class CardView: UIView {
 		stackView.snp.makeConstraints {
 			$0.top.equalTo(backgroundImageView.snp.bottom)
 			$0.leading.trailing.equalTo(self).inset(16)
+			$0.bottom.equalToSuperview()
 		}
 		
 		userTitle.snp.makeConstraints {
+			$0.top.equalTo(stackView.snp.top)
 			$0.height.equalTo(58)
 		}
 		
 		reputationView.snp.makeConstraints {
 			$0.height.equalTo(154)
-		}
-		
-		reviewView.snp.makeConstraints {
-			$0.bottom.equalTo(stackView.snp.bottom).offset(16)
 		}
 		
 	}

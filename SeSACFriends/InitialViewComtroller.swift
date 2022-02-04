@@ -21,25 +21,29 @@ final class InitialViewcontroller: BaseViewController {
 		super.viewDidLoad()
 		setupConstraint()
 		setupProgressHud()
-		FIRAuth.renewIdToken()
+		
 		if let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) {
-			//비행기모드 대응 해주세용
-			LoginApiService.logIn { data, code, error in
-				switch code {
-				case 200:
-					self.hud.dismiss(animated: true)
-					self.changeRootView(viewController: withdrawViewController())
-				case 201:
-					self.hud.dismiss(animated: true)
-					self.changeRootView(viewController: NickNameViewController())
-				default:
-					self.hud.dismiss(animated: true)
-					return
+			DispatchQueue.main.async {
+				FIRAuth.renewIdToken()
+				//비행기모드 대응 해주세용
+				UserApiService.logIn { data, code, error in
+					switch code {
+					case 200:
+						self.hud.dismiss(animated: true)
+						self.changeRootView(viewController: TabBarController())
+					case 406:
+						self.hud.dismiss(animated: true)
+						self.changeRootNavView(viewController: NickNameViewController())
+					default:
+						print("**********************************************이니셜뷰 에러!!!!!!!!!!!! 여기서 디폴트 빠지는데 이유가?*******************************", code)
+						self.hud.dismiss(animated: true)
+						return
+					}
 				}
 			}
 		} else {
 			hud.dismiss(animated: true)
-			changeRootView(viewController: LoginViewController())
+			changeRootNavView(viewController: LoginViewController())
 		}
 		
 	}

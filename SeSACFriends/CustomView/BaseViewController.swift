@@ -45,9 +45,15 @@ extension UIViewController {
 		view.endEditing(true)
 	}
 	
-	func changeRootView(viewController: UIViewController) {
+	func changeRootNavView(viewController: UIViewController) {
 		guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
 		windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: viewController)
+		windowScene.windows.first?.makeKeyAndVisible()
+	}
+	
+	func changeRootView(viewController: UIViewController) {
+		guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+		windowScene.windows.first?.rootViewController = viewController
 		windowScene.windows.first?.makeKeyAndVisible()
 	}
 }

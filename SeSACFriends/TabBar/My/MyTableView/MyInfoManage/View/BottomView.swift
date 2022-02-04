@@ -7,8 +7,9 @@
 
 import UIKit
 import SnapKit
+import MultiSlider
 
-class BottomView: BaseView {
+class BottomView: UIView {
 	
 	let myGenderView = UIView()
 	let myGenderViewTitle = UILabel()
@@ -25,18 +26,32 @@ class BottomView: BaseView {
 	let otherAgeSearchRangeView = UIView()
 	let otherAgeSearchRangeViewTitle = UILabel()
 	let otherAgeNumberLabel = UILabel()
-	let otherAgeNumberSlider = UIView()
+	let otherAgeSliderView = UIView()
+	let slider = MultiSlider()
 	let withdrawView = UIView()
 	let withdrawViewTitle = UILabel()
 	let stackView = UIStackView()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		setupConstraint()
 		stackViewSetUp()
 		subViewConstraint()
 		subViewConfigure()
-//		configure()
-//		setupConstraint()
+		sliderSetting()
+	}
+	
+	func sliderSetting() {
+		slider.orientation = .horizontal
+		slider.thumbImage = UIImage(named: "thumb")
+		slider.outerTrackColor = .sesacGray2
+		slider.trackWidth = 4
+		slider.tintColor = .sesacGreen
+		slider.snapStepSize = 1
+		slider.distanceBetweenThumbs = 1
+		slider.hasRoundTrackEnds = true
+		slider.minimumValue = 18
+		slider.maximumValue = 65
 	}
 	
 	func subViewConfigure() {
@@ -47,10 +62,9 @@ class BottomView: BaseView {
 		hobbyTextField.textField.placeholder = "취미를 입력해 주세요"
 		myPhoneNumberSearchActiveViewTitle.text = "내 번호 검색 허용"
 		otherAgeSearchRangeViewTitle.text = "상대방 연령대"
+		otherAgeNumberLabel.font = SesacFont.title3M14.font
+		otherAgeNumberLabel.textColor = .sesacGreen
 		withdrawViewTitle.text = "회원 탈퇴"
-		
-		//test
-		otherAgeNumberSlider.backgroundColor = .yellow
 	}
 	
 	func subViewConstraint() {
@@ -114,26 +128,30 @@ class BottomView: BaseView {
 			$0.top.bottom.equalTo(myPhoneNumberSearchActiveView).inset(10)
 		}
 		
-		[otherAgeSearchRangeViewTitle, otherAgeNumberLabel, otherAgeNumberSlider].forEach {
+		[otherAgeSearchRangeViewTitle, otherAgeNumberLabel, otherAgeSliderView].forEach {
 			otherAgeSearchRangeView.addSubview($0)
 		}
 		
 		otherAgeSearchRangeViewTitle.snp.makeConstraints {
 			$0.leading.equalTo(otherAgeSearchRangeView)
 			$0.top.equalTo(otherAgeSearchRangeView).inset(13)
-			$0.bottom.equalTo(otherAgeNumberSlider).offset(13)
 		}
 		
 		otherAgeNumberLabel.snp.makeConstraints {
 			$0.trailing.equalTo(otherAgeSearchRangeView)
 			$0.top.equalTo(otherAgeSearchRangeView).inset(13)
-			$0.bottom.equalTo(otherAgeNumberSlider).offset(13)
 		}
 		
-		otherAgeNumberSlider.snp.makeConstraints {
+		otherAgeSliderView.snp.makeConstraints {
+			$0.top.equalTo(otherAgeSearchRangeViewTitle.snp.bottom).offset(13)
 			$0.leading.trailing.equalTo(otherAgeSearchRangeView)
-			$0.bottom.equalTo(otherAgeSearchRangeView.snp.bottom).inset(9)
-			$0.height.equalTo(24)
+			$0.bottom.equalTo(otherAgeSearchRangeView.snp.bottom).inset(8)
+			$0.height.equalTo(32)
+		}
+		
+		otherAgeSliderView.addSubview(slider)
+		slider.snp.makeConstraints {
+			$0.edges.equalToSuperview()
 		}
 		
 		withdrawView.addSubview(withdrawViewTitle)
@@ -146,8 +164,7 @@ class BottomView: BaseView {
 	}
 	
 	
-	override func setupConstraint() {
-		super.setupConstraint()
+	func setupConstraint() {
 		addSubview(stackView)
 		[myGenderView, myHobbyView, myPhoneNumberSearchActiveView, otherAgeSearchRangeView ,withdrawView].forEach {
 			stackView.addArrangedSubview($0)
@@ -182,7 +199,8 @@ class BottomView: BaseView {
 	
 	func stackViewSetUp() {
 		stackView.axis = .vertical
-		stackView.distribution = .fill
+	 	stackView.distribution = .fill
+		stackView.spacing = 16
 	}
 	
 	

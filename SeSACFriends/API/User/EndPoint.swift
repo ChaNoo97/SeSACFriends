@@ -15,6 +15,7 @@ struct LoginRequest {
 enum UserEndPoint {
 	case user
 	case withdraw
+	case mypage
 }
 
 extension UserEndPoint {
@@ -24,6 +25,8 @@ extension UserEndPoint {
 			return .makeEndPoint("/user")
 		case .withdraw:
 			return .makeEndPoint("/user/withdraw")
+		case .mypage:
+			return .makeEndPoint("/user/update/mypage")
 		}
 	}
 }

@@ -70,7 +70,7 @@ final class ConfirmViewController: BaseViewController {
 			FIRAuth.checkAuthNum(authNum: viewModel.authNum.value) { idToken, success in
 				if success {
 					UserDefaults.standard.set(idToken, forKey: UserDefaultsKey.idToken.rawValue)
-					self.changeRootView(viewController: NickNameViewController())
+					self.changeRootNavView(viewController: NickNameViewController())
 				} else {
 					self.view.makeToast("에러가 발생했습니다.\n잠시후 다시 시도해주세요.")
 					self.mainView.mainButton.isEnabled = true

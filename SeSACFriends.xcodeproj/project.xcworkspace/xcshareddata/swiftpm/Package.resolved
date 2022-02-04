@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "AvailableHapticFeedback",
+        "repositoryURL": "https://github.com/yonat/AvailableHapticFeedback",
+        "state": {
+          "branch": null,
+          "revision": "f9ae6d54af1fb06fff0ddb16246091c6de22f989",
+          "version": "1.0.2"
+        }
+      },
+      {
         "package": "BoringSSL-GRPC",
         "repositoryURL": "https://github.com/firebase/boringssl-SwiftPM.git",
         "state": {
@@ -101,6 +110,15 @@
         }
       },
       {
+        "package": "MultiSlider",
+        "repositoryURL": "https://github.com/yonat/MultiSlider",
+        "state": {
+          "branch": null,
+          "revision": "6606775df4274b4e545c169320344ffb6fdd3e37",
+          "version": "1.11.2"
+        }
+      },
+      {
         "package": "nanopb",
         "repositoryURL": "https://github.com/firebase/nanopb.git",
         "state": {
@@ -125,6 +143,15 @@
           "branch": null,
           "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
           "version": "5.0.1"
+        }
+      },
+      {
+        "package": "SweeterSwift",
+        "repositoryURL": "https://github.com/yonat/SweeterSwift",
+        "state": {
+          "branch": null,
+          "revision": "23997b3f33cc213a9fb15064c609bf29787c0653",
+          "version": "1.2.0"
         }
       },
       {

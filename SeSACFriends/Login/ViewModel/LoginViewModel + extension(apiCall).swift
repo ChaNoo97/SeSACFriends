@@ -21,7 +21,7 @@ extension LoginViewModel {
 			email: email.value,
 			gender: gender.value,
 			birth: birth)
-		LoginApiService.signUp(model: signUpModel) { statusCode, error in
+		UserApiService.signUp(model: signUpModel) { statusCode, error in
 			completion(statusCode, error)
 		}
 	}

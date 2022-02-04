@@ -8,6 +8,11 @@
 import UIKit
 import SnapKit
 
+enum reputationType {
+	case empty
+	case fill
+}
+
 class ReputationView: UIView, ViewProtocols {
 	
 	let title = UILabel()
@@ -20,7 +25,6 @@ class ReputationView: UIView, ViewProtocols {
 	let reputationLabel4 = UILabel()
 	let reputationLabel5 = UILabel()
 	let reputationLabel6 = UILabel()
-	
 	let verticalStackView: UIStackView = {
 		let stack = UIStackView()
 		stack.axis = .vertical
@@ -34,8 +38,29 @@ class ReputationView: UIView, ViewProtocols {
 		super.init(frame: frame)
 		configure()
 		setupConstraint()
+		
 	}
 	
+	func reputationLabelSetType(type: reputationType, reputationLabel: UILabel) {
+		switch type {
+		case .empty:
+			reputationLabel.textColor = .black
+			reputationLabel.layer.borderWidth = 1
+			reputationLabel.backgroundColor = .white
+		case .fill:
+			reputationLabel.textColor = .white
+			reputationLabel.layer.borderWidth = 0
+			reputationLabel.backgroundColor = .sesacGreen
+		}
+	}
+	
+	func setUpReputationLabel(num: Int, reputationLabel: UILabel) {
+		if num > 0 {
+			reputationLabelSetType(type: .fill, reputationLabel: reputationLabel)
+		} else {
+			reputationLabelSetType(type: .empty, reputationLabel: reputationLabel)
+		}
+	}
 	
 	func configure() {
 		[horizontalStackView1, horizontalStackView2, horizontalStackView3].forEach {
@@ -54,6 +79,7 @@ class ReputationView: UIView, ViewProtocols {
 		[reputationLabel1,reputationLabel2,reputationLabel3,reputationLabel4,reputationLabel5,reputationLabel6].forEach{
 			$0.font = SesacFont.title4R14.font
 			$0.textColor = .black
+			$0.clipsToBounds = true
 			$0.textAlignment = .center
 			$0.layer.cornerRadius = 8
 			$0.layer.borderColor = UIColor.sesacGray4.cgColor

@@ -1,5 +1,5 @@
 //
-//  APIService.swift
+//  UserApiService.swift
 //  SeSACFriends
 //
 //  Created by Hoo's MacBookPro on 2022/01/25.
@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class LoginApiService {
+class UserApiService {
 	
 	static func signUp(model: signUpModel, completion: @escaping (Int?, Error?) -> Void) {
 		
@@ -52,6 +52,25 @@ class LoginApiService {
 				   method: .post,
 				  headers: header).responseString { response in
 			completion(response.response?.statusCode, nil)
+		}
+	}
+	
+	static func updateMypage(model: UpdateMypageModel, completion: @escaping (Int?, Error?) -> Void) {
+		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
+		let header = ["idtoken": idtoken] as HTTPHeaders
+		let updateParameter: Parameters = [
+			"searchable": model.searchable,
+			"ageMin": model.ageMin,
+			"ageMax": model.ageMax,
+			"gender": model.gender,
+			"hobby": model.hobby
+		]
+		
+		AF.request(UserEndPoint.mypage.url,
+				   method: .post,
+				   parameters: updateParameter,
+				   headers: header).responseString { response in
+			completion(response.response?.statusCode, response.error)
 		}
 	}
 	

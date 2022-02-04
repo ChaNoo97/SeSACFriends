@@ -24,13 +24,14 @@ class withdrawViewController: UIViewController {
 	
 	@objc func buttonclicked() {
 		print("??")
-		LoginApiService.withdraw { statusCode, error in
+		UserApiService.withdraw { statusCode, error in
 			if let error = error {
 				return
 			}
 			if let statusCode = statusCode {
 				//200 -> 온보딩, 401 파베토큰오류, 406 처리된 회원, 500 서버에러
 				print(statusCode)
+				UserDefaults.standard.removeObject(forKey: UserDefaultsKey.idToken.rawValue)
 			}
 		}
 	}

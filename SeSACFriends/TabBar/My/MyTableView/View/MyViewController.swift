@@ -77,5 +77,11 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
 		}
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		if indexPath == [0, 0] {
+			pushViewCon(vc: MyInfoManageViewController())
+		}
+	}
+	
 	
 }

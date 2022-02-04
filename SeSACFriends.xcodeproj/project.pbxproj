@@ -72,10 +72,14 @@
 		FE7BDCEA279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCE9279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift */; };
 		FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCEB279F04ED001C75A9 /* BaseURL.swift */; };
 		FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF1279F054D001C75A9 /* EndPoint.swift */; };
-		FE7BDCF4279F0562001C75A9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF3279F0562001C75A9 /* APIService.swift */; };
+		FE7BDCF4279F0562001C75A9 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF3279F0562001C75A9 /* UserApiService.swift */; };
 		FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */; };
 		FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */; };
 		FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */; };
+		FEB419FF27AC3ED700058E1C /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = FEB419FE27AC3ED700058E1C /* MultiSlider */; };
+		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
+		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
+		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,10 +144,13 @@
 		FE7BDCE9279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel + extension(apiCall).swift"; sourceTree = "<group>"; };
 		FE7BDCEB279F04ED001C75A9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		FE7BDCF1279F054D001C75A9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		FE7BDCF3279F0562001C75A9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FE7BDCF3279F0562001C75A9 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withdrawViewController.swift; sourceTree = "<group>"; };
+		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
+		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
+		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */,
+				FEB419FF27AC3ED700058E1C /* MultiSlider in Frameworks */,
 				FE1E7A0927A1B4430043F0F7 /* JGProgressHUD in Frameworks */,
 				FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */,
 				FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */,
@@ -342,18 +350,19 @@
 			isa = PBXGroup;
 			children = (
 				FE7BDCEB279F04ED001C75A9 /* BaseURL.swift */,
-				FE7BDCF0279F0530001C75A9 /* Login */,
+				FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */,
+				FE7BDCF0279F0530001C75A9 /* User */,
 			);
 			path = API;
 			sourceTree = "<group>";
 		};
-		FE7BDCF0279F0530001C75A9 /* Login */ = {
+		FE7BDCF0279F0530001C75A9 /* User */ = {
 			isa = PBXGroup;
 			children = (
 				FE7BDCF1279F054D001C75A9 /* EndPoint.swift */,
-				FE7BDCF3279F0562001C75A9 /* APIService.swift */,
+				FE7BDCF3279F0562001C75A9 /* UserApiService.swift */,
 			);
-			path = Login;
+			path = User;
 			sourceTree = "<group>";
 		};
 		FE7BDCF5279F05E6001C75A9 /* UserDefaultKey */ = {
@@ -530,6 +539,7 @@
 		FEC012D527ABA8C8004E0577 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -537,6 +547,7 @@
 		FEC012D627ABA8C9004E0577 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -565,6 +576,7 @@
 				FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */,
 				FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */,
 				FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */,
+				FEB419FE27AC3ED700058E1C /* MultiSlider */,
 			);
 			productName = SeSACFriends;
 			productReference = FE26BD072796832600E92519 /* SeSACFriends.app */;
@@ -600,6 +612,7 @@
 				FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				FEB419FD27AC3ED700058E1C /* XCRemoteSwiftPackageReference "MultiSlider" */,
 			);
 			productRefGroup = FE26BD082796832600E92519 /* Products */;
 			projectDirPath = "";
@@ -641,6 +654,7 @@
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
+				FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */,
 				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
@@ -648,6 +662,7 @@
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
 				FE22DEA427A3BBA100368B13 /* CardView.swift in Sources */,
+				FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */,
 				FE22DE8C27A27A6200368B13 /* HomeViewController.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
 				FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */,
@@ -664,6 +679,7 @@
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
+				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
@@ -674,7 +690,7 @@
 				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
 				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,
-				FE7BDCF4279F0562001C75A9 /* APIService.swift in Sources */,
+				FE7BDCF4279F0562001C75A9 /* UserApiService.swift in Sources */,
 				FE22DEB827AA295200368B13 /* MyInfoManageViewController.swift in Sources */,
 				FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */,
 				FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */,
@@ -940,6 +956,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		FEB419FD27AC3ED700058E1C /* XCRemoteSwiftPackageReference "MultiSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yonat/MultiSlider";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -977,6 +1001,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		FEB419FE27AC3ED700058E1C /* MultiSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEB419FD27AC3ED700058E1C /* XCRemoteSwiftPackageReference "MultiSlider" */;
+			productName = MultiSlider;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

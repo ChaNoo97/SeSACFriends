@@ -26,7 +26,8 @@ class ReviewView: UIView, ViewProtocols {
 		moreButton.setImage(UIImage(named: "moreArrow"), for: .normal)
 		reviewLabel.numberOfLines = 0
 		reviewLabel.font = SesacFont.body3R14.font
-		reviewLabel.text = "새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰새싹 리뷰"
+		reviewLabel.text = "첫 리뷰를 기다리는 중이에요!"
+		reviewLabel.textColor = .sesacGray6
 	}
 	
 	func setupConstraint() {
