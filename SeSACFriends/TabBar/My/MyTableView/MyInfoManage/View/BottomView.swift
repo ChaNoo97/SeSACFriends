@@ -28,7 +28,7 @@ class BottomView: UIView {
 	let otherAgeNumberLabel = UILabel()
 	let otherAgeSliderView = UIView()
 	let slider = MultiSlider()
-	let withdrawView = UIView()
+	let withdrawButton = UIButton()
 	let withdrawViewTitle = UILabel()
 	let stackView = UIStackView()
 	
@@ -154,11 +154,11 @@ class BottomView: UIView {
 			$0.edges.equalToSuperview()
 		}
 		
-		withdrawView.addSubview(withdrawViewTitle)
+		withdrawButton.addSubview(withdrawViewTitle)
 		
 		withdrawViewTitle.snp.makeConstraints {
-			$0.leading.equalTo(withdrawView)
-			$0.top.bottom.equalTo(withdrawView).inset(13)
+			$0.leading.equalTo(withdrawButton)
+			$0.top.bottom.equalTo(withdrawButton).inset(13)
 		}
 		
 	}
@@ -166,7 +166,7 @@ class BottomView: UIView {
 	
 	func setupConstraint() {
 		addSubview(stackView)
-		[myGenderView, myHobbyView, myPhoneNumberSearchActiveView, otherAgeSearchRangeView ,withdrawView].forEach {
+		[myGenderView, myHobbyView, myPhoneNumberSearchActiveView, otherAgeSearchRangeView ,withdrawButton].forEach {
 			stackView.addArrangedSubview($0)
 		}
 		
@@ -190,7 +190,7 @@ class BottomView: UIView {
 			$0.height.equalTo(80)
 		}
 		
-		withdrawView.snp.makeConstraints {
+		withdrawButton.snp.makeConstraints {
 			$0.height.equalTo(48)
 		}
 		

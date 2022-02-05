@@ -40,6 +40,7 @@ class MyInfoManageViewController: BaseViewController {
 		mainView.bottomView.womanButton.addTarget(self, action: #selector(womanButtonClicked), for: .touchUpInside)
 		mainView.bottomView.activeSwitch.addTarget(self, action: #selector(activeSwitchChanged), for: .valueChanged)
 		mainView.bottomView.hobbyTextField.textField.addTarget(self, action: #selector(hobbyTextFieldChagnged), for: .editingChanged)
+		mainView.bottomView.withdrawButton.addTarget(self, action: #selector(withdrawButtonClicked), for: .touchUpInside)
     }
 	
 	func bindUserInfo() {
@@ -178,6 +179,13 @@ class MyInfoManageViewController: BaseViewController {
 		} else {
 			self.view.makeToast("변경사항이 없습니다.")
 		}
+	}
+	
+	@objc func withdrawButtonClicked() {
+		let vc = WithdrawViewController()
+		vc.modalPresentationStyle = .currentContext
+		vc.modalTransitionStyle = .crossDissolve
+		present(vc, animated: true, completion: nil)
 	}
 
 }

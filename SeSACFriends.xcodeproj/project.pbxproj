@@ -80,6 +80,7 @@
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
+		FEB41A0727AD353500058E1C /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0627AD353500058E1C /* WithdrawViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +152,7 @@
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
+		FEB41A0627AD353500058E1C /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -532,6 +534,7 @@
 				FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */,
 				FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */,
 				FE22DEB727AA295100368B13 /* MyInfoManageViewController.swift */,
+				FEB41A0627AD353500058E1C /* WithdrawViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
 				FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */,
+				FEB41A0727AD353500058E1C /* WithdrawViewController.swift in Sources */,
 				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,

@@ -48,7 +48,7 @@ final class GenderViewController: BaseViewController {
 				case 200:
 					self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
 					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-						self.changeRootView(viewController: withdrawViewController())
+						self.changeRootView(viewController: TabBarController())
 					}
 				case 201:
 					self.view.makeToast("이미 가입한 회원입니다.")

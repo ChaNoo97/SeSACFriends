@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class withdrawViewController: UIViewController {
-	let button = UIButton()
+class withdraw2ViewController: UIViewController {
+	let button = UIButton()	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
