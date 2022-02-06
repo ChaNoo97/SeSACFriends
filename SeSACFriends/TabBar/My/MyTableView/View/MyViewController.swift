@@ -53,7 +53,7 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
 			guard let cellOfSec0 = tableView.dequeueReusableCell(withIdentifier: MyInfoCell.reuseIdentfier, for: indexPath) as? MyInfoCell else {
 				return UITableViewCell()
 			}
-			cellOfSec0.profileName.text = "TEST"
+			cellOfSec0.profileName.text = UserDefaults.standard.string(forKey: UserDefaultsKey.nickName.rawValue)!
 			return cellOfSec0
 		} else {
 			guard let cellOfSec1 = tableView.dequeueReusableCell(withIdentifier: AppInfoCell.reuseIdentfier, for: indexPath) as? AppInfoCell else {

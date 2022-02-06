@@ -21,7 +21,6 @@ final class InitialViewcontroller: BaseViewController {
 		super.viewDidLoad()
 		setupConstraint()
 		setupProgressHud()
-		
 		if let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) {
 			DispatchQueue.main.async {
 				FIRAuth.renewIdToken()

@@ -37,6 +37,7 @@ class UserApiService {
 			let code = response.response?.statusCode
 			switch response.result {
 			case.success(let data):
+				UserDefaults.standard.set(data.nick, forKey: UserDefaultsKey.nickName.rawValue)
 				completion(data,code,nil)
 			case .failure(let error):
 				completion(nil,code,error)

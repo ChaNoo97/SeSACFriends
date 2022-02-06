@@ -8,29 +8,38 @@
 import UIKit
 import SnapKit
 
-class WithdrawViewController: UIViewController {
+class WithdrawViewController: BaseViewController {
 	
-	let button = UIButton()
+	let mainView = PopUpView(frame: .zero, title: "정말 탈퇴하시겠습니까?", subTitle: "탈퇴하시면 새싹 프렌즈를 이용할 수 없어요ㅠ", cnacelTitle: "취소", allowTitle: "확인")
+	
+	override func loadView() {
+		self.view = mainView
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		config()
-		view.backgroundColor = .red
-		button.backgroundColor = .blue
-		button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+		view.backgroundColor = .black.withAlphaComponent(0.5)
+		mainView.allowButton.addTarget(self, action: #selector(allowButtonClicked), for: .touchUpInside)
+		mainView.cancelButton.addTarget(self, action: #selector(cancelButtonClicked), for: .touchUpInside)
     }
     
-	func config() {
-		view.addSubview(button)
-		button.snp.makeConstraints { make in
-			make.size.equalTo(100)
-			make.center.equalToSuperview()
+	@objc func allowButtonClicked() {
+		UserApiService.withdraw { statusCode, error in
+			if let error = error {
+				return
+			}
+			if let statusCode = statusCode {
+				UserDefaults.standard.removeObject(forKey: UserDefaultsKey.idToken.rawValue)
+				self.changeRootNavView(viewController: InitialViewcontroller())
+			}
 		}
 	}
 	
-	@objc func buttonClicked() {
-		dismiss(animated: true, completion: nil)
+	@objc func cancelButtonClicked() {
+		self.dismiss(animated: true, completion: nil)
 	}
+	
+	
     
 
 }

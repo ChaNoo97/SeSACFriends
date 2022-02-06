@@ -12,5 +12,6 @@ enum UserDefaultsKey: String {
 	case varification
 	case idToken
 	case joinFriends //회원가입 유무 bool값
-	case userPhoneNum 
+	case userPhoneNum
+	case nickName
 }

@@ -183,7 +183,7 @@ class MyInfoManageViewController: BaseViewController {
 	
 	@objc func withdrawButtonClicked() {
 		let vc = WithdrawViewController()
-		vc.modalPresentationStyle = .currentContext
+		vc.modalPresentationStyle = .overCurrentContext
 		vc.modalTransitionStyle = .crossDissolve
 		present(vc, animated: true, completion: nil)
 	}
