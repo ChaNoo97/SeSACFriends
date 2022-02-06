@@ -22,6 +22,11 @@ class MyInfoManageViewController: BaseViewController {
 		self.view = mainView
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		self.tabBarController?.tabBar.isHidden = true
+		self.tabBarController?.tabBar.isTranslucent = true
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationBarSetting()

@@ -16,6 +16,10 @@ final class MyViewController: BaseViewController {
 		self.view = mainView
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		self.tabBarController?.tabBar.isHidden = false
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationBarSetTitle(title: "내정보")
