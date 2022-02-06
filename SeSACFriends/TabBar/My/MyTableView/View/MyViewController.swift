@@ -65,7 +65,7 @@ extension MyViewController: UITableViewDataSource, UITableViewDelegate {
 			}
 			let row = indexPath.row
 			let imageArray = ["notice","faq", "qna", "setting", "permit"]
-			let titleArray = ["공지 사항", "자주 묻는 질문", "1:1문의", "알림 설정", "이용 약관"]
+			let titleArray = ["공지 사항", "자주 묻는 질문", "1:1문의", "알림 설정", "이용약관"]
 			cellOfSec1.iconImage.image = UIImage(named: imageArray[row])
 			cellOfSec1.titleLabel.text = titleArray[row]
 			return cellOfSec1

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import MultiSlider
 
-class BottomView: UIView {
+final class BottomView: UIView {
 	
 	let myGenderView = UIView()
 	let myGenderViewTitle = UILabel()

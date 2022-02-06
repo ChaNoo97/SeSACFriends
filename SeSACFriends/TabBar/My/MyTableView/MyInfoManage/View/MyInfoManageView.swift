@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MyInfoManageView: UIView {
+final class MyInfoManageView: UIView {
 	
 	let myInfoCardView = CardView()
 	let bottomView = BottomView()
@@ -46,7 +46,7 @@ class MyInfoManageView: UIView {
 		bottomView.snp.makeConstraints {
 			$0.leading.trailing.equalTo(contentView).inset(16)
 			$0.top.equalTo(myInfoCardView.snp.bottom).offset(24)
-			$0.bottom.equalTo(contentView).inset(50)
+			$0.bottom.equalTo(contentView).inset(150)
 		}
 		
 		

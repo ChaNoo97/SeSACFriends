@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import MultiSlider
 
-class MyInfoManageViewController: BaseViewController {
+final class MyInfoManageViewController: BaseViewController {
 	
 	let mainView = MyInfoManageView()
 	let viewModel = MyInfoManageViewModel()

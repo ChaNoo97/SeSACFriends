@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class WithdrawViewController: BaseViewController {
+final class WithdrawViewController: BaseViewController {
 	
 	let mainView = PopUpView(frame: .zero, title: "정말 탈퇴하시겠습니까?", subTitle: "탈퇴하시면 새싹 프렌즈를 이용할 수 없어요ㅠ", cnacelTitle: "취소", allowTitle: "확인")
 	
