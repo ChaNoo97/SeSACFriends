@@ -24,27 +24,23 @@ final class HomeViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationBarSetTitle(title: "홈")
-		mainView.allButton.addTarget(self, action: #selector(allButtonClicked), for: .touchUpInside)
-		mainView.manButton.addTarget(self, action: #selector(manButtonClicked), for: .touchUpInside)
-		mainView.womanButton.addTarget(self, action: #selector(womanButtonClicked), for: .touchUpInside)
+		mainView.allButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
+		mainView.manButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
+		mainView.womanButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		
 	}
 	
-	@objc func allButtonClicked() {
-		mainView.changeGenderButton(button: mainView.allButton, label: mainView.allLabel, type: .select)
-		mainView.changeGenderButton(button: mainView.manButton, label: mainView.manLabel, type: .unSelect)
-		mainView.changeGenderButton(button: mainView.womanButton, label: mainView.womanLabel, type: .unSelect)
+	@objc func buttonClicked(_ sender: UIButton) {
+		switch sender.tag {
+		case 0:
+			mainView.selectAllButton()
+		case 1:
+			mainView.selectManButton()
+		case 2:
+			mainView.selectWomanButton()
+		default:
+			break
+		}
 	}
 	
-	@objc func manButtonClicked() {
-		mainView.changeGenderButton(button: mainView.allButton, label: mainView.allLabel, type: .unSelect)
-		mainView.changeGenderButton(button: mainView.manButton, label: mainView.manLabel, type: .select)
-		mainView.changeGenderButton(button: mainView.womanButton, label: mainView.womanLabel, type: .unSelect)
-	}
-	
-	@objc func womanButtonClicked() {
-		mainView.changeGenderButton(button: mainView.womanButton, label: mainView.womanLabel, type: .select)
-		mainView.changeGenderButton(button: mainView.manButton, label: mainView.manLabel, type: .unSelect)
-		mainView.changeGenderButton(button: mainView.allButton, label: mainView.allLabel, type: .unSelect)
-	}
 }

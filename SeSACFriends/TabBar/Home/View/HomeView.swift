@@ -20,6 +20,7 @@ final class HomeView: UIView, ViewProtocols {
 	let allLabel = UILabel()
 	let stackView = UIStackView()
 	let gpsButton = UIButton()
+	let matchingButton = UIButton()
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -27,6 +28,9 @@ final class HomeView: UIView, ViewProtocols {
 		setupConstraint()
 		configure()
 		setUpShadow()
+		allButton.tag = 0
+		manButton.tag = 1
+		womanButton.tag = 2
 	}
 	
 	func setUpShadow() {
@@ -58,13 +62,17 @@ final class HomeView: UIView, ViewProtocols {
 			$0.backgroundColor = .sesacWhite
 		}
 		
+		matchingButton.setImage(UIImage(named: "default"), for: .normal)
+		matchingButton.layer.cornerRadius = 32
+		matchingButton.clipsToBounds = true
+		
 		setUpButtonTitle()
 	}
 	
 	func setupConstraint() {
 		addSubview(mapView)
 		
-		[stackView, gpsButton].forEach {
+		[stackView, gpsButton, matchingButton].forEach {
 			mapView.addSubview($0)
 		}
 		
@@ -89,6 +97,11 @@ final class HomeView: UIView, ViewProtocols {
 			$0.leading.equalToSuperview().inset(16)
 			$0.top.equalToSuperview().inset(212)
 			$0.size.equalTo(48)
+		}
+		
+		matchingButton.snp.makeConstraints {
+			$0.trailing.bottom.equalTo(self.safeAreaLayoutGuide).inset(16)
+			$0.size.equalTo(64)
 		}
 		
 	}
@@ -128,6 +141,24 @@ final class HomeView: UIView, ViewProtocols {
 			label.font = SesacFont.title4R14.font
 			label.textColor = .black
 		}
+	}
+	
+	func selectAllButton() {
+		changeGenderButton(button: allButton, label: allLabel, type: .select)
+		changeGenderButton(button: manButton, label: manLabel, type: .unSelect)
+		changeGenderButton(button: womanButton, label: womanLabel, type: .unSelect)
+	}
+	
+	func selectManButton() {
+		changeGenderButton(button: allButton, label: allLabel, type: .unSelect)
+		changeGenderButton(button: manButton, label: manLabel, type: .select)
+		changeGenderButton(button: womanButton, label: womanLabel, type: .unSelect)
+	}
+	
+	func selectWomanButton() {
+		changeGenderButton(button: womanButton, label: womanLabel, type: .select)
+		changeGenderButton(button: manButton, label: manLabel, type: .unSelect)
+		changeGenderButton(button: allButton, label: allLabel, type: .unSelect)
 	}
 	
 	required init?(coder: NSCoder) {

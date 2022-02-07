@@ -53,6 +53,7 @@
 		FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515976279B0DE800E2CFBD /* LoginViewModel.swift */; };
 		FE515979279B1DA400E2CFBD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515978279B1DA400E2CFBD /* Observable.swift */; };
 		FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C8E27AF759700D64A41 /* PopUpView.swift */; };
+		FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */; };
 		FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */; };
 		FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */; };
 		FE7BDCBD279B3C6C001C75A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */; };
@@ -129,6 +130,7 @@
 		FE515976279B0DE800E2CFBD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FE515978279B1DA400E2CFBD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FE617C8E27AF759700D64A41 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageView.swift; sourceTree = "<group>"; };
 		FE7BDCC2279B3D47001C75A9 /* SeSACFriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSACFriends.entitlements; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 		FEC012CA27ABA327004E0577 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */,
+				FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
