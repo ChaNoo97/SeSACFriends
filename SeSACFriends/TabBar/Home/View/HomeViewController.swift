@@ -15,6 +15,8 @@ final class HomeViewController: BaseViewController {
 	let mainView = HomeView()
 	
 	var myLocation: CLLocationCoordinate2D?
+	var centerLocation: CLLocationCoordinate2D?
+	let sesacLocation = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734)
 
 	override func loadView() {
 		self.view = mainView
@@ -31,19 +33,26 @@ final class HomeViewController: BaseViewController {
 		checkUserLocationServicesAuthorization()
 		mainView.mapView.delegate = self
 		locationManager.delegate = self
-		
+		mainView.mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: CustomAnnotationView.identifier)
 		mainView.allButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		mainView.manButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		mainView.womanButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		mainView.gpsButton.addTarget(self, action: #selector(gpsButtonClicked), for: .touchUpInside)
+		if let myLocation = myLocation {
+			mainView.mapView.showsUserLocation = true
+			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
+		} else {
+			mainView.mapView.showsUserLocation = true
+			mainView.mapView.setRegion(MKCoordinateRegion(center: sesacLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
+		}
 	}
 	
 	@objc func gpsButtonClicked() {
-		print("dd")
 		checkUserLocationServicesAuthorization()
+		mainView.mapView.showsUserLocation = true
+		mainView.mapView.setUserTrackingMode(.follow, animated: true)
 		if let myLocation = myLocation {
 			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
-			addCustomPin()
 		}
 		
 	}
@@ -64,7 +73,62 @@ final class HomeViewController: BaseViewController {
 	
 }
 
-extension HomeViewController: MKMapViewDelegate, CLLocationManagerDelegate {
+extension HomeViewController: MKMapViewDelegate {
+	
+	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+//		mainView.mapView.isUserInteractionEnabled = false
+		self.centerLocation = self.mainView.mapView.centerCoordinate
+		
+		print(centerLocation)
+	}
+	
+	func addCustomPin(coordinate: CLLocationCoordinate2D) {
+		let pin = CustomAnnotation(style: .face5, coordinate: coordinate)
+		mainView.mapView.addAnnotation(pin)
+	}
+	
+	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+		guard let annotation = annotation as? CustomAnnotation else {
+			return nil
+		}
+		
+		var annotationView = self.mainView.mapView.dequeueReusableAnnotationView(withIdentifier: CustomAnnotationView.identifier)
+		
+		if annotationView == nil {
+			annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: CustomAnnotationView.identifier)
+			annotationView?.canShowCallout = false
+			annotationView?.contentMode = .scaleAspectFit
+		} else {
+			annotationView?.annotation = annotation
+		}
+		
+		let sesacImage: UIImage!
+		let size = CGSize(width: 85, height: 85)
+		UIGraphicsBeginImageContext(size)
+		
+		switch annotation.style {
+		case .face1:
+			sesacImage = UIImage(named: sesacImageStyle.face1.rawValue)
+		case .face2:
+			sesacImage = UIImage(named: sesacImageStyle.face2.rawValue)
+		case .face3:
+			sesacImage = UIImage(named: sesacImageStyle.face3.rawValue)
+		case .face4:
+			sesacImage = UIImage(named: sesacImageStyle.face4.rawValue)
+		case .face5:
+			sesacImage = UIImage(named: sesacImageStyle.face5.rawValue)
+		}
+	
+		
+		sesacImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+		let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+		annotationView?.image = resizedImage
+		
+		return annotationView
+	}
+}
+
+extension HomeViewController:  CLLocationManagerDelegate {
 	
 	func checkCurrentLocationAuthorization(authorizationStatus: CLAuthorizationStatus) {
 		
@@ -121,17 +185,14 @@ extension HomeViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 	}
 	
 	func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-		print("change")
+		checkUserLocationServicesAuthorization()
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		myLocation = CLLocationCoordinate2D(latitude: locations.last!.coordinate.latitude, longitude: locations.last!.coordinate.longitude)
+		mainView.mapView.showsUserLocation = true
 	}
 	
-	func addCustomPin() {
-		let pin = MKPointAnnotation()
-		pin.coordinate = CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude)
-		mainView.mapView.addAnnotation(pin)
-	}
+	
 	
 }

@@ -12,6 +12,7 @@ import MapKit
 final class HomeView: UIView, ViewProtocols {
 	
 	let mapView = MKMapView()
+	let centerPin = UIImageView()
 	let manButton = UIButton()
 	let manLabel = UILabel()
 	let womanButton = UIButton()
@@ -62,6 +63,7 @@ final class HomeView: UIView, ViewProtocols {
 			$0.backgroundColor = .sesacWhite
 		}
 		
+		centerPin.image = UIImage(named: "centerPin")
 		matchingButton.setImage(UIImage(named: "default"), for: .normal)
 		matchingButton.layer.cornerRadius = 32
 		matchingButton.clipsToBounds = true
@@ -72,7 +74,7 @@ final class HomeView: UIView, ViewProtocols {
 	func setupConstraint() {
 		addSubview(mapView)
 		
-		[stackView, gpsButton, matchingButton].forEach {
+		[stackView, gpsButton, matchingButton, centerPin].forEach {
 			mapView.addSubview($0)
 		}
 		
@@ -83,6 +85,11 @@ final class HomeView: UIView, ViewProtocols {
 		mapView.snp.makeConstraints {
 			$0.top.equalToSuperview()
 			$0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
+		}
+		
+		centerPin.snp.makeConstraints {
+			$0.center.equalToSuperview()
+			$0.size.equalTo(48)
 		}
 		
 		stackView.snp.makeConstraints {

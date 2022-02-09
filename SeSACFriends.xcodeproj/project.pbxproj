@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE02F2BC27B3B0F200192551 /* sesacImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */; };
 		FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79F9279FD2600043F0F7 /* Onboding.swift */; };
 		FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */; };
 		FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */; };
@@ -83,9 +84,13 @@
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
 		FEB41A0727AD353500058E1C /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0627AD353500058E1C /* WithdrawViewController.swift */; };
+		FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5006E27B390BE004915BC /* Endpoint.swift */; };
+		FEB5007127B390D0004915BC /* QueueApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5007027B390D0004915BC /* QueueApiService.swift */; };
+		FEB5007327B39B1B004915BC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5007227B39B1B004915BC /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sesacImageStyle.swift; sourceTree = "<group>"; };
 		FE1E79F9279FD2600043F0F7 /* Onboding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboding.swift; sourceTree = "<group>"; };
 		FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuth.swift; sourceTree = "<group>"; };
 		FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -157,6 +162,9 @@
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
 		FEB41A0627AD353500058E1C /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		FEB5006E27B390BE004915BC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FEB5007027B390D0004915BC /* QueueApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueApiService.swift; sourceTree = "<group>"; };
+		FEB5007227B39B1B004915BC /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +283,7 @@
 				FE7BDCE3279E69B0001C75A9 /* GenderButton.swift */,
 				FE51595E279A984300E2CFBD /* BaseViewController.swift */,
 				FE617C8E27AF759700D64A41 /* PopUpView.swift */,
+				FEB5007227B39B1B004915BC /* CustomAnnotationView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -359,6 +368,7 @@
 				FE7BDCEB279F04ED001C75A9 /* BaseURL.swift */,
 				FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */,
 				FE7BDCF0279F0530001C75A9 /* User */,
+				FEB5006D27B39070004915BC /* Queue */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -380,9 +390,19 @@
 			path = UserDefaultKey;
 			sourceTree = "<group>";
 		};
+		FEB5006D27B39070004915BC /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				FEB5006E27B390BE004915BC /* Endpoint.swift */,
+				FEB5007027B390D0004915BC /* QueueApiService.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
 		FEC012C127AB9B9F004E0577 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */,
 				FEC012CB27ABA328004E0577 /* Model */,
 				FEC012CA27ABA327004E0577 /* ViewModel */,
 				FEC012C927ABA325004E0577 /* View */,
@@ -668,6 +688,7 @@
 				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */,
+				FEB5007327B39B1B004915BC /* CustomAnnotationView.swift in Sources */,
 				FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */,
@@ -694,7 +715,9 @@
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
+				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
+				FE02F2BC27B3B0F200192551 /* sesacImageStyle.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
 				FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */,
 				FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */,
@@ -712,6 +735,7 @@
 				FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */,
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
 				FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */,
+				FEB5007127B390D0004915BC /* QueueApiService.swift in Sources */,
 				FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */,
 				FE22DEBA27AA2C4900368B13 /* UserInfoTitle.swift in Sources */,
 				FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */,
