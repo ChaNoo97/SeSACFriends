@@ -31,14 +31,16 @@ class MyInfoManageViewModel {
 				self.bindData()
 				completion()
 			case 401:
-				FIRAuth.renewIdToken()
-				UserApiService.logIn { data, code, error in
-					guard let data = data else {
-						return
+				FIRAuth.renewIdToken {
+					UserApiService.logIn { data, code, error in
+						guard let data = data else {
+							return
+						}
+						self.userInfo.value = data
+						self.bindData()
+						completion()
+					
 					}
-					self.userInfo.value = data
-					self.bindData()
-					completion()
 				}
 			default:
 				return
@@ -91,25 +93,26 @@ class MyInfoManageViewModel {
 			case .success:
 				completion("업데이트 성공")
 			case .fireBaseTokenError:
-				FIRAuth.renewIdToken()
-				UserApiService.updateMypage(model: updateMypageModel) { statusCode, error in
-					if let error = error {
-						return
-					}
-					guard let statusCode = statusCode else {
-						return
-					}
-					switch UserStateCodeEnum(rawValue: statusCode)! {
-					case .success:
-						completion("업데이트 성공")
-					case .fireBaseTokenError:
-						completion("유저 인증 오류")
-					case .servewError:
-						completion("서버 오류")
-					case .clientError:
-						completion("클라이언트 오류")
-					default :
-						break
+				FIRAuth.renewIdToken {
+					UserApiService.updateMypage(model: updateMypageModel) { statusCode, error in
+						if let error = error {
+							return
+						}
+						guard let statusCode = statusCode else {
+							return
+						}
+						switch UserStateCodeEnum(rawValue: statusCode)! {
+						case .success:
+							completion("업데이트 성공")
+						case .fireBaseTokenError:
+							completion("유저 인증 오류")
+						case .servewError:
+							completion("서버 오류")
+						case .clientError:
+							completion("클라이언트 오류")
+						default :
+							break
+						}
 					}
 				}
 			case .servewError:

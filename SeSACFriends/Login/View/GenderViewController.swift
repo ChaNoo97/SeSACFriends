@@ -58,31 +58,32 @@ final class GenderViewController: BaseViewController {
 						self.navigationController?.popToRootViewController(animated: true)
 					}
 				case 401:
-					FIRAuth.renewIdToken()
-					self.viewModel.signUP { statusCode, error in
-						if error != nil {
-							self.view.makeToast("회원가입 실패.\n잠시후 다시 시도해 주세요.")
-							return
-						}
-						if let statusCode = statusCode {
-							switch statusCode {
-							case 200:
-								self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
-								UserDefaults.standard.set(true, forKey: UserDefaultsKey.joinFriends.rawValue)
-								DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-									self.changeRootView(viewController: TabBarController())
-								}
-							case 201:
-								self.view.makeToast("이미 가입한 회원입니다.")
-							case 202:
-								self.view.makeToast("사용할수 없는 닉네임 입니다.\n닉네임 재설정 화면으로 이동합니다.")
-								DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-									self.navigationController?.popToRootViewController(animated: true)
-								}
-							case 401:
+					FIRAuth.renewIdToken {
+						self.viewModel.signUP { statusCode, error in
+							if error != nil {
 								self.view.makeToast("회원가입 실패.\n잠시후 다시 시도해 주세요.")
-							default:
-								self.view.makeToast("서버에 오류가 있습니다.\n잠시후 다시 시도해 주세요.")
+								return
+							}
+							if let statusCode = statusCode {
+								switch statusCode {
+								case 200:
+									self.view.makeToast("회원가입 완료\n홈 화면으로 이동합니다.")
+									UserDefaults.standard.set(true, forKey: UserDefaultsKey.joinFriends.rawValue)
+									DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+										self.changeRootView(viewController: TabBarController())
+									}
+								case 201:
+									self.view.makeToast("이미 가입한 회원입니다.")
+								case 202:
+									self.view.makeToast("사용할수 없는 닉네임 입니다.\n닉네임 재설정 화면으로 이동합니다.")
+									DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+										self.navigationController?.popToRootViewController(animated: true)
+									}
+								case 401:
+									self.view.makeToast("회원가입 실패.\n잠시후 다시 시도해 주세요.")
+								default:
+									self.view.makeToast("서버에 오류가 있습니다.\n잠시후 다시 시도해 주세요.")
+								}
 							}
 						}
 					}

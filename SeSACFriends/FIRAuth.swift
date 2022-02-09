@@ -47,7 +47,7 @@ class FIRAuth {
 	   }
    }
 	
-	static func renewIdToken() {
+	static func renewIdToken(completion: @escaping () -> Void) {
 		print("firauthrenewidtoken")
 		let currentUser = Auth.auth().currentUser
 		currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
@@ -56,7 +56,7 @@ class FIRAuth {
 			return;
 		  }
 			UserDefaults.standard.set(idToken, forKey: UserDefaultsKey.idToken.rawValue)
-			
+			completion()
 		}
 	}
 	
