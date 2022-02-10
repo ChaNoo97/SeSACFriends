@@ -15,4 +15,10 @@ enum sesacImageStyle: String {
 	case face5
 }
 
+enum genderEnum: Int {
+	case all = 0
+	case man = 1
+	case woman = 2
+}
+
 

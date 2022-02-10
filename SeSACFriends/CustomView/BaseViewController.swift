@@ -56,4 +56,22 @@ extension UIViewController {
 		windowScene.windows.first?.rootViewController = viewController
 		windowScene.windows.first?.makeKeyAndVisible()
 	}
+	
+	func tabBarHidden() {
+		self.tabBarController?.tabBar.isHidden = true
+		self.tabBarController?.tabBar.isTranslucent = true
+	}
+	
+	func tabBarDisplay() {
+		self.tabBarController?.tabBar.isHidden = false
+	}
+	
+	func navBarHidden() {
+		self.navigationController?.navigationBar.isHidden = true
+		self.navigationController?.navigationBar.isTranslucent = true
+	}
+	
+	func navBarDisplay() {
+		self.navigationController?.navigationBar.isHidden = false
+	}
 }

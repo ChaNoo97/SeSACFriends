@@ -19,6 +19,8 @@ final class HomeViewController: BaseViewController {
 	var myLocation: CLLocationCoordinate2D?
 	var centerLocation: CLLocationCoordinate2D?
 	let sesacLocation = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734)
+	
+	var userAnnotationArray: [CustomAnnotation] = []
 
 	override func loadView() {
 		self.view = mainView
@@ -26,8 +28,8 @@ final class HomeViewController: BaseViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		self.navigationController?.navigationBar.isHidden = true
-		self.navigationController?.navigationBar.isTranslucent = true
+		tabBarDisplay()
+		navBarHidden()
 	}
 	
 	override func viewDidLoad() {
@@ -40,6 +42,7 @@ final class HomeViewController: BaseViewController {
 		mainView.manButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		mainView.womanButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		mainView.gpsButton.addTarget(self, action: #selector(gpsButtonClicked), for: .touchUpInside)
+		mainView.matchingButton.addTarget(self, action: #selector(matchingButtonClicked), for: .touchUpInside)
 		if let myLocation = myLocation {
 			mainView.mapView.showsUserLocation = true
 			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
@@ -47,7 +50,19 @@ final class HomeViewController: BaseViewController {
 			mainView.mapView.showsUserLocation = true
 			mainView.mapView.setRegion(MKCoordinateRegion(center: sesacLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
 		}
-		
+		mainView.selectAllButton()
+	}
+	
+	@objc func buttonClicked(_ sender: UIButton) {
+		viewModel.selectGender.value = sender.tag
+		switch genderEnum(rawValue: sender.tag)! {
+		case .all:
+			mainView.selectAllButton()
+		case .man:
+			mainView.selectManButton()
+		case .woman:
+			mainView.selectWomanButton()
+		}
 	}
 	
 	@objc func gpsButtonClicked() {
@@ -60,53 +75,58 @@ final class HomeViewController: BaseViewController {
 		
 	}
 	
-	@objc func buttonClicked(_ sender: UIButton) {
-		switch sender.tag {
-			//enum
-		case 0:
-			mainView.selectAllButton()
-		case 1:
-			mainView.selectManButton()
-		case 2:
-			mainView.selectWomanButton()
-		default:
-			break
-		}
+	@objc func matchingButtonClicked() {
+		checkUserLocationServicesAuthorization()
+		pushViewCon(vc: HobbyViewController())
 	}
 	
 }
+
+
 
 extension HomeViewController: MKMapViewDelegate {
 	
 	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		self.centerLocation = self.mainView.mapView.centerCoordinate
 		if let centerLocation = centerLocation {
-			print(centerLocation)
 			viewModel.lat.value = centerLocation.latitude
 			viewModel.long.value = centerLocation.longitude
 			viewModel.region.value = viewModel.operationRegion(lat: centerLocation.latitude, long: centerLocation.longitude)
+			
 			viewModel.onQueue { message in
-				guard let message = message else {
-					return
+				if let message = message {
+					self.view.makeToast(message)
 				}
-				self.view.makeToast(message)
-				let count = self.viewModel.userLocation.value.count
-				for i in 0...count-1 {
-					self.addCustomPin(style: .face5, coordinate: CLLocationCoordinate2D(latitude: self.viewModel.userLocation.value[i][0], longitude: self.viewModel.userLocation.value[i][1]))
+				//성공일때 진행
+				self.viewModel.selectGender.bind { gender in
+					self.mainView.mapView.removeAnnotations(self.userAnnotationArray)
+					self.userAnnotationArray.removeAll()
+					switch genderEnum(rawValue: gender)! {
+					case .all:
+						self.viewModel.allUser.forEach({ user in
+							self.addCustomPin(style: user.sesac, coordinate: CLLocationCoordinate2D(latitude: user.lat, longitude: user.long))
+						})
+					case .man:
+						self.viewModel.manUser.forEach({ user in
+							self.addCustomPin(style: user.sesac, coordinate: CLLocationCoordinate2D(latitude: user.lat, longitude: user.long))
+						})
+					case .woman:
+						self.viewModel.womanUSer.forEach({ user in
+							self.addCustomPin(style: user.sesac, coordinate: CLLocationCoordinate2D(latitude: user.lat, longitude: user.long))
+						})
+					}
 				}
 			}
 		}
-	}
-	
-//	self.addCustomPin(style: .face5, coordinate: CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>))
-	
-	func addSesacPin(lat: Double, long: Double) {
 		
 	}
 	
-	func addCustomPin(style: sesacImageStyle,  coordinate: CLLocationCoordinate2D) {
-		let pin = CustomAnnotation(style: style, coordinate: coordinate)
-		mainView.mapView.addAnnotation(pin)
+	func addCustomPin(style: Int,  coordinate: CLLocationCoordinate2D) {
+		let pin = CustomAnnotation(style: viewModel.setUpSesacStyle(style), coordinate: coordinate)
+		userAnnotationArray.append(pin)
+		self.userAnnotationArray.forEach {
+			self.mainView.mapView.addAnnotation($0)
+		}
 	}
 	
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

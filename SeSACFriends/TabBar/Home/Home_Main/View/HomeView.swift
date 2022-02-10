@@ -68,6 +68,9 @@ final class HomeView: UIView, ViewProtocols {
 		matchingButton.layer.cornerRadius = 32
 		matchingButton.clipsToBounds = true
 		
+		mapView.isRotateEnabled = false
+		mapView.isPitchEnabled = false
+		
 		setUpButtonTitle()
 	}
 	

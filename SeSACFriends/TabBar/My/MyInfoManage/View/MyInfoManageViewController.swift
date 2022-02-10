@@ -33,7 +33,6 @@ final class MyInfoManageViewController: BaseViewController {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveBtnTapped))
 		makeTabGester(view: mainView, target: self, action: #selector(dismissKeyboard))
 		navigationBarSetTitle(title: "내 정보")
-//		sliderChange(mainView.bottomView.slider)
 		viewModel.callUserInfo {
 			self.bindValue()
 			self.bindUserInfo()

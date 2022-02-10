@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE02F2BC27B3B0F200192551 /* sesacImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */; };
+		FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02F2BB27B3B0F200192551 /* HomeEnum.swift */; };
 		FE030ECD27B43EB2008D29ED /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECC27B43EB2008D29ED /* QueueModel.swift */; };
 		FE030ECF27B443DC008D29ED /* OnQueueParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */; };
 		FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79F9279FD2600043F0F7 /* Onboding.swift */; };
@@ -37,6 +37,7 @@
 		FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE26BD0C2796832600E92519 /* SceneDelegate.swift */; };
 		FE26BD142796832800E92519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD132796832800E92519 /* Assets.xcassets */; };
 		FE26BD172796832800E92519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD152796832800E92519 /* LaunchScreen.storyboard */; };
+		FE3030CA27B5861E008E48EC /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3030C927B5861E008E48EC /* HobbyViewController.swift */; };
 		FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51593F279692F900E2CFBD /* ColorExtension.swift */; };
 		FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515941279694FB00E2CFBD /* FontExtension.swift */; };
 		FE5159462796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */; };
@@ -92,7 +93,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sesacImageStyle.swift; sourceTree = "<group>"; };
+		FE02F2BB27B3B0F200192551 /* HomeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnum.swift; sourceTree = "<group>"; };
 		FE030ECC27B43EB2008D29ED /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
 		FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnQueueParameterModel.swift; sourceTree = "<group>"; };
 		FE1E79F9279FD2600043F0F7 /* Onboding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboding.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		FE26BD132796832800E92519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE26BD162796832800E92519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE26BD182796832800E92519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE3030C927B5861E008E48EC /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
 		FE51593F279692F900E2CFBD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		FE515941279694FB00E2CFBD /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -267,6 +269,49 @@
 			path = SeSACFriends;
 			sourceTree = "<group>";
 		};
+		FE3030C327B58547008E48EC /* Home_Main */ = {
+			isa = PBXGroup;
+			children = (
+				FEC012CB27ABA328004E0577 /* Model */,
+				FEC012CA27ABA327004E0577 /* ViewModel */,
+				FEC012C927ABA325004E0577 /* View */,
+			);
+			path = Home_Main;
+			sourceTree = "<group>";
+		};
+		FE3030C427B58581008E48EC /* Home_Hobby */ = {
+			isa = PBXGroup;
+			children = (
+				FE3030C627B58594008E48EC /* Model */,
+				FE3030C827B585DE008E48EC /* ViewModel */,
+				FE3030C527B58593008E48EC /* View */,
+			);
+			path = Home_Hobby;
+			sourceTree = "<group>";
+		};
+		FE3030C527B58593008E48EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE3030C927B5861E008E48EC /* HobbyViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE3030C627B58594008E48EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = "New Group/Model";
+			sourceTree = "<group>";
+		};
+		FE3030C827B585DE008E48EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FE515943279694FE00E2CFBD /* DesignExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,10 +451,9 @@
 		FEC012C127AB9B9F004E0577 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */,
-				FEC012CB27ABA328004E0577 /* Model */,
-				FEC012CA27ABA327004E0577 /* ViewModel */,
-				FEC012C927ABA325004E0577 /* View */,
+				FE02F2BB27B3B0F200192551 /* HomeEnum.swift */,
+				FE3030C327B58547008E48EC /* Home_Main */,
+				FE3030C427B58581008E48EC /* Home_Hobby */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -438,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC012D227ABA89F004E0577 /* MyTableView */,
+				FE22DE9C27A2F3AA00368B13 /* MyInfoManage */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -542,7 +587,6 @@
 		FEC012D227ABA89F004E0577 /* MyTableView */ = {
 			isa = PBXGroup;
 			children = (
-				FE22DE9C27A2F3AA00368B13 /* MyInfoManage */,
 				FEC012CE27ABA35D004E0577 /* Model */,
 				FEC012CD27ABA35C004E0577 /* ViewModel */,
 				FEC012CC27ABA35A004E0577 /* View */,
@@ -715,6 +759,7 @@
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */,
+				FE3030CA27B5861E008E48EC /* HobbyViewController.swift in Sources */,
 				FE030ECD27B43EB2008D29ED /* QueueModel.swift in Sources */,
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
@@ -724,7 +769,7 @@
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
-				FE02F2BC27B3B0F200192551 /* sesacImageStyle.swift in Sources */,
+				FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
 				FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */,
 				FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */,
