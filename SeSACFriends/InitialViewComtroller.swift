@@ -24,6 +24,7 @@ final class InitialViewcontroller: BaseViewController {
 		if let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) {
 				//컴플리션 써야지
 				FIRAuth.renewIdToken {
+					print(idtoken)
 					//비행기모드 대응 해주세용
 					UserApiService.logIn { data, code, error in
 						switch code {
@@ -31,10 +32,10 @@ final class InitialViewcontroller: BaseViewController {
 							self.hud.dismiss(animated: true)
 							self.changeRootView(viewController: TabBarController())
 						case 406:
+							print("**********************************************이니셜뷰 에러!!!!!!!!!!!!************************", code)
 							self.hud.dismiss(animated: true)
 							self.changeRootNavView(viewController: NickNameViewController())
 						default:
-							print("**********************************************이니셜뷰 에러!!!!!!!!!!!! 여기서 디폴트 빠지는데 이유가?*******************************", code)
 							self.hud.dismiss(animated: true)
 							return
 						}

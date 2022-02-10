@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum UserStateCodeEnum: Int {
+enum StateCodeEnum: Int {
 	case success = 200
 	case existUser = 201
 	case impossibleNick = 202
@@ -17,5 +17,4 @@ enum UserStateCodeEnum: Int {
 	case servewError = 500
 	case clientError = 501
 }
-
 

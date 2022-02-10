@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FE02F2BC27B3B0F200192551 /* sesacImageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */; };
+		FE030ECD27B43EB2008D29ED /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECC27B43EB2008D29ED /* QueueModel.swift */; };
+		FE030ECF27B443DC008D29ED /* OnQueueParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */; };
 		FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79F9279FD2600043F0F7 /* Onboding.swift */; };
 		FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */; };
 		FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */; };
@@ -91,6 +93,8 @@
 
 /* Begin PBXFileReference section */
 		FE02F2BB27B3B0F200192551 /* sesacImageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sesacImageStyle.swift; sourceTree = "<group>"; };
+		FE030ECC27B43EB2008D29ED /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
+		FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnQueueParameterModel.swift; sourceTree = "<group>"; };
 		FE1E79F9279FD2600043F0F7 /* Onboding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboding.swift; sourceTree = "<group>"; };
 		FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuth.swift; sourceTree = "<group>"; };
 		FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -481,6 +485,8 @@
 		FEC012CB27ABA328004E0577 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE030ECC27B43EB2008D29ED /* QueueModel.swift */,
+				FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */,
+				FE030ECD27B43EB2008D29ED /* QueueModel.swift in Sources */,
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
@@ -736,6 +743,7 @@
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
 				FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */,
 				FEB5007127B390D0004915BC /* QueueApiService.swift in Sources */,
+				FE030ECF27B443DC008D29ED /* OnQueueParameterModel.swift in Sources */,
 				FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */,
 				FE22DEBA27AA2C4900368B13 /* UserInfoTitle.swift in Sources */,
 				FE7BDCD0279C5E3E001C75A9 /* BirthSubView.swift in Sources */,

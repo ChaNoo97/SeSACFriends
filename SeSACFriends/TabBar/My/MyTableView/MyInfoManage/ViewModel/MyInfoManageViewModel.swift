@@ -39,7 +39,6 @@ class MyInfoManageViewModel {
 						self.userInfo.value = data
 						self.bindData()
 						completion()
-					
 					}
 				}
 			default:
@@ -89,7 +88,7 @@ class MyInfoManageViewModel {
 				return
 			}
 			
-			switch UserStateCodeEnum(rawValue: statusCode)! {
+			switch StateCodeEnum(rawValue: statusCode)! {
 			case .success:
 				completion("업데이트 성공")
 			case .fireBaseTokenError:
@@ -101,7 +100,7 @@ class MyInfoManageViewModel {
 						guard let statusCode = statusCode else {
 							return
 						}
-						switch UserStateCodeEnum(rawValue: statusCode)! {
+						switch StateCodeEnum(rawValue: statusCode)! {
 						case .success:
 							completion("업데이트 성공")
 						case .fireBaseTokenError:

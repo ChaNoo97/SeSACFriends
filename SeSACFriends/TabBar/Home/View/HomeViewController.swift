@@ -6,13 +6,15 @@
 //
 
 import UIKit
-import SnapKit
 import MapKit
+import SnapKit
+import Toast
 
 final class HomeViewController: BaseViewController {
 	
 	let locationManager = CLLocationManager()
 	let mainView = HomeView()
+	let viewModel = HomeViewModel()
 	
 	var myLocation: CLLocationCoordinate2D?
 	var centerLocation: CLLocationCoordinate2D?
@@ -45,6 +47,7 @@ final class HomeViewController: BaseViewController {
 			mainView.mapView.showsUserLocation = true
 			mainView.mapView.setRegion(MKCoordinateRegion(center: sesacLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
 		}
+		
 	}
 	
 	@objc func gpsButtonClicked() {
@@ -75,15 +78,34 @@ final class HomeViewController: BaseViewController {
 
 extension HomeViewController: MKMapViewDelegate {
 	
-	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-//		mainView.mapView.isUserInteractionEnabled = false
+	func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 		self.centerLocation = self.mainView.mapView.centerCoordinate
-		
-		print(centerLocation)
+		if let centerLocation = centerLocation {
+			print(centerLocation)
+			viewModel.lat.value = centerLocation.latitude
+			viewModel.long.value = centerLocation.longitude
+			viewModel.region.value = viewModel.operationRegion(lat: centerLocation.latitude, long: centerLocation.longitude)
+			viewModel.onQueue { message in
+				guard let message = message else {
+					return
+				}
+				self.view.makeToast(message)
+				let count = self.viewModel.userLocation.value.count
+				for i in 0...count-1 {
+					self.addCustomPin(style: .face5, coordinate: CLLocationCoordinate2D(latitude: self.viewModel.userLocation.value[i][0], longitude: self.viewModel.userLocation.value[i][1]))
+				}
+			}
+		}
 	}
 	
-	func addCustomPin(coordinate: CLLocationCoordinate2D) {
-		let pin = CustomAnnotation(style: .face5, coordinate: coordinate)
+//	self.addCustomPin(style: .face5, coordinate: CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>))
+	
+	func addSesacPin(lat: Double, long: Double) {
+		
+	}
+	
+	func addCustomPin(style: sesacImageStyle,  coordinate: CLLocationCoordinate2D) {
+		let pin = CustomAnnotation(style: style, coordinate: coordinate)
 		mainView.mapView.addAnnotation(pin)
 	}
 	
