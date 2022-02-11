@@ -14,7 +14,6 @@
 		FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */; };
 		FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FF27A052CC0043F0F7 /* UserInfo.swift */; };
 		FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E7A0527A1939A0043F0F7 /* InitialViewComtroller.swift */; };
-		FE1E7A0927A1B4430043F0F7 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */; };
 		FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8927A27A3900368B13 /* TabBarController.swift */; };
 		FE22DE8C27A27A6200368B13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8B27A27A6200368B13 /* HomeViewController.swift */; };
 		FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */; };
@@ -39,11 +38,17 @@
 		FE26BD172796832800E92519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD152796832800E92519 /* LaunchScreen.storyboard */; };
 		FE3030CA27B5861E008E48EC /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3030C927B5861E008E48EC /* HobbyViewController.swift */; };
 		FE3030CC27B5958E008E48EC /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3030CB27B5958E008E48EC /* HobbyView.swift */; };
+		FE4F7E6427B663F1003CE5B6 /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E6327B663F1003CE5B6 /* MultiSlider */; };
+		FE4F7E6727B66520003CE5B6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E6627B66520003CE5B6 /* SnapKit */; };
+		FE4F7E6A27B665D3003CE5B6 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E6927B665D3003CE5B6 /* JGProgressHUD */; };
+		FE4F7E6D27B66606003CE5B6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E6C27B66606003CE5B6 /* FirebaseAnalytics */; };
+		FE4F7E6F27B66606003CE5B6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E6E27B66606003CE5B6 /* FirebaseAuth */; };
+		FE4F7E7127B66606003CE5B6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E7027B66606003CE5B6 /* FirebaseMessaging */; };
+		FE4F7E7427B6665E003CE5B6 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FE4F7E7327B6665E003CE5B6 /* Toast */; };
 		FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51593F279692F900E2CFBD /* ColorExtension.swift */; };
 		FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515941279694FB00E2CFBD /* FontExtension.swift */; };
 		FE5159462796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */; };
 		FE5159472796A0CE00E2CFBD /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE5159452796A0CE00E2CFBD /* NotoSansCJKkr-Medium.otf */; };
-		FE51594A2796A8C000E2CFBD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FE5159492796A8C000E2CFBD /* SnapKit */; };
 		FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595027993EFD00E2CFBD /* MainButton.swift */; };
 		FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5159532799B4D500E2CFBD /* MainTextField.swift */; };
 		FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5159552799B95500E2CFBD /* ViewProtocols.swift */; };
@@ -53,17 +58,12 @@
 		FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51595E279A984300E2CFBD /* BaseViewController.swift */; };
 		FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515966279AA2C800E2CFBD /* ConfirmView.swift */; };
 		FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515968279AAED600E2CFBD /* ConfirmViewController.swift */; };
-		FE51596C279AFE7400E2CFBD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596B279AFE7400E2CFBD /* Toast */; };
-		FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FE51596E279AFE8200E2CFBD /* Alamofire */; };
 		FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515976279B0DE800E2CFBD /* LoginViewModel.swift */; };
 		FE515979279B1DA400E2CFBD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515978279B1DA400E2CFBD /* Observable.swift */; };
 		FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C8E27AF759700D64A41 /* PopUpView.swift */; };
 		FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */; };
 		FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */; };
 		FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */; };
-		FE7BDCBD279B3C6C001C75A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */; };
-		FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */; };
-		FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */; };
 		FE7BDCC4279BC1E6001C75A9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */; };
 		FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCC9279C0F42001C75A9 /* NickNameViewController.swift */; };
 		FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCCB279C4CA3001C75A9 /* NickNameView.swift */; };
@@ -83,7 +83,10 @@
 		FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */; };
 		FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */; };
 		FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */; };
-		FEB419FF27AC3ED700058E1C /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = FEB419FE27AC3ED700058E1C /* MultiSlider */; };
+		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
+		FEB3C36327B6CFB9005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyServerCell.swift */; };
+		FEB3C36527B6CFC2005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyClientCell.swift */; };
+		FEB3C36727B6CFE9005D1C01 /* UICollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -166,6 +169,9 @@
 		FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withdrawViewController.swift; sourceTree = "<group>"; };
+		FEB3C36227B6CFB9005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
+		FEB3C36427B6CFC2005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
+		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -180,14 +186,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE7BDCC1279B3C6C001C75A9 /* FirebaseMessaging in Frameworks */,
-				FEB419FF27AC3ED700058E1C /* MultiSlider in Frameworks */,
-				FE1E7A0927A1B4430043F0F7 /* JGProgressHUD in Frameworks */,
-				FE51596F279AFE8200E2CFBD /* Alamofire in Frameworks */,
-				FE7BDCBF279B3C6C001C75A9 /* FirebaseAuth in Frameworks */,
-				FE51596C279AFE7400E2CFBD /* Toast in Frameworks */,
-				FE7BDCBD279B3C6C001C75A9 /* FirebaseAnalytics in Frameworks */,
-				FE51594A2796A8C000E2CFBD /* SnapKit in Frameworks */,
+				FE4F7E7127B66606003CE5B6 /* FirebaseMessaging in Frameworks */,
+				FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */,
+				FE4F7E6427B663F1003CE5B6 /* MultiSlider in Frameworks */,
+				FE4F7E6F27B66606003CE5B6 /* FirebaseAuth in Frameworks */,
+				FE4F7E6A27B665D3003CE5B6 /* JGProgressHUD in Frameworks */,
+				FE4F7E6D27B66606003CE5B6 /* FirebaseAnalytics in Frameworks */,
+				FE4F7E7427B6665E003CE5B6 /* Toast in Frameworks */,
+				FE4F7E6727B66520003CE5B6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +302,8 @@
 			children = (
 				FE3030C927B5861E008E48EC /* HobbyViewController.swift */,
 				FE3030CB27B5958E008E48EC /* HobbyView.swift */,
+				FEB3C36227B6CFB9005D1C01 /* HobbyServerCell.swift */,
+				FEB3C36427B6CFC2005D1C01 /* HobbyClientCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +372,7 @@
 			children = (
 				FE5159552799B95500E2CFBD /* ViewProtocols.swift */,
 				FE22DEA127A2F52300368B13 /* UITableViewCell+extension.swift */,
+				FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -651,14 +660,14 @@
 			);
 			name = SeSACFriends;
 			packageProductDependencies = (
-				FE5159492796A8C000E2CFBD /* SnapKit */,
-				FE51596B279AFE7400E2CFBD /* Toast */,
-				FE51596E279AFE8200E2CFBD /* Alamofire */,
-				FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */,
-				FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */,
-				FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */,
-				FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */,
-				FEB419FE27AC3ED700058E1C /* MultiSlider */,
+				FE4F7E6327B663F1003CE5B6 /* MultiSlider */,
+				FE4F7E6627B66520003CE5B6 /* SnapKit */,
+				FE4F7E6927B665D3003CE5B6 /* JGProgressHUD */,
+				FE4F7E6C27B66606003CE5B6 /* FirebaseAnalytics */,
+				FE4F7E6E27B66606003CE5B6 /* FirebaseAuth */,
+				FE4F7E7027B66606003CE5B6 /* FirebaseMessaging */,
+				FE4F7E7327B6665E003CE5B6 /* Toast */,
+				FEB3C36027B69C9A005D1C01 /* Alamofire */,
 			);
 			productName = SeSACFriends;
 			productReference = FE26BD072796832600E92519 /* SeSACFriends.app */;
@@ -689,12 +698,12 @@
 			);
 			mainGroup = FE26BCFE2796832600E92519;
 			packageReferences = (
-				FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */,
-				FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
-				FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */,
-				FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				FEB419FD27AC3ED700058E1C /* XCRemoteSwiftPackageReference "MultiSlider" */,
+				FE4F7E6227B663F1003CE5B6 /* XCRemoteSwiftPackageReference "MultiSlider" */,
+				FE4F7E6527B66520003CE5B6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FE4F7E6827B665D3003CE5B6 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				FE4F7E6B27B66606003CE5B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FE4F7E7227B6665E003CE5B6 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				FEB3C35F27B69C9A005D1C01 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = FE26BD082796832600E92519 /* Products */;
 			projectDirPath = "";
@@ -768,10 +777,12 @@
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
+				FEB3C36327B6CFB9005D1C01 /* HobbyServerCell.swift in Sources */,
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
+				FEB3C36527B6CFC2005D1C01 /* HobbyClientCell.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
 				FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
@@ -785,6 +796,7 @@
 				FE22DEB827AA295200368B13 /* MyInfoManageViewController.swift in Sources */,
 				FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */,
 				FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */,
+				FEB3C36727B6CFE9005D1C01 /* UICollectionView+extension.swift in Sources */,
 				FE22DEAB27A5B13600368B13 /* HobbyCollectionView.swift in Sources */,
 				FE22DEA927A5B08800368B13 /* ReputationView.swift in Sources */,
 				FE7BDCE0279E6868001C75A9 /* GenderView.swift in Sources */,
@@ -1009,47 +1021,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
-		FEB419FD27AC3ED700058E1C /* XCRemoteSwiftPackageReference "MultiSlider" */ = {
+		FE4F7E6227B663F1003CE5B6 /* XCRemoteSwiftPackageReference "MultiSlider" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yonat/MultiSlider";
 			requirement = {
@@ -1057,48 +1029,88 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		FE4F7E6527B66520003CE5B6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FE4F7E6827B665D3003CE5B6 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		FE4F7E6B27B66606003CE5B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		FE4F7E7227B6665E003CE5B6 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		FEB3C35F27B69C9A005D1C01 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FE1E7A0827A1B4430043F0F7 /* JGProgressHUD */ = {
+		FE4F7E6327B663F1003CE5B6 /* MultiSlider */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE1E7A0727A1B4430043F0F7 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
-			productName = JGProgressHUD;
+			package = FE4F7E6227B663F1003CE5B6 /* XCRemoteSwiftPackageReference "MultiSlider" */;
+			productName = MultiSlider;
 		};
-		FE5159492796A8C000E2CFBD /* SnapKit */ = {
+		FE4F7E6627B66520003CE5B6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE5159482796A8C000E2CFBD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = FE4F7E6527B66520003CE5B6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		FE51596B279AFE7400E2CFBD /* Toast */ = {
+		FE4F7E6927B665D3003CE5B6 /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE51596A279AFE7400E2CFBD /* XCRemoteSwiftPackageReference "Toast-Swift" */;
-			productName = Toast;
+			package = FE4F7E6827B665D3003CE5B6 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
-		FE51596E279AFE8200E2CFBD /* Alamofire */ = {
+		FE4F7E6C27B66606003CE5B6 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE51596D279AFE8200E2CFBD /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		FE7BDCBC279B3C6C001C75A9 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FE4F7E6B27B66606003CE5B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		FE7BDCBE279B3C6C001C75A9 /* FirebaseAuth */ = {
+		FE4F7E6E27B66606003CE5B6 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FE4F7E6B27B66606003CE5B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		FE7BDCC0279B3C6C001C75A9 /* FirebaseMessaging */ = {
+		FE4F7E7027B66606003CE5B6 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE7BDCBB279B3C6C001C75A9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FE4F7E6B27B66606003CE5B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
 		};
-		FEB419FE27AC3ED700058E1C /* MultiSlider */ = {
+		FE4F7E7327B6665E003CE5B6 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FEB419FD27AC3ED700058E1C /* XCRemoteSwiftPackageReference "MultiSlider" */;
-			productName = MultiSlider;
+			package = FE4F7E7227B6665E003CE5B6 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		FEB3C36027B69C9A005D1C01 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEB3C35F27B69C9A005D1C01 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

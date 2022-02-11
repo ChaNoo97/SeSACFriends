@@ -19,6 +19,7 @@ final class HobbyView: UIView, ViewProtocols {
 		return cv
 	}()
 	let findButton = MainButton(frame: .zero, type: .fill, text: "새싹 찾기")
+	let searchBar = UISearchBar()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -28,7 +29,7 @@ final class HobbyView: UIView, ViewProtocols {
 	
 	
 	func configure() {
-		
+		searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
 	}
 	
 	func setupConstraint() {

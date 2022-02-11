@@ -23,10 +23,24 @@ class HobbyViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		let searchBar = UISearchBar()
-		searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
-		self.navigationItem.titleView = searchBar
+		self.navigationItem.titleView = mainView.searchBar
+		
+		
+		
     }
 
 
 }
+
+//extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//		return 2
+//	}
+//
+//	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//	}
+//
+//
+//}

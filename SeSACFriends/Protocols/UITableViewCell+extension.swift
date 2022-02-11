@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol ResuableView {
+protocol ReuseableView {
 	static var reuseIdentfier: String { get }
 }
 
-extension UITableViewCell: ResuableView {
+extension UITableViewCell: ReuseableView {
 	static var reuseIdentfier: String {
 		return String(describing: self)
 	}

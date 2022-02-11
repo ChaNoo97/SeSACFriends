@@ -12,9 +12,10 @@ final class HomeViewModel {
 	let region = Observable(0)
 	let lat: Observable<Double> = Observable(0)
 	let long: Observable<Double> = Observable(0)
-	var manUser = [User(uid: "", nick: "", lat: 0, long: 0, reputation: [], hf: [], reviews: [], gender: 0, type: 0, sesac: 0, background: 0)]
-	var womanUSer = [User(uid: "", nick: "", lat: 0, long: 0, reputation: [], hf: [], reviews: [], gender: 0, type: 0, sesac: 0, background: 0)]
-	var allUser = [User(uid: "", nick: "", lat: 0, long: 0, reputation: [], hf: [], reviews: [], gender: 0, type: 0, sesac: 0, background: 0)]
+	var test: [User] = []
+	var manUser: [User] = []
+	var womanUSer: [User] = []
+	var allUser: [User] = []
 	var selectGender = Observable(0)
 	
 	func operationRegion(lat: Double, long: Double) -> Int {
