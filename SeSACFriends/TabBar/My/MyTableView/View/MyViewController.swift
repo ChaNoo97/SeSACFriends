@@ -17,7 +17,7 @@ final class MyViewController: BaseViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		self.tabBarController?.tabBar.isHidden = false
+		tabBarDisplay()
 	}
 	
 	override func viewDidLoad() {

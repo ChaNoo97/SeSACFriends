@@ -23,8 +23,7 @@ final class MyInfoManageViewController: BaseViewController {
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		self.tabBarController?.tabBar.isHidden = true
-		self.tabBarController?.tabBar.isTranslucent = true
+		tabBarHidden()
 	}
 	
     override func viewDidLoad() {

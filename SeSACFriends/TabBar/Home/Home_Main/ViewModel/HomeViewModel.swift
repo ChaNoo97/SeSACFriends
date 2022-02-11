@@ -12,8 +12,6 @@ final class HomeViewModel {
 	let region = Observable(0)
 	let lat: Observable<Double> = Observable(0)
 	let long: Observable<Double> = Observable(0)
-	var userLocation = Observable([[0.0, 0.0]])
-	var annotationArray = Observable([User.self])
 	var manUser = [User(uid: "", nick: "", lat: 0, long: 0, reputation: [], hf: [], reviews: [], gender: 0, type: 0, sesac: 0, background: 0)]
 	var womanUSer = [User(uid: "", nick: "", lat: 0, long: 0, reputation: [], hf: [], reviews: [], gender: 0, type: 0, sesac: 0, background: 0)]
 	var allUser = [User(uid: "", nick: "", lat: 0, long: 0, reputation: [], hf: [], reviews: [], gender: 0, type: 0, sesac: 0, background: 0)]
@@ -34,12 +32,10 @@ final class HomeViewModel {
 			guard let data = data else {
 				return
 			}
-			self.userLocation.value.removeAll()
 			switch StateCodeEnum(rawValue: code)! {
 			case .success:
 				self.validGender(data: data)
 				self.queueDB.value = data
-//				self.setupUserRegion(data: data)
 				print("onQueue api?",data.fromQueueDB)
 				completion(nil)
 			case .fireBaseTokenError:

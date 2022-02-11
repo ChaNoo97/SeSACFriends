@@ -38,6 +38,7 @@
 		FE26BD142796832800E92519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD132796832800E92519 /* Assets.xcassets */; };
 		FE26BD172796832800E92519 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE26BD152796832800E92519 /* LaunchScreen.storyboard */; };
 		FE3030CA27B5861E008E48EC /* HobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3030C927B5861E008E48EC /* HobbyViewController.swift */; };
+		FE3030CC27B5958E008E48EC /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3030CB27B5958E008E48EC /* HobbyView.swift */; };
 		FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE51593F279692F900E2CFBD /* ColorExtension.swift */; };
 		FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515941279694FB00E2CFBD /* FontExtension.swift */; };
 		FE5159462796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */; };
@@ -125,6 +126,7 @@
 		FE26BD162796832800E92519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE26BD182796832800E92519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE3030C927B5861E008E48EC /* HobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewController.swift; sourceTree = "<group>"; };
+		FE3030CB27B5958E008E48EC /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
 		FE51593F279692F900E2CFBD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		FE515941279694FB00E2CFBD /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		FE5159442796A0CE00E2CFBD /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				FE3030C927B5861E008E48EC /* HobbyViewController.swift */,
+				FE3030CB27B5958E008E48EC /* HobbyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,10 +610,10 @@
 		FEC012D427ABA8C1004E0577 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */,
-				FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */,
 				FE22DEB727AA295100368B13 /* MyInfoManageViewController.swift */,
 				FEB41A0627AD353500058E1C /* WithdrawViewController.swift */,
+				FE6E198527ABE53200BF9EB9 /* MyInfoManageView.swift */,
+				FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
 				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
+				FE3030CC27B5958E008E48EC /* HobbyView.swift in Sources */,
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
