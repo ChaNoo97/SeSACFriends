@@ -77,7 +77,9 @@ final class HomeViewController: BaseViewController {
 	
 	@objc func matchingButtonClicked() {
 		checkUserLocationServicesAuthorization()
-		pushViewCon(vc: HobbyViewController())
+		let vc = HobbyViewController()
+		vc.viewModel.recommendArray = self.viewModel.recommendArray
+		pushViewCon(vc: vc)
 	}
 	
 }

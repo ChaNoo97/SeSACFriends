@@ -12,9 +12,13 @@ final class HobbyView: UIView, ViewProtocols {
 	
 	let collectionView: UICollectionView = {
 		let layout = UICollectionViewFlowLayout()
+		layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 34)
+		layout.minimumInteritemSpacing = 10
 		layout.minimumLineSpacing = 10
 		layout.scrollDirection = .vertical
 		layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+		layout.itemSize = CGSize(width: 80, height: 32)
+		
 		let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		return cv
 	}()
@@ -38,7 +42,7 @@ final class HobbyView: UIView, ViewProtocols {
 		addSubview(findButton)
 		
 		collectionView.snp.makeConstraints {
-			$0.leading.trailing.top.equalTo(self.safeAreaLayoutGuide)
+			$0.leading.trailing.top.equalTo(self.safeAreaLayoutGuide).inset(16)
 			$0.bottom.equalTo(findButton.snp.top)
 		}
 		

@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import SnapKit
 
-final class HobbyServerCell: UICollectionViewCell, ViewProtocols {
+enum serverCellType {
+	case recommend
+	case otherUser
+	case none
+}
+
+class HobbyServerCell: UICollectionViewCell {
+	
+	let shallView = UIView()
+	let textLabel = UILabel()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -17,10 +27,24 @@ final class HobbyServerCell: UICollectionViewCell, ViewProtocols {
 	
 	
 	func configure() {
+		shallView.layer.cornerRadius = 8
+		shallView.layer.borderWidth = 1
+		textLabel.font = SesacFont.title4R14.font
 		
 	}
 	
 	func setupConstraint() {
+		addSubview(shallView)
+		shallView.addSubview(textLabel)
+		
+		shallView.snp.makeConstraints {
+			$0.height.equalTo(32)
+		}
+		
+		textLabel.snp.makeConstraints {
+			$0.top.bottom.equalTo(shallView).inset(5)
+			$0.leading.trailing.equalTo(shallView).inset(16)
+		}
 		
 	}
 	
@@ -29,3 +53,28 @@ final class HobbyServerCell: UICollectionViewCell, ViewProtocols {
 	}
 	
 }
+
+
+/*
+ switch type {
+ case .recommend:
+	 shallView.layer.borderColor = UIColor.sesacError.cgColor
+	 textLabel.textColor = .sesacError
+ case .otherUser:
+	 shallView.layer.borderColor = UIColor.sesacGray4.cgColor
+	 textLabel.textColor = .sesacBlack
+ case .none:
+	 shallView.layer.borderColor = UIColor.sesacGreen.cgColor
+	 textLabel.textColor = .sesacGreen
+ }switch type {
+ case .recommend:
+		   shallView.layer.borderColor = UIColor.sesacError.cgColor
+		   textLabel.textColor = .sesacError
+	   case .otherUser:
+		   shallView.layer.borderColor = UIColor.sesacGray4.cgColor
+		   textLabel.textColor = .sesacBlack
+	   case .none:
+		   shallView.layer.borderColor = UIColor.sesacGreen.cgColor
+		   textLabel.textColor = .sesacGreen
+	   }
+ */

@@ -84,9 +84,11 @@
 		FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */; };
 		FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */; };
 		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
-		FEB3C36327B6CFB9005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyServerCell.swift */; };
-		FEB3C36527B6CFC2005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyClientCell.swift */; };
+		FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */; };
+		FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */; };
 		FEB3C36727B6CFE9005D1C01 /* UICollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */; };
+		FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */; };
+		FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -169,9 +171,11 @@
 		FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withdrawViewController.swift; sourceTree = "<group>"; };
-		FEB3C36227B6CFB9005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
-		FEB3C36427B6CFC2005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
+		FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
+		FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
+		FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -302,8 +306,9 @@
 			children = (
 				FE3030C927B5861E008E48EC /* HobbyViewController.swift */,
 				FE3030CB27B5958E008E48EC /* HobbyView.swift */,
-				FEB3C36227B6CFB9005D1C01 /* HobbyServerCell.swift */,
-				FEB3C36427B6CFC2005D1C01 /* HobbyClientCell.swift */,
+				FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */,
+				FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */,
+				FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 		FE3030C827B585DE008E48EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -755,6 +761,7 @@
 				FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */,
+				FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
 				FE22DEA427A3BBA100368B13 /* CardView.swift in Sources */,
@@ -764,6 +771,7 @@
 				FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
 				FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */,
+				FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */,
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
@@ -777,12 +785,12 @@
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
-				FEB3C36327B6CFB9005D1C01 /* HobbyServerCell.swift in Sources */,
+				FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */,
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
-				FEB3C36527B6CFC2005D1C01 /* HobbyClientCell.swift in Sources */,
+				FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
 				FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,

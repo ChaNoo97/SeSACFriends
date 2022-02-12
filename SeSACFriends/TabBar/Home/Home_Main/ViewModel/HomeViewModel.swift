@@ -17,6 +17,7 @@ final class HomeViewModel {
 	var womanUSer: [User] = []
 	var allUser: [User] = []
 	var selectGender = Observable(0)
+	var recommendArray: [String] = []
 	
 	func operationRegion(lat: Double, long: Double) -> Int {
 		let front = floor((lat+90)*100)
@@ -37,7 +38,8 @@ final class HomeViewModel {
 			case .success:
 				self.validGender(data: data)
 				self.queueDB.value = data
-				print("onQueue api?",data.fromQueueDB)
+				self.recommendArray = data.fromRecommend
+				print("onQueue api?",data)
 				completion(nil)
 			case .fireBaseTokenError:
 				completion("token error")
