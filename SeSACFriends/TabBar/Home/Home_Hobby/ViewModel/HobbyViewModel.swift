@@ -10,4 +10,5 @@ import Foundation
 final class HobbyViewModel {
 	var recommendArray: [String] = []
 	var testArray = ["테스트"]
+	var myHobbyArray: Observable<[String]> = Observable([])
 }

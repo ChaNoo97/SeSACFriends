@@ -32,10 +32,9 @@ class HobbyViewController: BaseViewController {
 		mainView.collectionView.register(CollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionHeaderView.identifier)
     }
 
-
 }
 
-extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 	
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 2
@@ -45,7 +44,7 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 		if section == 0 {
 			return viewModel.recommendArray.count + viewModel.testArray.count
 		} else {
-			return 2
+			return viewModel.myHobbyArray.value.count
 		}
 	}
 
@@ -66,8 +65,42 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 			return cell1
 		} else {
 			guard let cell2 = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: HobbyClientCell.reuseIdentfier, for: indexPath) as? HobbyClientCell else { return UICollectionViewCell() }
-			cell2.textLabel.text = "집에"
+			let row = indexPath.row
+			cell2.textLabel.text = viewModel.myHobbyArray.value[row]
 			return cell2
+		}
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		
+		if indexPath.section == 0 {
+			let row = indexPath.row
+			if row >= 0 && row < viewModel.recommendArray.count {
+				let label = UILabel()
+				label.font = SesacFont.title4R14.font
+				label.sizeToFit()
+				label.text = viewModel.recommendArray[row]
+				let size = label.frame.size
+				print("----------", size)
+				return CGSize(width: size.width + 32, height: size.height + 10)
+			} else {
+				let label = UILabel()
+				label.font = SesacFont.title4R14.font
+				label.sizeToFit()
+				let index = row - (viewModel.recommendArray.count)
+				label.text = viewModel.testArray[index]
+				let size = label.frame.size
+				print("----------++++", size)
+				return CGSize(width: size.width + 32, height: size.height + 10)
+			}
+		} else {
+			let label = UILabel()
+			label.font = SesacFont.title4R14.font
+			label.sizeToFit()
+			let row = indexPath.row
+			label.text = viewModel.myHobbyArray.value[row]
+			let size = label.frame.size
+			return CGSize(width: size.width + 32, height: size.height + 10)
 		}
 	}
 	
@@ -90,12 +123,9 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 		}
 	}
 	
-//	func designRecommendCell(row: Int, cell: HobbyServerCell) {
-//		for i in 0...row {
-//			cell.shallView.layer.borderColor = UIColor.sesacError.cgColor
-//			cell.textLabel.textColor = .sesacError
+//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//		return CGSize(width: mainView.collectionView.frame.width, height: 18)
 //		}
-//	}
 
 
 }

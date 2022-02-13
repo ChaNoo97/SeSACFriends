@@ -89,6 +89,7 @@
 		FEB3C36727B6CFE9005D1C01 /* UICollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */; };
 		FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */; };
 		FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */; };
+		FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -176,6 +177,7 @@
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
 		FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
+		FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */,
 				FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */,
 				FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */,
+				FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
 				FE3030CC27B5958E008E48EC /* HobbyView.swift in Sources */,
+				FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,

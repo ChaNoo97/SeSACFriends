@@ -12,7 +12,7 @@ final class CollectionHeaderView: UICollectionReusableView {
 	
 	static let identifier = "CollectionHeaderView"
 	
-	let headerView = UIView()
+//	let headerView = UIView()
 	let headerLabel = UILabel()
 	
 	override init(frame: CGRect) {
@@ -26,11 +26,12 @@ final class CollectionHeaderView: UICollectionReusableView {
 	}
 	
 	func setUpConstraints() {
-		addSubview(headerView)
-		headerView.addSubview(headerLabel)
-		headerView.snp.makeConstraints {
-			$0.edges.equalToSuperview()
-		}
+//		addSubview(headerView)
+//		headerView.addSubview(headerLabel)
+//		headerView.snp.makeConstraints {
+//			$0.top.leading.equalToSuperview()
+//		}
+		self.addSubview(headerLabel)
 		headerLabel.snp.makeConstraints {
 			$0.bottom.equalToSuperview().inset(16)
 			$0.top.equalToSuperview()
