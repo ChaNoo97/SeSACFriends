@@ -105,7 +105,7 @@ class MyInfoManageViewModel {
 							completion("업데이트 성공")
 						case .fireBaseTokenError:
 							completion("유저 인증 오류")
-						case .servewError:
+						case .serverError:
 							completion("서버 오류")
 						case .clientError:
 							completion("클라이언트 오류")
@@ -114,7 +114,7 @@ class MyInfoManageViewModel {
 						}
 					}
 				}
-			case .servewError:
+			case .serverError:
 				completion("서버 오류")
 			case .clientError:
 				completion("클라이언트 오류")

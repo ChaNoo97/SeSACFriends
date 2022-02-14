@@ -79,6 +79,10 @@ final class HomeViewController: BaseViewController {
 		checkUserLocationServicesAuthorization()
 		let vc = HobbyViewController()
 		vc.viewModel.recommendArray = self.viewModel.recommendArray
+		vc.viewModel.hfArray.value = self.viewModel.hfArray
+		vc.viewModel.region = self.viewModel.region.value
+		vc.viewModel.lat = self.viewModel.lat.value
+		vc.viewModel.long = self.viewModel.long.value
 		pushViewCon(vc: vc)
 	}
 	
@@ -99,6 +103,7 @@ extension HomeViewController: MKMapViewDelegate {
 				if let message = message {
 					self.view.makeToast(message)
 				}
+				
 				//성공일때 진행
 				self.viewModel.selectGender.bind { gender in
 					self.mainView.mapView.removeAnnotations(self.userAnnotationArray)

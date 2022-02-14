@@ -13,6 +13,7 @@ enum validPattern: String{
 	case AuthNumber = "^([0-9]{6})$"
 	case NickName = "^[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9_]{1,10}$"
 	case Email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+	case addHobby = "^[가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9_]{1,8}$"
 }
 
 final class LoginViewModel {

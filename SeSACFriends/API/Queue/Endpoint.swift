@@ -9,14 +9,14 @@ import Foundation
 
 
 enum QueueEndPoint {
-	case searching
+	case queue
 	case onQueue
 }
 
 extension QueueEndPoint {
 	var url: URL {
 		switch self {
-		case .searching:
+		case .queue:
 			return .makeEndPoint("/queue")
 		case .onQueue:
 			return .makeEndPoint("/queue/onqueue")

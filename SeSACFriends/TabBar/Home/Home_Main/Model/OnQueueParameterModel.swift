@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct onQueueParameterModel: Encodable {
+struct OnQueueParameterModel: Encodable {
 	let region: Int
 	let lat, long: Double
 }

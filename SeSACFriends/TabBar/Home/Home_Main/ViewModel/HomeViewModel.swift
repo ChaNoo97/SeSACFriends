@@ -18,6 +18,7 @@ final class HomeViewModel {
 	var allUser: [User] = []
 	var selectGender = Observable(0)
 	var recommendArray: [String] = []
+	var hfArray: [String] = []
 	
 	func operationRegion(lat: Double, long: Double) -> Int {
 		let front = floor((lat+90)*100)
@@ -28,7 +29,7 @@ final class HomeViewModel {
 	
 	func onQueue(completion: @escaping(String?) -> Void) {
 		
-		let model = onQueueParameterModel(region: region.value, lat: lat.value, long: long.value)
+		let model = OnQueueParameterModel(region: region.value, lat: lat.value, long: long.value)
 		 
 		QueueApiService.onQueue(model: model) { data, code in
 			guard let data = data else {
@@ -37,6 +38,7 @@ final class HomeViewModel {
 			switch StateCodeEnum(rawValue: code)! {
 			case .success:
 				self.validGender(data: data)
+				self.setUpHfArray(data: data)
 				self.queueDB.value = data
 				self.recommendArray = data.fromRecommend
 				print("onQueue api?",data)
@@ -45,7 +47,7 @@ final class HomeViewModel {
 				completion("token error")
 			case .unenteredUser:
 				completion("미가입유져")
-			case .servewError:
+			case .serverError:
 				completion("오류")
 			case .clientError:
 				completion("오류")
@@ -55,6 +57,16 @@ final class HomeViewModel {
 		}
 	}
 	
+	func setUpHfArray(data: OnQueueModel) {
+		hfArray.removeAll()
+		data.fromQueueDB.forEach {
+			$0.hf.forEach {
+				if !hfArray.contains($0) {
+					hfArray.append($0)
+				}
+			}
+		}
+	}
 	
 	func validGender(data: OnQueueModel) {
 		removeArray()

@@ -8,13 +8,7 @@
 import UIKit
 import SnapKit
 
-enum serverCellType {
-	case recommend
-	case otherUser
-	case none
-}
-
-class HobbyServerCell: UICollectionViewCell {
+class HobbyHfCell: UICollectionViewCell {
 	
 	let shallView = UIView()
 	let textLabel = UILabel()
@@ -30,7 +24,6 @@ class HobbyServerCell: UICollectionViewCell {
 		shallView.layer.cornerRadius = 8
 		shallView.layer.borderWidth = 1
 		textLabel.font = SesacFont.title4R14.font
-		
 	}
 	
 	func setupConstraint() {
@@ -54,27 +47,15 @@ class HobbyServerCell: UICollectionViewCell {
 	
 }
 
-
-/*
- switch type {
- case .recommend:
-	 shallView.layer.borderColor = UIColor.sesacError.cgColor
-	 textLabel.textColor = .sesacError
- case .otherUser:
-	 shallView.layer.borderColor = UIColor.sesacGray4.cgColor
-	 textLabel.textColor = .sesacBlack
- case .none:
-	 shallView.layer.borderColor = UIColor.sesacGreen.cgColor
-	 textLabel.textColor = .sesacGreen
- }switch type {
- case .recommend:
-		   shallView.layer.borderColor = UIColor.sesacError.cgColor
-		   textLabel.textColor = .sesacError
-	   case .otherUser:
-		   shallView.layer.borderColor = UIColor.sesacGray4.cgColor
-		   textLabel.textColor = .sesacBlack
-	   case .none:
-		   shallView.layer.borderColor = UIColor.sesacGreen.cgColor
-		   textLabel.textColor = .sesacGreen
-	   }
- */
+final class HobbyRecommendCell: HobbyHfCell {
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		shallView.layer.borderColor = UIColor.sesacError.cgColor
+		textLabel.textColor = .sesacError
+	}
+	
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+}

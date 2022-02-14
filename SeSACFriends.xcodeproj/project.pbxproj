@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02F2BB27B3B0F200192551 /* HomeEnum.swift */; };
-		FE030ECD27B43EB2008D29ED /* QueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECC27B43EB2008D29ED /* QueueModel.swift */; };
+		FE030ECD27B43EB2008D29ED /* OnQueueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECC27B43EB2008D29ED /* OnQueueModel.swift */; };
 		FE030ECF27B443DC008D29ED /* OnQueueParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */; };
 		FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79F9279FD2600043F0F7 /* Onboding.swift */; };
 		FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */; };
@@ -90,6 +90,8 @@
 		FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */; };
 		FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */; };
 		FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */; };
+		FEB3C37427BA7C9B005D1C01 /* NearUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -101,7 +103,7 @@
 
 /* Begin PBXFileReference section */
 		FE02F2BB27B3B0F200192551 /* HomeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnum.swift; sourceTree = "<group>"; };
-		FE030ECC27B43EB2008D29ED /* QueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueModel.swift; sourceTree = "<group>"; };
+		FE030ECC27B43EB2008D29ED /* OnQueueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnQueueModel.swift; sourceTree = "<group>"; };
 		FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnQueueParameterModel.swift; sourceTree = "<group>"; };
 		FE1E79F9279FD2600043F0F7 /* Onboding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboding.swift; sourceTree = "<group>"; };
 		FE1E79FD279FD46D0043F0F7 /* FIRAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuth.swift; sourceTree = "<group>"; };
@@ -178,6 +180,8 @@
 		FEB3C36A27B81FBB005D1C01 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
 		FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueParameterModel.swift; sourceTree = "<group>"; };
+		FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewController.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -319,6 +323,7 @@
 		FE3030C627B58594008E48EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */,
 			);
 			name = Model;
 			path = "New Group/Model";
@@ -460,6 +465,14 @@
 			path = UserDefaultKey;
 			sourceTree = "<group>";
 		};
+		FEB3C37227BA7C7D005D1C01 /* Home_NearUser */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */,
+			);
+			path = Home_NearUser;
+			sourceTree = "<group>";
+		};
 		FEB5006D27B39070004915BC /* Queue */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +485,7 @@
 		FEC012C127AB9B9F004E0577 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FEB3C37227BA7C7D005D1C01 /* Home_NearUser */,
 				FE02F2BB27B3B0F200192551 /* HomeEnum.swift */,
 				FE3030C327B58547008E48EC /* Home_Main */,
 				FE3030C427B58581008E48EC /* Home_Hobby */,
@@ -551,7 +565,7 @@
 		FEC012CB27ABA328004E0577 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FE030ECC27B43EB2008D29ED /* QueueModel.swift */,
+				FE030ECC27B43EB2008D29ED /* OnQueueModel.swift */,
 				FE030ECE27B443DC008D29ED /* OnQueueParameterModel.swift */,
 			);
 			path = Model;
@@ -776,16 +790,18 @@
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
 				FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */,
 				FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */,
+				FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */,
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
+				FEB3C37427BA7C9B005D1C01 /* NearUserViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */,
 				FE3030CA27B5861E008E48EC /* HobbyViewController.swift in Sources */,
-				FE030ECD27B43EB2008D29ED /* QueueModel.swift in Sources */,
+				FE030ECD27B43EB2008D29ED /* OnQueueModel.swift in Sources */,
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,

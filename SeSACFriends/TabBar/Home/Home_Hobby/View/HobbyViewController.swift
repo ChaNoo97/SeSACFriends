@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SnapKit
+import Toast
 
 class HobbyViewController: BaseViewController {
 	
 	let mainView = HobbyView()
 	let viewModel = HobbyViewModel()
 	
+	var standByArray: [String] = []
 	override func loadView() {
 		self.view = mainView
 	}
@@ -20,6 +23,9 @@ class HobbyViewController: BaseViewController {
 		tabBarHidden()
 		navBarDisplay()
 		navigationBarSetting()
+//		viewModel.onQueue {
+//			self.mainView.collectionView.reloadData()
+//		}
 	}
 
     override func viewDidLoad() {
@@ -27,10 +33,69 @@ class HobbyViewController: BaseViewController {
 		self.navigationItem.titleView = mainView.searchBar
 		mainView.collectionView.dataSource = self
 		mainView.collectionView.delegate = self
-		mainView.collectionView.register(HobbyServerCell.self, forCellWithReuseIdentifier: HobbyServerCell.reuseIdentfier)
+		mainView.searchBar.delegate = self
+		mainView.collectionView.register(HobbyRecommendCell.self, forCellWithReuseIdentifier: HobbyRecommendCell.reuseIdentfier)
+		mainView.collectionView.register(HobbyHfCell.self, forCellWithReuseIdentifier: HobbyHfCell.reuseIdentfier)
 		mainView.collectionView.register(HobbyClientCell.self, forCellWithReuseIdentifier: HobbyClientCell.reuseIdentfier)
 		mainView.collectionView.register(CollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CollectionHeaderView.identifier)
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardShow(notification:)),
+			name: UIResponder.keyboardWillChangeFrameNotification,
+			object: nil)
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardHide(notification:)),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil)
+		mainView.findButton.addTarget(self, action: #selector(findButtonClicked), for: .touchUpInside)
     }
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		//tapGesture 로 하면 didselect 가 안먹음
+			navigationItem.titleView?.endEditing(true)
+		}
+	
+	@objc func findButtonClicked() {
+		navigationItem.titleView?.endEditing(true)
+		viewModel.queue { message, viewController in
+			if let message = message {
+				self.view.makeToast(message, duration: 1.0)
+				
+			}
+			if let viewController = viewController {
+				DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+					self.pushViewCon(vc: viewController)
+				}
+			}
+		}
+	}
+	
+	@objc func myHobbyCellClosedButtonClicked(_ sender: UIButton) {
+		viewModel.myHobbyArray.value.remove(at: sender.tag)
+		mainView.collectionView.reloadData()
+	}
+	
+	@objc func keyboardShow(notification: NSNotification) {
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
+			mainView.findButton.layer.cornerRadius = 0
+			mainView.findButton.snp.updateConstraints {
+				$0.bottom.equalTo(view.safeAreaLayoutGuide).inset(keyboardHeight)
+				$0.leading.trailing.equalToSuperview()
+			}
+			mainView.layoutIfNeeded()
+		}
+	}
+	
+	@objc func keyboardHide(notification: NSNotification) {
+		mainView.findButton.layer.cornerRadius = 8
+		mainView.findButton.snp.updateConstraints {
+			$0.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
+			$0.leading.trailing.equalToSuperview().inset(16)
+		}
+		mainView.layoutIfNeeded()
+	}
 
 }
 
@@ -42,7 +107,7 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		if section == 0 {
-			return viewModel.recommendArray.count + viewModel.testArray.count
+			return viewModel.recommendArray.count + viewModel.hfArray.value.count
 		} else {
 			return viewModel.myHobbyArray.value.count
 		}
@@ -51,23 +116,24 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		if indexPath.section == 0 {
-			guard let cell1 = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: HobbyServerCell.reuseIdentfier, for: indexPath) as? HobbyServerCell else { return UICollectionViewCell() }
 			let row = indexPath.row
 			if row >= 0 && row < viewModel.recommendArray.count {
-				cell1.textLabel.text = viewModel.recommendArray[row]
-				cell1.shallView.layer.borderColor = UIColor.sesacError.cgColor
-				cell1.textLabel.textColor = .sesacError
+				guard let recommendCell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: HobbyRecommendCell.reuseIdentfier, for: indexPath) as? HobbyRecommendCell else { return UICollectionViewCell() }
+				recommendCell.textLabel.text = viewModel.recommendArray[row]
+				return recommendCell
 			} else {
+				guard let hfCell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: HobbyHfCell.reuseIdentfier, for: indexPath) as? HobbyHfCell else { return UICollectionViewCell() }
 				let index = row - (viewModel.recommendArray.count)
-				cell1.textLabel.text = viewModel.testArray[index]
+				hfCell.textLabel.text = viewModel.hfArray.value[index]
+				return hfCell
 			}
-			cell1.backgroundColor = .yellow
-			return cell1
 		} else {
-			guard let cell2 = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: HobbyClientCell.reuseIdentfier, for: indexPath) as? HobbyClientCell else { return UICollectionViewCell() }
+			guard let myHobbyCell = mainView.collectionView.dequeueReusableCell(withReuseIdentifier: HobbyClientCell.reuseIdentfier, for: indexPath) as? HobbyClientCell else { return UICollectionViewCell() }
 			let row = indexPath.row
-			cell2.textLabel.text = viewModel.myHobbyArray.value[row]
-			return cell2
+			myHobbyCell.textLabel.text = viewModel.myHobbyArray.value[row]
+			myHobbyCell.closeButton.addTarget(self, action: #selector(myHobbyCellClosedButtonClicked(_:)), for: .touchUpInside)
+			myHobbyCell.closeButton.tag = row
+			return myHobbyCell
 		}
 	}
 	
@@ -76,32 +142,64 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 		if indexPath.section == 0 {
 			let row = indexPath.row
 			if row >= 0 && row < viewModel.recommendArray.count {
-				let label = UILabel()
-				label.font = SesacFont.title4R14.font
-				label.sizeToFit()
-				label.text = viewModel.recommendArray[row]
-				let size = label.frame.size
-				print("----------", size)
+				let recommendCell: UILabel = {
+					let lb = UILabel()
+					lb.font = SesacFont.title4R14.font
+					lb.text = viewModel.recommendArray[row]
+					lb.sizeToFit()
+					return lb
+				}()
+				let size = recommendCell.frame.size
 				return CGSize(width: size.width + 32, height: size.height + 10)
 			} else {
-				let label = UILabel()
-				label.font = SesacFont.title4R14.font
-				label.sizeToFit()
 				let index = row - (viewModel.recommendArray.count)
-				label.text = viewModel.testArray[index]
-				let size = label.frame.size
-				print("----------++++", size)
+				let hfCell: UILabel = {
+					let lb = UILabel()
+					lb.font = SesacFont.title4R14.font
+					lb.text = viewModel.hfArray.value[index]
+					lb.sizeToFit()
+					return lb
+				}()
+				let size = hfCell.frame.size
 				return CGSize(width: size.width + 32, height: size.height + 10)
 			}
 		} else {
-			let label = UILabel()
-			label.font = SesacFont.title4R14.font
-			label.sizeToFit()
 			let row = indexPath.row
-			label.text = viewModel.myHobbyArray.value[row]
-			let size = label.frame.size
-			return CGSize(width: size.width + 32, height: size.height + 10)
+			let myHobbyCell: UILabel = {
+				let lb = UILabel()
+				lb.font = SesacFont.title4R14.font
+				lb.text = viewModel.myHobbyArray.value[row]
+				lb.sizeToFit()
+				return lb
+			}()
+			let size = myHobbyCell.frame.size
+			return CGSize(width: size.width + 52, height: size.height + 10)
 		}
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		if indexPath.section == 0 {
+			let row = indexPath.row
+			if row >= 0 && row < viewModel.recommendArray.count {
+				viewModel.checkOverlap(value: viewModel.recommendArray[row]) { message in
+					guard let message = message else {
+						viewModel.myHobbyArray.value.append(viewModel.recommendArray[row])
+						return
+					}
+					self.view.makeToast(message)
+				}
+			} else {
+				let index = row - viewModel.recommendArray.count
+				viewModel.checkOverlap(value: viewModel.hfArray.value[index]) { message in
+					guard let message = message else {
+						viewModel.myHobbyArray.value.append(viewModel.hfArray.value[index])
+						return
+					}
+					self.view.makeToast(message)
+				}
+			}
+		}
+		mainView.collectionView.reloadData()
 	}
 	
 	//collectionHeaderView
@@ -122,10 +220,35 @@ extension HobbyViewController: UICollectionViewDelegate, UICollectionViewDataSou
 			assert(false)
 		}
 	}
+
+}
+
+extension HobbyViewController: UISearchBarDelegate {
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		navigationItem.titleView?.endEditing(true)
+		standByArray.forEach { hobby in
+			viewModel.checkOverlap(value: hobby) { message in
+				if let message = message {
+					view.makeToast(message)
+				} else {
+					if viewModel.valid(pattern: validPattern.addHobby.rawValue, input: hobby) {
+						viewModel.myHobbyArray.value.append(hobby)
+					} else {
+						view.makeToast("최소 한 자 이상, 최대 8글자까지 작성 가능합니다")
+					}
+					
+				}
+			}
+		}
+		mainView.collectionView.reloadData()
+	}
 	
-//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//		return CGSize(width: mainView.collectionView.frame.width, height: 18)
-//		}
-
-
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		mainView.searchBar.text = ""
+	}
+	
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		standByArray = searchText.components(separatedBy: " ")
+		print(standByArray)
+	}
 }

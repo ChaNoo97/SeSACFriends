@@ -48,7 +48,7 @@ final class HobbyView: UIView, ViewProtocols {
 		
 		findButton.snp.makeConstraints {
 			$0.bottom.equalTo(self.safeAreaLayoutGuide).inset(16)
-			$0.left.trailing.equalToSuperview().inset(16)
+			$0.leading.trailing.equalToSuperview().inset(16)
 			$0.height.equalTo(48)
 		}
 		

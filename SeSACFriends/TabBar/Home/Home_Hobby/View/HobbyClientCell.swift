@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class HobbyClientCell: HobbyServerCell {
+final class HobbyClientCell: HobbyHfCell {
 	
 	let closeButton = UIButton()
 	
@@ -20,6 +20,7 @@ final class HobbyClientCell: HobbyServerCell {
 	
 	override func configure() {
 		super.configure()
+		
 		shallView.layer.borderColor = UIColor.sesacGreen.cgColor
 		closeButton.setImage(UIImage(named: "close"), for: .normal)
 		textLabel.textColor = .sesacGreen

@@ -144,6 +144,12 @@ final class MyInfoManageViewController: BaseViewController {
 			isWoman.toggle()
 			viewModel.gender.value = 1
 		}
+		if !isWoman && !isMan {
+			mainView.bottomView.manButton.setupButtonType(type: .select)
+			isMan.toggle()
+			viewModel.gender.value = 1
+		}
+		print(isMan)
 	}
 	
 	@objc func womanButtonClicked() {
@@ -154,6 +160,12 @@ final class MyInfoManageViewController: BaseViewController {
 			isWoman.toggle()
 			viewModel.gender.value = 0
 		}
+		if !isWoman && !isMan {
+			mainView.bottomView.womanButton.setupButtonType(type: .select)
+			isWoman.toggle()
+			viewModel.gender.value = 0
+		}
+		print(isWoman)
 	}
     
 	@objc func arrowBtnClicked() {
