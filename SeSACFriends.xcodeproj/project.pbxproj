@@ -91,11 +91,15 @@
 		FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */; };
 		FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */; };
-		FEB3C37427BA7C9B005D1C01 /* NearUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */; };
+		FEB3C37427BA7C9B005D1C01 /* FindSeSacTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37327BA7C9B005D1C01 /* FindSeSacTabViewController.swift */; };
 		FEB3C37727BAC41F005D1C01 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C37627BAC41F005D1C01 /* Tabman */; };
 		FEB3C37B27BAC6E2005D1C01 /* FindNearSeSacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */; };
 		FEB3C37D27BAC70F005D1C01 /* AcceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */; };
-		FEB3C37F27BACB35005D1C01 /* TabBarDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37E27BACB35005D1C01 /* TabBarDesignView.swift */; };
+		FEB3C38327BB8F38005D1C01 /* NearSeSacViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38227BB8F38005D1C01 /* NearSeSacViewModel.swift */; };
+		FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38827BB9D73005D1C01 /* FindNearView.swift */; };
+		FEB3C38B27BBE08B005D1C01 /* AcceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */; };
+		FEB3C38D27BBFC87005D1C01 /* AcceptTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */; };
+		FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -185,10 +189,14 @@
 		FEB3C36C27B826AA005D1C01 /* HobbyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyViewModel.swift; sourceTree = "<group>"; };
 		FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueParameterModel.swift; sourceTree = "<group>"; };
-		FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewController.swift; sourceTree = "<group>"; };
+		FEB3C37327BA7C9B005D1C01 /* FindSeSacTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSeSacTabViewController.swift; sourceTree = "<group>"; };
 		FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearSeSacViewController.swift; sourceTree = "<group>"; };
 		FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptViewController.swift; sourceTree = "<group>"; };
-		FEB3C37E27BACB35005D1C01 /* TabBarDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDesignView.swift; sourceTree = "<group>"; };
+		FEB3C38227BB8F38005D1C01 /* NearSeSacViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSacViewModel.swift; sourceTree = "<group>"; };
+		FEB3C38827BB9D73005D1C01 /* FindNearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearView.swift; sourceTree = "<group>"; };
+		FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptView.swift; sourceTree = "<group>"; };
+		FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTableCell.swift; sourceTree = "<group>"; };
+		FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSacTableCell.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -476,8 +484,7 @@
 		FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */,
-				FEB3C37E27BACB35005D1C01 /* TabBarDesignView.swift */,
+				FEB3C38527BB9C9B005D1C01 /* NearUserTab */,
 				FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */,
 				FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */,
 			);
@@ -487,7 +494,7 @@
 		FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */,
+				FEB3C38727BB9CF7005D1C01 /* View */,
 			);
 			path = AcceptSeSac;
 			sourceTree = "<group>";
@@ -495,9 +502,54 @@
 		FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */,
+				FEB3C38427BB9C78005D1C01 /* View */,
 			);
 			path = FindNearSeSac;
+			sourceTree = "<group>";
+		};
+		FEB3C38027BB8F0A005D1C01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C37327BA7C9B005D1C01 /* FindSeSacTabViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEB3C38127BB8F15005D1C01 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C38227BB8F38005D1C01 /* NearSeSacViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEB3C38427BB9C78005D1C01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */,
+				FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */,
+				FEB3C38827BB9D73005D1C01 /* FindNearView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEB3C38527BB9C9B005D1C01 /* NearUserTab */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C38127BB8F15005D1C01 /* ViewModel */,
+				FEB3C38027BB8F0A005D1C01 /* View */,
+			);
+			path = NearUserTab;
+			sourceTree = "<group>";
+		};
+		FEB3C38727BB9CF7005D1C01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */,
+				FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */,
+				FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FEB5006D27B39070004915BC /* Queue */ = {
@@ -789,6 +841,7 @@
 				FE22DE9B27A27B4F00368B13 /* MyView.swift in Sources */,
 				FE7BDCEA279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift in Sources */,
 				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
+				FEB3C38327BB8F38005D1C01 /* NearSeSacViewModel.swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
 				FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
@@ -808,7 +861,6 @@
 				FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */,
-				FEB3C37F27BACB35005D1C01 /* TabBarDesignView.swift in Sources */,
 				FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
@@ -825,7 +877,8 @@
 				FEB3C37B27BAC6E2005D1C01 /* FindNearSeSacViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
-				FEB3C37427BA7C9B005D1C01 /* NearUserViewController.swift in Sources */,
+				FEB3C38B27BBE08B005D1C01 /* AcceptView.swift in Sources */,
+				FEB3C37427BA7C9B005D1C01 /* FindSeSacTabViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
@@ -836,10 +889,12 @@
 				FE7BDCD6279C7AFE001C75A9 /* EmailView.swift in Sources */,
 				FE1E7A0627A1939A0043F0F7 /* InitialViewComtroller.swift in Sources */,
 				FE515940279692F900E2CFBD /* ColorExtension.swift in Sources */,
+				FEB3C38D27BBFC87005D1C01 /* AcceptTableCell.swift in Sources */,
 				FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */,
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
+				FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */,
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
 				FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
@@ -849,6 +904,7 @@
 				FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */,
 				FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */,
 				FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */,
+				FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */,
 				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
 				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,

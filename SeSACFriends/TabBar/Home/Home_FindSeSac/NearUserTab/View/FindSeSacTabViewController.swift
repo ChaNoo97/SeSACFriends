@@ -14,18 +14,19 @@ final class FindSeSacTabViewController: TabmanViewController {
 	
 	private var viewControllers = [FindNearSeSacViewController(), AcceptViewController()]
 	
-//	let tabBarView = UIView()
-	let mainView = TabBarView()
 	let designView = UIView()
+	let viewModel = NearSeSacViewModel()
 	
-	override func loadView() {
-		self.view = mainView
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationBarSetTitle(title: "새싹 찾기")
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.dataSource = self
 		setUpTabBarViewDesign()
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "찾기중단", style: .plain, target: self, action: #selector(suspendButton))
 	}
 	
 	func setUpTabBarViewDesign() {
@@ -46,8 +47,27 @@ final class FindSeSacTabViewController: TabmanViewController {
 			$0.selectedTintColor = .sesacGreen
 		}
 		bar.layout.contentMode = .fit
-		addBar(bar, dataSource: self, at: .custom(view: mainView.tabBarView, layout: nil))
-		
+		addBar(bar, dataSource: self, at: .top)
+	}
+	
+	@objc func suspendButton() {
+		viewModel.deleteQueue { message, viewController in
+			if let viewController = viewController {
+				self.changeRootView(viewController: viewController)
+//				if viewController == TabBarController() {
+//					print("dhdodhodhdodhdohdodho")
+//					self.changeRootView(viewController: HomeViewController())
+//				} else {
+//					if let message = message {
+//						self.view.makeToast(message, duration: 1.0)
+//						채팅뷰컨 이동
+//						DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+//							self.changeRootView(viewController: <#T##UIViewController#>)
+//						}
+//					}
+//				}
+			}
+		}
 	}
 	
 }

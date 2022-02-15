@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 
 enum QueueEndPoint {
@@ -24,3 +25,6 @@ extension QueueEndPoint {
 	}
 }
 
+struct QueueHeader {
+	static var header = ["idtoken": UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue)!] as HTTPHeaders
+}

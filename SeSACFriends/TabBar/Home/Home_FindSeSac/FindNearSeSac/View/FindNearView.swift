@@ -1,5 +1,5 @@
 //
-//  TabBarDesignView.swift
+//  FindNearView.swift
 //  SeSACFriends
 //
 //  Created by Hoo's MacBookPro on 2022/02/15.
@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 
-final class TabBarView: UIView, ViewProtocols {
+class FindNearView: UIView, ViewProtocols {
 	
-	let tabBarView = UIView()
+	
+	let tableView = UITableView()
 	let modifyHobbyButton = MainButton(frame: .zero, type: .fill, text: "취미변경하기")
 	let reloadButton = UIButton()
 	
@@ -26,26 +27,29 @@ final class TabBarView: UIView, ViewProtocols {
 	}
 	
 	func setupConstraint() {
-		[tabBarView, modifyHobbyButton, reloadButton].forEach {
+		addSubview(tableView)
+		
+		[modifyHobbyButton, reloadButton].forEach {
 			addSubview($0)
 		}
-		tabBarView.snp.makeConstraints {
-			$0.height.equalTo(44)
-			$0.leading.trailing.equalToSuperview()
-			$0.top.equalTo(self.safeAreaLayoutGuide)
+		
+		tableView.snp.makeConstraints {
+			$0.edges.equalTo(self.safeAreaLayoutGuide)
 		}
+		
 		modifyHobbyButton.snp.makeConstraints {
-			$0.leading.equalToSuperview().inset(16)
-			$0.trailing.equalTo(reloadButton.snp.leading).offset(-8)
-			$0.height.equalTo(48)
 			$0.bottom.equalTo(self.safeAreaLayoutGuide).inset(16)
+			$0.leading.equalToSuperview().inset(16)
+			$0.height.equalTo(48)
 		}
 		
 		reloadButton.snp.makeConstraints {
-			$0.trailing.equalToSuperview().inset(16)
-			$0.size.equalTo(48)
 			$0.centerY.equalTo(modifyHobbyButton.snp.centerY)
+			$0.trailing.equalToSuperview().inset(16)
+			$0.leading.equalTo(modifyHobbyButton.snp.trailing).offset(8)
+			$0.size.equalTo(48)
 		}
+		
 	}
 	
 	required init?(coder: NSCoder) {

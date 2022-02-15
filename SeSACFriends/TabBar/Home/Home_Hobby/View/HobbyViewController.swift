@@ -13,7 +13,7 @@ class HobbyViewController: BaseViewController {
 	
 	let mainView = HobbyView()
 	let viewModel = HobbyViewModel()
-	
+	var buttonStatus = true
 	var standByArray: [String] = []
 	override func loadView() {
 		self.view = mainView
@@ -64,14 +64,18 @@ class HobbyViewController: BaseViewController {
 	
 	@objc func findButtonClicked() {
 		navigationItem.titleView?.endEditing(true)
-		viewModel.queue { message, viewController in
-			if let message = message {
-				self.view.makeToast(message, duration: 1.0)
-				
-			}
-			if let viewController = viewController {
-				DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-					self.pushViewCon(vc: viewController)
+		if buttonStatus {
+			buttonStatus.toggle()
+			viewModel.queue { message, viewController in
+				if let message = message {
+					self.buttonStatus = true
+					self.view.makeToast(message, duration: 1.0)
+				}
+				if let viewController = viewController {
+					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+						self.buttonStatus = true
+						self.pushViewCon(vc: viewController)
+					}
 				}
 			}
 		}

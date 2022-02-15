@@ -43,13 +43,6 @@ final class HomeViewController: BaseViewController {
 		mainView.womanButton.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
 		mainView.gpsButton.addTarget(self, action: #selector(gpsButtonClicked), for: .touchUpInside)
 		mainView.matchingButton.addTarget(self, action: #selector(matchingButtonClicked), for: .touchUpInside)
-		if let myLocation = myLocation {
-			mainView.mapView.showsUserLocation = true
-			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
-		} else {
-			mainView.mapView.showsUserLocation = true
-			mainView.mapView.setRegion(MKCoordinateRegion(center: sesacLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
-		}
 		mainView.selectAllButton()
 	}
 	
@@ -202,7 +195,7 @@ extension HomeViewController:  CLLocationManagerDelegate {
 	}
 	
 	func changeAuthAlert() {
-		
+		mainView.mapView.setRegion(MKCoordinateRegion(center: sesacLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
 		let alert = UIAlertController(title: "위치권한 요청", message: "친구 찾기를 위해 위치권한이 필요합니다.", preferredStyle: .alert)
 		let settingAction = UIAlertAction(title: "설정", style: .default) { action in
 			guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
@@ -240,6 +233,9 @@ extension HomeViewController:  CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		myLocation = CLLocationCoordinate2D(latitude: locations.last!.coordinate.latitude, longitude: locations.last!.coordinate.longitude)
 		mainView.mapView.showsUserLocation = true
+		if let myLocation = myLocation {
+			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
+		}
 	}
 	
 	
