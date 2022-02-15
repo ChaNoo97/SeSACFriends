@@ -51,19 +51,21 @@ final class HobbyViewModel {
 	}
 	
 	func queue(completion: @escaping (String?, UIViewController?) -> Void) {
+		var modelHF: [String] = []
 		if myHobbyArray.value.count == 0 {
-			myHobbyArray.value = ["anything"]
+			modelHF = ["anything"]
+		} else {
+			modelHF = myHobbyArray.value
 		}
-		let model = QueueParameterModel(region: region, type: 2, lat: lat, long: long, hf: myHobbyArray.value)
+		let model = QueueParameterModel(region: region, type: 2, lat: lat, long: long, hf: modelHF)
 		QueueApiService.postQueue(model: model) { code in
 			guard let code = code else {
 				return
 			}
-			print("========",model)
 			print(code)
 			switch QueueStateCodeEnum(rawValue: code)! {
 			case .success:
-				completion(nil, NearUserViewController())
+				completion(nil, FindSeSacTabViewController())
 			case .ban:
 				completion("신고가 누적되어 이용하실 수 없습니다.", nil)
 			case .stReport:
@@ -82,7 +84,7 @@ final class HobbyViewModel {
 						}
 						switch QueueStateCodeEnum(rawValue: code)! {
 						case .success:
-							completion(nil, NearUserViewController())
+							completion(nil, FindSeSacTabViewController())
 						case .ban:
 							completion("신고가 누적되어 이용하실 수 없습니다.", nil)
 						case .stReport:

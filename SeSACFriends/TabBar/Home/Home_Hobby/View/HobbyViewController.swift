@@ -23,9 +23,9 @@ class HobbyViewController: BaseViewController {
 		tabBarHidden()
 		navBarDisplay()
 		navigationBarSetting()
-//		viewModel.onQueue {
-//			self.mainView.collectionView.reloadData()
-//		}
+		viewModel.onQueue {
+			self.mainView.collectionView.reloadData()
+		}
 	}
 
     override func viewDidLoad() {
@@ -50,6 +50,12 @@ class HobbyViewController: BaseViewController {
 			object: nil)
 		mainView.findButton.addTarget(self, action: #selector(findButtonClicked), for: .touchUpInside)
     }
+	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		//tapGesture 로 하면 didselect 가 안먹음

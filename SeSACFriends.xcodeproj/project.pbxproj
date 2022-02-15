@@ -92,6 +92,10 @@
 		FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */; };
 		FEB3C37427BA7C9B005D1C01 /* NearUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */; };
+		FEB3C37727BAC41F005D1C01 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C37627BAC41F005D1C01 /* Tabman */; };
+		FEB3C37B27BAC6E2005D1C01 /* FindNearSeSacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */; };
+		FEB3C37D27BAC70F005D1C01 /* AcceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */; };
+		FEB3C37F27BACB35005D1C01 /* TabBarDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37E27BACB35005D1C01 /* TabBarDesignView.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -182,6 +186,9 @@
 		FEB3C36E27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		FEB3C37027BA726B005D1C01 /* QueueParameterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueParameterModel.swift; sourceTree = "<group>"; };
 		FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewController.swift; sourceTree = "<group>"; };
+		FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearSeSacViewController.swift; sourceTree = "<group>"; };
+		FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptViewController.swift; sourceTree = "<group>"; };
+		FEB3C37E27BACB35005D1C01 /* TabBarDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDesignView.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -201,6 +208,7 @@
 				FE4F7E6427B663F1003CE5B6 /* MultiSlider in Frameworks */,
 				FE4F7E6F27B66606003CE5B6 /* FirebaseAuth in Frameworks */,
 				FE4F7E6A27B665D3003CE5B6 /* JGProgressHUD in Frameworks */,
+				FEB3C37727BAC41F005D1C01 /* Tabman in Frameworks */,
 				FE4F7E6D27B66606003CE5B6 /* FirebaseAnalytics in Frameworks */,
 				FE4F7E7427B6665E003CE5B6 /* Toast in Frameworks */,
 				FE4F7E6727B66520003CE5B6 /* SnapKit in Frameworks */,
@@ -465,12 +473,31 @@
 			path = UserDefaultKey;
 			sourceTree = "<group>";
 		};
-		FEB3C37227BA7C7D005D1C01 /* Home_NearUser */ = {
+		FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */ = {
 			isa = PBXGroup;
 			children = (
 				FEB3C37327BA7C9B005D1C01 /* NearUserViewController.swift */,
+				FEB3C37E27BACB35005D1C01 /* TabBarDesignView.swift */,
+				FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */,
+				FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */,
 			);
-			path = Home_NearUser;
+			path = Home_FindSeSac;
+			sourceTree = "<group>";
+		};
+		FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */,
+			);
+			path = AcceptSeSac;
+			sourceTree = "<group>";
+		};
+		FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */,
+			);
+			path = FindNearSeSac;
 			sourceTree = "<group>";
 		};
 		FEB5006D27B39070004915BC /* Queue */ = {
@@ -485,10 +512,10 @@
 		FEC012C127AB9B9F004E0577 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C37227BA7C7D005D1C01 /* Home_NearUser */,
 				FE02F2BB27B3B0F200192551 /* HomeEnum.swift */,
 				FE3030C327B58547008E48EC /* Home_Main */,
 				FE3030C427B58581008E48EC /* Home_Hobby */,
+				FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -691,6 +718,7 @@
 				FE4F7E7027B66606003CE5B6 /* FirebaseMessaging */,
 				FE4F7E7327B6665E003CE5B6 /* Toast */,
 				FEB3C36027B69C9A005D1C01 /* Alamofire */,
+				FEB3C37627BAC41F005D1C01 /* Tabman */,
 			);
 			productName = SeSACFriends;
 			productReference = FE26BD072796832600E92519 /* SeSACFriends.app */;
@@ -727,6 +755,7 @@
 				FE4F7E6B27B66606003CE5B6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FE4F7E7227B6665E003CE5B6 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				FEB3C35F27B69C9A005D1C01 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				FEB3C37527BAC41F005D1C01 /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = FE26BD082796832600E92519 /* Products */;
 			projectDirPath = "";
@@ -779,6 +808,7 @@
 				FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
 				FE6E198627ABE53200BF9EB9 /* MyInfoManageView.swift in Sources */,
+				FEB3C37F27BACB35005D1C01 /* TabBarDesignView.swift in Sources */,
 				FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
@@ -792,6 +822,7 @@
 				FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */,
 				FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */,
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
+				FEB3C37B27BAC6E2005D1C01 /* FindNearSeSacViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FEB3C37427BA7C9B005D1C01 /* NearUserViewController.swift in Sources */,
@@ -812,6 +843,7 @@
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
 				FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
+				FEB3C37D27BAC70F005D1C01 /* AcceptViewController.swift in Sources */,
 				FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
 				FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */,
@@ -1097,6 +1129,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		FEB3C37527BAC41F005D1C01 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1139,6 +1179,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FEB3C35F27B69C9A005D1C01 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		FEB3C37627BAC41F005D1C01 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEB3C37527BAC41F005D1C01 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

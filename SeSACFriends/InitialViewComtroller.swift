@@ -29,6 +29,7 @@ final class InitialViewcontroller: BaseViewController {
 					UserApiService.logIn { data, code, error in
 						switch code {
 						case 200:
+							print("=======get=======",data)
 							self.hud.dismiss(animated: true)
 							self.changeRootView(viewController: TabBarController())
 						case 406:
