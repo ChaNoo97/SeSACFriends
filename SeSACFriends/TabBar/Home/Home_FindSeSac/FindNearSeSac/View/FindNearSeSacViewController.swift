@@ -11,6 +11,7 @@ import SnapKit
 final class FindNearSeSacViewController: UIViewController {
 	
 	let mainView = FindNearView()
+	let viewModel = NearSeSacViewModel()
 	
 	override func loadView() {
 		self.view = mainView
@@ -62,17 +63,19 @@ extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSourc
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = mainView.tableView.dequeueReusableCell(withIdentifier: NearSeSacTableCell.reuseIdentfier, for: indexPath) as? NearSeSacTableCell else { return UITableViewCell() }
-		cell.cellDelegate = self
+		let row = indexPath.row
+		
+		cell.arrowBtnAction = {
+			self.mainView.tableView.reloadData()
+		}
+		
+		cell.requestBtnAction = {
+			print("request")
+		}
+		
 		return cell
 	}
 
 }
+	
 
-extension FindNearSeSacViewController: ButtonActionDelegate {
-	func arrowButtonClicked() {
-		print("test: arrow button clicked")
-		mainView.tableView.reloadData()
-	}
-	
-	
-}

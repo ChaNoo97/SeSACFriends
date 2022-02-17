@@ -10,6 +10,8 @@ import UIKit
 
 final class NearSeSacViewModel {
 	
+	var boolArray = Array(repeating: true, count: 5)
+	
 	func deleteQueue(completion: @escaping (String?, UIViewController?) -> Void) {
 		QueueApiService.deleteQueue { code in
 			guard let code = code else {

@@ -8,10 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol ButtonActionDelegate: AnyObject {
-	func arrowButtonClicked()
-}
-
 final class NearSeSacTableCell: UITableViewCell {
 	
 	let backgroundImageView = UIImageView()
@@ -21,8 +17,10 @@ final class NearSeSacTableCell: UITableViewCell {
 	let reputationView = ReputationView()
 	let reviewView = ReviewView()
 	let designView = UIView()
+	let requestButton = UIButton()
 	
-	weak var cellDelegate: ButtonActionDelegate?
+	var arrowBtnAction: (() -> ())?
+	var requestBtnAction: (() -> Void)?
 	var isOpen = true
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,12 +28,19 @@ final class NearSeSacTableCell: UITableViewCell {
 		setUpStackView()
 		setupConstraint()
 		configure()
+		requestButtonConfigure()
 		self.userTitle.arrowButton.addTarget(self, action: #selector(arrowButtonClicked(_:)), for: .touchUpInside)
+		self.requestButton.addTarget(self, action: #selector(requestButtonClicked), for: .touchUpInside)
+	}
+	
+	@objc func requestButtonClicked() {
+		requestBtnAction?()
 	}
 	
 	@objc func arrowButtonClicked(_ sender: UIButton) {
-		cellDelegate?.arrowButtonClicked()
-		print("======isopen",isOpen)
+//		self.userTitle.arrowButton.isSelected.toggle()
+//		print("arrowBtnClicked in Cell Class")
+//		print("======isopen",isOpen)
 		if isOpen {
 			reputationView.isHidden = true
 			reviewView.isHidden = true
@@ -46,6 +51,8 @@ final class NearSeSacTableCell: UITableViewCell {
 			userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
 		}
 		isOpen.toggle()
+//
+		arrowBtnAction?()
 	}
 	
 	func setUpStackView() {
@@ -66,8 +73,15 @@ final class NearSeSacTableCell: UITableViewCell {
 		designView.backgroundColor = .white
 	}
 	
+	func requestButtonConfigure() {
+		requestButton.backgroundColor = .sesacError
+		requestButton.setTitle("요청하기", for: .normal)
+		requestButton.titleLabel?.font = SesacFont.title3M14.font
+		requestButton.layer.cornerRadius = 8
+	}
+	
 	func setupConstraint() {
-		[backgroundImageView, faceImageView, stackView, designView].forEach {
+		[backgroundImageView, faceImageView, stackView, designView, requestButton].forEach {
 			contentView.addSubview($0)
 		}
 		
@@ -79,6 +93,12 @@ final class NearSeSacTableCell: UITableViewCell {
 			$0.top.equalTo(designView.snp.bottom)
 			$0.leading.trailing.equalTo(self).inset(16)
 			$0.height.equalTo(194)
+		}
+		
+		requestButton.snp.makeConstraints {
+			$0.top.trailing.equalTo(backgroundImageView).inset(12)
+			$0.width.equalTo(80)
+			$0.height.equalTo(40)
 		}
 		
 		faceImageView.snp.makeConstraints {
