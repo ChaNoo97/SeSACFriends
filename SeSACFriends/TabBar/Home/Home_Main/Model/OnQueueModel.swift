@@ -21,4 +21,3 @@ struct User: Codable {
 	let hf, reviews: [String]
 	let gender, type, sesac, background: Int
 }
-

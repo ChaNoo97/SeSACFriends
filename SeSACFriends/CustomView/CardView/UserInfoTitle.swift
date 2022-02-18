@@ -22,7 +22,7 @@ class UserInfoTitle: UIView, ViewProtocols {
 		nameLabel.font = SesacFont.title1M16.font
 		//test
 		nameLabel.text = "김새싹"
-		arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
+		arrowButton.setImage(UIImage(named: "upArrow"), for: .normal)
 	}
 	
 	func setupConstraint() {

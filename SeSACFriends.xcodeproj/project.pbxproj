@@ -100,6 +100,7 @@
 		FEB3C38B27BBE08B005D1C01 /* AcceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */; };
 		FEB3C38D27BBFC87005D1C01 /* AcceptTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */; };
 		FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */; };
+		FEB3C39327BECE1F005D1C01 /* FindNearSeSacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C39227BECE1F005D1C01 /* FindNearSeSacModel.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -197,6 +198,7 @@
 		FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptView.swift; sourceTree = "<group>"; };
 		FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTableCell.swift; sourceTree = "<group>"; };
 		FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSacTableCell.swift; sourceTree = "<group>"; };
+		FEB3C39227BECE1F005D1C01 /* FindNearSeSacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearSeSacModel.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */ = {
 			isa = PBXGroup;
 			children = (
+				FEB3C39127BECE0E005D1C01 /* Model */,
 				FEB3C38427BB9C78005D1C01 /* View */,
 			);
 			path = FindNearSeSac;
@@ -550,6 +553,14 @@
 				FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FEB3C39127BECE0E005D1C01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEB3C39227BECE1F005D1C01 /* FindNearSeSacModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FEB5006D27B39070004915BC /* Queue */ = {
@@ -871,6 +882,7 @@
 				FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
 				FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */,
+				FEB3C39327BECE1F005D1C01 /* FindNearSeSacModel.swift in Sources */,
 				FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */,
 				FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */,
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,

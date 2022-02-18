@@ -172,11 +172,11 @@ final class MyInfoManageViewController: BaseViewController {
 		if profileIsOpen {
 			mainView.myInfoCardView.reputationView.isHidden = true
 			mainView.myInfoCardView.reviewView.isHidden = true
-			mainView.myInfoCardView.userTitle.arrowButton.setImage(UIImage(named: "upArrow"), for: .normal)
+			mainView.myInfoCardView.userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
 		} else {
 			mainView.myInfoCardView.reputationView.isHidden = false
 			mainView.myInfoCardView.reviewView.isHidden = false
-			mainView.myInfoCardView.userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
+			mainView.myInfoCardView.userTitle.arrowButton.setImage(UIImage(named: "upArrow"), for: .normal)
 		}
 		profileIsOpen.toggle()
 		

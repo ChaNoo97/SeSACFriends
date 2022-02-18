@@ -38,20 +38,19 @@ final class NearSeSacTableCell: UITableViewCell {
 	}
 	
 	@objc func arrowButtonClicked(_ sender: UIButton) {
-//		self.userTitle.arrowButton.isSelected.toggle()
-//		print("arrowBtnClicked in Cell Class")
-//		print("======isopen",isOpen)
-		if isOpen {
-			reputationView.isHidden = true
-			reviewView.isHidden = true
-			userTitle.arrowButton.setImage(UIImage(named: "upArrow"), for: .normal)
-		} else {
-			reputationView.isHidden = false
-			reviewView.isHidden = false
-			userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
-		}
-		isOpen.toggle()
-//
+////		self.userTitle.arrowButton.isSelected.toggle()
+////		print("arrowBtnClicked in Cell Class")
+////		print("======isopen",isOpen)
+//		if isOpen {
+//			reputationView.isHidden = true
+//			reviewView.isHidden = true
+//			userTitle.arrowButton.setImage(UIImage(named: "upArrow"), for: .normal)
+//		} else {
+//			reputationView.isHidden = false
+//			reviewView.isHidden = false
+//			userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
+//		}
+//		isOpen.toggle()
 		arrowBtnAction?()
 	}
 	

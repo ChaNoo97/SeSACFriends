@@ -66,15 +66,26 @@ class HobbyViewController: BaseViewController {
 		navigationItem.titleView?.endEditing(true)
 		if buttonStatus {
 			buttonStatus.toggle()
-			viewModel.queue { message, viewController in
+			viewModel.queue { message, vc in
 				if let message = message {
 					self.buttonStatus = true
 					self.view.makeToast(message, duration: 1.0)
 				}
-				if let viewController = viewController {
+				
+				if let vc = vc {
 					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-						self.buttonStatus = true
-						self.pushViewCon(vc: viewController)
+						switch viewcon(rawValue: vc)! {
+						case .push:
+							self.buttonStatus = true
+							let vc = FindSeSacTabViewController()
+							vc.viewModel.region = self.viewModel.region
+							vc.viewModel.lat = self.viewModel.lat
+							vc.viewModel.long = self.viewModel.long
+							self.pushViewCon(vc: FindSeSacTabViewController())
+						case .setting:
+							self.buttonStatus = true
+							self.pushViewCon(vc: MyInfoManageViewController())
+						}
 					}
 				}
 			}

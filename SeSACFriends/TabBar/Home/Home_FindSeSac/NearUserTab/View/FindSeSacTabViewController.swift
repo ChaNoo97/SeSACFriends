@@ -15,7 +15,7 @@ final class FindSeSacTabViewController: TabmanViewController {
 	private var viewControllers = [FindNearSeSacViewController(), AcceptViewController()]
 	
 	let designView = UIView()
-	let viewModel = NearSeSacViewModel()
+	let viewModel = NearSeSacViewModel.shared
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)

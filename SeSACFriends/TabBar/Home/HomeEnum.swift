@@ -21,4 +21,7 @@ enum genderEnum: Int {
 	case woman = 2
 }
 
-
+enum viewcon: Int {
+	case push = 0
+	case setting = 1
+}

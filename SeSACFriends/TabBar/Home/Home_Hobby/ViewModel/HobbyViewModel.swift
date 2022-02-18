@@ -30,18 +30,20 @@ final class HobbyViewModel {
 				self.selectHfArray(array: self.subHfArray)
 				completion()
 			case .fireBaseTokenError:
-				QueueApiService.onQueue(model: model) { data, code in
-					guard let data = data else {
-						return
-					}
-					switch StateCodeEnum(rawValue: code)! {
-					case .success:
-						self.recommendArray = data.fromRecommend
-						self.setUpSubHfarray(data: data)
-						self.selectHfArray(array: self.subHfArray)
-						completion()
-					default:
-						return
+				FIRAuth.renewIdToken {
+					QueueApiService.onQueue(model: model) { data, code in
+						guard let data = data else {
+							return
+						}
+						switch StateCodeEnum(rawValue: code)! {
+						case .success:
+							self.recommendArray = data.fromRecommend
+							self.setUpSubHfarray(data: data)
+							self.selectHfArray(array: self.subHfArray)
+							completion()
+						default:
+							return
+						}
 					}
 				}
 			default:
@@ -50,7 +52,7 @@ final class HobbyViewModel {
 		}
 	}
 	
-	func queue(completion: @escaping (String?, UIViewController?) -> Void) {
+	func queue(completion: @escaping (String?, Int?) -> Void) {
 		var modelHF: [String] = []
 		if myHobbyArray.value.count == 0 {
 			modelHF = ["anything"]
@@ -65,7 +67,7 @@ final class HobbyViewModel {
 			print(code)
 			switch QueueStateCodeEnum(rawValue: code)! {
 			case .success:
-				completion(nil, FindSeSacTabViewController())
+				completion(nil, 0)
 			case .ban:
 				completion("신고가 누적되어 이용하실 수 없습니다.", nil)
 			case .stReport:
@@ -75,7 +77,7 @@ final class HobbyViewModel {
 			case .rdReport:
 				completion("약속 취소 패널티로, 3분동안 이용하실 수 없습니다", nil)
 			case .undecidedGender:
-				completion("새싹 찾기 기능을 이용하기 위해서는 성별이 필요해요!", MyInfoManageViewController())
+				completion("새싹 찾기 기능을 이용하기 위해서는 성별이 필요해요!", 1)
 			case .fireBaseTokenError:
 				FIRAuth.renewIdToken {
 					QueueApiService.postQueue(model: model) { code in
@@ -84,7 +86,7 @@ final class HobbyViewModel {
 						}
 						switch QueueStateCodeEnum(rawValue: code)! {
 						case .success:
-							completion(nil, FindSeSacTabViewController())
+							completion(nil, 0)
 						case .ban:
 							completion("신고가 누적되어 이용하실 수 없습니다.", nil)
 						case .stReport:
@@ -94,7 +96,7 @@ final class HobbyViewModel {
 						case .rdReport:
 							completion("약속 취소 패널티로, 3분동안 이용하실 수 없습니다", nil)
 						case .undecidedGender:
-							completion("새싹 찾기 기능을 이용하기 위해서는 성별이 필요해요!", MyInfoManageViewController())
+							completion("새싹 찾기 기능을 이용하기 위해서는 성별이 필요해요!", 1)
 						case .fireBaseTokenError:
 							completion("앱 내부 오류. 잠시후 다시 시도해주세요.", nil)
 						case .unenteredUser:
