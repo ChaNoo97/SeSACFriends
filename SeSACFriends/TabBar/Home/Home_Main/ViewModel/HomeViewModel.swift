@@ -32,6 +32,9 @@ final class HomeViewModel {
 		let model = OnQueueParameterModel(region: region.value, lat: lat.value, long: long.value)
 		 
 		QueueApiService.onQueue(model: model) { data, code in
+			guard let code = code else {
+				return
+			}
 			guard let data = data else {
 				return
 			}

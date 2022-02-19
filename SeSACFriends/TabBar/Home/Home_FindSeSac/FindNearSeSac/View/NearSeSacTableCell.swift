@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class NearSeSacTableCell: UITableViewCell {
+class NearSeSacTableCell: UITableViewCell {
 	
 	let backgroundImageView = UIImageView()
 	let faceImageView = UIImageView()
@@ -19,39 +19,12 @@ final class NearSeSacTableCell: UITableViewCell {
 	let designView = UIView()
 	let requestButton = UIButton()
 	
-	var arrowBtnAction: (() -> ())?
-	var requestBtnAction: (() -> Void)?
-	var isOpen = true
-	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		setUpStackView()
 		setupConstraint()
 		configure()
 		requestButtonConfigure()
-		self.userTitle.arrowButton.addTarget(self, action: #selector(arrowButtonClicked(_:)), for: .touchUpInside)
-		self.requestButton.addTarget(self, action: #selector(requestButtonClicked), for: .touchUpInside)
-	}
-	
-	@objc func requestButtonClicked() {
-		requestBtnAction?()
-	}
-	
-	@objc func arrowButtonClicked(_ sender: UIButton) {
-////		self.userTitle.arrowButton.isSelected.toggle()
-////		print("arrowBtnClicked in Cell Class")
-////		print("======isopen",isOpen)
-//		if isOpen {
-//			reputationView.isHidden = true
-//			reviewView.isHidden = true
-//			userTitle.arrowButton.setImage(UIImage(named: "upArrow"), for: .normal)
-//		} else {
-//			reputationView.isHidden = false
-//			reviewView.isHidden = false
-//			userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
-//		}
-//		isOpen.toggle()
-		arrowBtnAction?()
 	}
 	
 	func setUpStackView() {

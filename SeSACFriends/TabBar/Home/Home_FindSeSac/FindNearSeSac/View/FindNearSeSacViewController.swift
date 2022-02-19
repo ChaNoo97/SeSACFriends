@@ -11,42 +11,42 @@ import SnapKit
 final class FindNearSeSacViewController: UIViewController {
 	
 	let mainView = FindNearView()
-	let viewModel = NearSeSacViewModel.shared
-	var sesacs: [sesacUser] = []
+	let viewModel = NearUserViewModel.shared
+	
+	var timer: Timer?
 	
 	override func loadView() {
 		self.view = mainView
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		viewModel.onQueue {
+			self.ButtonSetting(userCount: self.viewModel.nearSesac.fromUser.count)
+			self.mainView.tableView.reloadData()
+		}
+		startTimer()
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		mainView.backgroundColor = .white
-		print("findNearView",#function)
 		tableViewSetting()
 		navigationBarSetting()
+		mainView.tableView.refreshControl = UIRefreshControl()
+		mainView.tableView.refreshControl?.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
 		mainView.modifyHobbyButton.addTarget(self, action: #selector(modifyButtonClicked), for: .touchUpInside)
 		mainView.reloadButton.addTarget(self, action: #selector(reloadButtonClicked), for: .touchUpInside)
-		viewModel.onQueue {
-			self.viewModel.nearSesac.bind { user in
-				print(user)
-				self.sesacs.removeAll()
-				for i in 0...user.count-1 {
-					let a = sesacUser(nick: user[i].nick, reputation: user[i].reputation, reviews: user[i].reviews, sesac: user[i].sesac, background: user[i].background)
-					self.sesacs.append(a)
-				}
-			}
-			self.mainView.tableView.reloadData()
-		}
-		
-
 	}
 	
-	func setUpReputationView(view: ReputationView, reputationArray: [UILabel], reputationNum: [Int]) {
-		for i in 0...reputationArray.count-1 {
-			view.setUpReputationLabel(
-				num: reputationNum[i],
-				reputationLabel: reputationArray[i]
-			)
+	override func viewWillDisappear(_ animated: Bool) {
+		stopTimer()
+	}
+	
+	func ButtonSetting(userCount: Int) {
+		if userCount != 0 {
+			mainView.modifyHobbyButton.isHidden = true
+			mainView.reloadButton.isHidden = true
+			mainView.emptyView.isHidden = true
 		}
 	}
 	
@@ -56,23 +56,51 @@ final class FindNearSeSacViewController: UIViewController {
 		mainView.tableView.register(NearSeSacTableCell.self, forCellReuseIdentifier: NearSeSacTableCell.reuseIdentfier)
 		mainView.tableView.separatorStyle = .none
 		mainView.tableView.rowHeight = UITableView.automaticDimension
-		mainView.tableView.allowsSelection = true
+		mainView.tableView.allowsSelection = false
+	}
+	
+	func stopTimer() {
+		if timer != nil && timer!.isValid {
+			timer!.invalidate()
+		}
+	}
+	
+	func startTimer() {
+		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(checkQueueStatus), userInfo: nil, repeats: true)
 	}
 	
 	@objc func modifyButtonClicked() {
-		
+		navigationController?.popViewController(animated: true)
 	}
 	
 	@objc func reloadButtonClicked() {
-		
+		viewModel.onQueue {
+			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+			self.mainView.tableView.reloadData()
+		}
+	}
+	
+	@objc func checkQueueStatus() {
+		viewModel.myStatus(callStatus: .timer) { message in
+			self.view.makeToast(message)
+		}
+	}
+	
+	@objc func refreshTableView() {
+		viewModel.onQueue {
+			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+			self.mainView.tableView.reloadData()
+		}
+		self.mainView.tableView.refreshControl?.endRefreshing()
 	}
 	
 	@objc func arrowButtonClicked(_ sender: UIButton) {
 		print(sender.tag)
-		if self.sesacs[sender.tag].isOpen {
-			self.sesacs[sender.tag].isOpen.toggle()
+		
+		if viewModel.nearSesac.fromUser[sender.tag].isOpen {
+			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
 		} else {
-			self.sesacs[sender.tag].isOpen.toggle()
+			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
 		}
 		mainView.tableView.reloadData()
 	}
@@ -81,13 +109,14 @@ final class FindNearSeSacViewController: UIViewController {
 extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return sesacs.count
+		return viewModel.nearSesac.fromUser.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = mainView.tableView.dequeueReusableCell(withIdentifier: NearSeSacTableCell.reuseIdentfier, for: indexPath) as? NearSeSacTableCell else { return UITableViewCell() }
 		let row = indexPath.row
-		cell.userTitle.nameLabel.text = sesacs[row].nick
+		let user = viewModel.nearSesac.fromUser[row]
+		cell.userTitle.nameLabel.text = user.nick
 		
 		let reputationArray = [
 			cell.reputationView.reputationLabel1,
@@ -97,12 +126,13 @@ extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSourc
 			cell.reputationView.reputationLabel5,
 			cell.reputationView.reputationLabel6
 		]
-		setUpReputationView(view: cell.reputationView, reputationArray: reputationArray, reputationNum: sesacs[row].reputation)
-		cell.reviewView.reviewLabel.text = sesacs[row].reviews.first
+		viewModel.setUpReputationView(view: cell.reputationView, reputationArray: reputationArray, reputationNum: user.reputation)
+		cell.reviewView.reviewLabel.text = user.reviews.first
 		//나중에 추가 화면까지 구현계획 있음
 		cell.reviewView.moreButton.isHidden = true
 		
-		if sesacs[row].isOpen {
+		
+		if user.isOpen {
 			cell.reputationView.isHidden = true
 			cell.reviewView.isHidden = true
 			cell.userTitle.arrowButton.setImage(UIImage(named: "downArrow"), for: .normal)
@@ -114,10 +144,6 @@ extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSourc
 		
 		cell.userTitle.arrowButton.tag = row
 		cell.userTitle.arrowButton.addTarget(self, action: #selector(arrowButtonClicked(_:)), for: .touchUpInside)
-
-		cell.requestBtnAction = {
-			print("request")
-		}
 		
 		return cell
 	}

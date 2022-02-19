@@ -31,7 +31,6 @@ final class HobbyView: UIView, ViewProtocols {
 		setupConstraint()
 	}
 	
-	
 	func configure() {
 		searchBar.placeholder = "띄어쓰기로 복수 입력이 가능해요"
 	}

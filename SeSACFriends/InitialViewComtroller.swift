@@ -19,6 +19,7 @@ final class InitialViewcontroller: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		print("++++++++++++++++++++++++",SesacHeader.normalHeaders.headers)
 		setupConstraint()
 		setupProgressHud()
 		if let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) {

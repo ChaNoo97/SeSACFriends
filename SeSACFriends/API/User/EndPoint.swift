@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-struct LoginRequest {
-	static var loginHeaders = ["idtoken": UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue)!, "Content-Type": "application/x-www-form-urlencoded"] as HTTPHeaders
-}
-
 enum UserEndPoint {
 	case user
 	case withdraw

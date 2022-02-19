@@ -11,7 +11,6 @@ import Alamofire
 class UserApiService {
 	
 	static func signUp(model: signUpModel, completion: @escaping (Int?, Error?) -> Void) {
-		
 		let signUpParameter: Parameters = [
 			"phoneNumber": model.phoneNum,
 			"FCMtoken": model.FCMtoken,
@@ -25,15 +24,13 @@ class UserApiService {
 			UserEndPoint.user.url,
 			method: .post,
 			parameters: signUpParameter,
-			headers: LoginRequest.loginHeaders).responseString { response in
+			headers: SesacHeader.loginHeaders.headers).responseString { response in
 				completion(response.response?.statusCode, nil)
 		}
 	}
 	
 	static func logIn(completion: @escaping (UserInfo?, Int?, Error?) -> Void ) {
-		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
-		let header = ["idtoken": idtoken] as HTTPHeaders
-		AF.request(UserEndPoint.user.url, method: .get, headers: header).responseDecodable(of: UserInfo.self) { response in
+		AF.request(UserEndPoint.user.url, method: .get, headers: SesacHeader.normalHeaders.headers).responseDecodable(of: UserInfo.self) { response in
 			let code = response.response?.statusCode
 			switch response.result {
 			case.success(let data):
@@ -47,18 +44,14 @@ class UserApiService {
 	}
 	
 	static func withdraw(completion: @escaping (Int?, Error?) -> Void) {
-		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
-		let header = ["idtoken": idtoken] as HTTPHeaders
 		AF.request(UserEndPoint.withdraw.url,
 				   method: .post,
-				  headers: header).responseString { response in
+				   headers: SesacHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode, nil)
 		}
 	}
 	
 	static func updateMypage(model: UpdateMypageModel, completion: @escaping (Int?, Error?) -> Void) {
-		guard let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) else { return }
-		let header = ["idtoken": idtoken] as HTTPHeaders
 		let updateParameter: Parameters = [
 			"searchable": model.searchable,
 			"ageMin": model.ageMin,
@@ -70,7 +63,7 @@ class UserApiService {
 		AF.request(UserEndPoint.mypage.url,
 				   method: .post,
 				   parameters: updateParameter,
-				   headers: header).responseString { response in
+				   headers: SesacHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode, response.error)
 		}
 	}

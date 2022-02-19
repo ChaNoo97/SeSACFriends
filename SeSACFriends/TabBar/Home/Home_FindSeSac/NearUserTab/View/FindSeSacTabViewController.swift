@@ -15,7 +15,7 @@ final class FindSeSacTabViewController: TabmanViewController {
 	private var viewControllers = [FindNearSeSacViewController(), AcceptViewController()]
 	
 	let designView = UIView()
-	let viewModel = NearSeSacViewModel.shared
+	let viewModel = NearUserViewModel.shared
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -27,6 +27,7 @@ final class FindSeSacTabViewController: TabmanViewController {
 		self.dataSource = self
 		setUpTabBarViewDesign()
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "찾기중단", style: .plain, target: self, action: #selector(suspendButton))
+		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(testButtonClicked))
 	}
 	
 	func setUpTabBarViewDesign() {
@@ -48,6 +49,10 @@ final class FindSeSacTabViewController: TabmanViewController {
 		}
 		bar.layout.contentMode = .fit
 		addBar(bar, dataSource: self, at: .top)
+	}
+	
+	@objc func testButtonClicked() {
+		navigationController?.popToRootViewController(animated: true)
 	}
 	
 	@objc func suspendButton() {

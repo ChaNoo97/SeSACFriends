@@ -10,14 +10,14 @@ import Alamofire
 
 final class QueueApiService {
 	
-	static func onQueue(model: OnQueueParameterModel, completion: @escaping (OnQueueModel?,Int) -> Void) {
+	static func onQueue(model: OnQueueParameterModel, completion: @escaping (OnQueueModel?,Int?) -> Void) {
 		let onQueueParameter: Parameters = [
 			"region": model.region,
 			"lat": model.lat,
 			"long": model.long
 		]
-		AF.request(QueueEndPoint.onQueue.url, method: .post, parameters: onQueueParameter, headers: QueueHeader.header).responseDecodable(of: OnQueueModel.self) { response in
-			completion(response.value, response.response!.statusCode)
+		AF.request(QueueEndPoint.onQueue.url, method: .post, parameters: onQueueParameter, headers: SesacHeader.normalHeaders.headers).responseDecodable(of: OnQueueModel.self) { response in
+			completion(response.value, response.response?.statusCode)
 		}
 	}
 	
@@ -30,15 +30,25 @@ final class QueueApiService {
 			"hf": model.hf
 		]
 		//AF 에서 URLEncoding(arrayEncoding: .noBrackets) 안해주면 501 에러 날라옴
-		AF.request(QueueEndPoint.queue.url, method: .post, parameters: queueParameter, encoding: URLEncoding(arrayEncoding: .noBrackets), headers: QueueHeader.header).responseString { response in
+		AF.request(QueueEndPoint.queue.url, method: .post, parameters: queueParameter, encoding: URLEncoding(arrayEncoding: .noBrackets), headers: SesacHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode)
 		}
 	}
 	
 	static func deleteQueue(completion: @escaping (Int?) -> Void) {
-		AF.request(QueueEndPoint.queue.url, method: .delete, headers: QueueHeader.header).responseString { response in
+		AF.request(QueueEndPoint.queue.url, method: .delete, headers: SesacHeader.normalHeaders.headers).responseString { response in
 			print("====delete=====",response.response?.statusCode)
 			completion(response.response?.statusCode)
 		}
 	}
+	
+	static func myQueueStatus(completion: @escaping (QueueStatusModel?, Int?) -> Void) {
+		AF.request(QueueEndPoint.queueStatus.url, method: .get, headers: SesacHeader.normalHeaders.headers).responseDecodable(of: QueueStatusModel.self) { response in
+			print("myQueue Status Value", response.value)
+			completion(response.value, response.response?.statusCode)
+		}
+	}
+
+
+	
 }

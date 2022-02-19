@@ -20,6 +20,9 @@ final class HobbyViewModel {
 	func onQueue(completion: @escaping () -> Void) {
 		let model = OnQueueParameterModel(region: region, lat: lat, long: long)
 		QueueApiService.onQueue(model: model) { data, code in
+			guard let code = code else {
+				return
+			}
 			guard let data = data else {
 				return
 			}
@@ -32,6 +35,9 @@ final class HobbyViewModel {
 			case .fireBaseTokenError:
 				FIRAuth.renewIdToken {
 					QueueApiService.onQueue(model: model) { data, code in
+						guard let code = code else {
+							return
+						}
 						guard let data = data else {
 							return
 						}

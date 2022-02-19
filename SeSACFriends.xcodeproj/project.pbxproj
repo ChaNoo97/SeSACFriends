@@ -83,6 +83,9 @@
 		FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */; };
 		FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */; };
 		FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */; };
+		FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */; };
+		FEA7CA3927C0CB7600BF5AC1 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */; };
+		FEA7CA3B27C0D76A00BF5AC1 /* MyQueueStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */; };
 		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
 		FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */; };
 		FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */; };
@@ -95,12 +98,12 @@
 		FEB3C37727BAC41F005D1C01 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C37627BAC41F005D1C01 /* Tabman */; };
 		FEB3C37B27BAC6E2005D1C01 /* FindNearSeSacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */; };
 		FEB3C37D27BAC70F005D1C01 /* AcceptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */; };
-		FEB3C38327BB8F38005D1C01 /* NearSeSacViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38227BB8F38005D1C01 /* NearSeSacViewModel.swift */; };
+		FEB3C38327BB8F38005D1C01 /* NearUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38227BB8F38005D1C01 /* NearUserViewModel.swift */; };
 		FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38827BB9D73005D1C01 /* FindNearView.swift */; };
 		FEB3C38B27BBE08B005D1C01 /* AcceptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */; };
 		FEB3C38D27BBFC87005D1C01 /* AcceptTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */; };
 		FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */; };
-		FEB3C39327BECE1F005D1C01 /* FindNearSeSacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C39227BECE1F005D1C01 /* FindNearSeSacModel.swift */; };
+		FEB3C39327BECE1F005D1C01 /* NearSeSacModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C39227BECE1F005D1C01 /* NearSeSacModel.swift */; };
 		FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */; };
 		FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */; };
 		FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */; };
@@ -183,6 +186,9 @@
 		FE7BDCF6279F05FB001C75A9 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		FE7BDCF8279F1850001C75A9 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		FE7BDCFA279F27BF001C75A9 /* withdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = withdrawViewController.swift; sourceTree = "<group>"; };
+		FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
+		FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueueStatusModel.swift; sourceTree = "<group>"; };
 		FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
 		FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
@@ -193,12 +199,12 @@
 		FEB3C37327BA7C9B005D1C01 /* FindSeSacTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSeSacTabViewController.swift; sourceTree = "<group>"; };
 		FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearSeSacViewController.swift; sourceTree = "<group>"; };
 		FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptViewController.swift; sourceTree = "<group>"; };
-		FEB3C38227BB8F38005D1C01 /* NearSeSacViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSacViewModel.swift; sourceTree = "<group>"; };
+		FEB3C38227BB8F38005D1C01 /* NearUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearUserViewModel.swift; sourceTree = "<group>"; };
 		FEB3C38827BB9D73005D1C01 /* FindNearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearView.swift; sourceTree = "<group>"; };
 		FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptView.swift; sourceTree = "<group>"; };
 		FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTableCell.swift; sourceTree = "<group>"; };
 		FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSacTableCell.swift; sourceTree = "<group>"; };
-		FEB3C39227BECE1F005D1C01 /* FindNearSeSacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNearSeSacModel.swift; sourceTree = "<group>"; };
+		FEB3C39227BECE1F005D1C01 /* NearSeSacModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSacModel.swift; sourceTree = "<group>"; };
 		FEB41A0027AC512500058E1C /* MyInfoManageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoManageViewModel.swift; sourceTree = "<group>"; };
 		FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMypageModel.swift; sourceTree = "<group>"; };
 		FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCodeEnum.swift; sourceTree = "<group>"; };
@@ -376,6 +382,7 @@
 				FE51595E279A984300E2CFBD /* BaseViewController.swift */,
 				FE617C8E27AF759700D64A41 /* PopUpView.swift */,
 				FEB5007227B39B1B004915BC /* CustomAnnotationView.swift */,
+				FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -460,6 +467,7 @@
 			children = (
 				FE7BDCEB279F04ED001C75A9 /* BaseURL.swift */,
 				FEB41A0427AD150C00058E1C /* StateCodeEnum.swift */,
+				FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */,
 				FE7BDCF0279F0530001C75A9 /* User */,
 				FEB5006D27B39070004915BC /* Queue */,
 			);
@@ -504,7 +512,6 @@
 		FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C39127BECE0E005D1C01 /* Model */,
 				FEB3C38427BB9C78005D1C01 /* View */,
 			);
 			path = FindNearSeSac;
@@ -521,7 +528,7 @@
 		FEB3C38127BB8F15005D1C01 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C38227BB8F38005D1C01 /* NearSeSacViewModel.swift */,
+				FEB3C38227BB8F38005D1C01 /* NearUserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -539,6 +546,7 @@
 		FEB3C38527BB9C9B005D1C01 /* NearUserTab */ = {
 			isa = PBXGroup;
 			children = (
+				FEB3C39127BECE0E005D1C01 /* Model */,
 				FEB3C38127BB8F15005D1C01 /* ViewModel */,
 				FEB3C38027BB8F0A005D1C01 /* View */,
 			);
@@ -558,7 +566,8 @@
 		FEB3C39127BECE0E005D1C01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C39227BECE1F005D1C01 /* FindNearSeSacModel.swift */,
+				FEB3C39227BECE1F005D1C01 /* NearSeSacModel.swift */,
+				FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -852,7 +861,7 @@
 				FE22DE9B27A27B4F00368B13 /* MyView.swift in Sources */,
 				FE7BDCEA279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift in Sources */,
 				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
-				FEB3C38327BB8F38005D1C01 /* NearSeSacViewModel.swift in Sources */,
+				FEB3C38327BB8F38005D1C01 /* NearUserViewModel.swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
 				FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
@@ -876,13 +885,15 @@
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
 				FE22DEA427A3BBA100368B13 /* CardView.swift in Sources */,
+				FEA7CA3B27C0D76A00BF5AC1 /* MyQueueStatusModel.swift in Sources */,
 				FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */,
 				FE22DE8C27A27A6200368B13 /* HomeViewController.swift in Sources */,
 				FE26BD0B2796832600E92519 /* AppDelegate.swift in Sources */,
 				FE7BDCCE279C5962001C75A9 /* BirthView.swift in Sources */,
 				FE515958279A894C00E2CFBD /* LoginBaseView.swift in Sources */,
+				FEA7CA3927C0CB7600BF5AC1 /* BaseHeader.swift in Sources */,
 				FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */,
-				FEB3C39327BECE1F005D1C01 /* FindNearSeSacModel.swift in Sources */,
+				FEB3C39327BECE1F005D1C01 /* NearSeSacModel.swift in Sources */,
 				FEB3C36D27B826AA005D1C01 /* HobbyViewModel.swift in Sources */,
 				FEB3C37127BA726B005D1C01 /* QueueParameterModel.swift in Sources */,
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
@@ -917,6 +928,7 @@
 				FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */,
 				FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */,
 				FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */,
+				FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */,
 				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
 				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,

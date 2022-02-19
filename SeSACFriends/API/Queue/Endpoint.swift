@@ -12,6 +12,7 @@ import Alamofire
 enum QueueEndPoint {
 	case queue
 	case onQueue
+	case queueStatus
 }
 
 extension QueueEndPoint {
@@ -21,10 +22,8 @@ extension QueueEndPoint {
 			return .makeEndPoint("/queue")
 		case .onQueue:
 			return .makeEndPoint("/queue/onqueue")
+		case .queueStatus:
+			return .makeEndPoint("/queue/myQueueState")
 		}
 	}
-}
-
-struct QueueHeader {
-	static var header = ["idtoken": UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue)!] as HTTPHeaders
 }

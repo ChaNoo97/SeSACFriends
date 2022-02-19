@@ -12,6 +12,7 @@ class FindNearView: UIView, ViewProtocols {
 	
 	
 	let tableView = UITableView()
+	let emptyView = EmptyView()
 	let modifyHobbyButton = MainButton(frame: .zero, type: .fill, text: "취미변경하기")
 	let reloadButton = UIButton()
 	
@@ -27,14 +28,20 @@ class FindNearView: UIView, ViewProtocols {
 	}
 	
 	func setupConstraint() {
-		addSubview(tableView)
-		
-		[modifyHobbyButton, reloadButton].forEach {
+		[tableView, modifyHobbyButton, reloadButton].forEach {
 			addSubview($0)
 		}
 		
+		tableView.addSubview(emptyView)
+		
 		tableView.snp.makeConstraints {
 			$0.edges.equalTo(self.safeAreaLayoutGuide)
+		}
+		
+		emptyView.snp.makeConstraints {
+			$0.center.equalTo(self)
+			$0.width.equalTo(263)
+			$0.height.equalTo(158)
 		}
 		
 		modifyHobbyButton.snp.makeConstraints {
