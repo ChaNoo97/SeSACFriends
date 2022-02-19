@@ -14,4 +14,5 @@ enum UserDefaultsKey: String {
 	case joinFriends //회원가입 유무 bool값
 	case userPhoneNum
 	case nickName
+	case queueStatus
 }

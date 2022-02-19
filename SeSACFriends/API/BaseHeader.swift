@@ -8,12 +8,12 @@
 import Foundation
 import Alamofire
 
-enum SesacHeader {
+enum BaseHeader {
 	case loginHeaders
 	case normalHeaders
 }
 
-extension SesacHeader {
+extension BaseHeader {
 	var headers: HTTPHeaders {
 		switch self {
 		case .loginHeaders:

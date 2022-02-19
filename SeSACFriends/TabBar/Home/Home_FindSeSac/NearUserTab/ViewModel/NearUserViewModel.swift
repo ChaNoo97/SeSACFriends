@@ -56,6 +56,7 @@ final class NearUserViewModel {
 			}
 			switch StateCodeEnum(rawValue: code)! {
 			case .success:
+				UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
 				completion(nil, TabBarController())
 			case .existUser:
 				completion("누군가와 취미를 함께하기로 약속하셨어요!", nil/*(채팅뷰컨)*/)
@@ -67,6 +68,7 @@ final class NearUserViewModel {
 						}
 						switch StateCodeEnum(rawValue: code)! {
 						case .success:
+							UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
 							completion(nil, HomeViewController())
 						case .existUser:
 							completion("누군가와 취미를 함께하기로 약속하셨어요!", nil/*(채팅뷰컨)*/)
@@ -89,26 +91,24 @@ final class NearUserViewModel {
 			guard let code = code else {
 				return
 			}
-			guard let data = data else {
-				return
-			}
 			switch StateCodeEnum(rawValue: code)! {
 			case .success:
-				self.nearSesac.setUpFromQueueDB(userList: data)
-				completion()
+				if let data = data {
+					self.nearSesac.setUpFromQueueDB(userList: data)
+					completion()
+				}
 			case .fireBaseTokenError:
 				FIRAuth.renewIdToken {
 					QueueApiService.onQueue(model: model) { data, code in
 						guard let code = code else {
 							return
 						}
-						guard let data = data else {
-							return
-						}
 						switch StateCodeEnum(rawValue: code)! {
 						case .success:
-							self.nearSesac.setUpFromQueueDB(userList: data)
-							completion()
+							if let data = data {
+								self.nearSesac.setUpFromQueueDB(userList: data)
+								completion()
+							}
 						default:
 							return
 						}
@@ -125,24 +125,24 @@ final class NearUserViewModel {
 			guard let code = code else {
 				return
 			}
-			guard let data = data else {
-				return
-			}
+
 			switch StateCodeEnum(rawValue: code)! {
 			case .success:
-				if data.matched == 1 {
-					switch callStatus {
-					case .timer:
-						if let nick = data.matchedNick {
-							completion(nick+callStatus.message)
+				if let data = data {
+					if data.matched == 1 {
+						switch callStatus {
+						case .timer:
+							if let nick = data.matchedNick {
+								completion(nick+callStatus.message)
+							}
+						case .requestButton:
+							completion(callStatus.message)
+						case .acceptButton:
+							completion(callStatus.message)
+						default:
+							return
 						}
-					case .requestButton:
-						completion(callStatus.message)
-					case .acceptButton:
-						completion(callStatus.message)
-					default:
-						return
-					} 
+					}
 				}
 			case .existUser:
 				completion("오랜 시간 동안 매칭 되지 않아 새싹 친구 찾기를 그만둡니다.")
@@ -152,21 +152,23 @@ final class NearUserViewModel {
 						guard let code = code else {
 							return
 						}
-						guard let data = data else {
-							return
-						}
+						
 						switch StateCodeEnum(rawValue: code)! {
 						case .success:
-							if data.matched == 1 {
-								switch callStatus {
-								case .timer:
-									completion(callStatus.message)
-								case .requestButton:
-									completion(callStatus.message)
-								case .acceptButton:
-									completion(callStatus.message)
-								default:
-									return
+							if let data = data {
+								if data.matched == 1 {
+									switch callStatus {
+									case .timer:
+										if let nick = data.matchedNick {
+											completion(nick+callStatus.message)
+										}
+									case .requestButton:
+										completion(callStatus.message)
+									case .acceptButton:
+										completion(callStatus.message)
+									default:
+										return
+									}
 								}
 							}
 						case .existUser:
@@ -183,6 +185,81 @@ final class NearUserViewModel {
 		}
 	}
 	
+	func hobbyRequest(_ otheruid: String, completion: @escaping(String?, UIViewController?) -> Void) {
+		QueueApiService.hobbyRequest(otheruid: otheruid) { code in
+			if let code = code {
+				switch hobbyEnum(rawValue: code)! {
+				case .success:
+					completion(nil, ChattingViewController())
+				case .alreadyOtherMatched:
+					completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)
+				case .otherSuspended:
+					completion("상대방이 취미 함께 하기를 그만두었습니다.", nil)
+				case .alreadyMatched:
+					completion("앗! 누군가가 나의 취미 함께 하기를 수락하였어요! ", nil)
+				case .firebaseTokenerror:
+					FIRAuth.renewIdToken {
+						QueueApiService.hobbyRequest(otheruid: otheruid) { code in
+							if let code = code {
+								switch hobbyEnum(rawValue: code)! {
+								case .success:
+									completion(nil, ChattingViewController())
+								case .alreadyOtherMatched:
+									completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)
+								case .otherSuspended:
+									completion("상대방이 취미 함께 하기를 그만두었습니다.", nil)
+								case .alreadyMatched:
+									completion("앗! 누군가가 나의 취미 함께 하기를 수락하였어요! ", nil)
+								default:
+									return
+								}
+							}
+						}
+					}
+				default:
+					return
+				}
+			}
+		}
+	}
+	
+	func hobbyAccept(_ otheruid: String, completion: @escaping(String?, UIViewController?) -> Void) {
+		QueueApiService.acceptRequest(otheruid: otheruid) { code in
+			if let code = code {
+				switch hobbyEnum(rawValue: code)! {
+				case .success:
+					completion(nil, ChattingViewController())
+				case .alreadyOtherMatched:
+					completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)
+				case .otherSuspended:
+					completion("상대방이 취미 함께 하기를 그만두었습니다.", nil)
+				case .alreadyMatched:
+					completion("앗! 누군가가 나의 취미 함께 하기를 수락하였어요! ", nil)
+				case .firebaseTokenerror:
+					FIRAuth.renewIdToken {
+						QueueApiService.hobbyRequest(otheruid: otheruid) { code in
+							if let code = code {
+								switch hobbyEnum(rawValue: code)! {
+								case .success:
+									completion(nil, ChattingViewController())
+								case .alreadyOtherMatched:
+									completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)
+								case .otherSuspended:
+									completion("상대방이 취미 함께 하기를 그만두었습니다.", nil)
+								case .alreadyMatched:
+									completion("앗! 누군가가 나의 취미 함께 하기를 수락하였어요! ", nil)
+								default:
+									return
+								}
+							}
+						}
+					}
+				default:
+					return
+				}
+			}
+		}
+	}
 }
 
 

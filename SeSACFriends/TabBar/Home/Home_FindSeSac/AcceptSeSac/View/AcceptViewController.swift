@@ -37,7 +37,6 @@ final class AcceptViewController: UIViewController {
     }
 	
 	override func viewWillDisappear(_ animated: Bool) {
-		print("이쯤 없어지나?")
 		stopTimer()
 	}
 	
@@ -58,15 +57,16 @@ final class AcceptViewController: UIViewController {
 		mainView.tableView.allowsSelection = false
 	}
 	
+	func startTimer() {
+		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(checkQueueStatus), userInfo: nil, repeats: true)
+ 	}
+	
 	func stopTimer() {
 		if timer != nil && timer!.isValid {
 			timer!.invalidate()
 		}
+		timer = nil
 	}
-	
-	func startTimer() {
-		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(checkQueueStatus), userInfo: nil, repeats: true)
- 	}
 	
 	@objc func modifyButtonClicked() {
 		navigationController?.popViewController(animated: true)
@@ -86,6 +86,7 @@ final class AcceptViewController: UIViewController {
 	}
 	
 	@objc func refreshTableView() {
+		print(viewModel.nearSesac)
 		viewModel.onQueue {
 			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
 			self.mainView.tableView.reloadData()
@@ -100,8 +101,25 @@ final class AcceptViewController: UIViewController {
 			viewModel.nearSesac.recommendUser[sender.tag].isOpen.toggle()
 		} else {
 			viewModel.nearSesac.recommendUser[sender.tag].isOpen.toggle()
+			viewModel.onQueue {
+				self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+			}
 		}
 		mainView.tableView.reloadData()
+	}
+	
+	@objc func acceptButtonClicked(_ sender: UIButton) {
+		print(sender.tag,"acceptButtonClicked")
+		print(viewModel.nearSesac.recommendUser[sender.tag].uid)
+		viewModel.hobbyAccept(viewModel.nearSesac.recommendUser[sender.tag].uid) { message, ViewController in
+			if let message = message {
+				self.view.makeToast(message)
+			} else {
+				if let ViewController = ViewController {
+					self.pushViewCon(vc: ViewController)
+				}
+			}
+		}
 	}
 }
 
@@ -116,7 +134,7 @@ extension AcceptViewController: UITableViewDelegate, UITableViewDataSource {
 		let row = indexPath.row
 		let user = viewModel.nearSesac.recommendUser[row]
 		
-		cell.userTitle.nameLabel.text = "가나다"
+		cell.userTitle.nameLabel.text = user.nick
 		
 		let reputationArray = [
 			cell.reputationView.reputationLabel1,
@@ -144,6 +162,9 @@ extension AcceptViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		cell.userTitle.arrowButton.tag = row
 		cell.userTitle.arrowButton.addTarget(self, action: #selector(arrowButtonClicked(_:)), for: .touchUpInside)
+		
+		cell.requestButton.tag = row
+		cell.requestButton.addTarget(self, action: #selector(acceptButtonClicked(_:)), for: .touchUpInside)
 		
 		return cell
 	}

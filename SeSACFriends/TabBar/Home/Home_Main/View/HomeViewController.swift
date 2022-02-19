@@ -21,7 +21,7 @@ final class HomeViewController: BaseViewController {
 	let sesacLocation = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734)
 	
 	var userAnnotationArray: [CustomAnnotation] = []
-
+	let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue)
 	override func loadView() {
 		self.view = mainView
 	}
@@ -30,6 +30,11 @@ final class HomeViewController: BaseViewController {
 		super.viewWillAppear(animated)
 		tabBarDisplay()
 		navBarHidden()
+		if let queueStatus = queueStatus {
+			floatingButtonSetImage(imageName: queueStatus)
+		} else {
+			floatingButtonSetImage(imageName: "normal")
+		}
 	}
 	
 	override func viewDidLoad() {
@@ -44,6 +49,24 @@ final class HomeViewController: BaseViewController {
 		mainView.gpsButton.addTarget(self, action: #selector(gpsButtonClicked), for: .touchUpInside)
 		mainView.matchingButton.addTarget(self, action: #selector(matchingButtonClicked), for: .touchUpInside)
 		mainView.selectAllButton()
+	}
+	
+	func valueDeliver(_ vc: HobbyViewController) {
+		vc.viewModel.recommendArray = self.viewModel.recommendArray
+		vc.viewModel.hfArray.value = self.viewModel.hfArray
+		vc.viewModel.region = self.viewModel.region.value
+		vc.viewModel.lat = self.viewModel.lat.value
+		vc.viewModel.long = self.viewModel.long.value
+	}
+	
+	func valueDeliver(vc: FindSeSacTabViewController) {
+		vc.viewModel.region = self.viewModel.region.value
+		vc.viewModel.lat = self.viewModel.lat.value
+		vc.viewModel.long = self.viewModel.long.value
+	}
+	
+	func floatingButtonSetImage(imageName: String) {
+		mainView.matchingButton.setImage(UIImage(named: imageName), for: .normal)
 	}
 	
 	@objc func buttonClicked(_ sender: UIButton) {
@@ -70,18 +93,28 @@ final class HomeViewController: BaseViewController {
 	
 	@objc func matchingButtonClicked() {
 		checkUserLocationServicesAuthorization()
-		let vc = HobbyViewController()
-		vc.viewModel.recommendArray = self.viewModel.recommendArray
-		vc.viewModel.hfArray.value = self.viewModel.hfArray
-		vc.viewModel.region = self.viewModel.region.value
-		vc.viewModel.lat = self.viewModel.lat.value
-		vc.viewModel.long = self.viewModel.long.value
-		pushViewCon(vc: vc)
+		if let queueStatus = queueStatus {
+			if queueStatus == "normal" {
+				let vc = HobbyViewController()
+				valueDeliver(vc)
+				pushViewCon(vc: vc)
+			}  else if queueStatus == "matching" {
+				let vc1 = HobbyViewController()
+				let vc2 = FindSeSacTabViewController()
+				valueDeliver(vc: vc2)
+				self.navigationController?.pushViewController(vc1, animated: false)
+				self.navigationController?.pushViewController(vc2, animated: true)
+			} else if queueStatus == "matched" {
+				//채팅 구현후 구현 예정
+			}
+		} else {
+			let vc = HobbyViewController()
+			valueDeliver(vc)
+			pushViewCon(vc: vc)
+		}
 	}
 	
 }
-
-
 
 extension HomeViewController: MKMapViewDelegate {
 	
@@ -161,7 +194,6 @@ extension HomeViewController: MKMapViewDelegate {
 			sesacImage = UIImage(named: sesacImageStyle.face5.rawValue)
 		}
 	
-		
 		sesacImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
 		let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
 		annotationView?.image = resizedImage
@@ -237,7 +269,5 @@ extension HomeViewController:  CLLocationManagerDelegate {
 			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
 		}
 	}
-	
-	
 	
 }

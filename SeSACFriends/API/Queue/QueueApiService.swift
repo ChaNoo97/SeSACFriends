@@ -16,7 +16,7 @@ final class QueueApiService {
 			"lat": model.lat,
 			"long": model.long
 		]
-		AF.request(QueueEndPoint.onQueue.url, method: .post, parameters: onQueueParameter, headers: SesacHeader.normalHeaders.headers).responseDecodable(of: OnQueueModel.self) { response in
+		AF.request(QueueEndPoint.onQueue.url, method: .post, parameters: onQueueParameter, headers: BaseHeader.normalHeaders.headers).responseDecodable(of: OnQueueModel.self) { response in
 			completion(response.value, response.response?.statusCode)
 		}
 	}
@@ -30,25 +30,41 @@ final class QueueApiService {
 			"hf": model.hf
 		]
 		//AF 에서 URLEncoding(arrayEncoding: .noBrackets) 안해주면 501 에러 날라옴
-		AF.request(QueueEndPoint.queue.url, method: .post, parameters: queueParameter, encoding: URLEncoding(arrayEncoding: .noBrackets), headers: SesacHeader.normalHeaders.headers).responseString { response in
+		AF.request(QueueEndPoint.queue.url, method: .post, parameters: queueParameter, encoding: URLEncoding(arrayEncoding: .noBrackets), headers: BaseHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode)
 		}
 	}
 	
 	static func deleteQueue(completion: @escaping (Int?) -> Void) {
-		AF.request(QueueEndPoint.queue.url, method: .delete, headers: SesacHeader.normalHeaders.headers).responseString { response in
+		AF.request(QueueEndPoint.queue.url, method: .delete, headers: BaseHeader.normalHeaders.headers).responseString { response in
 			print("====delete=====",response.response?.statusCode)
 			completion(response.response?.statusCode)
 		}
 	}
 	
 	static func myQueueStatus(completion: @escaping (QueueStatusModel?, Int?) -> Void) {
-		AF.request(QueueEndPoint.queueStatus.url, method: .get, headers: SesacHeader.normalHeaders.headers).responseDecodable(of: QueueStatusModel.self) { response in
+		AF.request(QueueEndPoint.queueStatus.url, method: .get, headers: BaseHeader.normalHeaders.headers).responseDecodable(of: QueueStatusModel.self) { response in
 			print("myQueue Status Value", response.value)
 			completion(response.value, response.response?.statusCode)
 		}
 	}
 
-
+	static func hobbyRequest(otheruid: String, completion: @escaping (Int?) -> Void) {
+		let hobbyRequestParameters: Parameters = [
+			"otheruid": otheruid
+		]
+		AF.request(QueueEndPoint.hobbyRequest.url, method: .post, parameters: hobbyRequestParameters, headers: BaseHeader.normalHeaders.headers).responseString { response in
+			completion(response.response?.statusCode)
+		}
+	}
+	
+	static func acceptRequest(otheruid: String, completion: @escaping (Int?) -> Void) {
+		let hobbyRequestParameters: Parameters = [
+			"otheruid": otheruid
+		]
+		AF.request(QueueEndPoint.hobbyAccept.url, method: .post, parameters: hobbyRequestParameters, headers: BaseHeader.normalHeaders.headers).responseString { response in
+			completion(response.response?.statusCode)
+		}
+	}
 	
 }

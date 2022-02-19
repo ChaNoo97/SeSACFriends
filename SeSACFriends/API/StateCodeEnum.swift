@@ -31,3 +31,13 @@ enum QueueStateCodeEnum: Int {
 	case clientError = 501
 }
 
+enum hobbyEnum: Int {
+	case success = 200
+	case alreadyOtherMatched = 201
+	case otherSuspended = 202
+	case alreadyMatched = 203
+	case firebaseTokenerror = 401
+	case unenteredUser = 406
+	case serverError = 500
+	case clientError = 501
+}

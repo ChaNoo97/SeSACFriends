@@ -86,6 +86,7 @@
 		FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */; };
 		FEA7CA3927C0CB7600BF5AC1 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */; };
 		FEA7CA3B27C0D76A00BF5AC1 /* MyQueueStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */; };
+		FEA7CA4027C17D4200BF5AC1 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */; };
 		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
 		FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */; };
 		FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */; };
@@ -189,6 +190,7 @@
 		FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueueStatusModel.swift; sourceTree = "<group>"; };
+		FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
 		FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
@@ -491,6 +493,14 @@
 			path = UserDefaultKey;
 			sourceTree = "<group>";
 		};
+		FEA7CA3C27C17D0100BF5AC1 /* Home_Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */,
+			);
+			path = Home_Chatting;
+			sourceTree = "<group>";
+		};
 		FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +598,7 @@
 				FE3030C327B58547008E48EC /* Home_Main */,
 				FE3030C427B58581008E48EC /* Home_Hobby */,
 				FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */,
+				FEA7CA3C27C17D0100BF5AC1 /* Home_Chatting */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -866,6 +877,7 @@
 				FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
 				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,
+				FEA7CA4027C17D4200BF5AC1 /* ChattingViewController.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
 				FE3030CC27B5958E008E48EC /* HobbyView.swift in Sources */,
 				FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,

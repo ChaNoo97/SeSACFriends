@@ -59,14 +59,15 @@ final class FindNearSeSacViewController: UIViewController {
 		mainView.tableView.allowsSelection = false
 	}
 	
+	func startTimer() {
+		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(checkQueueStatus), userInfo: nil, repeats: true)
+	}
+	
 	func stopTimer() {
 		if timer != nil && timer!.isValid {
 			timer!.invalidate()
 		}
-	}
-	
-	func startTimer() {
-		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(checkQueueStatus), userInfo: nil, repeats: true)
+		timer = nil
 	}
 	
 	@objc func modifyButtonClicked() {
@@ -101,8 +102,25 @@ final class FindNearSeSacViewController: UIViewController {
 			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
 		} else {
 			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
+			viewModel.onQueue {
+				self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+			}
 		}
 		mainView.tableView.reloadData()
+	}
+	
+	@objc func requestButtonClicked(_ sender: UIButton) {
+		print(sender.tag,"requestButtonClicked")
+		print(viewModel.nearSesac.fromUser[sender.tag].uid)
+		viewModel.hobbyRequest(viewModel.nearSesac.fromUser[sender.tag].uid) { message, ViewController in
+			if let message = message {
+				self.view.makeToast(message)
+			} else {
+				if let ViewController = ViewController {
+					self.pushViewCon(vc: ViewController)
+				}
+			}
+		}
 	}
 }
 
@@ -131,7 +149,6 @@ extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSourc
 		//나중에 추가 화면까지 구현계획 있음
 		cell.reviewView.moreButton.isHidden = true
 		
-		
 		if user.isOpen {
 			cell.reputationView.isHidden = true
 			cell.reviewView.isHidden = true
@@ -144,6 +161,9 @@ extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSourc
 		
 		cell.userTitle.arrowButton.tag = row
 		cell.userTitle.arrowButton.addTarget(self, action: #selector(arrowButtonClicked(_:)), for: .touchUpInside)
+		
+		cell.requestButton.tag = row
+		cell.requestButton.addTarget(self, action: #selector(requestButtonClicked(_:)), for: .touchUpInside)
 		
 		return cell
 	}

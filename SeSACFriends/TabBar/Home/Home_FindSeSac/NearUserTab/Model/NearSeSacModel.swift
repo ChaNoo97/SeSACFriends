@@ -14,28 +14,27 @@ struct sesacUsers {
 	
 	mutating func setUpFromQueueDB(userList: OnQueueModel) {
 		fromUser.removeAll()
+		recommendUser.removeAll()
 		userList.fromQueueDB.forEach {
 			fromUser.append(sesacUser(queueDB: $0))
 		}
-	}
-	
-	mutating func setUpRequestedQueueDB(userList: OnQueueModel) {
-		recommendUser.removeAll()
 		userList.fromQueueDBRequested.forEach {
 			recommendUser.append(sesacUser(queueDB: $0))
 		}
 	}
 	
+	
 }
 
 struct sesacUser {
-	let nick: String
+	let nick, uid: String
 	let reputation: [Int]
 	let reviews: [String]
 	let sesac, background: Int
 	var isOpen: Bool
 	init(queueDB: User) {
 		self.nick = queueDB.nick
+		self.uid = queueDB.uid
 		self.reputation = queueDB.reputation
 		self.reviews = queueDB.reviews
 		self.sesac = queueDB.sesac

@@ -24,13 +24,13 @@ class UserApiService {
 			UserEndPoint.user.url,
 			method: .post,
 			parameters: signUpParameter,
-			headers: SesacHeader.loginHeaders.headers).responseString { response in
+			headers: BaseHeader.loginHeaders.headers).responseString { response in
 				completion(response.response?.statusCode, nil)
 		}
 	}
 	
 	static func logIn(completion: @escaping (UserInfo?, Int?, Error?) -> Void ) {
-		AF.request(UserEndPoint.user.url, method: .get, headers: SesacHeader.normalHeaders.headers).responseDecodable(of: UserInfo.self) { response in
+		AF.request(UserEndPoint.user.url, method: .get, headers: BaseHeader.normalHeaders.headers).responseDecodable(of: UserInfo.self) { response in
 			let code = response.response?.statusCode
 			switch response.result {
 			case.success(let data):
@@ -46,7 +46,7 @@ class UserApiService {
 	static func withdraw(completion: @escaping (Int?, Error?) -> Void) {
 		AF.request(UserEndPoint.withdraw.url,
 				   method: .post,
-				   headers: SesacHeader.normalHeaders.headers).responseString { response in
+				   headers: BaseHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode, nil)
 		}
 	}
@@ -63,7 +63,7 @@ class UserApiService {
 		AF.request(UserEndPoint.mypage.url,
 				   method: .post,
 				   parameters: updateParameter,
-				   headers: SesacHeader.normalHeaders.headers).responseString { response in
+				   headers: BaseHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode, response.error)
 		}
 	}

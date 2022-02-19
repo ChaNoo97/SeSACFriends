@@ -28,6 +28,7 @@ final class FindSeSacTabViewController: TabmanViewController {
 		setUpTabBarViewDesign()
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "찾기중단", style: .plain, target: self, action: #selector(suspendButton))
 		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(testButtonClicked))
+
 	}
 	
 	func setUpTabBarViewDesign() {
