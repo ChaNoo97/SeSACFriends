@@ -7,13 +7,19 @@
 var Timer: Timer? 
 
 func startTImer() {
+
   timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+  
 }
 
 func stopTimer() {
+
   if timer != nil && timer!.isValid {
+  
     timer!.invalidate()
+    
   }
+  
 }
 
 화면 진입때 : startTimer
@@ -25,5 +31,7 @@ tableView.refreshControl = UIRefreshControl()
 tableView.refreshControl?.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
 
 @objc func  refreshTableView() {
+
   기능구현
+  
 }
