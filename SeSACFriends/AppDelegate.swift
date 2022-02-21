@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			let settings: UIUserNotificationSettings = UIUserNotificationSettings(
 				types: [.alert, .sound, .badge],
 				categories: nil)
-			application.registerForRemoteNotifications()
+			application.registerUserNotificationSettings(settings)
 		}
-		
+		application.registerForRemoteNotifications()
 		Messaging.messaging().delegate = self
 		Messaging.messaging().token { token, error in
 			if let error = error {

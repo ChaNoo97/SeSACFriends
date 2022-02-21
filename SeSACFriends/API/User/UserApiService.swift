@@ -34,7 +34,10 @@ class UserApiService {
 			let code = response.response?.statusCode
 			switch response.result {
 			case.success(let data):
+				//에러 존재..
 				UserDefaults.standard.set(data.nick, forKey: UserDefaultsKey.nickName.rawValue)
+				print("serverFCMTOKEN:",data.fcMtoken)
+				print("MYUID!!!!!!!:", data.uid)
 				completion(data,code,nil)
 			case .failure(let error):
 				completion(nil,code,error)
@@ -68,6 +71,14 @@ class UserApiService {
 		}
 	}
 	
-	
+	static func updateFCMToken() {
+		guard let fcmtoken = UserDefaults.standard.string(forKey:  UserDefaultsKey.FCMtoken.rawValue) else { return }
+		let parameter: Parameters = [
+			"FCMtoken": fcmtoken
+		]
+		AF.request(UserEndPoint.updateFCMtoken.url, method: .put, parameters: parameter, headers: BaseHeader.normalHeaders.headers).responseString { response in
+			print(response.response?.statusCode)
+		}
+	}
 	
 }

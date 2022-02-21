@@ -19,13 +19,12 @@ final class InitialViewcontroller: BaseViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print("++++++++++++++++++++++++",BaseHeader.normalHeaders.headers)
 		setupConstraint()
 		setupProgressHud()
 		if let idtoken = UserDefaults.standard.string(forKey: UserDefaultsKey.idToken.rawValue) {
 				//컴플리션 써야지
 				FIRAuth.renewIdToken {
-					print(idtoken)
+					print("idtoken",idtoken)
 					//비행기모드 대응 해주세용
 					UserApiService.logIn { data, code, error in
 						switch code {

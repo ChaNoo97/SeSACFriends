@@ -19,9 +19,11 @@ final class HomeViewController: BaseViewController {
 	var myLocation: CLLocationCoordinate2D?
 	var centerLocation: CLLocationCoordinate2D?
 	let sesacLocation = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734)
+	var setRegionOnce = true
 	
 	var userAnnotationArray: [CustomAnnotation] = []
-	let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue)
+//	let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue)
+	
 	override func loadView() {
 		self.view = mainView
 	}
@@ -30,7 +32,8 @@ final class HomeViewController: BaseViewController {
 		super.viewWillAppear(animated)
 		tabBarDisplay()
 		navBarHidden()
-		if let queueStatus = queueStatus {
+		if let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue) {
+			print("******image*******Homevc36",queueStatus)
 			floatingButtonSetImage(imageName: queueStatus)
 		} else {
 			floatingButtonSetImage(imageName: "normal")
@@ -74,10 +77,13 @@ final class HomeViewController: BaseViewController {
 		switch genderEnum(rawValue: sender.tag)! {
 		case .all:
 			mainView.selectAllButton()
+			UserDefaults.standard.set(2, forKey: UserDefaultsKey.genderStstus.rawValue)
 		case .man:
 			mainView.selectManButton()
+			UserDefaults.standard.set(1, forKey: UserDefaultsKey.genderStstus.rawValue)
 		case .woman:
 			mainView.selectWomanButton()
+			UserDefaults.standard.set(0, forKey: UserDefaultsKey.genderStstus.rawValue)
 		}
 	}
 	
@@ -93,7 +99,7 @@ final class HomeViewController: BaseViewController {
 	
 	@objc func matchingButtonClicked() {
 		checkUserLocationServicesAuthorization()
-		if let queueStatus = queueStatus {
+		if let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue) {
 			if queueStatus == "normal" {
 				let vc = HobbyViewController()
 				valueDeliver(vc)
@@ -202,16 +208,16 @@ extension HomeViewController: MKMapViewDelegate {
 	}
 }
 
-extension HomeViewController:  CLLocationManagerDelegate {
+extension HomeViewController: CLLocationManagerDelegate {
 	
 	func checkCurrentLocationAuthorization(authorizationStatus: CLAuthorizationStatus) {
+		print("CheckCurrentLocation")
 		
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		
 		switch authorizationStatus {
 		case .notDetermined:
 			locationManager.requestWhenInUseAuthorization()
-			locationManager.startUpdatingLocation()
 		case .denied, .restricted:
 			print("denided")
 			changeAuthAlert()
@@ -252,7 +258,7 @@ extension HomeViewController:  CLLocationManagerDelegate {
 		} else {
 			authorizationStatus = CLLocationManager.authorizationStatus()
 		}
-		
+
 		if CLLocationManager.locationServicesEnabled() {
 			checkCurrentLocationAuthorization(authorizationStatus: authorizationStatus)
 		}
@@ -266,8 +272,12 @@ extension HomeViewController:  CLLocationManagerDelegate {
 		myLocation = CLLocationCoordinate2D(latitude: locations.last!.coordinate.latitude, longitude: locations.last!.coordinate.longitude)
 		mainView.mapView.showsUserLocation = true
 		if let myLocation = myLocation {
-			mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
+			if setRegionOnce {
+				setRegionOnce.toggle()
+				mainView.mapView.setRegion(MKCoordinateRegion(center: myLocation, latitudinalMeters: 700, longitudinalMeters: 700), animated: true)
+			}
 		}
+		locationManager.stopUpdatingLocation()
 	}
 	
 }

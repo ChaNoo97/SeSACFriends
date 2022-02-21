@@ -14,6 +14,7 @@ final class TabBarController: UITabBarController {
 		super.viewDidLoad()
 		configureTabBarController()
 		setupTabBarAppearence()
+		UserApiService.updateFCMToken()
 	}
 	
 	func configureTabBarController() {

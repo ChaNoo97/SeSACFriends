@@ -87,6 +87,8 @@
 		FEA7CA3927C0CB7600BF5AC1 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */; };
 		FEA7CA3B27C0D76A00BF5AC1 /* MyQueueStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */; };
 		FEA7CA4027C17D4200BF5AC1 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */; };
+		FEA7CA4227C2064700BF5AC1 /* RequestPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4127C2064700BF5AC1 /* RequestPopUpViewController.swift */; };
+		FEA7CA4427C325D600BF5AC1 /* AcceptPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4327C325D600BF5AC1 /* AcceptPopUpViewController.swift */; };
 		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
 		FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */; };
 		FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */; };
@@ -191,6 +193,8 @@
 		FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueueStatusModel.swift; sourceTree = "<group>"; };
 		FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		FEA7CA4127C2064700BF5AC1 /* RequestPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopUpViewController.swift; sourceTree = "<group>"; };
+		FEA7CA4327C325D600BF5AC1 /* AcceptPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPopUpViewController.swift; sourceTree = "<group>"; };
 		FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
 		FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
@@ -505,8 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				FEB3C38527BB9C9B005D1C01 /* NearUserTab */,
-				FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */,
-				FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */,
 			);
 			path = Home_FindSeSac;
 			sourceTree = "<group>";
@@ -514,7 +516,10 @@
 		FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C38727BB9CF7005D1C01 /* View */,
+				FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */,
+				FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */,
+				FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */,
+				FEA7CA4327C325D600BF5AC1 /* AcceptPopUpViewController.swift */,
 			);
 			path = AcceptSeSac;
 			sourceTree = "<group>";
@@ -522,7 +527,10 @@
 		FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */ = {
 			isa = PBXGroup;
 			children = (
-				FEB3C38427BB9C78005D1C01 /* View */,
+				FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */,
+				FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */,
+				FEB3C38827BB9D73005D1C01 /* FindNearView.swift */,
+				FEA7CA4127C2064700BF5AC1 /* RequestPopUpViewController.swift */,
 			);
 			path = FindNearSeSac;
 			sourceTree = "<group>";
@@ -531,6 +539,8 @@
 			isa = PBXGroup;
 			children = (
 				FEB3C37327BA7C9B005D1C01 /* FindSeSacTabViewController.swift */,
+				FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */,
+				FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,16 +553,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		FEB3C38427BB9C78005D1C01 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FEB3C37A27BAC6E2005D1C01 /* FindNearSeSacViewController.swift */,
-				FEB3C38E27BBFC93005D1C01 /* NearSeSacTableCell.swift */,
-				FEB3C38827BB9D73005D1C01 /* FindNearView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		FEB3C38527BB9C9B005D1C01 /* NearUserTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,16 +561,6 @@
 				FEB3C38027BB8F0A005D1C01 /* View */,
 			);
 			path = NearUserTab;
-			sourceTree = "<group>";
-		};
-		FEB3C38727BB9CF7005D1C01 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FEB3C37C27BAC70F005D1C01 /* AcceptViewController.swift */,
-				FEB3C38C27BBFC87005D1C01 /* AcceptTableCell.swift */,
-				FEB3C38A27BBE08B005D1C01 /* AcceptView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FEB3C39127BECE0E005D1C01 /* Model */ = {
@@ -929,12 +919,14 @@
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
+				FEA7CA4427C325D600BF5AC1 /* AcceptPopUpViewController.swift in Sources */,
 				FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */,
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
 				FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
 				FEB3C37D27BAC70F005D1C01 /* AcceptViewController.swift in Sources */,
 				FE02F2BC27B3B0F200192551 /* HomeEnum.swift in Sources */,
+				FEA7CA4227C2064700BF5AC1 /* RequestPopUpViewController.swift in Sources */,
 				FE7BDCE4279E69B0001C75A9 /* GenderButton.swift in Sources */,
 				FE7BDCEC279F04ED001C75A9 /* BaseURL.swift in Sources */,
 				FE7BDCFB279F27BF001C75A9 /* withdrawViewController.swift in Sources */,

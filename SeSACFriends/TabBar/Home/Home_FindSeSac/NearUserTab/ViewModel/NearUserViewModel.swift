@@ -59,7 +59,7 @@ final class NearUserViewModel {
 				UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
 				completion(nil, TabBarController())
 			case .existUser:
-				completion("누군가와 취미를 함께하기로 약속하셨어요!", nil/*(채팅뷰컨)*/)
+				completion("누군가와 취미를 함께하기로 약속하셨어요!", ChattingViewController())
 			case .fireBaseTokenError:
 				FIRAuth.renewIdToken {
 					QueueApiService.deleteQueue { code in
@@ -95,6 +95,22 @@ final class NearUserViewModel {
 			case .success:
 				if let data = data {
 					self.nearSesac.setUpFromQueueDB(userList: data)
+					data.fromQueueDB.forEach {
+						switch UserDefaults.standard.integer(forKey: UserDefaultsKey.genderStstus.rawValue) {
+						case 0 :
+							if $0.gender == 0 {
+								self.nearSesac.fromUser.append(sesacUser(queueDB: $0))
+							}
+						case 1:
+							if $0.gender == 1 {
+								self.nearSesac.fromUser.append(sesacUser(queueDB: $0))
+							}
+						case 2:
+							self.nearSesac.fromUser.append(sesacUser(queueDB: $0))
+						default:
+							self.nearSesac.setUpFromQueueDB(userList: data)
+						}
+					}
 					completion()
 				}
 			case .fireBaseTokenError:
@@ -190,7 +206,7 @@ final class NearUserViewModel {
 			if let code = code {
 				switch hobbyEnum(rawValue: code)! {
 				case .success:
-					completion(nil, ChattingViewController())
+					completion("취미 함께 하기 요청을 보냈습니다", nil)
 				case .alreadyOtherMatched:
 					completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)
 				case .otherSuspended:

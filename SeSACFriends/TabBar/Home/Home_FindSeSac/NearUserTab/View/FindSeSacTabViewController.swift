@@ -55,23 +55,12 @@ final class FindSeSacTabViewController: TabmanViewController {
 	@objc func testButtonClicked() {
 		navigationController?.popToRootViewController(animated: true)
 	}
-	
+
 	@objc func suspendButton() {
 		viewModel.deleteQueue { message, viewController in
 			if let viewController = viewController {
+				UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
 				self.changeRootView(viewController: viewController)
-//				if viewController == TabBarController() {
-//					print("dhdodhodhdodhdohdodho")
-//					self.changeRootView(viewController: HomeViewController())
-//				} else {
-//					if let message = message {
-//						self.view.makeToast(message, duration: 1.0)
-//						채팅뷰컨 이동
-//						DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-//							self.changeRootView(viewController: <#T##UIViewController#>)
-//						}
-//					}
-//				}
 			}
 		}
 	}

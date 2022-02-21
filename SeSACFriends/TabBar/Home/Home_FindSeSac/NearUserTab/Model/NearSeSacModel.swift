@@ -15,9 +15,6 @@ struct sesacUsers {
 	mutating func setUpFromQueueDB(userList: OnQueueModel) {
 		fromUser.removeAll()
 		recommendUser.removeAll()
-		userList.fromQueueDB.forEach {
-			fromUser.append(sesacUser(queueDB: $0))
-		}
 		userList.fromQueueDBRequested.forEach {
 			recommendUser.append(sesacUser(queueDB: $0))
 		}
@@ -41,4 +38,5 @@ struct sesacUser {
 		self.background = queueDB.background
 		self.isOpen = true
 	}
+	
 }

@@ -1,5 +1,5 @@
 //
-//  AcceptViewController.swift
+//  FindNearSeSacViewController.swift
 //  SeSACFriends
 //
 //  Created by Hoo's MacBookPro on 2022/02/15.
@@ -8,12 +8,14 @@
 import UIKit
 import SnapKit
 
-final class AcceptViewController: UIViewController {
+final class FindNearSeSacViewController: UIViewController {
 	
-	let mainView = acceptView()
+	let mainView = FindNearView()
 	let viewModel = NearUserViewModel.shared
 	
 	var timer: Timer?
+	
+	var viewClosure: (() -> ())?
 	
 	override func loadView() {
 		self.view = mainView
@@ -21,20 +23,22 @@ final class AcceptViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		viewModel.onQueue {
-			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+			self.ButtonSetting(userCount: self.viewModel.nearSesac.fromUser.count)
 			self.mainView.tableView.reloadData()
 		}
+		startTimer()
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		view.backgroundColor = .white
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		mainView.backgroundColor = .white
 		tableViewSetting()
+		navigationBarSetting()
 		mainView.tableView.refreshControl = UIRefreshControl()
 		mainView.tableView.refreshControl?.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
 		mainView.modifyHobbyButton.addTarget(self, action: #selector(modifyButtonClicked), for: .touchUpInside)
 		mainView.reloadButton.addTarget(self, action: #selector(reloadButtonClicked), for: .touchUpInside)
-    }
+	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		stopTimer()
@@ -51,7 +55,7 @@ final class AcceptViewController: UIViewController {
 	func tableViewSetting() {
 		mainView.tableView.delegate = self
 		mainView.tableView.dataSource = self
-		mainView.tableView.register(AcceptTableCell.self, forCellReuseIdentifier: AcceptTableCell.reuseIdentfier)
+		mainView.tableView.register(NearSeSacTableCell.self, forCellReuseIdentifier: NearSeSacTableCell.reuseIdentfier)
 		mainView.tableView.separatorStyle = .none
 		mainView.tableView.rowHeight = UITableView.automaticDimension
 		mainView.tableView.allowsSelection = false
@@ -59,7 +63,7 @@ final class AcceptViewController: UIViewController {
 	
 	func startTimer() {
 		timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(checkQueueStatus), userInfo: nil, repeats: true)
- 	}
+	}
 	
 	func stopTimer() {
 		if timer != nil && timer!.isValid {
@@ -86,21 +90,20 @@ final class AcceptViewController: UIViewController {
 	}
 	
 	@objc func refreshTableView() {
-		print(viewModel.nearSesac)
 		viewModel.onQueue {
 			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
 			self.mainView.tableView.reloadData()
 		}
 		self.mainView.tableView.refreshControl?.endRefreshing()
 	}
-
+	
 	@objc func arrowButtonClicked(_ sender: UIButton) {
 		print(sender.tag)
 		
-		if viewModel.nearSesac.recommendUser[sender.tag].isOpen {
-			viewModel.nearSesac.recommendUser[sender.tag].isOpen.toggle()
+		if viewModel.nearSesac.fromUser[sender.tag].isOpen {
+			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
 		} else {
-			viewModel.nearSesac.recommendUser[sender.tag].isOpen.toggle()
+			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
 			viewModel.onQueue {
 				self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
 			}
@@ -108,32 +111,39 @@ final class AcceptViewController: UIViewController {
 		mainView.tableView.reloadData()
 	}
 	
-	@objc func acceptButtonClicked(_ sender: UIButton) {
-		print(sender.tag,"acceptButtonClicked")
-		print(viewModel.nearSesac.recommendUser[sender.tag].uid)
-		viewModel.hobbyAccept(viewModel.nearSesac.recommendUser[sender.tag].uid) { message, ViewController in
-			if let message = message {
-				self.view.makeToast(message)
-			} else {
-				if let ViewController = ViewController {
-					self.pushViewCon(vc: ViewController)
+	@objc func requestButtonClicked(_ sender: UIButton) {
+		let vc = RequestPopUpViewController()
+		vc.modalPresentationStyle = .overCurrentContext
+		vc.modalTransitionStyle = .crossDissolve
+		present(vc, animated: true, completion: nil)
+		
+		vc.requestClosure = {
+			print("closure")
+			print(sender.tag,"requestButtonClicked")
+			print(self.viewModel.nearSesac.fromUser[sender.tag].uid)
+			self.viewModel.hobbyRequest(self.viewModel.nearSesac.fromUser[sender.tag].uid) { message, ViewController in
+				if let message = message {
+					self.view.makeToast(message)
+				} else {
+					if let ViewController = ViewController {
+						self.pushViewCon(vc: ViewController)
+					}
 				}
 			}
 		}
 	}
 }
 
-extension AcceptViewController: UITableViewDelegate, UITableViewDataSource {
+extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.nearSesac.recommendUser.count
+		return viewModel.nearSesac.fromUser.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = mainView.tableView.dequeueReusableCell(withIdentifier: AcceptTableCell.reuseIdentfier, for: indexPath) as? AcceptTableCell else { return UITableViewCell() }
+		guard let cell = mainView.tableView.dequeueReusableCell(withIdentifier: NearSeSacTableCell.reuseIdentfier, for: indexPath) as? NearSeSacTableCell else { return UITableViewCell() }
 		let row = indexPath.row
-		let user = viewModel.nearSesac.recommendUser[row]
-		
+		let user = viewModel.nearSesac.fromUser[row]
 		cell.userTitle.nameLabel.text = user.nick
 		
 		let reputationArray = [
@@ -149,7 +159,6 @@ extension AcceptViewController: UITableViewDelegate, UITableViewDataSource {
 		//나중에 추가 화면까지 구현계획 있음
 		cell.reviewView.moreButton.isHidden = true
 		
-		
 		if user.isOpen {
 			cell.reputationView.isHidden = true
 			cell.reviewView.isHidden = true
@@ -164,11 +173,11 @@ extension AcceptViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.userTitle.arrowButton.addTarget(self, action: #selector(arrowButtonClicked(_:)), for: .touchUpInside)
 		
 		cell.requestButton.tag = row
-		cell.requestButton.addTarget(self, action: #selector(acceptButtonClicked(_:)), for: .touchUpInside)
+		cell.requestButton.addTarget(self, action: #selector(requestButtonClicked(_:)), for: .touchUpInside)
 		
 		return cell
 	}
-	
-	
-	
+
 }
+	
+
