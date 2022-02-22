@@ -74,4 +74,10 @@ extension UIViewController {
 	func navBarDisplay() {
 		self.navigationController?.navigationBar.isHidden = false
 	}
+	
+	func popupPresent(_ vc: UIViewController) {
+		vc.modalTransitionStyle = .crossDissolve
+		vc.modalPresentationStyle = .overCurrentContext
+		present(vc, animated: true, completion: nil)
+	}
 }

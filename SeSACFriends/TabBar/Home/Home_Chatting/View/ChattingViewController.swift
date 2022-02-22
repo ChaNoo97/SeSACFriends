@@ -9,6 +9,12 @@ import UIKit
 import SnapKit
 import Toast
 
+enum moreViewButton: Int {
+	case report = 1
+	case cancle
+	case review
+}
+
 class ChattingViewController: BaseViewController {
 	
 	let mainView = ChattingView()
@@ -50,8 +56,33 @@ class ChattingViewController: BaseViewController {
 		mainView.sendButton.addTarget(self, action: #selector(sendButtonClicked), for: .touchUpInside)
 		makeTabGester(view: mainView.tableView, target: self, action: #selector(dismissKeyboard))
 		makeTabGester(view: mainView.moreView, target: self, action: #selector(tabAction))
-		mainView.moreView.reviewButton.addTarget(self, action: #selector(reviewButtonClicked), for: .touchUpInside)
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardShow(notification:)),
+			name: UIResponder.keyboardWillChangeFrameNotification,
+			object: nil)
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardHide(notification:)),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil)
+		moreButtonAddTarget()
     }
+	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
+	
+	func moreButtonAddTarget() {
+		mainView.moreView.reportButton.addTarget(self, action: #selector(actionButtonClicked(_:)), for: .touchUpInside)
+		mainView.moreView.reportButton.tag = 1
+		mainView.moreView.cancleButton.addTarget(self, action: #selector(actionButtonClicked(_:)), for: .touchUpInside)
+		mainView.moreView.cancleButton.tag = 2
+		mainView.moreView.reviewButton.addTarget(self, action: #selector(actionButtonClicked(_:)), for: .touchUpInside)
+		mainView.moreView.reviewButton.tag = 3
+	}
 	
 	func navigationBarItemSetting() {
 		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backButtonClicked))
@@ -73,6 +104,23 @@ class ChattingViewController: BaseViewController {
 		mainView.tableView.estimatedRowHeight = UITableView.automaticDimension
 		mainView.tableView.separatorStyle = .none
 		
+	}
+	
+	@objc func keyboardShow(notification: NSNotification) {
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
+			mainView.chatView.snp.updateConstraints {
+				$0.bottom.equalTo(view.safeAreaLayoutGuide).inset(keyboardHeight)
+			}
+			mainView.layoutIfNeeded()
+		}
+	}
+	
+	@objc func keyboardHide(notification: NSNotification) {
+		mainView.chatView.snp.updateConstraints {
+			$0.bottom.equalTo(view.safeAreaLayoutGuide)
+		}
+		mainView.layoutIfNeeded()
 	}
 	
 	@objc func sendButtonClicked() {
@@ -106,6 +154,17 @@ class ChattingViewController: BaseViewController {
 	
 	@objc func reviewButtonClicked() {
 		print("reviewbtnClicked")
+	}
+	
+	@objc func actionButtonClicked(_ sender: UIButton) {
+		switch moreViewButton(rawValue: sender.tag)! {
+		case .report:
+			popupPresent(ReportViewController())
+		case .cancle:
+			popupPresent(CanclePopupViewController())
+		case .review:
+			popupPresent(ReviewPopUpViewontroller())
+		}
 	}
 	
 }

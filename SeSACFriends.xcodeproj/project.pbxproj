@@ -97,6 +97,12 @@
 		FEA7CA5627C4119A00BF5AC1 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA5527C4119A00BF5AC1 /* Notice.swift */; };
 		FEA7CA5927C42BA200BF5AC1 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */; };
 		FEA7CA5B27C4973D00BF5AC1 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA5A27C4973D00BF5AC1 /* MoreView.swift */; };
+		FEA7CA6227C50DCE00BF5AC1 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA6127C50DCE00BF5AC1 /* ReportView.swift */; };
+		FEA7CA6427C50DDF00BF5AC1 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA6327C50DDF00BF5AC1 /* ReportViewController.swift */; };
+		FEA7CA6727C52A1500BF5AC1 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA6627C52A1400BF5AC1 /* SelectionCell.swift */; };
+		FEA7CA6D27C5570D00BF5AC1 /* ReviewPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA6C27C5570D00BF5AC1 /* ReviewPopUpViewController.swift */; };
+		FEA7CA6F27C5571600BF5AC1 /* ReviewPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA6E27C5571600BF5AC1 /* ReviewPopUpView.swift */; };
+		FEA7CA7327C55D9A00BF5AC1 /* CanclePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA7227C55D9A00BF5AC1 /* CanclePopupViewController.swift */; };
 		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
 		FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */; };
 		FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */; };
@@ -211,6 +217,12 @@
 		FEA7CA5527C4119A00BF5AC1 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		FEA7CA5A27C4973D00BF5AC1 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		FEA7CA6127C50DCE00BF5AC1 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		FEA7CA6327C50DDF00BF5AC1 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		FEA7CA6627C52A1400BF5AC1 /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		FEA7CA6C27C5570D00BF5AC1 /* ReviewPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopUpViewController.swift; sourceTree = "<group>"; };
+		FEA7CA6E27C5571600BF5AC1 /* ReviewPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewPopUpView.swift; sourceTree = "<group>"; };
+		FEA7CA7227C55D9A00BF5AC1 /* CanclePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanclePopupViewController.swift; sourceTree = "<group>"; };
 		FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
 		FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
@@ -518,6 +530,7 @@
 		FEA7CA3C27C17D0100BF5AC1 /* Home_Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				FEA7CA4927C3ED7F00BF5AC1 /* ViewModel */,
 				FEA7CA4E27C3F8DE00BF5AC1 /* View */,
 			);
 			path = Home_Chatting;
@@ -534,7 +547,6 @@
 		FEA7CA4E27C3F8DE00BF5AC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FEA7CA4927C3ED7F00BF5AC1 /* ViewModel */,
 				FEA7CA4F27C3F8EC00BF5AC1 /* Cell */,
 				FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */,
 				FEA7CA5A27C4973D00BF5AC1 /* MoreView.swift */,
@@ -559,6 +571,43 @@
 				FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		FEA7CA5E27C50B7200BF5AC1 /* Chatting_Report */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA6327C50DDF00BF5AC1 /* ReportViewController.swift */,
+				FEA7CA6127C50DCE00BF5AC1 /* ReportView.swift */,
+			);
+			path = Chatting_Report;
+			sourceTree = "<group>";
+		};
+		FEA7CA5F27C50D2000BF5AC1 /* Chatting_Review */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA6C27C5570D00BF5AC1 /* ReviewPopUpViewController.swift */,
+				FEA7CA6E27C5571600BF5AC1 /* ReviewPopUpView.swift */,
+			);
+			path = Chatting_Review;
+			sourceTree = "<group>";
+		};
+		FEA7CA6027C50D7C00BF5AC1 /* Chatting_Cancle */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA7227C55D9A00BF5AC1 /* CanclePopupViewController.swift */,
+			);
+			path = Chatting_Cancle;
+			sourceTree = "<group>";
+		};
+		FEA7CA6527C529D200BF5AC1 /* ChattingPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA6627C52A1400BF5AC1 /* SelectionCell.swift */,
+				FEA7CA5E27C50B7200BF5AC1 /* Chatting_Report */,
+				FEA7CA5F27C50D2000BF5AC1 /* Chatting_Review */,
+				FEA7CA6027C50D7C00BF5AC1 /* Chatting_Cancle */,
+			);
+			path = ChattingPopUpView;
 			sourceTree = "<group>";
 		};
 		FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */ = {
@@ -645,6 +694,7 @@
 				FE3030C427B58581008E48EC /* Home_Hobby */,
 				FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */,
 				FEA7CA3C27C17D0100BF5AC1 /* Home_Chatting */,
+				FEA7CA6527C529D200BF5AC1 /* ChattingPopUpView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -917,11 +967,13 @@
 			files = (
 				FE22DE9B27A27B4F00368B13 /* MyView.swift in Sources */,
 				FE7BDCEA279F04C7001C75A9 /* LoginViewModel + extension(apiCall).swift in Sources */,
+				FEA7CA6D27C5570D00BF5AC1 /* ReviewPopUpViewController.swift in Sources */,
 				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
 				FEB3C38327BB8F38005D1C01 /* NearUserViewModel.swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
 				FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
+				FEA7CA6427C50DDF00BF5AC1 /* ReportViewController.swift in Sources */,
 				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,
 				FEA7CA4027C17D4200BF5AC1 /* ChattingViewController.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
@@ -997,7 +1049,9 @@
 				FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */,
 				FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */,
 				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
+				FEA7CA6F27C5571600BF5AC1 /* ReviewPopUpView.swift in Sources */,
 				FE22DE8A27A27A3900368B13 /* TabBarController.swift in Sources */,
+				FEA7CA6727C52A1500BF5AC1 /* SelectionCell.swift in Sources */,
 				FE7BDCD2279C67B3001C75A9 /* BirthViewController.swift in Sources */,
 				FE7BDCF4279F0562001C75A9 /* UserApiService.swift in Sources */,
 				FE22DEB827AA295200368B13 /* MyInfoManageViewController.swift in Sources */,
@@ -1007,7 +1061,9 @@
 				FEB3C36727B6CFE9005D1C01 /* UICollectionView+extension.swift in Sources */,
 				FE22DEAB27A5B13600368B13 /* HobbyCollectionView.swift in Sources */,
 				FE22DEA927A5B08800368B13 /* ReputationView.swift in Sources */,
+				FEA7CA6227C50DCE00BF5AC1 /* ReportView.swift in Sources */,
 				FE7BDCE0279E6868001C75A9 /* GenderView.swift in Sources */,
+				FEA7CA7327C55D9A00BF5AC1 /* CanclePopupViewController.swift in Sources */,
 				FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */,
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
 				FE7BDCF9279F1850001C75A9 /* SignUpModel.swift in Sources */,
