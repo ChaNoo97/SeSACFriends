@@ -20,9 +20,9 @@ class TestViewController: BaseViewController {
 			$0.size.equalTo(50)
 			$0.center.equalToSuperview()
 		}
-		
+
 		button.backgroundColor = .red
-		
+
 		button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
     }
     

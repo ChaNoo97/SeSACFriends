@@ -14,6 +14,7 @@ final class ChattingView: UIView, ViewProtocols {
 	let chatView = UIView()
 	let contentView = UITextView()
 	let sendButton = UIButton()
+	let moreView = MoreView()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -28,10 +29,14 @@ final class ChattingView: UIView, ViewProtocols {
 		contentView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 		contentView.backgroundColor = .sesacGray1
 		sendButton.setImage(UIImage(named: "inactive"), for: .normal)
+		moreView.isHidden = true
+		moreView.stackView.backgroundColor = .white
+		moreView.stackView.alpha = 0
+		moreView.backgroundColor = .black.withAlphaComponent(0.5)
 	}
 	
 	func setupConstraint() {
-		[tableView, chatView].forEach {
+		[tableView, chatView, moreView].forEach {
 			addSubview($0)
 		}
 		
@@ -62,6 +67,12 @@ final class ChattingView: UIView, ViewProtocols {
 			$0.trailing.equalToSuperview().inset(12)
 			$0.centerY.equalToSuperview()
 			$0.size.equalTo(24)
+		}
+		
+		moreView.snp.makeConstraints {
+			$0.top.equalTo(self.safeAreaLayoutGuide)
+			$0.bottom.equalToSuperview()
+			$0.leading.trailing.equalTo(self.safeAreaLayoutGuide)
 		}
 	}
 	

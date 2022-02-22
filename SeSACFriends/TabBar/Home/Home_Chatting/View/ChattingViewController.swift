@@ -16,6 +16,8 @@ class ChattingViewController: BaseViewController {
 	
 	let placeholder = "메세지를 입력하세요"
 	
+	var moreViewIsHidden = true
+	
 	override func loadView() {
 		self.view = mainView
 	}
@@ -46,7 +48,9 @@ class ChattingViewController: BaseViewController {
 			self.mainView.sendButton.setImage(UIImage(named: self.viewModel.sendButtonSetting($0)), for: .normal)
 		}
 		mainView.sendButton.addTarget(self, action: #selector(sendButtonClicked), for: .touchUpInside)
-		makeTabGester(view: mainView, target: self, action: #selector(dismissKeyboard))
+		makeTabGester(view: mainView.tableView, target: self, action: #selector(dismissKeyboard))
+		makeTabGester(view: mainView.moreView, target: self, action: #selector(tabAction))
+		mainView.moreView.reviewButton.addTarget(self, action: #selector(reviewButtonClicked), for: .touchUpInside)
     }
 	
 	func navigationBarItemSetting() {
@@ -58,9 +62,6 @@ class ChattingViewController: BaseViewController {
 		mainView.contentView.delegate = self
 	}
 	
-	@objc func sendButtonClicked() {
-		mainView.contentView.text = ""
-	}
 	
 	func setUpTableView() {
 		mainView.tableView.register(NoticeCell.self, forCellReuseIdentifier: NoticeCell.reuseIdentfier)
@@ -71,7 +72,11 @@ class ChattingViewController: BaseViewController {
 		mainView.tableView.rowHeight = UITableView.automaticDimension
 		mainView.tableView.estimatedRowHeight = UITableView.automaticDimension
 		mainView.tableView.separatorStyle = .none
-		mainView.tableView.isUserInteractionEnabled = false
+		
+	}
+	
+	@objc func sendButtonClicked() {
+		mainView.contentView.text = ""
 	}
 	
 	@objc func backButtonClicked() {
@@ -80,7 +85,27 @@ class ChattingViewController: BaseViewController {
 	}
 	
 	@objc func moreButtonClicked() {
-		print("moreButtonClcked")
+		mainView.contentView.endEditing(true)
+		if moreViewIsHidden {
+			UIView.animate(withDuration: 0.5) {
+				self.mainView.moreView.isHidden = false
+				self.mainView.moreView.stackView.alpha = 1
+				self.moreViewIsHidden.toggle()
+			}
+			
+		}
+	}
+	
+	@objc func tabAction() {
+		if !moreViewIsHidden {
+			mainView.moreView.isHidden = true
+			moreViewIsHidden.toggle()
+			mainView.moreView.stackView.alpha = 0
+		}
+	}
+	
+	@objc func reviewButtonClicked() {
+		print("reviewbtnClicked")
 	}
 	
 }
@@ -95,7 +120,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 		if section == 0 {
 			return 1
 		} else {
-			return 2
+			return 10
 		}
 	}
 
@@ -108,12 +133,14 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 			//MARK: Test
 			let row = indexPath.row
 			if row == 0 {
-				otherCell.chatLabel.text = "우"
+				otherCell.chatLabel.text = "아아ㅏ아ㅏ아ㅏㅏ아ㅏ아아아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ아ㅏ아아ㅏ아아아ㅏ아아ㅏ아아아아아아아ㅏ아ㅏ아ㅏㅏ아ㅏ아아아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ아ㅏ아아ㅏ아아아ㅏ아아ㅏ아아아아아"
 				otherCell.dateLabel.text = "11:11"
+				otherCell.selectionStyle = .none
 				return otherCell
 			} else {
 				myCell.chatLabel.text = "우리는 의료 서비스의 정보 불균형 문제를 정보 통신 기술(IT)을 활용하여 해결하고자 노력하고 있고, 그 첫 번째 영역으로 메디컬 뷰티 시장의 정보 비대칭 문제를 해결하고자 합니다."
 				myCell.dateLabel.text = "11:11"
+				myCell.selectionStyle = .none
 				return myCell
 			}
 		} else {
@@ -121,6 +148,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 			viewModel.otherNick.bind {
 				noticeCell.titleLabel.text = $0+"님과 매칭되었습니다"
 			}
+			noticeCell.selectionStyle = .none
 			return noticeCell
 		}
 	}
@@ -146,6 +174,7 @@ extension ChattingViewController: UITextViewDelegate {
 	
 	func textViewDidChange(_ textView: UITextView) {
 		let contentHeight = textView.contentSize.height
+		print(contentHeight)
 		DispatchQueue.main.async {
 			if contentHeight <= 30 {
 				self.mainView.contentView.snp.updateConstraints {
@@ -153,7 +182,7 @@ extension ChattingViewController: UITextViewDelegate {
 				}
 			} else if contentHeight >= 80 {
 				self.mainView.contentView.snp.updateConstraints {
-					$0.height.equalTo(82)
+					$0.height.equalTo(63)
 				}
 			} else {
 				self.mainView.contentView.snp.updateConstraints {
