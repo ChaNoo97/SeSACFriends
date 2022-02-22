@@ -89,6 +89,13 @@
 		FEA7CA4027C17D4200BF5AC1 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */; };
 		FEA7CA4227C2064700BF5AC1 /* RequestPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4127C2064700BF5AC1 /* RequestPopUpViewController.swift */; };
 		FEA7CA4427C325D600BF5AC1 /* AcceptPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4327C325D600BF5AC1 /* AcceptPopUpViewController.swift */; };
+		FEA7CA4627C3E38F00BF5AC1 /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4527C3E38E00BF5AC1 /* ChattingView.swift */; };
+		FEA7CA4827C3E8EB00BF5AC1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4727C3E8EB00BF5AC1 /* TestViewController.swift */; };
+		FEA7CA4B27C3ED9100BF5AC1 /* ChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4A27C3ED9100BF5AC1 /* ChattingViewModel.swift */; };
+		FEA7CA4D27C3F8B000BF5AC1 /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA4C27C3F8B000BF5AC1 /* Other.swift */; };
+		FEA7CA5227C3F90200BF5AC1 /* My.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA5127C3F90200BF5AC1 /* My.swift */; };
+		FEA7CA5627C4119A00BF5AC1 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA5527C4119A00BF5AC1 /* Notice.swift */; };
+		FEA7CA5927C42BA200BF5AC1 /* UIImage + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */; };
 		FEB3C36127B69C9A005D1C01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FEB3C36027B69C9A005D1C01 /* Alamofire */; };
 		FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */; };
 		FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */; };
@@ -195,6 +202,13 @@
 		FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		FEA7CA4127C2064700BF5AC1 /* RequestPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPopUpViewController.swift; sourceTree = "<group>"; };
 		FEA7CA4327C325D600BF5AC1 /* AcceptPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptPopUpViewController.swift; sourceTree = "<group>"; };
+		FEA7CA4527C3E38E00BF5AC1 /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
+		FEA7CA4727C3E8EB00BF5AC1 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		FEA7CA4A27C3ED9100BF5AC1 /* ChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewModel.swift; sourceTree = "<group>"; };
+		FEA7CA4C27C3F8B000BF5AC1 /* Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
+		FEA7CA5127C3F90200BF5AC1 /* My.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My.swift; sourceTree = "<group>"; };
+		FEA7CA5527C4119A00BF5AC1 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
+		FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + extension.swift"; sourceTree = "<group>"; };
 		FEB3C36227B6CFB9005D1C01 /* HobbyClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyClientCell.swift; sourceTree = "<group>"; };
 		FEB3C36427B6CFC2005D1C01 /* HobbyServerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyServerCell.swift; sourceTree = "<group>"; };
 		FEB3C36627B6CFE9005D1C01 /* UICollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
@@ -293,6 +307,7 @@
 		FE26BD092796832600E92519 /* SeSACFriends */ = {
 			isa = PBXGroup;
 			children = (
+				FEA7CA5727C42B8500BF5AC1 /* Utility */,
 				FE7BDCC2279B3D47001C75A9 /* SeSACFriends.entitlements */,
 				FE26BD0A2796832600E92519 /* AppDelegate.swift */,
 				FE26BD0C2796832600E92519 /* SceneDelegate.swift */,
@@ -313,6 +328,7 @@
 				FE26BD152796832800E92519 /* LaunchScreen.storyboard */,
 				FE26BD182796832800E92519 /* Info.plist */,
 				FE7BDCC3279BC1E6001C75A9 /* GoogleService-Info.plist */,
+				FEA7CA4727C3E8EB00BF5AC1 /* TestViewController.swift */,
 			);
 			path = SeSACFriends;
 			sourceTree = "<group>";
@@ -500,9 +516,46 @@
 		FEA7CA3C27C17D0100BF5AC1 /* Home_Chatting */ = {
 			isa = PBXGroup;
 			children = (
-				FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */,
+				FEA7CA4E27C3F8DE00BF5AC1 /* View */,
 			);
 			path = Home_Chatting;
+			sourceTree = "<group>";
+		};
+		FEA7CA4927C3ED7F00BF5AC1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA4A27C3ED9100BF5AC1 /* ChattingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FEA7CA4E27C3F8DE00BF5AC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA4927C3ED7F00BF5AC1 /* ViewModel */,
+				FEA7CA4F27C3F8EC00BF5AC1 /* Cell */,
+				FEA7CA3F27C17D4200BF5AC1 /* ChattingViewController.swift */,
+				FEA7CA4527C3E38E00BF5AC1 /* ChattingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEA7CA4F27C3F8EC00BF5AC1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA4C27C3F8B000BF5AC1 /* Other.swift */,
+				FEA7CA5127C3F90200BF5AC1 /* My.swift */,
+				FEA7CA5527C4119A00BF5AC1 /* Notice.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FEA7CA5727C42B8500BF5AC1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		FEB3C37227BA7C7D005D1C01 /* Home_FindSeSac */ = {
@@ -876,9 +929,12 @@
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
 				FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */,
 				FEB41A0727AD353500058E1C /* WithdrawViewController.swift in Sources */,
+				FEA7CA5227C3F90200BF5AC1 /* My.swift in Sources */,
 				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */,
+				FEA7CA5627C4119A00BF5AC1 /* Notice.swift in Sources */,
+				FEA7CA4827C3E8EB00BF5AC1 /* TestViewController.swift in Sources */,
 				FEB5007327B39B1B004915BC /* CustomAnnotationView.swift in Sources */,
 				FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */,
 				FE1E79FE279FD46D0043F0F7 /* FIRAuth.swift in Sources */,
@@ -901,11 +957,13 @@
 				FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */,
 				FEB3C37B27BAC6E2005D1C01 /* FindNearSeSacViewController.swift in Sources */,
 				FE7BDCF2279F054D001C75A9 /* EndPoint.swift in Sources */,
+				FEA7CA5927C42BA200BF5AC1 /* UIImage + extension.swift in Sources */,
 				FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */,
 				FEB3C38B27BBE08B005D1C01 /* AcceptView.swift in Sources */,
 				FEB3C37427BA7C9B005D1C01 /* FindSeSacTabViewController.swift in Sources */,
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
+				FEA7CA4B27C3ED9100BF5AC1 /* ChattingViewModel.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */,
@@ -921,6 +979,7 @@
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FEA7CA4427C325D600BF5AC1 /* AcceptPopUpViewController.swift in Sources */,
 				FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */,
+				FEA7CA4627C3E38F00BF5AC1 /* ChattingView.swift in Sources */,
 				FEB5006F27B390BE004915BC /* Endpoint.swift in Sources */,
 				FEB3C36527B6CFC2005D1C01 /* HobbyServerCell.swift in Sources */,
 				FE7BDCCA279C0F42001C75A9 /* NickNameViewController.swift in Sources */,
@@ -940,6 +999,7 @@
 				FE22DEB827AA295200368B13 /* MyInfoManageViewController.swift in Sources */,
 				FE1E7A0027A052CC0043F0F7 /* UserInfo.swift in Sources */,
 				FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */,
+				FEA7CA4D27C3F8B000BF5AC1 /* Other.swift in Sources */,
 				FEB3C36727B6CFE9005D1C01 /* UICollectionView+extension.swift in Sources */,
 				FE22DEAB27A5B13600368B13 /* HobbyCollectionView.swift in Sources */,
 				FE22DEA927A5B08800368B13 /* ReputationView.swift in Sources */,

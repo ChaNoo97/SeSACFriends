@@ -56,7 +56,7 @@ final class NearUserViewModel {
 			}
 			switch StateCodeEnum(rawValue: code)! {
 			case .success:
-				UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
+				UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 				completion(nil, TabBarController())
 			case .existUser:
 				completion("누군가와 취미를 함께하기로 약속하셨어요!", ChattingViewController())
@@ -68,7 +68,7 @@ final class NearUserViewModel {
 						}
 						switch StateCodeEnum(rawValue: code)! {
 						case .success:
-							UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
+							UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 							completion(nil, HomeViewController())
 						case .existUser:
 							completion("누군가와 취미를 함께하기로 약속하셨어요!", nil/*(채팅뷰컨)*/)
@@ -123,6 +123,22 @@ final class NearUserViewModel {
 						case .success:
 							if let data = data {
 								self.nearSesac.setUpFromQueueDB(userList: data)
+								data.fromQueueDB.forEach {
+									switch UserDefaults.standard.integer(forKey: UserDefaultsKey.genderStstus.rawValue) {
+									case 0 :
+										if $0.gender == 0 {
+											self.nearSesac.fromUser.append(sesacUser(queueDB: $0))
+										}
+									case 1:
+										if $0.gender == 1 {
+											self.nearSesac.fromUser.append(sesacUser(queueDB: $0))
+										}
+									case 2:
+										self.nearSesac.fromUser.append(sesacUser(queueDB: $0))
+									default:
+										self.nearSesac.setUpFromQueueDB(userList: data)
+									}
+								}
 								completion()
 							}
 						default:
@@ -244,6 +260,7 @@ final class NearUserViewModel {
 			if let code = code {
 				switch hobbyEnum(rawValue: code)! {
 				case .success:
+					UserDefaults.standard.set(queueState.matched.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 					completion(nil, ChattingViewController())
 				case .alreadyOtherMatched:
 					completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)
@@ -257,6 +274,7 @@ final class NearUserViewModel {
 							if let code = code {
 								switch hobbyEnum(rawValue: code)! {
 								case .success:
+									UserDefaults.standard.set(queueState.matched.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 									completion(nil, ChattingViewController())
 								case .alreadyOtherMatched:
 									completion("상대방이 이미 다른 사람과 취미를 함께하는 중입니다.", nil)

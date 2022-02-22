@@ -76,7 +76,7 @@ class HobbyViewController: BaseViewController {
 					DispatchQueue.main.asyncAfter(deadline: .now()+1) {
 						switch viewcon(rawValue: vc)! {
 						case .push:
-							UserDefaults.standard.set("matching", forKey: UserDefaultsKey.queueStatus.rawValue)
+							UserDefaults.standard.set(queueState.matching.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 							self.buttonStatus = true
 							let vc = FindSeSacTabViewController()
 							vc.viewModel.region = self.viewModel.region

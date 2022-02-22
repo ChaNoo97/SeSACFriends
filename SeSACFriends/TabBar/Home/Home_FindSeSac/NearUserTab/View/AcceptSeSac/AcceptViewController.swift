@@ -45,6 +45,10 @@ final class AcceptViewController: UIViewController {
 			mainView.modifyHobbyButton.isHidden = true
 			mainView.reloadButton.isHidden = true
 			mainView.emptyView.isHidden = true
+		} else {
+			mainView.modifyHobbyButton.isHidden = false
+			mainView.reloadButton.isHidden = false
+			mainView.emptyView.isHidden = false
 		}
 	}
 	
@@ -86,7 +90,7 @@ final class AcceptViewController: UIViewController {
 	}
 	
 	@objc func refreshTableView() {
-		print(viewModel.nearSesac)
+		print("123123123123",viewModel.nearSesac)
 		viewModel.onQueue {
 			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
 			self.mainView.tableView.reloadData()
@@ -171,6 +175,9 @@ extension AcceptViewController: UITableViewDelegate, UITableViewDataSource {
 		
 		cell.requestButton.tag = row
 		cell.requestButton.addTarget(self, action: #selector(acceptButtonClicked(_:)), for: .touchUpInside)
+		
+		cell.backgroundImageView.image = backgroundImageEnum(rawValue: user.background)!.image
+		cell.faceImageView.image = sesacImageEnum(rawValue: user.sesac)!.image
 		
 		return cell
 	}

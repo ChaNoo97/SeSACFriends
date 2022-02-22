@@ -22,7 +22,6 @@ final class HomeViewController: BaseViewController {
 	var setRegionOnce = true
 	
 	var userAnnotationArray: [CustomAnnotation] = []
-//	let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue)
 	
 	override func loadView() {
 		self.view = mainView
@@ -32,6 +31,7 @@ final class HomeViewController: BaseViewController {
 		super.viewWillAppear(animated)
 		tabBarDisplay()
 		navBarHidden()
+//		UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 		if let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue) {
 			print("******image*******Homevc36",queueStatus)
 			floatingButtonSetImage(imageName: queueStatus)
@@ -111,7 +111,8 @@ final class HomeViewController: BaseViewController {
 				self.navigationController?.pushViewController(vc1, animated: false)
 				self.navigationController?.pushViewController(vc2, animated: true)
 			} else if queueStatus == "matched" {
-				//채팅 구현후 구현 예정
+				
+				pushViewCon(vc: ChattingViewController())
 			}
 		} else {
 			let vc = HobbyViewController()

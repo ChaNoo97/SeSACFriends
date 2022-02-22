@@ -38,6 +38,7 @@ class UserApiService {
 				UserDefaults.standard.set(data.nick, forKey: UserDefaultsKey.nickName.rawValue)
 				print("serverFCMTOKEN:",data.fcMtoken)
 				print("MYUID!!!!!!!:", data.uid)
+				print("신고", data.reportedNum)
 				completion(data,code,nil)
 			case .failure(let error):
 				completion(nil,code,error)

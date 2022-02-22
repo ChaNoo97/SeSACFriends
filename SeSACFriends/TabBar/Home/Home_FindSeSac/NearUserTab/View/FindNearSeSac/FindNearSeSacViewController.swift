@@ -49,6 +49,10 @@ final class FindNearSeSacViewController: UIViewController {
 			mainView.modifyHobbyButton.isHidden = true
 			mainView.reloadButton.isHidden = true
 			mainView.emptyView.isHidden = true
+		} else {
+			mainView.modifyHobbyButton.isHidden = false
+			mainView.reloadButton.isHidden = false
+			mainView.emptyView.isHidden = false
 		}
 	}
 	
@@ -91,7 +95,7 @@ final class FindNearSeSacViewController: UIViewController {
 	
 	@objc func refreshTableView() {
 		viewModel.onQueue {
-			self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+			self.ButtonSetting(userCount: self.viewModel.nearSesac.fromUser.count)
 			self.mainView.tableView.reloadData()
 		}
 		self.mainView.tableView.refreshControl?.endRefreshing()
@@ -174,6 +178,9 @@ extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSourc
 		
 		cell.requestButton.tag = row
 		cell.requestButton.addTarget(self, action: #selector(requestButtonClicked(_:)), for: .touchUpInside)
+		
+		cell.backgroundImageView.image = backgroundImageEnum(rawValue: user.background)!.image
+		cell.faceImageView.image = sesacImageEnum(rawValue: user.sesac)!.image
 		
 		return cell
 	}

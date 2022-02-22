@@ -27,7 +27,7 @@ final class FindSeSacTabViewController: TabmanViewController {
 		self.dataSource = self
 		setUpTabBarViewDesign()
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "찾기중단", style: .plain, target: self, action: #selector(suspendButton))
-		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(testButtonClicked))
+		navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backButtonClicked))
 
 	}
 	
@@ -52,14 +52,14 @@ final class FindSeSacTabViewController: TabmanViewController {
 		addBar(bar, dataSource: self, at: .top)
 	}
 	
-	@objc func testButtonClicked() {
+	@objc func backButtonClicked() {
 		navigationController?.popToRootViewController(animated: true)
 	}
 
 	@objc func suspendButton() {
 		viewModel.deleteQueue { message, viewController in
 			if let viewController = viewController {
-				UserDefaults.standard.set("normal", forKey: UserDefaultsKey.queueStatus.rawValue)
+				UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 				self.changeRootView(viewController: viewController)
 			}
 		}
