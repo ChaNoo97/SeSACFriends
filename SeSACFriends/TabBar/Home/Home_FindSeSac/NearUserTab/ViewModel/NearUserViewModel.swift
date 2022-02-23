@@ -152,7 +152,7 @@ final class NearUserViewModel {
 		}
 	}
 	
-	func myStatus(callStatus: CallStatus, completion: @escaping (String?) -> Void) {
+	func myStatus(callStatus: CallStatus, completion: @escaping (String?, UIViewController?) -> Void) {
 		QueueApiService.myQueueStatus { data, code in
 			guard let code = code else {
 				return
@@ -165,19 +165,19 @@ final class NearUserViewModel {
 						switch callStatus {
 						case .timer:
 							if let nick = data.matchedNick {
-								completion(nick+callStatus.message)
+								completion(nick+callStatus.message, ChattingViewController())
 							}
 						case .requestButton:
-							completion(callStatus.message)
+							completion(callStatus.message, nil)
 						case .acceptButton:
-							completion(callStatus.message)
+							completion(callStatus.message, nil)
 						default:
 							return
 						}
 					}
 				}
 			case .existUser:
-				completion("오랜 시간 동안 매칭 되지 않아 새싹 친구 찾기를 그만둡니다.")
+				completion("오랜 시간 동안 매칭 되지 않아 새싹 친구 찾기를 그만둡니다.", nil)
 			case .fireBaseTokenError:
 				FIRAuth.renewIdToken {
 					QueueApiService.myQueueStatus { data, code in
@@ -192,27 +192,27 @@ final class NearUserViewModel {
 									switch callStatus {
 									case .timer:
 										if let nick = data.matchedNick {
-											completion(nick+callStatus.message)
+											completion(nick+callStatus.message, ChattingViewController())
 										}
 									case .requestButton:
-										completion(callStatus.message)
+										completion(callStatus.message, nil)
 									case .acceptButton:
-										completion(callStatus.message)
+										completion(callStatus.message, nil)
 									default:
 										return
 									}
 								}
 							}
 						case .existUser:
-							completion("오랜 시간 동안 매칭 되지 않아 새싹 친구 찾기를 그만둡니다.")
+							completion("오랜 시간 동안 매칭 되지 않아 새싹 친구 찾기를 그만둡니다.", nil)
 						default:
-							completion("알수없는 오류. 앱을 재실행 해주세요")
+							completion("알수없는 오류. 앱을 재실행 해주세요", nil)
 						}
 
 					}
 				}
 			default:
-				completion("알수없는 오류.")
+				completion("알수없는 오류.", nil)
 			}
 		}
 	}

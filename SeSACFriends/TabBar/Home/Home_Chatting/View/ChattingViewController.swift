@@ -40,6 +40,7 @@ class ChattingViewController: BaseViewController {
 				self.view.makeToast(message)
 			}
 		}
+		SocketIoManager.shared.establishConnection()
 	}
 	
     override func viewDidLoad() {
@@ -66,6 +67,7 @@ class ChattingViewController: BaseViewController {
 			selector: #selector(keyboardHide(notification:)),
 			name: UIResponder.keyboardWillHideNotification,
 			object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(getMessage(notification:)), name: NSNotification.Name("getMessage"), object: nil)
 		moreButtonAddTarget()
     }
 	
@@ -73,6 +75,8 @@ class ChattingViewController: BaseViewController {
 		super.viewDidDisappear(animated)
 		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
 		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: NSNotification.Name("getMessage"), object: nil)
+		SocketIoManager.shared.closeConnection()
 	}
 	
 	func moreButtonAddTarget() {
@@ -106,6 +110,17 @@ class ChattingViewController: BaseViewController {
 		
 	}
 	
+	@objc func getMessage(notification: NSNotification) {
+		print("123123")
+		let chat = notification.userInfo!["chat"] as! String
+		let createdAt = notification.userInfo!["createdAt"] as! String
+		let from = notification.userInfo!["from"] as! String
+		let value = Chat(id: "", v: 0, to: "", from: from, chat: chat, createdAt: createdAt)
+		viewModel.chatList.append(value)
+		mainView.tableView.reloadData()
+		self.mainView.tableView.scrollToRow(at: [1, self.viewModel.chatList.count-1], at: .bottom, animated: false)
+	}
+	
 	@objc func keyboardShow(notification: NSNotification) {
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
 			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
@@ -124,6 +139,11 @@ class ChattingViewController: BaseViewController {
 	}
 	
 	@objc func sendButtonClicked() {
+		if let chat = mainView.contentView.text {
+			viewModel.chatPost(chatText: chat) {
+				self.mainView.tableView.reloadData()
+			}
+		}
 		mainView.contentView.text = ""
 	}
 	
@@ -179,26 +199,24 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 		if section == 0 {
 			return 1
 		} else {
-			return 10
+			return viewModel.chatList.count
 		}
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if indexPath.section == 1 {
-			guard let otherCell = tableView.dequeueReusableCell(withIdentifier: OtherCell.reuseIdentfier, for: indexPath) as? OtherCell else { return UITableViewCell() }
-			
-			guard let myCell = tableView.dequeueReusableCell(withIdentifier: MyCell.reuseIdentfier, for: indexPath) as? MyCell else { return UITableViewCell() }
-
 			//MARK: Test
 			let row = indexPath.row
-			if row == 0 {
-				otherCell.chatLabel.text = "아아ㅏ아ㅏ아ㅏㅏ아ㅏ아아아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ아ㅏ아아ㅏ아아아ㅏ아아ㅏ아아아아아아아ㅏ아ㅏ아ㅏㅏ아ㅏ아아아아ㅏ아아ㅏ아아ㅏ아ㅏ아아ㅏ아ㅏ아아ㅏ아아아ㅏ아아ㅏ아아아아아"
-				otherCell.dateLabel.text = "11:11"
+			if viewModel.chatList[row].from == viewModel.otherUid.value {
+				guard let otherCell = tableView.dequeueReusableCell(withIdentifier: OtherCell.reuseIdentfier, for: indexPath) as? OtherCell else { return UITableViewCell() }
+				otherCell.chatLabel.text = viewModel.chatList[row].chat
+				otherCell.dateLabel.text = viewModel.chatList[row].createdAt
 				otherCell.selectionStyle = .none
 				return otherCell
 			} else {
-				myCell.chatLabel.text = "우리는 의료 서비스의 정보 불균형 문제를 정보 통신 기술(IT)을 활용하여 해결하고자 노력하고 있고, 그 첫 번째 영역으로 메디컬 뷰티 시장의 정보 비대칭 문제를 해결하고자 합니다."
-				myCell.dateLabel.text = "11:11"
+				guard let myCell = tableView.dequeueReusableCell(withIdentifier: MyCell.reuseIdentfier, for: indexPath) as? MyCell else { return UITableViewCell() }
+				myCell.chatLabel.text = viewModel.chatList[row].chat
+				myCell.dateLabel.text = viewModel.chatList[row].createdAt
 				myCell.selectionStyle = .none
 				return myCell
 			}

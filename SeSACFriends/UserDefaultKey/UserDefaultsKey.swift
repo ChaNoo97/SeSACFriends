@@ -9,6 +9,7 @@ import Foundation
 
 enum UserDefaultsKey: String {
 	case FCMtoken
+	case Uid
 	case varification
 	case idToken
 	case joinFriends //회원가입 유무 bool값

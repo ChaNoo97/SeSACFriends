@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ReportView: UIView, ViewProtocols {
+final class ReportView: UIView, ViewProtocols {
 	
 	let shallView = UIView()
 	let titleLabel = UILabel()
@@ -57,7 +57,8 @@ class ReportView: UIView, ViewProtocols {
 		}
 		
 		shallView.snp.makeConstraints {
-			$0.center.equalToSuperview()
+			$0.centerX.equalToSuperview()
+			$0.centerY.equalToSuperview()
 			$0.leading.trailing.equalToSuperview().inset(16)
 		}
 		

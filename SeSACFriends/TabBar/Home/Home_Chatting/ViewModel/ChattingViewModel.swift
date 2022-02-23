@@ -13,6 +13,8 @@ final class ChattingViewModel {
 	var chatPossibility = Observable(false)
 	var otherNick: Observable<String> = Observable("")
 	var otherUid: Observable<String> = Observable("")
+	let myUid = UserDefaults.standard.string(forKey: UserDefaultsKey.Uid.rawValue)!
+	var chatList: [Chat] = []
 	
 	func sendButtonSetting(_ textCount: Int) -> String {
 		if textCount != 0 && chatPossibility.value {
@@ -82,6 +84,16 @@ final class ChattingViewModel {
 				default:
 					return
 				}
+			}
+		}
+	}
+	
+	func chatPost(chatText: String, completion: @escaping() -> Void) {
+		ChatApiService.chat(otherUid: self.otherUid.value, chatText: chatText) { code, data in
+			if let data = data {
+				let myChat = Chat(id: "", v: 0, to: "", from: self.myUid, chat: data.chat, createdAt: "(Date.now)")
+				self.chatList.append(myChat)
+				completion()
 			}
 		}
 	}

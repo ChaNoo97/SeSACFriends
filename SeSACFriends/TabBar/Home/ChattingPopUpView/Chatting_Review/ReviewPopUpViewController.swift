@@ -10,6 +10,7 @@ import UIKit
 class ReviewPopUpViewontroller: UIViewController {
 	
 	let mainView = ReviewPopUpView()
+	let viewModel = ReviewPopupViewModel()
 	
 	let placeholder = "자세한 피드백은 다른 새싹들에게 도움이 됩니다\n(500자 이내 작성)"
 	
@@ -28,8 +29,25 @@ class ReviewPopUpViewontroller: UIViewController {
 		view.backgroundColor = .black.withAlphaComponent(0.5)
 		mainView.closeButton.addTarget(self, action: #selector(closeButtonClicked), for: .touchUpInside)
 		mainView.contentTextView.delegate = self
+		makeTabGester(view: mainView, target: self, action: #selector(dismissKeyboard))
 		collectionViewSetting()
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardShow(notification:)),
+			name: UIResponder.keyboardWillChangeFrameNotification,
+			object: nil)
+		NotificationCenter.default.addObserver(
+			self,
+			selector: #selector(keyboardHide(notification:)),
+			name: UIResponder.keyboardWillHideNotification,
+			object: nil)
     }
+	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+		NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+	}
 	
 	func collectionViewSetting() {
 		mainView.selectionCollectionView.delegate = self
@@ -39,6 +57,24 @@ class ReviewPopUpViewontroller: UIViewController {
 	
 	@objc func closeButtonClicked() {
 		dismiss(animated: true, completion: nil)
+	}
+	
+	@objc func keyboardShow(notification: NSNotification) {
+		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
+			let updateHeight = UIScreen.main.bounds.height/2 - keyboardHeight
+			mainView.shallView.snp.updateConstraints {
+				$0.centerY.equalToSuperview().offset(-updateHeight)
+			}
+			mainView.shallView.layoutIfNeeded()
+		}
+	}
+	
+	@objc func keyboardHide(notification: NSNotification) {
+		mainView.shallView.snp.updateConstraints {
+			$0.centerY.equalToSuperview()
+		}
+		mainView.shallView.layoutIfNeeded()
 	}
 
 }
@@ -52,8 +88,24 @@ extension ReviewPopUpViewontroller: UICollectionViewDelegate, UICollectionViewDa
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectionCell.reuseIdentfier, for: indexPath) as? SelectionCell else { return UICollectionViewCell() }
 		let titleArray = ["좋은 매너", "정확한 시간 약속", "빠른 응답", "친절한 성격", "능숙한 취미 실력", "유익한 시간"]
 		let row = indexPath.row
-		cell.itemLabel.text = titleArray[row]
+		cell.selectButton.setTitle(titleArray[row], for: .normal)
+		cell.selectButton.addTarget(self, action: #selector(selectButtonClicked(_:)), for: .touchUpInside)
+		cell.selectButton.tag = row
+		if viewModel.selectArray[row] {
+			cell.contentView.backgroundColor = .sesacGreen
+			cell.contentView.layer.borderWidth = 0
+			cell.selectButton.setTitleColor(.sesacWhite, for: .normal)
+		} else {
+			cell.contentView.backgroundColor = .white
+			cell.contentView.layer.borderWidth = 1
+			cell.selectButton.setTitleColor(.sesacBlack, for: .normal)
+		}
 		return cell
+	}
+	
+	@objc func selectButtonClicked(_ sender: UIButton) {
+		viewModel.selectArray[sender.tag].toggle()
+		mainView.selectionCollectionView.reloadData()
 	}
 	
 }

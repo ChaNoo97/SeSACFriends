@@ -10,7 +10,7 @@ import SnapKit
 
 final class SelectionCell: UICollectionViewCell {
 	
-	let itemLabel = UILabel()
+	let selectButton = UIButton()
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -23,13 +23,14 @@ final class SelectionCell: UICollectionViewCell {
 		contentView.layer.cornerRadius = 8
 		contentView.layer.borderColor = UIColor.sesacGray4.cgColor
 		contentView.layer.borderWidth = 1
-		itemLabel.font = SesacFont.title4R14.font
+		selectButton.titleLabel?.font = SesacFont.title4R14.font
+		selectButton.setTitleColor(.black, for: .normal)
 	}
 	
 	func setUpConstraints() {
-		contentView.addSubview(itemLabel)
+		contentView.addSubview(selectButton)
 		
-		itemLabel.snp.makeConstraints {
+		selectButton.snp.makeConstraints {
 			$0.center.equalToSuperview()
 			$0.height.equalTo(22)
 		}

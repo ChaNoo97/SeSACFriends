@@ -88,8 +88,11 @@ final class FindNearSeSacViewController: UIViewController {
 	}
 	
 	@objc func checkQueueStatus() {
-		viewModel.myStatus(callStatus: .timer) { message in
+		viewModel.myStatus(callStatus: .timer) { message, vc in
 			self.view.makeToast(message)
+			if let vc = vc {
+				self.pushViewCon(vc: vc)
+			}
 		}
 	}
 	

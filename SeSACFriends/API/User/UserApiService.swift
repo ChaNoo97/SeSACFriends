@@ -36,6 +36,7 @@ class UserApiService {
 			case.success(let data):
 				//에러 존재..
 				UserDefaults.standard.set(data.nick, forKey: UserDefaultsKey.nickName.rawValue)
+				UserDefaults.standard.set(data.uid, forKey: UserDefaultsKey.Uid.rawValue)
 				print("serverFCMTOKEN:",data.fcMtoken)
 				print("MYUID!!!!!!!:", data.uid)
 				print("신고", data.reportedNum)

@@ -28,5 +28,6 @@ class CanclePopupViewController: UIViewController {
 	
 	@objc func allowButtonClicked() {
 		print("allow")
+		UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 	}
 }
