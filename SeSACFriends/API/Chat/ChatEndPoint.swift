@@ -9,6 +9,7 @@ import Foundation
 
 enum ChatEndPoint {
 	case chat(id: String)
+	case lastChat(fromId: String, lastChatDate: String)
 }
 
 extension ChatEndPoint {
@@ -16,6 +17,8 @@ extension ChatEndPoint {
 		switch self {
 		case .chat(id: let id):
 			return .makeEndPoint("/chat/"+id)
+		case .lastChat(fromId: let fromId, lastChatDate: let lastChatDate):
+			return .makeEndPoint("/chat/\(fromId)?lastchatDate=\(lastChatDate)")
 		}
 	}
 }

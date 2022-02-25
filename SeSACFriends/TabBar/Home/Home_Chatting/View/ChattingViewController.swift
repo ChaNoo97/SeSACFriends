@@ -41,6 +41,7 @@ class ChattingViewController: BaseViewController {
 			}
 		}
 		SocketIoManager.shared.establishConnection()
+		//Test
 	}
 	
     override func viewDidLoad() {
@@ -69,6 +70,12 @@ class ChattingViewController: BaseViewController {
 			object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(getMessage(notification:)), name: NSNotification.Name("getMessage"), object: nil)
 		moreButtonAddTarget()
+		
+		viewModel.otherUid.bind {
+			self.viewModel.takeLastChat($0) {
+				self.mainView.tableView.reloadData()
+			}
+		}
     }
 	
 	override func viewDidDisappear(_ animated: Bool) {
@@ -115,7 +122,12 @@ class ChattingViewController: BaseViewController {
 		let chat = notification.userInfo!["chat"] as! String
 		let createdAt = notification.userInfo!["createdAt"] as! String
 		let from = notification.userInfo!["from"] as! String
-		let value = Chat(id: "", v: 0, to: "", from: from, chat: chat, createdAt: createdAt)
+		let to = notification.userInfo!["to"] as! String
+		let value = Chat(id: "", v: 0, to: to, from: from, chat: chat, createdAt: createdAt)
+		print("getMessage createdAt", createdAt)
+		UserDefaults.standard.set(createdAt, forKey: UserDefaultsKey.chatLastDate.rawValue)
+		
+//		UserDefaults.standard.set(from, forKey: UserDefaultsKey.from.rawValue)
 		viewModel.chatList.append(value)
 		mainView.tableView.reloadData()
 		self.mainView.tableView.scrollToRow(at: [1, self.viewModel.chatList.count-1], at: .bottom, animated: false)
@@ -139,12 +151,15 @@ class ChattingViewController: BaseViewController {
 	}
 	
 	@objc func sendButtonClicked() {
-		if let chat = mainView.contentView.text {
-			viewModel.chatPost(chatText: chat) {
-				self.mainView.tableView.reloadData()
+		guard let chat = mainView.contentView.text else { return }
+		viewModel.validText.bind {
+			if $0.count != 0 {
+				self.viewModel.chatPost(chatText: chat) {
+					self.mainView.tableView.reloadData()
+				}
+				self.mainView.contentView.text = nil
 			}
 		}
-		mainView.contentView.text = ""
 	}
 	
 	@objc func backButtonClicked() {
@@ -252,6 +267,10 @@ extension ChattingViewController: UITextViewDelegate {
 	func textViewDidChange(_ textView: UITextView) {
 		let contentHeight = textView.contentSize.height
 		print(contentHeight)
+		viewModel.validText.value = textView.text.trimmingCharacters(in: ["\n"])
+		viewModel.validText.bind {
+			self.mainView.sendButton.setImage(UIImage(named: self.viewModel.sendButtonSetting($0.count)), for: .normal)
+		}
 		DispatchQueue.main.async {
 			if contentHeight <= 30 {
 				self.mainView.contentView.snp.updateConstraints {

@@ -17,4 +17,6 @@ enum UserDefaultsKey: String {
 	case nickName
 	case queueStatus
 	case genderStstus
+	case chatLastDate
+	case from
 }

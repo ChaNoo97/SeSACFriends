@@ -15,6 +15,7 @@ final class ChattingViewModel {
 	var otherUid: Observable<String> = Observable("")
 	let myUid = UserDefaults.standard.string(forKey: UserDefaultsKey.Uid.rawValue)!
 	var chatList: [Chat] = []
+	var validText: Observable<String> = Observable("")
 	
 	func sendButtonSetting(_ textCount: Int) -> String {
 		if textCount != 0 && chatPossibility.value {
@@ -91,9 +92,26 @@ final class ChattingViewModel {
 	func chatPost(chatText: String, completion: @escaping() -> Void) {
 		ChatApiService.chat(otherUid: self.otherUid.value, chatText: chatText) { code, data in
 			if let data = data {
-				let myChat = Chat(id: "", v: 0, to: "", from: self.myUid, chat: data.chat, createdAt: "(Date.now)")
+				let myChat = Chat(id: "", v: 0, to: "", from: self.myUid, chat: data.chat, createdAt: "\(Date.now)")
 				self.chatList.append(myChat)
 				completion()
+			}
+		}
+	}
+	
+	func takeLastChat(_ otherUid: String, completion: @escaping () -> Void) {
+		guard let chatDate = UserDefaults.standard.string(forKey: UserDefaultsKey.chatLastDate.rawValue) else { return print("chatDate return") }
+//		guard let fromId = UserDefaults.standard.string(forKey: UserDefaultsKey.from.rawValue) else { return
+//			print("fromId Return")
+//		}
+//		print("chatDate: \(chatDate), fromId: \(fromId)")
+		ChatApiService.lastChat(fromId: otherUid, lastDate: chatDate) { data in
+			if let data = data {
+				data.payload.forEach {
+					self.chatList.append($0)
+					completion()
+				}
+				print("$$",data.payload)
 			}
 		}
 	}

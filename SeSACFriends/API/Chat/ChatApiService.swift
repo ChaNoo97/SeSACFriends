@@ -19,7 +19,12 @@ final class ChatApiService {
 		AF.request(ChatEndPoint.chat(id: otherUid).url, method: .post, parameters: parameters, headers: BaseHeader.normalHeaders.headers).responseDecodable(of: ChatResponseModel.self) { response in
 			completion(response.response!.statusCode, response.value)
 		}
-		
-		
+	}
+	
+	static func lastChat(fromId: String, lastDate: String, completion: @escaping (LastChat?) -> Void) {
+		AF.request(ChatEndPoint.lastChat(fromId: fromId, lastChatDate: lastDate).url, method: .get, headers: BaseHeader.normalHeaders.headers).responseDecodable(of: LastChat.self) { response in
+			print("=-=-=-=-=%%",response.response?.statusCode)
+			completion(response.value)
+		}
 	}
 }

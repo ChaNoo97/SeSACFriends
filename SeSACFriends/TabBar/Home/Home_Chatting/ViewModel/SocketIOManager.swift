@@ -44,10 +44,12 @@ final class SocketIoManager: NSObject {
 			let chat = data["chat"] as! String
 			let createdAt = data["createdAt"] as! String
 			let from = data["from"] as! String
+			let to = data["to"] as! String
+			
 			
 			print("Check", chat, createdAt)
 			
-			NotificationCenter.default.post(name: NSNotification.Name("getMessage"), object: self, userInfo: ["chat": chat, "createdAt": createdAt, "from": from])
+			NotificationCenter.default.post(name: NSNotification.Name("getMessage"), object: self, userInfo: ["chat": chat, "createdAt": createdAt, "from": from, "to": to])
 		}
 		
 	}

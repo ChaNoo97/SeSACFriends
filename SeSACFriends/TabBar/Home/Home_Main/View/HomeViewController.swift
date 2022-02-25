@@ -31,7 +31,6 @@ final class HomeViewController: BaseViewController {
 		super.viewWillAppear(animated)
 		tabBarDisplay()
 		navBarHidden()
-//		UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 		if let queueStatus = UserDefaults.standard.string(forKey: UserDefaultsKey.queueStatus.rawValue) {
 			print("******image*******Homevc36",queueStatus)
 			floatingButtonSetImage(imageName: queueStatus)

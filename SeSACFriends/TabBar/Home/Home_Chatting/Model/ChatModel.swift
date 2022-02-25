@@ -7,6 +7,11 @@
 
 import Foundation
 
+// MARK: - LastChat
+struct LastChat: Codable {
+	let payload: [Chat]
+}
+
 // MARK: - Chat
 struct Chat: Codable {
 	let id: String
@@ -19,4 +24,3 @@ struct Chat: Codable {
 		case to, from, chat, createdAt
 	}
 }
-
