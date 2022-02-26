@@ -10,6 +10,7 @@ import Foundation
 enum ChatEndPoint {
 	case chat(id: String)
 	case lastChat(fromId: String, lastChatDate: String)
+	case dodge
 }
 
 extension ChatEndPoint {
@@ -19,6 +20,8 @@ extension ChatEndPoint {
 			return .makeEndPoint("/chat/"+id)
 		case .lastChat(fromId: let fromId, lastChatDate: let lastChatDate):
 			return .makeEndPoint("/chat/\(fromId)?lastchatDate=\(lastChatDate)")
+		case .dodge:
+			return .makeEndPoint("/queue/dodge")
 		}
 	}
 }

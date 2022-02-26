@@ -27,4 +27,16 @@ final class ChatApiService {
 			completion(response.value)
 		}
 	}
+	
+	static func dodge(_ otherUid: String, completion: @escaping (Int?) -> Void) {
+		
+		let parameters: Parameters = [
+			"otheruid": otherUid
+		]
+		
+		AF.request(ChatEndPoint.dodge.url, method: .post, parameters: parameters, headers: BaseHeader.normalHeaders.headers).responseString { response in
+			completion(response.response?.statusCode)
+		}
+	}
+	
 }

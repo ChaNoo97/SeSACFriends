@@ -18,7 +18,7 @@ enum moreViewButton: Int {
 class ChattingViewController: BaseViewController {
 	
 	let mainView = ChattingView()
-	let viewModel = ChattingViewModel()
+	let viewModel = ChattingViewModel.shared
 	
 	let placeholder = "메세지를 입력하세요"
 	
@@ -40,6 +40,7 @@ class ChattingViewController: BaseViewController {
 				self.view.makeToast(message)
 			}
 		}
+		UserDefaults.standard.set(queueState.matched.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 		SocketIoManager.shared.establishConnection()
 		//Test
 	}

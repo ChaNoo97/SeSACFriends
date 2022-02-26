@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 final class ChattingViewModel {
+	
+	static let shared = ChattingViewModel()
 	
 	var textCount = Observable(0)
 	var chatPossibility = Observable(false)
@@ -114,5 +117,42 @@ final class ChattingViewModel {
 				print("$$",data.payload)
 			}
 		}
+		ChatApiService.lastChat(fromId: myUid, lastDate: chatDate) { data in
+			if let data = data {
+				data.payload.forEach {
+					self.chatList.append($0)
+				}
+				print("@@",data.payload)
+			}
+		}
 	}
+	
+	func dodge(completion: @escaping (String?, UIViewController?) -> Void) {
+		ChatApiService.dodge(otherUid.value) { code in
+			if let code = code {
+				print("code",code)
+				print(self.otherUid.value)
+				switch StateCodeEnum(rawValue: code)! {
+				case .success:
+					UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
+					completion(nil, TabBarController())
+				case .fireBaseTokenError:
+					ChatApiService.dodge(self.otherUid.value) { code in
+						if let code = code {
+							switch StateCodeEnum(rawValue: code)! {
+							case .success:
+								UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
+								completion(nil, TabBarController())
+							default:
+								completion("오류가 발생했습니다", nil)
+							}
+						}
+					}
+				default:
+					completion("오류가 발생했습니다", nil)
+				}
+			}
+		}
+	}
+	
 }

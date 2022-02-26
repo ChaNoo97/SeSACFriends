@@ -10,6 +10,7 @@ import UIKit
 class CanclePopupViewController: UIViewController {
 	
 	let mainView = PopUpView(frame: .zero, title: "약속을 취소하겠습니까?", subTitle: "약속을 취소하시면 패널티가 부과됩니다", cnacelTitle: "취소", allowTitle: "확인")
+	let viewModel = ChattingViewModel.shared
 	
 	override func loadView() {
 		self.view = mainView
@@ -28,6 +29,13 @@ class CanclePopupViewController: UIViewController {
 	
 	@objc func allowButtonClicked() {
 		print("allow")
-		UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
+		viewModel.dodge { message, viewController in
+			if let viewController = viewController {
+				self.changeRootView(viewController: viewController)
+			}
+			if let message = message {
+				self.view.makeToast(message)
+			}
+		}
 	}
 }
