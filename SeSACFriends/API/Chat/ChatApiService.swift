@@ -49,7 +49,7 @@ final class ChatApiService {
 			"comment" : comment
 		]
 		
-		AF.request(ChatEndPoint.report.url, method: .post, parameters: parameters, headers: BaseHeader.normalHeaders.headers).responseString { response in
+		AF.request(ChatEndPoint.report.url, method: .post, parameters: parameters, encoding: URLEncoding(arrayEncoding: .noBrackets), headers: BaseHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode)
 		}
 	}
@@ -62,7 +62,7 @@ final class ChatApiService {
 			  "comment" : comment
 		]
 		print(parameters)
-		AF.request(ChatEndPoint.review(id: otherUid).url, method: .post, parameters: parameters, headers: BaseHeader.normalHeaders.headers).responseString { response in
+		AF.request(ChatEndPoint.review(id: otherUid).url, method: .post, parameters: parameters, encoding: URLEncoding(arrayEncoding: .noBrackets), headers: BaseHeader.normalHeaders.headers).responseString { response in
 			completion(response.response?.statusCode)
 		}
 		print(ChatEndPoint.review(id: otherUid).url)
