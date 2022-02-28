@@ -34,7 +34,6 @@ class ChattingViewController: BaseViewController {
 		navBarDisplay()
 		mainView.contentView.text = placeholder
 		mainView.contentView.textColor = .sesacGray7
-		viewModel.otherNick.value = "김찬후"
 		viewModel.checkMyState { message in
 			if let message = message {
 				self.view.makeToast(message)
@@ -54,6 +53,7 @@ class ChattingViewController: BaseViewController {
 			self.navigationBarSetTitle(title: $0)
 		}
 		viewModel.textCount.bind {
+			print("textCount", $0)
 			self.mainView.sendButton.setImage(UIImage(named: self.viewModel.sendButtonSetting($0)), for: .normal)
 		}
 		mainView.sendButton.addTarget(self, action: #selector(sendButtonClicked), for: .touchUpInside)
@@ -152,14 +152,11 @@ class ChattingViewController: BaseViewController {
 	}
 	
 	@objc func sendButtonClicked() {
-		guard let chat = mainView.contentView.text else { return }
-		viewModel.validText.bind {
-			if $0.count != 0 {
-				self.viewModel.chatPost(chatText: chat) {
-					self.mainView.tableView.reloadData()
-				}
-				self.mainView.contentView.text = nil
-			}
+		let chat = mainView.contentView.text
+		viewModel.chatPost(chatText: chat!) {
+			self.mainView.tableView.reloadData()
+			self.mainView.contentView.text = ""
+			self.mainView.tableView.scrollToRow(at: [1,self.viewModel.chatList.count-1], at: .bottom, animated: true)
 		}
 	}
 	
@@ -201,7 +198,9 @@ class ChattingViewController: BaseViewController {
 		case .cancle:
 			popupPresent(CanclePopupViewController())
 		case .review:
-			popupPresent(ReviewPopUpViewontroller())
+			let vc = ReviewPopUpViewController()
+			vc.viewModel.otherUid = self.viewModel.otherUid.value
+			popupPresent(vc)
 		}
 	}
 	
@@ -268,8 +267,8 @@ extension ChattingViewController: UITextViewDelegate {
 	}
 	
 	func textViewDidChange(_ textView: UITextView) {
+		viewModel.textCount.value = textView.text.count
 		let contentHeight = textView.contentSize.height
-		print(contentHeight)
 		viewModel.validText.value = textView.text.trimmingCharacters(in: ["\n"])
 		viewModel.validText.bind {
 			self.mainView.sendButton.setImage(UIImage(named: self.viewModel.sendButtonSetting($0.count)), for: .normal)

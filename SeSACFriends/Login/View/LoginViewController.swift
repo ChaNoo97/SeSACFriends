@@ -25,6 +25,7 @@ final class LoginViewController: BaseViewController {
 		makeTabGester(view: view, target: self, action: #selector(dismissKeyboard))
 		mainView.phoneNumberTextField.textField.delegate = self
 		mainView.phoneNumberTextField.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+		UserDefaults.standard.set(queueState.normal.rawValue, forKey: UserDefaultsKey.queueStatus.rawValue)
 	}
 	
 	@objc func textFieldDidChange(_ textField: UITextField) {

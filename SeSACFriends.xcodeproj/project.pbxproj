@@ -699,6 +699,7 @@
 			isa = PBXGroup;
 			children = (
 				FEB3C37327BA7C9B005D1C01 /* FindSeSacTabViewController.swift */,
+				FEB3C38127BB8F15005D1C01 /* ViewModel */,
 				FEB3C37927BAC6A8005D1C01 /* FindNearSeSac */,
 				FEB3C37827BAC6A5005D1C01 /* AcceptSeSac */,
 			);
@@ -717,7 +718,6 @@
 			isa = PBXGroup;
 			children = (
 				FEB3C39127BECE0E005D1C01 /* Model */,
-				FEB3C38127BB8F15005D1C01 /* ViewModel */,
 				FEB3C38027BB8F0A005D1C01 /* View */,
 			);
 			path = NearUserTab;
