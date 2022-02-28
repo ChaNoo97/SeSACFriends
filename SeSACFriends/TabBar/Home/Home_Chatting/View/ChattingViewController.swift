@@ -195,7 +195,9 @@ class ChattingViewController: BaseViewController {
 	@objc func actionButtonClicked(_ sender: UIButton) {
 		switch moreViewButton(rawValue: sender.tag)! {
 		case .report:
-			popupPresent(ReportViewController())
+			let vc = ReportViewController()
+			vc.viewModel.otherUid = self.viewModel.otherUid.value
+			popupPresent(vc)
 		case .cancle:
 			popupPresent(CanclePopupViewController())
 		case .review:

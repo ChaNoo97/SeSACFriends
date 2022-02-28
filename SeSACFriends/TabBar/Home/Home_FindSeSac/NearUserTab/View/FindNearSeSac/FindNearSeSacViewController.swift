@@ -142,7 +142,6 @@ final class FindNearSeSacViewController: UIViewController {
 }
 
 extension FindNearSeSacViewController: UITableViewDelegate, UITableViewDataSource {
-	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return viewModel.nearSesac.fromUser.count
 	}

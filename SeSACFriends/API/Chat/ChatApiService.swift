@@ -39,4 +39,17 @@ final class ChatApiService {
 		}
 	}
 	
+	static func report(otherUid: String, reportRepustation: [Int], comment: String, completion: @escaping (Int?) -> Void) {
+		
+		let parameters: Parameters = [
+			"otheruid" : otherUid,
+			"reportedReputation" : reportRepustation,
+			"comment" : comment
+		]
+		
+		AF.request(ChatEndPoint.report.url, method: .post, parameters: parameters, headers: BaseHeader.normalHeaders.headers).responseString { response in
+			completion(response.response?.statusCode)
+		}
+	}
+	
 }

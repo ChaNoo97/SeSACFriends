@@ -11,6 +11,7 @@ enum ChatEndPoint {
 	case chat(id: String)
 	case lastChat(fromId: String, lastChatDate: String)
 	case dodge
+	case report
 }
 
 extension ChatEndPoint {
@@ -22,6 +23,8 @@ extension ChatEndPoint {
 			return .makeEndPoint("/chat/\(fromId)?lastchatDate=\(lastChatDate)")
 		case .dodge:
 			return .makeEndPoint("/queue/dodge")
+		case .report:
+			return .makeEndPoint("/user/report")
 		}
 	}
 }
