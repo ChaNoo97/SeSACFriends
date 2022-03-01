@@ -42,20 +42,19 @@ final class NoticeCell: UITableViewCell, ViewProtocols {
 		titleView.snp.makeConstraints {
 			$0.centerX.equalToSuperview()
 			$0.top.equalToSuperview().inset(12)
-			$0.width.equalTo(178)
+			$0.leading.trailing.equalToSuperview()
 			$0.height.equalTo(22)
 		}
 		
 		bellImage.snp.makeConstraints {
-			$0.leading.equalToSuperview()
+			$0.trailing.equalTo(titleLabel.snp.leading).offset(-4)
 			$0.centerY.equalToSuperview()
 			$0.size.equalTo(16)
 		}
 		
 		titleLabel.snp.makeConstraints {
-			$0.leading.equalTo(bellImage.snp.trailing).offset(4)
+			$0.centerX.equalToSuperview().offset(10)
 			$0.top.bottom.equalToSuperview()
-			$0.trailing.equalToSuperview()
 		}
 		
 		subTitleLabel.snp.makeConstraints {
