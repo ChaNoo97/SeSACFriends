@@ -135,6 +135,7 @@ class ChattingViewController: BaseViewController {
 	}
 	
 	@objc func keyboardShow(notification: NSNotification) {
+		mainView.tableView.scrollToRow(at: [1, self.viewModel.chatList.count-1], at: .bottom, animated: false)
 		if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
 			let keyboardHeight = keyboardSize.height - view.safeAreaInsets.bottom
 			mainView.chatView.snp.updateConstraints {
@@ -157,6 +158,7 @@ class ChattingViewController: BaseViewController {
 			self.mainView.tableView.reloadData()
 			self.mainView.contentView.text = ""
 			self.mainView.tableView.scrollToRow(at: [1,self.viewModel.chatList.count-1], at: .bottom, animated: true)
+			self.mainView.sendButton.setImage(UIImage(named: "inactive"), for: .normal)
 		}
 	}
 	

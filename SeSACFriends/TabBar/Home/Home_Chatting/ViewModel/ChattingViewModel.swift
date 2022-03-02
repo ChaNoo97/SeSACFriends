@@ -24,7 +24,7 @@ final class ChattingViewModel {
 		if textCount != 0 && chatPossibility.value {
 			return "active"
 		} else {
-			return "inactive"
+			return "8"
 		}
 	}
 	

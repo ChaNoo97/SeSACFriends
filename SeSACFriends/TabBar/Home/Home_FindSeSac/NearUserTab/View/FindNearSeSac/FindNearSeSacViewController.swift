@@ -111,9 +111,9 @@ final class FindNearSeSacViewController: UIViewController {
 			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
 		} else {
 			viewModel.nearSesac.fromUser[sender.tag].isOpen.toggle()
-			viewModel.onQueue {
-				self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
-			}
+//			viewModel.onQueue {
+//				self.ButtonSetting(userCount: self.viewModel.nearSesac.recommendUser.count)
+//			}
 		}
 		mainView.tableView.reloadData()
 	}

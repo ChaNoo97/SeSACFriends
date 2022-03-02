@@ -91,6 +91,7 @@
 		FE7F5E6627C6304B00E09353 /* ChatEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7F5E6527C6304B00E09353 /* ChatEndPoint.swift */; };
 		FE7F5E6827C6305800E09353 /* ChatApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7F5E6727C6305800E09353 /* ChatApiService.swift */; };
 		FE7F5E6A27C635E700E09353 /* ChatResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7F5E6927C635E700E09353 /* ChatResponseModel.swift */; };
+		FE91D20F27CF434400DF1F3F /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91D20E27CF434400DF1F3F /* NetworkMonitor.swift */; };
 		FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */; };
 		FEA7CA3927C0CB7600BF5AC1 /* BaseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */; };
 		FEA7CA3B27C0D76A00BF5AC1 /* MyQueueStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */; };
@@ -218,6 +219,7 @@
 		FE7F5E6527C6304B00E09353 /* ChatEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatEndPoint.swift; sourceTree = "<group>"; };
 		FE7F5E6727C6305800E09353 /* ChatApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatApiService.swift; sourceTree = "<group>"; };
 		FE7F5E6927C635E700E09353 /* ChatResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatResponseModel.swift; sourceTree = "<group>"; };
+		FE91D20E27CF434400DF1F3F /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		FEA7CA3627BFB1DB00BF5AC1 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		FEA7CA3827C0CB7600BF5AC1 /* BaseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHeader.swift; sourceTree = "<group>"; };
 		FEA7CA3A27C0D76A00BF5AC1 /* MyQueueStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueueStatusModel.swift; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 			isa = PBXGroup;
 			children = (
 				FEA7CA5827C42BA200BF5AC1 /* UIImage + extension.swift */,
+				FE91D20E27CF434400DF1F3F /* NetworkMonitor.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1044,6 +1047,7 @@
 				FEA7CA5B27C4973D00BF5AC1 /* MoreView.swift in Sources */,
 				FEB41A0727AD353500058E1C /* WithdrawViewController.swift in Sources */,
 				FEA7CA5227C3F90200BF5AC1 /* My.swift in Sources */,
+				FE91D20F27CF434400DF1F3F /* NetworkMonitor.swift in Sources */,
 				FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */,
 				FE7BDCD4279C7788001C75A9 /* LoginViewModel + extension(Birth).swift in Sources */,
 				FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */,
