@@ -25,7 +25,7 @@
 
 ## 트러블슈팅
 - 로그인 과정에서 validation을 여러개 사용해줘야 했습니다. 모두 다른 위치에서 코드로 처리해주었는데 모듈화를 통해서 가독성을 높여주고, 확장성을 확보해볼수 있었습니다.
-- 채팅화면의 textView의 edgeInset이 존재하여 원하는 UI가 만들어 졌는데, edgeInset 값을 바꿔줘서 해결했습니다.
+- 채팅화면의 textView의 edgeInset이 존재하여 원하지 않는 UI가 만들어 졌는데, edgeInset 값을 바꿔줘서 해결했습니다.
 - viewModel의 일부 property를 공유해야 하는 상황이 있어서 해당 viewModel을 싱글톤으로 처리해주었습니다.
 - MVVM패턴임에도 불구하고 API 상태코드에 따라서 분기처리를 해주는 부분때문에 viewController에 코드가 길어졌었습니다. viewModel에서 분기처리를 진행해주고, 토스트 메세지를 띄워야 하는 경우에는 escaping closure 을 사용하여 string값만 가져오면 viewController에서 띄워주기만 할수 있도록 로직을 개선했습니다.
 - API 상태 코드처리를 해줄때, integer값으로 터프하게 처리해주다 보니 가독성이 떨어지고, 오타가 발생했습니다. enum을 만들어서 가독성 문제를 해결하고, 혹시 발생할수 있는 오타의 오류에 대응할수 있도록 처리했습니다.
