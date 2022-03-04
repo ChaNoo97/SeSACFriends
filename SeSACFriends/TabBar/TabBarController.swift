@@ -19,7 +19,7 @@ final class TabBarController: UITabBarController {
 	
 	func configureTabBarController() {
 		let homeNav = makeNavigationVC(HomeViewController(), title: "홈", unSelectImage: "homeUnSelect", selectImage: "homeSelect")
-		let shopNav = makeNavigationVC(ShopViewController(), title: "새싹샵", unSelectImage: "shopUnSelect", selectImage: "shopSelect")
+		let shopNav = makeNavigationVC(ShopTabViewController(), title: "새싹샵", unSelectImage: "shopUnSelect", selectImage: "shopSelect")
 		let friendNav = makeNavigationVC(FriendViewController(), title: "새싹친구", unSelectImage: "friendUnSelect", selectImage: "friendSelect")
 		let myNav = makeNavigationVC(MyViewController(), title: "내정보", unSelectImage: "myUnSelect", selectImage: "mySelect")
 		setViewControllers([homeNav, shopNav, friendNav, myNav], animated: true)

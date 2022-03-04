@@ -18,7 +18,7 @@
 		FE22DE8C27A27A6200368B13 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8B27A27A6200368B13 /* HomeViewController.swift */; };
 		FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */; };
 		FE22DE9027A27AA400368B13 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE8F27A27AA400368B13 /* MyViewController.swift */; };
-		FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9127A27AAF00368B13 /* ShopViewController.swift */; };
+		FE22DE9227A27AAF00368B13 /* ShopTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9127A27AAF00368B13 /* ShopTabViewController.swift */; };
 		FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9427A27B3A00368B13 /* HomeView.swift */; };
 		FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9627A27B4400368B13 /* FriendView.swift */; };
 		FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9827A27B4B00368B13 /* ShopView.swift */; };
@@ -60,6 +60,8 @@
 		FE515969279AAED600E2CFBD /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515968279AAED600E2CFBD /* ConfirmViewController.swift */; };
 		FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515976279B0DE800E2CFBD /* LoginViewModel.swift */; };
 		FE515979279B1DA400E2CFBD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515978279B1DA400E2CFBD /* Observable.swift */; };
+		FE548E7727D266D90029F6DC /* BackgroundShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */; };
+		FE548E7927D266EF0029F6DC /* SesacShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */; };
 		FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C8E27AF759700D64A41 /* PopUpView.swift */; };
 		FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */; };
 		FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */; };
@@ -151,7 +153,7 @@
 		FE22DE8B27A27A6200368B13 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FE22DE8D27A27A8A00368B13 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		FE22DE8F27A27AA400368B13 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		FE22DE9127A27AAF00368B13 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		FE22DE9127A27AAF00368B13 /* ShopTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTabViewController.swift; sourceTree = "<group>"; };
 		FE22DE9427A27B3A00368B13 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FE22DE9627A27B4400368B13 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		FE22DE9827A27B4B00368B13 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,8 @@
 		FE515968279AAED600E2CFBD /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		FE515976279B0DE800E2CFBD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FE515978279B1DA400E2CFBD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShopViewController.swift; sourceTree = "<group>"; };
+		FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacShopViewController.swift; sourceTree = "<group>"; };
 		FE617C8E27AF759700D64A41 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
@@ -516,6 +520,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FE548E7427D2667E0029F6DC /* ShpoSesac */ = {
+			isa = PBXGroup;
+			children = (
+				FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */,
+			);
+			path = ShpoSesac;
+			sourceTree = "<group>";
+		};
+		FE548E7527D266800029F6DC /* ShopBackground */ = {
+			isa = PBXGroup;
+			children = (
+				FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */,
+			);
+			path = ShopBackground;
+			sourceTree = "<group>";
+		};
 		FE7BDCED279F050D001C75A9 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,8 +809,10 @@
 		FEC012C527AB9ECB004E0577 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE548E7527D266800029F6DC /* ShopBackground */,
+				FE548E7427D2667E0029F6DC /* ShpoSesac */,
 				FE22DE9827A27B4B00368B13 /* ShopView.swift */,
-				FE22DE9127A27AAF00368B13 /* ShopViewController.swift */,
+				FE22DE9127A27AAF00368B13 /* ShopTabViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1043,6 +1065,7 @@
 				FE7BDCD8279C7B09001C75A9 /* EmailViewController.swift in Sources */,
 				FE22DEAD27A5B1C100368B13 /* ReviewView.swift in Sources */,
 				FE515979279B1DA400E2CFBD /* Observable.swift in Sources */,
+				FE548E7727D266D90029F6DC /* BackgroundShopViewController.swift in Sources */,
 				FEB41A0127AC512500058E1C /* MyInfoManageViewModel.swift in Sources */,
 				FEA7CA5B27C4973D00BF5AC1 /* MoreView.swift in Sources */,
 				FEB41A0727AD353500058E1C /* WithdrawViewController.swift in Sources */,
@@ -1095,7 +1118,7 @@
 				FEB3C38D27BBFC87005D1C01 /* AcceptTableCell.swift in Sources */,
 				FEB3C36327B6CFB9005D1C01 /* HobbyClientCell.swift in Sources */,
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
-				FE22DE9227A27AAF00368B13 /* ShopViewController.swift in Sources */,
+				FE22DE9227A27AAF00368B13 /* ShopTabViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
 				FEA7CA4427C325D600BF5AC1 /* AcceptPopUpViewController.swift in Sources */,
 				FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */,
@@ -1131,6 +1154,7 @@
 				FE22DEA927A5B08800368B13 /* ReputationView.swift in Sources */,
 				FEA7CA6227C50DCE00BF5AC1 /* ReportView.swift in Sources */,
 				FE7BDCE0279E6868001C75A9 /* GenderView.swift in Sources */,
+				FE548E7927D266EF0029F6DC /* SesacShopViewController.swift in Sources */,
 				FEA7CA7327C55D9A00BF5AC1 /* CanclePopupViewController.swift in Sources */,
 				FE5159562799B95500E2CFBD /* ViewProtocols.swift in Sources */,
 				FE51595D279A90F300E2CFBD /* LoginViewController.swift in Sources */,
