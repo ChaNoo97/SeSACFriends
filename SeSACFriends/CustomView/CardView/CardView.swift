@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-//MARK: 상속예정에 있음
 final class CardView: UIView {
 	
 	let backgroundImageView = UIImageView()

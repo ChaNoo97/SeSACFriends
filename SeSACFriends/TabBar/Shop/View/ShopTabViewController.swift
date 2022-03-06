@@ -14,18 +14,17 @@ final class ShopTabViewController: TabmanViewController {
 	
 	private var viewControllers = [SesacShopViewController(), BackgroundShopViewController()]
 	
-//	let mainView = ShopView()
+	let cardView = SesacCard()
 	let designView = UIView()
-	
-	
-//	override func loadView() {
-//		self.view = mainView
-//	}
+	let customContainer = UIView()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationBarSetTitle(title: "새싹샵")
 		self.dataSource = self
+		view.backgroundColor = .white
+		setUpConstraints()
+		setUpConstraintCustomContainer()
 		setUpTabBarViewDesign()
 	}
 	
@@ -47,9 +46,26 @@ final class ShopTabViewController: TabmanViewController {
 			$0.selectedTintColor = .sesacGreen
 		}
 		bar.layout.contentMode = .fit
-		addBar(bar, dataSource: self, at: .top)
+		addBar(bar, dataSource: self, at: .custom(view: customContainer, layout: nil))
 	}
 	
+	func setUpConstraintCustomContainer() {
+		view.addSubview(customContainer)
+		customContainer.snp.makeConstraints {
+			$0.leading.trailing.equalToSuperview()
+			$0.top.equalTo(cardView.snp.bottom)
+			$0.height.equalTo(43)
+		}
+	}
+	
+	func setUpConstraints() {
+		view.addSubview(cardView)
+		cardView.snp.makeConstraints{
+			$0.top.equalTo(view.safeAreaLayoutGuide).offset(15)
+			$0.height.equalTo(195)
+			$0.leading.trailing.equalToSuperview()
+		}
+	}
 }
 
 extension ShopTabViewController: PageboyViewControllerDataSource, TMBarDataSource {

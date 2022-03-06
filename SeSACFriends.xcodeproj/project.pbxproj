@@ -62,6 +62,7 @@
 		FE515979279B1DA400E2CFBD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE515978279B1DA400E2CFBD /* Observable.swift */; };
 		FE548E7727D266D90029F6DC /* BackgroundShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */; };
 		FE548E7927D266EF0029F6DC /* SesacShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */; };
+		FE548E7D27D481750029F6DC /* SesacCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7C27D481750029F6DC /* SesacCard.swift */; };
 		FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C8E27AF759700D64A41 /* PopUpView.swift */; };
 		FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */; };
 		FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */; };
@@ -192,6 +193,7 @@
 		FE515978279B1DA400E2CFBD /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShopViewController.swift; sourceTree = "<group>"; };
 		FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacShopViewController.swift; sourceTree = "<group>"; };
+		FE548E7C27D481750029F6DC /* SesacCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacCard.swift; sourceTree = "<group>"; };
 		FE617C8E27AF759700D64A41 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				FE22DEA827A5B08800368B13 /* ReputationView.swift */,
 				FE22DEAA27A5B13600368B13 /* HobbyCollectionView.swift */,
 				FE22DEAC27A5B1C100368B13 /* ReviewView.swift */,
+				FE548E7C27D481750029F6DC /* SesacCard.swift */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				FE51595A279A8DEB00E2CFBD /* LoginView.swift in Sources */,
 				FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */,
 				FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */,
+				FE548E7D27D481750029F6DC /* SesacCard.swift in Sources */,
 				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
 				FEA7CA6F27C5571600BF5AC1 /* ReviewPopUpView.swift in Sources */,
 				FE7F5E5B27C60F5700E09353 /* ReviewPopupViewModel.swift in Sources */,
