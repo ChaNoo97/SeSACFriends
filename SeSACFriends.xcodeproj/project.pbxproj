@@ -63,6 +63,9 @@
 		FE548E7727D266D90029F6DC /* BackgroundShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */; };
 		FE548E7927D266EF0029F6DC /* SesacShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */; };
 		FE548E7D27D481750029F6DC /* SesacCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7C27D481750029F6DC /* SesacCard.swift */; };
+		FE548E7F27D5B8920029F6DC /* BackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E7E27D5B8920029F6DC /* BackgroundCell.swift */; };
+		FE548E8127D5B89D0029F6DC /* SesacFaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E8027D5B89D0029F6DC /* SesacFaceCell.swift */; };
+		FE548E8527D5BF1A0029F6DC /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE548E8427D5BF1A0029F6DC /* PurchaseButton.swift */; };
 		FE617C8F27AF759700D64A41 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C8E27AF759700D64A41 /* PopUpView.swift */; };
 		FE617C9127B02EFE00D64A41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */; };
 		FE6E198427ABAC9F00BF9EB9 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */; };
@@ -194,6 +197,9 @@
 		FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShopViewController.swift; sourceTree = "<group>"; };
 		FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacShopViewController.swift; sourceTree = "<group>"; };
 		FE548E7C27D481750029F6DC /* SesacCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacCard.swift; sourceTree = "<group>"; };
+		FE548E7E27D5B8920029F6DC /* BackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCell.swift; sourceTree = "<group>"; };
+		FE548E8027D5B89D0029F6DC /* SesacFaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesacFaceCell.swift; sourceTree = "<group>"; };
+		FE548E8427D5BF1A0029F6DC /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		FE617C8E27AF759700D64A41 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		FE617C9027B02EFE00D64A41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FE6E198327ABAC9F00BF9EB9 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
@@ -527,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				FE548E7827D266EF0029F6DC /* SesacShopViewController.swift */,
+				FE548E8027D5B89D0029F6DC /* SesacFaceCell.swift */,
 			);
 			path = ShpoSesac;
 			sourceTree = "<group>";
@@ -535,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				FE548E7627D266D90029F6DC /* BackgroundShopViewController.swift */,
+				FE548E7E27D5B8920029F6DC /* BackgroundCell.swift */,
 			);
 			path = ShopBackground;
 			sourceTree = "<group>";
@@ -812,6 +820,7 @@
 		FEC012C527AB9ECB004E0577 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FE548E8427D5BF1A0029F6DC /* PurchaseButton.swift */,
 				FE548E7527D266800029F6DC /* ShopBackground */,
 				FE548E7427D2667E0029F6DC /* ShpoSesac */,
 				FE22DE9827A27B4B00368B13 /* ShopView.swift */,
@@ -1062,6 +1071,7 @@
 				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,
 				FEA7CA4027C17D4200BF5AC1 /* ChattingViewController.swift in Sources */,
 				FE7F5E6327C62F1F00E09353 /* ChatModel.swift in Sources */,
+				FE548E8127D5B89D0029F6DC /* SesacFaceCell.swift in Sources */,
 				FE1E79FA279FD2600043F0F7 /* Onboding.swift in Sources */,
 				FE3030CC27B5958E008E48EC /* HobbyView.swift in Sources */,
 				FEB3C36F27B96748005D1C01 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
@@ -1109,6 +1119,7 @@
 				FE515967279AA2C800E2CFBD /* ConfirmView.swift in Sources */,
 				FE515977279B0DE800E2CFBD /* LoginViewModel.swift in Sources */,
 				FEA7CA4B27C3ED9100BF5AC1 /* ChattingViewModel.swift in Sources */,
+				FE548E7F27D5B8920029F6DC /* BackgroundCell.swift in Sources */,
 				FE51595F279A984300E2CFBD /* BaseViewController.swift in Sources */,
 				FE26BD0D2796832600E92519 /* SceneDelegate.swift in Sources */,
 				FE22DEA227A2F52300368B13 /* UITableViewCell+extension.swift in Sources */,
@@ -1142,6 +1153,7 @@
 				FEB3C38F27BBFC93005D1C01 /* NearSeSacTableCell.swift in Sources */,
 				FEA7CA3727BFB1DB00BF5AC1 /* EmptyView.swift in Sources */,
 				FE548E7D27D481750029F6DC /* SesacCard.swift in Sources */,
+				FE548E8527D5BF1A0029F6DC /* PurchaseButton.swift in Sources */,
 				FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */,
 				FEA7CA6F27C5571600BF5AC1 /* ReviewPopUpView.swift in Sources */,
 				FE7F5E5B27C60F5700E09353 /* ReviewPopupViewModel.swift in Sources */,
