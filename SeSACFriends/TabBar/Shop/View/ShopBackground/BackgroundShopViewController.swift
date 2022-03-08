@@ -11,6 +11,7 @@ import SnapKit
 class BackgroundShopViewController: UIViewController {
 	
 	let tableView = UITableView()
+	let viewModel = ShopViewModel.shared
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,10 @@ extension BackgroundShopViewController: UITableViewDataSource, UITableViewDelega
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: BackgroundCell.reuseIdentfier) as? BackgroundCell else { return UITableViewCell() }
-		
+		let row = indexPath.row
+		cell.titleLable.text = viewModel.backgroundImageTitle[row]
+		cell.subTitleLabel.text = viewModel.backgroundImageSubtitle[row]
+		cell.imageViwe.image = backgroundImageEnum(rawValue: row)?.image
 		return cell
 	}
 	

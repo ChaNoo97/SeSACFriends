@@ -26,9 +26,6 @@ final class BackgroundCell: UITableViewCell, ViewProtocols {
 	
 	
 	func configure() {
-		imageViwe.image = backgroundImageEnum.back1.image
-		titleLable.text = "하늘공원"
-		subTitleLabel.text = "새싹들을 많이 마주치는 매력적인 하늘 공원입니다."
 		imageViwe.layer.cornerRadius = 8
 		imageViwe.clipsToBounds = true
 		subTitleLabel.numberOfLines = 0

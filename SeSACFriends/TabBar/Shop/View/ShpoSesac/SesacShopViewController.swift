@@ -21,6 +21,9 @@ class SesacShopViewController: UIViewController {
 		let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		return cv
 	}()
+	
+	let viewModel = ShopViewModel.shared
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		view.backgroundColor = .white
@@ -53,9 +56,10 @@ extension SesacShopViewController: UICollectionViewDataSource, UICollectionViewD
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SesacFaceCell.reuseIdentfier, for: indexPath) as? SesacFaceCell else { return UICollectionViewCell() }
-		cell.imageViwe.image = sesacImageEnum.face1.image
-		cell.titleLable.text = "민트새싹"
-		cell.subTitleLabel.text = "새싹을 대표하는 기본 식물입니다. 다른 새싹들과 함께 하는 것을 좋아합니다."
+		let row = indexPath.row
+		cell.imageViwe.image = sesacImageEnum(rawValue: row)?.image
+		cell.titleLable.text = viewModel.sesacImageTitle[row]
+		cell.subTitleLabel.text = viewModel.sesacImageSubtitle[row]
 		return cell
 	}
 
