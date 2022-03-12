@@ -62,6 +62,10 @@ extension SesacShopViewController: UICollectionViewDataSource, UICollectionViewD
 		cell.subTitleLabel.text = viewModel.sesacImageSubtitle[row]
 		return cell
 	}
+	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		viewModel.presentImage.value = indexPath.row
+	}
 
 
 }

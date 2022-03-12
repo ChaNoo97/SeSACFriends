@@ -13,7 +13,7 @@ import Pageboy
 final class ShopTabViewController: TabmanViewController {
 	
 	private var viewControllers = [SesacShopViewController(), BackgroundShopViewController()]
-	
+	let viewModel = ShopViewModel.shared
 	let cardView = SesacCard()
 	let designView = UIView()
 	let customContainer = UIView()
@@ -26,6 +26,15 @@ final class ShopTabViewController: TabmanViewController {
 		setUpConstraints()
 		setUpConstraintCustomContainer()
 		setUpTabBarViewDesign()
+		
+		viewModel.presentBackgroundImage.bind {
+			self.cardView.backgroundImageView.image = backgroundImageEnum(rawValue: $0)?.image
+		}
+		
+		viewModel.presentImage.bind {
+			self.cardView.faceImageView.image = sesacImageEnum(rawValue: $0)?.image
+		}
+		
 	}
 	
 	func setUpTabBarViewDesign() {

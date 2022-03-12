@@ -56,6 +56,9 @@ extension BackgroundShopViewController: UITableViewDataSource, UITableViewDelega
 		return cell
 	}
 	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		viewModel.presentBackgroundImage.value = indexPath.row
+	}
 	
 	
 }
