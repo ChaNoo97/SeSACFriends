@@ -37,6 +37,10 @@ class BackgroundShopViewController: UIViewController {
 		tableView.estimatedRowHeight = UITableView.automaticDimension
 		tableView.separatorStyle = .none
 	}
+	
+	@objc func purchaseButton(_ sender: UIButton) {
+		print(sender.tag)
+	}
 
 }
 
@@ -53,6 +57,8 @@ extension BackgroundShopViewController: UITableViewDataSource, UITableViewDelega
 		cell.titleLable.text = viewModel.backgroundImageTitle[row]
 		cell.subTitleLabel.text = viewModel.backgroundImageSubtitle[row]
 		cell.imageViwe.image = backgroundImageEnum(rawValue: row)?.image
+		cell.purchaseButton.tag = row
+		cell.purchaseButton.addTarget(self, action: #selector(purchaseButton(_:)), for: .touchUpInside)
 		return cell
 	}
 	

@@ -45,6 +45,10 @@ class SesacShopViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.register(SesacFaceCell.self, forCellWithReuseIdentifier: SesacFaceCell.reuseIdentfier)
 	}
+	
+	@objc func purchaseButton(_ sender: UIButton) {
+		print(sender.tag)
+	}
     
 }
 
@@ -60,6 +64,8 @@ extension SesacShopViewController: UICollectionViewDataSource, UICollectionViewD
 		cell.imageViwe.image = sesacImageEnum(rawValue: row)?.image
 		cell.titleLable.text = viewModel.sesacImageTitle[row]
 		cell.subTitleLabel.text = viewModel.sesacImageSubtitle[row]
+		cell.purchaseButton.tag = row
+		cell.purchaseButton.addTarget(self, action: #selector(purchaseButton(_:)), for: .touchUpInside)
 		return cell
 	}
 	
