@@ -52,12 +52,15 @@ extension BackgroundShopViewController: UITableViewDataSource, UITableViewDelega
 	
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: BackgroundCell.reuseIdentfier) as? BackgroundCell else { return UITableViewCell() }
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: BackgroundCell.reuseIdentfier, for: indexPath) as? BackgroundCell else { return UITableViewCell() }
 		let row = indexPath.row
 		cell.titleLable.text = viewModel.backgroundImageTitle[row]
 		cell.subTitleLabel.text = viewModel.backgroundImageSubtitle[row]
 		cell.imageViwe.image = backgroundImageEnum(rawValue: row)?.image
 		cell.purchaseButton.tag = row
+		if viewModel.backgroundPurchaseList.contains(row) {
+			cell.purchaseButton.setUpButtonType(type: .purchase)
+		}
 		cell.purchaseButton.addTarget(self, action: #selector(purchaseButton(_:)), for: .touchUpInside)
 		return cell
 	}

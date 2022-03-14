@@ -40,6 +40,7 @@ final class PurchaseButton: UIButton {
 		case .purchase:
 			backgroundColor = .sesacGray2
 			setTitleColor(.sesacGray7, for: .normal)
+			setTitle("보유", for: .normal)
 		case .noPurchase:
 			backgroundColor = .sesacGreen
 			setTitleColor(.sesacWhite, for: .normal)

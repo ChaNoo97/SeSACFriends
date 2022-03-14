@@ -18,8 +18,8 @@ final class ShopViewModel {
 	
 	let presentImage = Observable(0)
 	let presentBackgroundImage = Observable(0)
-	let backgroundPurchaseList: [Int] = []
-	let sesacImagePurchaseList: [Int] = []
+	let backgroundPurchaseList: [Int] = [0]
+	let sesacImagePurchaseList: [Int] = [0, 1]
 	
 	private init() { }
 	

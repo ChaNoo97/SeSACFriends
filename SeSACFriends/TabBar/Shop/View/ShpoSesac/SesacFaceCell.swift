@@ -13,7 +13,7 @@ final class SesacFaceCell: UICollectionViewCell, ViewProtocols {
 	let imageViwe = UIImageView()
 	let titleLable = UILabel()
 	let subTitleLabel = UILabel()
-	let purchaseButton = PurchaseButton(frame: .zero, type: .noPurchase, title: "보유")
+	let purchaseButton = PurchaseButton(frame: .zero, type: .noPurchase, title: "1,200")
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)

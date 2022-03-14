@@ -64,6 +64,9 @@ extension SesacShopViewController: UICollectionViewDataSource, UICollectionViewD
 		cell.imageViwe.image = sesacImageEnum(rawValue: row)?.image
 		cell.titleLable.text = viewModel.sesacImageTitle[row]
 		cell.subTitleLabel.text = viewModel.sesacImageSubtitle[row]
+		if viewModel.sesacImagePurchaseList.contains(row) {
+			cell.purchaseButton.setUpButtonType(type: .purchase)
+		}
 		cell.purchaseButton.tag = row
 		cell.purchaseButton.addTarget(self, action: #selector(purchaseButton(_:)), for: .touchUpInside)
 		return cell
