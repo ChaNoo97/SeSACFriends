@@ -144,6 +144,9 @@
 		FEB5006F27B390BE004915BC /* QueueEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5006E27B390BE004915BC /* QueueEndPoint.swift */; };
 		FEB5007127B390D0004915BC /* QueueApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5007027B390D0004915BC /* QueueApiService.swift */; };
 		FEB5007327B39B1B004915BC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB5007227B39B1B004915BC /* CustomAnnotationView.swift */; };
+		FEF5DF1727E0DE78009C634B /* ShopEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5DF1627E0DE78009C634B /* ShopEndPoint.swift */; };
+		FEF5DF1927E0DE86009C634B /* ShopApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5DF1827E0DE86009C634B /* ShopApiService.swift */; };
+		FEF5DF1B27E0DF9A009C634B /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF5DF1A27E0DF9A009C634B /* ShopModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -277,6 +280,9 @@
 		FEB5006E27B390BE004915BC /* QueueEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueEndPoint.swift; sourceTree = "<group>"; };
 		FEB5007027B390D0004915BC /* QueueApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueApiService.swift; sourceTree = "<group>"; };
 		FEB5007227B39B1B004915BC /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		FEF5DF1627E0DE78009C634B /* ShopEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopEndPoint.swift; sourceTree = "<group>"; };
+		FEF5DF1827E0DE86009C634B /* ShopApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopApiService.swift; sourceTree = "<group>"; };
+		FEF5DF1A27E0DF9A009C634B /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -558,6 +564,7 @@
 				FE7BDCF0279F0530001C75A9 /* User */,
 				FEB5006D27B39070004915BC /* Queue */,
 				FE7F5E6427C6302500E09353 /* Chat */,
+				FEF5DF1527E0DE58009C634B /* Shop */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -842,6 +849,7 @@
 		FEC012C827ABA311004E0577 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FEF5DF1A27E0DF9A009C634B /* ShopModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -965,6 +973,15 @@
 				FEB41A0227AD10EF00058E1C /* UpdateMypageModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FEF5DF1527E0DE58009C634B /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				FEF5DF1627E0DE78009C634B /* ShopEndPoint.swift */,
+				FEF5DF1827E0DE86009C634B /* ShopApiService.swift */,
+			);
+			path = Shop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1100,6 +1117,8 @@
 				FEB3C36B27B81FBB005D1C01 /* CollectionHeaderView.swift in Sources */,
 				FE7BDCF7279F05FB001C75A9 /* UserDefaultsKey.swift in Sources */,
 				FE51595127993EFD00E2CFBD /* MainButton.swift in Sources */,
+				FEF5DF1B27E0DF9A009C634B /* ShopModel.swift in Sources */,
+				FEF5DF1727E0DE78009C634B /* ShopEndPoint.swift in Sources */,
 				FE22DEA427A3BBA100368B13 /* CardView.swift in Sources */,
 				FEA7CA3B27C0D76A00BF5AC1 /* MyQueueStatusModel.swift in Sources */,
 				FEB41A0527AD150C00058E1C /* StateCodeEnum.swift in Sources */,
@@ -1137,6 +1156,7 @@
 				FEB41A0327AD10EF00058E1C /* UpdateMypageModel.swift in Sources */,
 				FE22DE9227A27AAF00368B13 /* ShopTabViewController.swift in Sources */,
 				FE5159542799B4D500E2CFBD /* MainTextField.swift in Sources */,
+				FEF5DF1927E0DE86009C634B /* ShopApiService.swift in Sources */,
 				FEA7CA4427C325D600BF5AC1 /* AcceptPopUpViewController.swift in Sources */,
 				FEB3C38927BB9D73005D1C01 /* FindNearView.swift in Sources */,
 				FEA7CA4627C3E38F00BF5AC1 /* ChattingView.swift in Sources */,
