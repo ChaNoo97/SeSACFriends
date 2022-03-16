@@ -15,6 +15,7 @@ final class ShopTabViewController: TabmanViewController {
 	private var viewControllers = [SesacShopViewController(), BackgroundShopViewController()]
 	let viewModel = ShopViewModel.shared
 	let cardView = SesacCard()
+	let saveButton = UIButton()
 	let designView = UIView()
 	let customContainer = UIView()
 	
@@ -26,15 +27,17 @@ final class ShopTabViewController: TabmanViewController {
 		setUpConstraints()
 		setUpConstraintCustomContainer()
 		setUpTabBarViewDesign()
+		saveButtonSetting()
 		
 		viewModel.presentBackgroundImage.bind {
 			self.cardView.backgroundImageView.image = backgroundImageEnum(rawValue: $0)?.image
 		}
-		
+
 		viewModel.presentImage.bind {
 			self.cardView.faceImageView.image = sesacImageEnum(rawValue: $0)?.image
 		}
 		
+		saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
 	}
 	
 	func setUpTabBarViewDesign() {
@@ -73,6 +76,27 @@ final class ShopTabViewController: TabmanViewController {
 			$0.top.equalTo(view.safeAreaLayoutGuide).offset(15)
 			$0.height.equalTo(195)
 			$0.leading.trailing.equalToSuperview()
+		}
+	}
+	
+	func saveButtonSetting() {
+		cardView.addSubview(saveButton)
+		saveButton.snp.makeConstraints {
+			$0.trailing.equalTo(cardView.backgroundImageView.snp.trailing).inset(15)
+			$0.top.equalTo(cardView.backgroundImageView.snp.top).inset(13)
+			$0.height.equalTo(40)
+			$0.width.equalTo(80)
+		}
+		saveButton.setTitle("저장하기", for: .normal)
+		saveButton.setTitleColor(.sesacWhite, for: .normal)
+		saveButton.titleLabel?.font = SesacFont.body3R14.font
+		saveButton.backgroundColor = .sesacGreen
+		saveButton.layer.cornerRadius = 8
+	}
+	
+	@objc func saveButtonClicked() {
+		viewModel.updateMyImage { message in
+			self.view.makeToast(message)
 		}
 	}
 }

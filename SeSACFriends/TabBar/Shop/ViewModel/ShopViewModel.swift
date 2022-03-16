@@ -18,8 +18,28 @@ final class ShopViewModel {
 	
 	let presentImage = Observable(0)
 	let presentBackgroundImage = Observable(0)
-	let backgroundPurchaseList: [Int] = [0]
-	let sesacImagePurchaseList: [Int] = [0, 1]
+	let backgroundPurchaseList: [Int] = []
+	let sesacImagePurchaseList: [Int] = []
+	
+	func updateMyImage(completion: @escaping (String) -> Void) {
+		ShopApiService.updateMyImage(backImageNum: presentBackgroundImage.value, sesacImageNum: presentImage.value) { code in
+			guard let code = code else {
+				return
+			}
+			switch StateCodeEnum(rawValue: code)! {
+			case .success:
+				completion("변경했습니다.")
+			case .existUser:
+				completion("구매가 필요한 아이템이 있어요")
+			case .fireBaseTokenError:
+				self.updateMyImage { message in
+					completion(message)
+				}
+			default:
+				return
+			}
+		}
+	}
 	
 	private init() { }
 	

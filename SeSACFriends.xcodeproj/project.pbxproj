@@ -21,7 +21,6 @@
 		FE22DE9227A27AAF00368B13 /* ShopTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9127A27AAF00368B13 /* ShopTabViewController.swift */; };
 		FE22DE9527A27B3A00368B13 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9427A27B3A00368B13 /* HomeView.swift */; };
 		FE22DE9727A27B4400368B13 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9627A27B4400368B13 /* FriendView.swift */; };
-		FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9827A27B4B00368B13 /* ShopView.swift */; };
 		FE22DE9B27A27B4F00368B13 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9A27A27B4F00368B13 /* MyView.swift */; };
 		FE22DE9E27A2F3DD00368B13 /* MyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */; };
 		FE22DEA027A2F3E900368B13 /* AppInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */; };
@@ -164,7 +163,6 @@
 		FE22DE9127A27AAF00368B13 /* ShopTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTabViewController.swift; sourceTree = "<group>"; };
 		FE22DE9427A27B3A00368B13 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FE22DE9627A27B4400368B13 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
-		FE22DE9827A27B4B00368B13 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		FE22DE9A27A27B4F00368B13 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		FE22DE9D27A2F3DD00368B13 /* MyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoCell.swift; sourceTree = "<group>"; };
 		FE22DE9F27A2F3E900368B13 /* AppInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCell.swift; sourceTree = "<group>"; };
@@ -832,7 +830,6 @@
 				FE548E8427D5BF1A0029F6DC /* PurchaseButton.swift */,
 				FE548E7527D266800029F6DC /* ShopBackground */,
 				FE548E7427D2667E0029F6DC /* ShpoSesac */,
-				FE22DE9827A27B4B00368B13 /* ShopView.swift */,
 				FE22DE9127A27AAF00368B13 /* ShopTabViewController.swift */,
 			);
 			path = View;
@@ -1085,7 +1082,6 @@
 				FE7BDCCC279C4CA3001C75A9 /* NickNameView.swift in Sources */,
 				FEB3C38327BB8F38005D1C01 /* NearUserViewModel.swift in Sources */,
 				FE515942279694FB00E2CFBD /* FontExtension.swift in Sources */,
-				FE22DE9927A27B4B00368B13 /* ShopView.swift in Sources */,
 				FE7BDCE2279E68C5001C75A9 /* GenderViewController.swift in Sources */,
 				FEA7CA6427C50DDF00BF5AC1 /* ReportViewController.swift in Sources */,
 				FE22DE8E27A27A8A00368B13 /* FriendViewController.swift in Sources */,

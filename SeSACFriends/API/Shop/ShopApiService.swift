@@ -16,4 +16,18 @@ final class ShopApiService {
 			completion(response.value)
 		}
 	}
+	
+	static func updateMyImage(backImageNum: Int, sesacImageNum: Int, completion: @escaping (Int?) -> Void) {
+		
+		let updateParameter: Parameters = [
+			"sesac" : sesacImageNum,
+			"background" : backImageNum
+		]
+		
+		AF.request(ShopEndPoint.updateMyImage.url, method: .post, parameters: updateParameter, headers: BaseHeader.normalHeaders.headers).responseString { response in
+			completion(response.response?.statusCode)
+		}
+	}
+	
+	
 }
