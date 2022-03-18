@@ -29,5 +29,18 @@ final class ShopApiService {
 		}
 	}
 	
+	static func purchaseItem(receipt: String, product: String) {
+		
+		let purchaseParameter: Parameters = [
+			  "receipt" : receipt,
+			  "product" : product
+		]
+		
+		AF.request(ShopEndPoint.purchase.url, method: .post, parameters: purchaseParameter).responseString { response in
+			print(response.response?.statusCode)
+		}
+		
+	}
+	
 	
 }

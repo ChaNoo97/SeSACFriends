@@ -10,6 +10,7 @@ import Foundation
 enum ShopEndPoint {
 	case shopMyinfo
 	case updateMyImage
+	case purchase
 }
 
 extension ShopEndPoint {
@@ -19,6 +20,8 @@ extension ShopEndPoint {
 			return .makeEndPoint("/user/shop/myinfo")
 		case .updateMyImage:
 			return .makeEndPoint("/user/update/shop")
+		case .purchase:
+			return .makeEndPoint("/user/shop/ios")
 		}
 	}
 }
